@@ -6,6 +6,21 @@ C++ 标准库可以分为两部分：
 
 C++ 标准库包含了所有的 C 标准库，为了支持类型安全，做了一定的添加和修改。
 
+STL共13个头文件
+<iterator>
+<functional>
+<vector>
+<deque>
+<list>
+<queue>
+<stack>
+<set>
+<map>
+<algorithm>
+<numeric>
+<memory>
+<utility>
+
 
 /********************/标准函数库/************************************************************/
 标准函数库分为以下几类：
@@ -66,34 +81,34 @@ using namespace std;
 
 int main()
 {
-    // 创建一个向量存储 int
-    vector<int> vec;
-    int i;
+        // 创建一个向量存储 int
+        vector<int> vec;
+        int i;
 
-    // 显示 vec 的原始大小
-    cout << "vector size = " << vec.size() << endl;
+        // 显示 vec 的原始大小
+        cout << "vector size = " << vec.size() << endl;
 
-    // 推入 5 个值到向量中
-    for (i = 0; i < 5; i++) {
-        vec.push_back(i);
-    }
+        // 推入 5 个值到向量中
+        for (i = 0; i < 5; i++) {
+                vec.push_back(i);
+        }
 
-    // 显示 vec 扩展后的大小
-    cout << "extended vector size = " << vec.size() << endl;
+        // 显示 vec 扩展后的大小
+        cout << "extended vector size = " << vec.size() << endl;
 
-    // 访问向量中的 5 个值
-    for (i = 0; i < 5; i++) {
-        cout << "value of vec [" << i << "] = " << vec[i] << endl;
-    }
+        // 访问向量中的 5 个值
+        for (i = 0; i < 5; i++) {
+                cout << "value of vec [" << i << "] = " << vec[i] << endl;
+        }
 
-    // 使用迭代器 iterator 访问值
-    vector<int>::iterator v = vec.begin();
-    while (v != vec.end()) {
-        cout << "value of v = " << *v << endl;
-        v++;
-    }
+        // 使用迭代器 iterator 访问值
+        vector<int>::iterator v = vec.begin();
+        while (v != vec.end()) {
+                cout << "value of v = " << *v << endl;
+                v++;
+        }
 
-    return 0;
+        return 0;
 }
 当上面的代码被编译和执行时，它会产生下列结果：
 
