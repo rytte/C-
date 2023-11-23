@@ -1,0 +1,4 @@
+if 语句和 for 语句与C++大致一样
+可以使用 var 关键字定义局部变量
+var 定义的变量是可以改变的。 property 定义的属性在QML中默认是不可改变的，如果需要改变，需要在 property 后面加上“readOnly”关键字。
+

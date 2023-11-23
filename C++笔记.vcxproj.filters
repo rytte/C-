@@ -40,6 +40,9 @@
     <Filter Include="源文件\网络编程\IO模型实例">
       <UniqueIdentifier>{29bf2d8a-94fb-403a-9142-3c138c2e961a}</UniqueIdentifier>
     </Filter>
+    <Filter Include="源文件\其它">
+      <UniqueIdentifier>{8bf3fb7e-562d-4f2e-bcec-cc172a2ab235}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="01输入输出流.cpp">
@@ -135,12 +138,6 @@
     <ClCompile Include="00基础知识.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
-    <ClCompile Include="数据结构与算法.cpp">
-      <Filter>源文件</Filter>
-    </ClCompile>
-    <ClCompile Include="辨析.cpp">
-      <Filter>源文件</Filter>
-    </ClCompile>
     <ClCompile Include="1-顺序表.c">
       <Filter>源文件\C语言算法</Filter>
     </ClCompile>
@@ -203,9 +200,6 @@
     </ClCompile>
     <ClCompile Include="4-精灵进程.cpp">
       <Filter>源文件\系统编程</Filter>
-    </ClCompile>
-    <ClCompile Include="复习.cpp">
-      <Filter>源文件</Filter>
     </ClCompile>
     <ClCompile Include="QT基础.cpp">
       <Filter>源文件\QT</Filter>
@@ -315,8 +309,35 @@
     <ClCompile Include="异步信号驱动server.c">
       <Filter>源文件\网络编程\IO模型实例</Filter>
     </ClCompile>
+    <ClCompile Include="QML-3动画.cpp">
+      <Filter>源文件\QT</Filter>
+    </ClCompile>
+    <ClCompile Include="辨析.cpp">
+      <Filter>源文件\其它</Filter>
+    </ClCompile>
+    <ClCompile Include="复习.cpp">
+      <Filter>源文件\其它</Filter>
+    </ClCompile>
     <ClCompile Include="面试重点.cpp">
-      <Filter>源文件</Filter>
+      <Filter>源文件\其它</Filter>
+    </ClCompile>
+    <ClCompile Include="数据结构与算法.cpp">
+      <Filter>源文件\其它</Filter>
+    </ClCompile>
+    <ClCompile Include="QML-2元素.cpp">
+      <Filter>源文件\QT</Filter>
+    </ClCompile>
+    <ClCompile Include="QML-6语法.cpp">
+      <Filter>源文件\QT</Filter>
+    </ClCompile>
+    <ClCompile Include="QML-5控件.cpp">
+      <Filter>源文件\QT</Filter>
+    </ClCompile>
+    <ClCompile Include="QML-4工程.cpp">
+      <Filter>源文件\QT</Filter>
+    </ClCompile>
+    <ClCompile Include="QML-1对象.cpp">
+      <Filter>源文件\QT</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
