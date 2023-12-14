@@ -141,6 +141,35 @@ highlighted: bool
 /********************/ListView/************************************************************/
 
 /********************/StackView/************************************************************/
+StackView
+{
+    id: stack
+    initialItem : mainView
+    anchors.fill : parent
+}
+
+Component{
+    id: mainView
+
+    Row {
+        spacing: 10
+
+        Button {
+            text: "一个界面进栈"
+            onClicked : stack.push(mainView)
+        }
+        Button {
+            text: "一个界面出栈"
+            enabled : stack.depth > 1
+            onClicked: stack.pop()
+
+        }
+        Text {
+            text: "当前界面的栈深度：" + stack.depth
+        }
+    }
+}
+
 
 /********************/SwipeView/************************************************************/
 
