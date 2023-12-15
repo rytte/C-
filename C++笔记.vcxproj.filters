@@ -249,10 +249,10 @@
     <ClCompile Include="QML-1对象.cpp">
       <Filter>源文件\QT</Filter>
     </ClCompile>
-    <ClCompile Include="1-mysql基础.cpp">
+    <ClCompile Include="101-mysql基础.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
-    <ClCompile Include="2-SQL语法.cpp">
+    <ClCompile Include="102-SQL语法.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
     <ClCompile Include="00基础知识.cpp">
@@ -347,6 +347,54 @@
     </ClCompile>
     <ClCompile Include="30C++11新特性.cpp">
       <Filter>源文件\基础语法</Filter>
+    </ClCompile>
+    <ClCompile Include="01-音视频概念.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="02-YUV与RGB.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="03-PCM.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="04-ffmpeg命令行.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="05-ffmpeg函数库.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="06-ffmpeg编解码.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="07-SDL.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="10-OpenCV.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="12-HTML.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="11-编解码协议.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="13-OpenGL.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="14-GLSL.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="20_OPS.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="21_BKPlayer.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="22_BKPlayer_New.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="23_bk_video_forward.cpp">
+      <Filter>源文件</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>

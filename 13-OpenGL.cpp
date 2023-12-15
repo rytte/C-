@@ -1,0 +1,60 @@
+﻿
+//OpenGL图形渲染管线
+顶点数据（Vertex Data）：顶点数据是从CPU传入到GPU的，传输是一个开销非常大的过程，因此应尽量减少传输的数据。
+顶点着色器（Vertex Shader）：加工顶点数据，一般是指顶点数据的变换。这部分需要自己来实现代码，可以对顶点进行各种操作或修改数据，需要保证最终只有一个顶点坐标，并且将一些会在其他阶段使用的数据传递输出。
+图元装配（Shape Assembly）：OpenGL支持四种基本图元类型：点，线，三角形，四边形，并提供了一些扩展图元供使用。
+几何着色器（Geometry Shader）：生成新的顶点数据（输入一个顶点，能够生成新的顶点数据）；修改输出的图元类型（输入图元是点，能够输出线条图元或者三角形图元）
+光栅化（rasterization）：将前两阶段处理之后的几何数据经过一系列变换转换为像素。
+片段着色器（Fragment Shader）：计算光栅化中产生片段（“像素”）的颜色；带有一定的裁剪功能（discard）
+测试（Tests）：筛选并处理从片段处理器中传递过来的像素。
+混合（Blending）：混合技术常用于表现物体的透明度。
+
+
+
+
+//VAO，VBO，EBO
+VAO、VBO和EBO都是用于图形渲染的术语，分别代表顶点数组对象、顶点缓冲对象和元素缓冲对象。
+
+顶点数组对象 VAO（Vertex Aarray Object），它存储了顶点数据的格式以及顶点数据所需的缓存对象的引用，任何随后的顶性调用都会储存在这个VAO中。
+
+顶点缓存对象 VBO（Vertex Buffer Object），它是在显卡存储空间里的一块缓存区（Buffer），用于存储顶点坐标 / 顶点uv / 顶点法线 / 顶点颜色等数据信息。VBO和EBO存储的都是顶点的信息。
+						一个VAO对应一个物体，一个VBO对应一个物品的所有属性 （顶点坐标、颜色等，除顶点索引外），而一个EBO仅对应一个物品的一种属性（顶点索引属性）。
+
+索引缓冲对象 EBO（Element Buffer Object），专门储存索引，OpenGL调用这些顶点的索引来决定该绘制哪个顶点。
+
+纹理对象 TB（Texture Obeject）
+
+帧缓存对象 FBO（Frame Buffer Object）
+
+
+
+在QOpenGLWidget的三个虚函数之外操作OpenGL对象必须要绑定当前OpenGL上下文，也就是要提前调用QOpenGLWidget::makeCurrent()方法。
+使用OpenGL对象自身的一些方法也需调用bind()，才能正常使用，使用结束之后，最好习惯性的解除绑定（release方法）
+
+避免以下问题：
+1、未调用makeCurrent，直接创建OpenGL对象，导致创建失败。
+2、未绑定VBO，调用VBO::allocate()，导致内存分配失败。
+3、未绑定VBO，调用VBO::size()，获取到错误的数据，导致内存泄漏。
+4、未解绑VAO，导致VBO混乱。
+5、未绑定VAO，直接调用QOpenGLShaderProgram::setAttributeArray()，导致内存泄漏
+
+
+
+//基本绘图操作
+1.创建OpenGL窗口：创建窗口类，继承自QOpenGLWidget，需要实现三个虚函数。同时继承QOpenGLExtraFunctions，该类拥有大量gl函数。
+initializeGL()—建立OpenGL的资源和状态。在第一次调用resizeGL()或paintGL()之前调用一次
+resizeGL()—设置OpenGL视口，投影等。每当调整Widget的大小时（第一次显示窗口Widget时会调用它，因为所有新创建Widget都会自动获得调整大小的事件）。
+paintGL()—渲染OpenGL场景，需要更新Widget时就会调用。
+
+2.创建并编写着色器程序
+
+3.为着色器程序装配顶点数据
+
+4.启动渲染管线进行绘图
+
+
+
+
+
+着色器语言
+
