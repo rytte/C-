@@ -222,6 +222,7 @@
     <ClCompile Include="QT进阶.cpp" />
     <ClCompile Include="10-图.c" />
     <ClCompile Include="2-TCP.cpp" />
+    <ClCompile Include="STM32.cpp" />
     <ClCompile Include="TCP_client.c" />
     <ClCompile Include="TCP_server.c" />
     <ClCompile Include="UDP_client.c" />
