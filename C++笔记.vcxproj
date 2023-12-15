@@ -128,7 +128,9 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="00基础知识.cpp" />
+    <ClCompile Include="1-mysql基础.cpp" />
     <ClCompile Include="01输入输出流.cpp" />
+    <ClCompile Include="2-SQL语法.cpp" />
     <ClCompile Include="02命名空间.cpp" />
     <ClCompile Include="03动态内存.cpp" />
     <ClCompile Include="04引用.cpp" />
