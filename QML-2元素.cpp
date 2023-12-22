@@ -172,7 +172,7 @@ spacing属性用来设置每个元素之间的间隔大小。
 Column{
         id: column
         anchors.centerIn : parent
-        spacing : 8
+        spacing : 8                                             //像素间隔
         RedSquare   {   }
         GreenSquare {   width:  96  }
         BlueSquare  {   }

@@ -195,11 +195,12 @@
     <ClCompile Include="OOB server.c" />
     <ClCompile Include="pthread_pool.c" />
     <ClCompile Include="QML-2元素.cpp" />
-    <ClCompile Include="QML-4工程.cpp" />
+    <ClCompile Include="QML-5工程.cpp" />
     <ClCompile Include="QML-1对象.cpp" />
     <ClCompile Include="QML-3动画.cpp" />
-    <ClCompile Include="QML-5控件.cpp" />
-    <ClCompile Include="QML-6语法.cpp" />
+    <ClCompile Include="QML-4组件.cpp" />
+    <ClCompile Include="QML-6控件.cpp" />
+    <ClCompile Include="QML-7语法.cpp" />
     <ClCompile Include="QT基础.cpp" />
     <ClCompile Include="1-多进程.cpp" />
     <ClCompile Include="4-双向循环链表.c" />

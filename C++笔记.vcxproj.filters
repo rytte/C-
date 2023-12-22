@@ -237,13 +237,13 @@
     <ClCompile Include="QML-2元素.cpp">
       <Filter>源文件\QT</Filter>
     </ClCompile>
-    <ClCompile Include="QML-6语法.cpp">
+    <ClCompile Include="QML-7语法.cpp">
       <Filter>源文件\QT</Filter>
     </ClCompile>
-    <ClCompile Include="QML-5控件.cpp">
+    <ClCompile Include="QML-6控件.cpp">
       <Filter>源文件\QT</Filter>
     </ClCompile>
-    <ClCompile Include="QML-4工程.cpp">
+    <ClCompile Include="QML-5工程.cpp">
       <Filter>源文件\QT</Filter>
     </ClCompile>
     <ClCompile Include="QML-1对象.cpp">
@@ -398,6 +398,9 @@
     </ClCompile>
     <ClCompile Include="STM32.cpp">
       <Filter>源文件\其它</Filter>
+    </ClCompile>
+    <ClCompile Include="QML-4组件.cpp">
+      <Filter>源文件\QT</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
