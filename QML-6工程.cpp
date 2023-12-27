@@ -89,11 +89,11 @@ class MyBackend : public QObject
 {
         Q_OBJECT
                 //宏声明了一个可以从QML访问的属性
-                Q_PROPERTY(QString userName READ userName WRITE setUserName NOTIFY userNameChanged)
+                Q_PROPERTY(QString userName READ getUserName WRITE setUserName NOTIFY userNameChanged)
 public:
         explicit MyBackend(QObject* parent = nullptr);
 
-        QString userName()
+        QString getUserName()
         {
                 return m_userName;
         }
@@ -129,7 +129,7 @@ Window{
 
         MyBackend {
                 id: backend
-                //调用MyBackend::userName()
+                //userName属性改变时，调用MyBackend::getUserName()
                 onUserNameChanged : console.log(backend.userName)
         }
 
@@ -139,11 +139,12 @@ Window{
 
                 TextField {
                         placeholderText: qsTr("user name")
-                        //调用MyBackend::setUserName()
+                        //当文本框内容改变时，调用MyBackend::setUserName()
                         onTextChanged : backend.userName = text
                 }
 
                 Label {
+                        //调用MyBackend::getUserName()
                         text: backend.userName
                         background : Rectangle {
                                 color: "red"
@@ -363,13 +364,13 @@ int main(int argc, char* argv[])
 *注意：当使用QML对象类型作为信号参数时，需要使用var作为参数类型，在C++中则应该使用QVariant。
 //main.qml中
 Item{
-    id: item
-    width : 400; height: 400
-    signal qmlSignal(var item)
-    MouseArea {
-        anchors.fill: parent
-        onClicked : item.qmlSignal(item)
-    }
+        id: item
+        width : 400; height: 400
+        signal qmlSignal(var item)
+        MouseArea {
+                anchors.fill: parent
+                onClicked : item.qmlSignal(item)
+        }
 }
 
 //MyBackend.h中
