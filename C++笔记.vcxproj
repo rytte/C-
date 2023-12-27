@@ -134,10 +134,10 @@
     <ClCompile Include="04-ffmpeg命令行.cpp" />
     <ClCompile Include="05-ffmpeg函数库.cpp" />
     <ClCompile Include="06-ffmpeg编解码.cpp" />
-    <ClCompile Include="07-SDL.cpp" />
+    <ClCompile Include="SDL-1函数库.cpp" />
     <ClCompile Include="101-mysql基础.cpp" />
     <ClCompile Include="01输入输出流.cpp" />
-    <ClCompile Include="10-OpenCV.cpp" />
+    <ClCompile Include="OpenCV.cpp" />
     <ClCompile Include="11-编解码协议.cpp" />
     <ClCompile Include="12-HTML.cpp" />
     <ClCompile Include="13-OpenGL.cpp" />
@@ -191,6 +191,7 @@
     <ClCompile Include="9-多线程.cpp" />
     <ClCompile Include="9-排序算法.cpp" />
     <ClCompile Include="4-IO模型.cpp" />
+    <ClCompile Include="main.cpp" />
     <ClCompile Include="main_dircopy.c" />
     <ClCompile Include="OOB server.c" />
     <ClCompile Include="pthread_pool.c" />
@@ -201,7 +202,8 @@
     <ClCompile Include="QML-3组件.cpp" />
     <ClCompile Include="QML-4控件.cpp" />
     <ClCompile Include="QML-7打包.cpp" />
-    <ClCompile Include="QT基础.cpp" />
+    <ClCompile Include="QML-8MVC.cpp" />
+    <ClCompile Include="QT-1基础.cpp" />
     <ClCompile Include="1-多进程.cpp" />
     <ClCompile Include="4-双向循环链表.c" />
     <ClCompile Include="1-顺序表.c" />
@@ -219,10 +221,15 @@
     <ClCompile Include="7-队列.cpp" />
     <ClCompile Include="8-二叉树.c" />
     <ClCompile Include="8-二叉树.cpp" />
-    <ClCompile Include="QT扩展.cpp" />
-    <ClCompile Include="QT进阶.cpp" />
+    <ClCompile Include="QT-4工程.cpp" />
+    <ClCompile Include="QT-3扩展.cpp" />
+    <ClCompile Include="QT-2进阶.cpp" />
     <ClCompile Include="10-图.c" />
     <ClCompile Include="2-TCP.cpp" />
+    <ClCompile Include="SDL-2绘制图形与图片.cpp" />
+    <ClCompile Include="SDL-3视频播放.cpp" />
+    <ClCompile Include="SDL-4音频播放_有回调.cpp" />
+    <ClCompile Include="SDL-5音频播放_无回调.cpp" />
     <ClCompile Include="STM32.cpp" />
     <ClCompile Include="TCP_client.c" />
     <ClCompile Include="TCP_server.c" />
@@ -247,7 +254,11 @@
     <ClCompile Include="面试重点.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="callable.h" />
+    <ClInclude Include="controller.h" />
+    <ClInclude Include="model.h" />
     <ClInclude Include="pthread_pool.h" />
+    <ClInclude Include="view.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
