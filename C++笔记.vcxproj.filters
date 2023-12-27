@@ -219,7 +219,7 @@
     <ClCompile Include="异步信号驱动server.c">
       <Filter>源文件\网络编程\IO模型实例</Filter>
     </ClCompile>
-    <ClCompile Include="QML-3动画.cpp">
+    <ClCompile Include="QML-5动画.cpp">
       <Filter>源文件\QT</Filter>
     </ClCompile>
     <ClCompile Include="辨析.cpp">
@@ -237,13 +237,13 @@
     <ClCompile Include="QML-2元素.cpp">
       <Filter>源文件\QT</Filter>
     </ClCompile>
-    <ClCompile Include="QML-7语法.cpp">
+    <ClCompile Include="QML-7打包.cpp">
       <Filter>源文件\QT</Filter>
     </ClCompile>
-    <ClCompile Include="QML-6控件.cpp">
+    <ClCompile Include="QML-4控件.cpp">
       <Filter>源文件\QT</Filter>
     </ClCompile>
-    <ClCompile Include="QML-5工程.cpp">
+    <ClCompile Include="QML-6工程.cpp">
       <Filter>源文件\QT</Filter>
     </ClCompile>
     <ClCompile Include="QML-1对象.cpp">
@@ -399,7 +399,7 @@
     <ClCompile Include="STM32.cpp">
       <Filter>源文件\其它</Filter>
     </ClCompile>
-    <ClCompile Include="QML-4组件.cpp">
+    <ClCompile Include="QML-3组件.cpp">
       <Filter>源文件\QT</Filter>
     </ClCompile>
   </ItemGroup>

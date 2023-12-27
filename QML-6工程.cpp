@@ -14,7 +14,7 @@ QML 与 QWidget 交互
 * C++类的实例可以作为上下文属性或上下文对象嵌入到QML代码中
 
 
-1.使用C++属性（Q_PROPERTY）
+//1.使用C++属性（Q_PROPERTY）
 QObject子类的所有属性都能够被QML访问。QObject子类使用Q_PROPERTY宏定义一个属性，该宏的作用是向Qt元对象系统注册类的属性。
 一个类型的属性就是类的数据成员，通常有一个读（READ）函数和写（WHITE）函数。
 Q_PROPERTY(QString userName READ userName WRITE setUserName NOTIFY userNameChanged)
@@ -24,7 +24,7 @@ Q_PROPERTY(QString userName READ userName WRITE setUserName NOTIFY userNameChang
 * 不仅可以有QString类型的属性，还可以是对象，也可以是对象数组。对象数组采用QQmlListProperty类型。
 Q_PROPERTY(QQmlListProperty messages READ messages)
 
-2.使用函数和槽
+//2.使用函数和槽
 QML可以有条件的访问QObject子类的函数，条件是
 * 使用 Q_INVOKABLE 宏标记的public函数；
 * public槽函数
@@ -43,7 +43,7 @@ public slots:
 
 
 //QML中使用C++类：将自定义的C++类注册到QML文件中使用，可以注册为可实例化对象类型、不可实例化对象类型、单例类型。
-步骤1：
+步骤：
 1. 自定义的类继承自QObject
 2. 自定义的类声明 Q_OBJECT 宏定义
 3. 自定义的类声明 Q_PROPERTY 宏定义
