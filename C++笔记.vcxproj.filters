@@ -58,6 +58,12 @@
     <Filter Include="源文件\OpenGL">
       <UniqueIdentifier>{d01ab72c-4960-412b-8194-420e9e80edca}</UniqueIdentifier>
     </Filter>
+    <Filter Include="源文件\MySQL">
+      <UniqueIdentifier>{00b792e8-2386-4be8-b208-fd473ca6da18}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="源文件\FFmpeg">
+      <UniqueIdentifier>{935589c3-b953-4032-a96c-535bc886468e}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="算法-1顺序表.c">
@@ -261,12 +267,6 @@
     <ClCompile Include="QML-1对象.cpp">
       <Filter>源文件\QT</Filter>
     </ClCompile>
-    <ClCompile Include="101-mysql基础.cpp">
-      <Filter>源文件</Filter>
-    </ClCompile>
-    <ClCompile Include="102-SQL语法.cpp">
-      <Filter>源文件</Filter>
-    </ClCompile>
     <ClCompile Include="00基础知识.cpp">
       <Filter>源文件\C++语法</Filter>
     </ClCompile>
@@ -369,15 +369,6 @@
     <ClCompile Include="03-PCM.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
-    <ClCompile Include="04-ffmpeg命令行.cpp">
-      <Filter>源文件</Filter>
-    </ClCompile>
-    <ClCompile Include="05-ffmpeg函数库.cpp">
-      <Filter>源文件</Filter>
-    </ClCompile>
-    <ClCompile Include="06-ffmpeg编解码.cpp">
-      <Filter>源文件</Filter>
-    </ClCompile>
     <ClCompile Include="12-HTML.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
@@ -440,6 +431,21 @@
     </ClCompile>
     <ClCompile Include="GLSL.cpp">
       <Filter>源文件\OpenGL</Filter>
+    </ClCompile>
+    <ClCompile Include="MySQL-1基础.cpp">
+      <Filter>源文件\MySQL</Filter>
+    </ClCompile>
+    <ClCompile Include="MySQL-2SQL语法.cpp">
+      <Filter>源文件\MySQL</Filter>
+    </ClCompile>
+    <ClCompile Include="FFmpeg-1命令行.cpp">
+      <Filter>源文件\FFmpeg</Filter>
+    </ClCompile>
+    <ClCompile Include="FFmpeg-2函数库.cpp">
+      <Filter>源文件\FFmpeg</Filter>
+    </ClCompile>
+    <ClCompile Include="FFmpeg-3编解码.cpp">
+      <Filter>源文件\FFmpeg</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
