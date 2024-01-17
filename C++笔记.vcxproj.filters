@@ -9,10 +9,6 @@
       <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
       <Extensions>h;hh;hpp;hxx;h++;hm;inl;inc;ipp;xsd</Extensions>
     </Filter>
-    <Filter Include="资源文件">
-      <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
-      <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
-    </Filter>
     <Filter Include="源文件\C语言算法">
       <UniqueIdentifier>{e847bea2-d726-48c1-91f4-cf494f31368c}</UniqueIdentifier>
     </Filter>
@@ -246,7 +242,7 @@
     <ClCompile Include="复习.cpp">
       <Filter>源文件\其它</Filter>
     </ClCompile>
-    <ClCompile Include="面试重点.cpp">
+    <ClCompile Include="面试.cpp">
       <Filter>源文件\其它</Filter>
     </ClCompile>
     <ClCompile Include="数据结构与算法.cpp">
@@ -446,6 +442,9 @@
     </ClCompile>
     <ClCompile Include="FFmpeg-3编解码.cpp">
       <Filter>源文件\FFmpeg</Filter>
+    </ClCompile>
+    <ClCompile Include="22_播控.cpp">
+      <Filter>源文件</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>

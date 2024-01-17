@@ -131,6 +131,7 @@
     <ClCompile Include="01-音视频概念.cpp" />
     <ClCompile Include="02-YUV与RGB.cpp" />
     <ClCompile Include="03-PCM.cpp" />
+    <ClCompile Include="22_播控.cpp" />
     <ClCompile Include="FFmpeg-1命令行.cpp" />
     <ClCompile Include="FFmpeg-2函数库.cpp" />
     <ClCompile Include="FFmpeg-3编解码.cpp" />
@@ -253,7 +254,7 @@
     <ClCompile Include="自定义协议sever.c" />
     <ClCompile Include="辨析.cpp" />
     <ClCompile Include="非阻塞轮询server.c" />
-    <ClCompile Include="面试重点.cpp" />
+    <ClCompile Include="面试.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="callable.h" />

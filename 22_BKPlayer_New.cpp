@@ -10,6 +10,12 @@ int main(int argc, char *argv[])
 	//清理coredump文件
 	ClearCoredumpFile("/media/nvme/log/coredump/", "bk_player", 1);		//清理临终文件
 
+	string appName = "bk_player";
+	YLogger::GetInstance()->SetAppName(appName);
+	YLogger::GetInstance()->SetFileMaxSize(125);
+	YLogger::GetInstance()->SetFileMaxCount(8);
+	YLogger::GetInstance()->OpenFileOutput();
+
 	//默认路径
 	string planPath = "../AgentToPlayControl/play_plan/";
 	string layoutPath = "../AgentToPlayControl/layout_template/";
@@ -55,15 +61,16 @@ MainWindow::MainWindow()
 	m_strLayoutName = "";
 	m_strObjectName = "MainWindow";									//设置MainWindow对象名为"MainWindow"	（无用）
 	m_layoutFileLastModified = QDateTime::currentDateTime();					//初始化布局文件最后修改时间为当前时间
+	m_strLastTextInfo = "";
 
 	m_bUseChange = YFALSE;											//中英文切换m_bUseChange初始化为false
-	m_bChangeTimeout = YTRUE;										//中英文切换m_bChangeTimeout初始化为true		（属性累赘）
+	m_bChangeTimeout = YTRUE;										//中英文切换m_bChangeTimeout初始化为true
 	m_iCurLanguage = 0;												//中英文切换m_iCurLanguage初始化为0中文
 	m_strCurVolumeValue = "";											//初始化当前音量值为空
 
 	m_windowLock = YGlobCreateLocker();									//创建并初始化锁m_windowLock
-	m_pWindow = YNULL;												//初始化版式窗口m_pWindow = NULL
-	m_pBlackWindow = new YWindow();									//创建黑屏版式窗口对象					（ControlBase应单独派生窗口类使用）
+	m_pWindow = YNULL;												//初始化版式窗口m_pWindow = NULL	
+	m_pBlackWindow = new YWindow();									//创建黑屏版式窗口对象						（ControlBase应单独派生窗口类使用）
 													构造函数（此处无传参，因此无控件）
 													{
 														父控件指针 = NULL
@@ -252,9 +259,6 @@ MainWindow::MainWindow()
 													
 	m_pAgentText = new YAgentText();									//创建Agent文本对象（紧急/提示文本）。构造：清空成员文本消息Vector
 	m_pAgentDynamicText = new YAgentText();								//创建Agent动态文本对象（紧急/提示文本）。构造：清空成员文本消息Vector
-
-	m_pSaveJsonFile = new YSaveFile();									//创建保存json文件到本地（此处无传参，使用默认值：保存路径为当前目录路径，内容类型为ordinary）
-	m_pSaveJsonFile->SetPathAndTime(JSON_DIRNAME, CLEAN_TIMEOUT_FILE);	//设置指定目录路径"/media/nvme/log/coredump/JsonMessage/"和超时时间300
 
 	m_dataBaseMap.clear();												//成员数据库Map清空
 	m_layoutPlan.clear();												//成员版式计划Vector清空
