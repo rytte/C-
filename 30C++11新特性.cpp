@@ -1,4 +1,26 @@
-﻿/********************/register&& volatile 关键字/************************************************************/
+﻿条件变量
+线程
+在定义lock_guard的地方会调用构造函数加锁，在离开定义域的话lock_guard就会被销毁
+unique_lock<mutex> unique(mt);
+这个会在构造函数加锁，然后可以利用unique.unlock()来解锁，所以当你觉得锁的粒度太多的时候，可以利用这个来解锁，而析构的时候会判断当前锁的状态来决定是否解锁
+方便肯定是有代价的，unique_lock内部会维护一个锁的状态，所以在效率上肯定会比lock_guard慢
+
+
+//    //解析Json
+//    QJsonDocument doc;
+//    QJsonParseError err;
+//    std::string strjson = Json::FastWriter().write(jsonValue);
+//    QString Qstr = QString::fromStdString(strjson);
+
+//    doc = QJsonDocument::fromJson(Qstr.toUtf8(), &err);
+//    if(err.error != QJsonParseError::NoError)
+//    {
+//        qDebug() << doc.toJson();
+//        YLOG_ERROR("Json Message error");
+//        return ;
+//    }
+//    m_jsonObj = doc.object();
+/********************/register&& volatile 关键字/************************************************************/
 register 关键字
 作用：修饰寄存器变量，将变量存储在寄存器中，以提高访问效率。
 如果变量被高频繁使用，编译器也会自动将变量存储在寄存器中。
