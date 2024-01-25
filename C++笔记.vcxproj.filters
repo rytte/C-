@@ -60,6 +60,9 @@
     <Filter Include="源文件\FFmpeg">
       <UniqueIdentifier>{935589c3-b953-4032-a96c-535bc886468e}</UniqueIdentifier>
     </Filter>
+    <Filter Include="源文件\C语言语法">
+      <UniqueIdentifier>{f269a9f5-3acb-4554-836c-95d1c63f0e16}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="算法-1顺序表.c">
@@ -445,6 +448,9 @@
     </ClCompile>
     <ClCompile Include="22_播控.cpp">
       <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="语法.c">
+      <Filter>源文件\C语言语法</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>

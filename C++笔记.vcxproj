@@ -252,6 +252,7 @@
     <ClCompile Include="组播recv.c" />
     <ClCompile Include="自定义协议clinet.c" />
     <ClCompile Include="自定义协议sever.c" />
+    <ClCompile Include="语法.c" />
     <ClCompile Include="辨析.cpp" />
     <ClCompile Include="非阻塞轮询server.c" />
     <ClCompile Include="面试.cpp" />
