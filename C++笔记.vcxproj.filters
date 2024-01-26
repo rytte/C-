@@ -61,7 +61,7 @@
       <UniqueIdentifier>{935589c3-b953-4032-a96c-535bc886468e}</UniqueIdentifier>
     </Filter>
     <Filter Include="源文件\C语言语法">
-      <UniqueIdentifier>{f269a9f5-3acb-4554-836c-95d1c63f0e16}</UniqueIdentifier>
+      <UniqueIdentifier>{cbf42b85-8f0b-4f45-b75a-093804c6b896}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>
@@ -238,12 +238,6 @@
     </ClCompile>
     <ClCompile Include="QML-5动画.cpp">
       <Filter>源文件\QT</Filter>
-    </ClCompile>
-    <ClCompile Include="辨析.cpp">
-      <Filter>源文件\其它</Filter>
-    </ClCompile>
-    <ClCompile Include="复习.cpp">
-      <Filter>源文件\其它</Filter>
     </ClCompile>
     <ClCompile Include="面试.cpp">
       <Filter>源文件\其它</Filter>
@@ -449,8 +443,59 @@
     <ClCompile Include="22_播控.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
-    <ClCompile Include="语法.c">
+    <ClCompile Include="笔记.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="C-01数据类型.c">
       <Filter>源文件\C语言语法</Filter>
+    </ClCompile>
+    <ClCompile Include="C-02变量.c">
+      <Filter>源文件\C语言语法</Filter>
+    </ClCompile>
+    <ClCompile Include="C-03运算符.c">
+      <Filter>源文件\C语言语法</Filter>
+    </ClCompile>
+    <ClCompile Include="C-04逻辑结构.cpp">
+      <Filter>源文件\C语言语法</Filter>
+    </ClCompile>
+    <ClCompile Include="C-05函数.c">
+      <Filter>源文件\C语言语法</Filter>
+    </ClCompile>
+    <ClCompile Include="C-06变参函数.c">
+      <Filter>源文件\C语言语法</Filter>
+    </ClCompile>
+    <ClCompile Include="C-07数组.c">
+      <Filter>源文件\C语言语法</Filter>
+    </ClCompile>
+    <ClCompile Include="C-08指针.c">
+      <Filter>源文件\C语言语法</Filter>
+    </ClCompile>
+    <ClCompile Include="C-09字符串.c">
+      <Filter>源文件\C语言语法</Filter>
+    </ClCompile>
+    <ClCompile Include="C-10结构体.c">
+      <Filter>源文件\C语言语法</Filter>
+    </ClCompile>
+    <ClCompile Include="C-11联合体.c">
+      <Filter>源文件\C语言语法</Filter>
+    </ClCompile>
+    <ClCompile Include="C-12枚举.c">
+      <Filter>源文件\C语言语法</Filter>
+    </ClCompile>
+    <ClCompile Include="C-13Linux内存布局.c">
+      <Filter>源文件\C语言语法</Filter>
+    </ClCompile>
+    <ClCompile Include="C-14GCC编译期.c">
+      <Filter>源文件\C语言语法</Filter>
+    </ClCompile>
+    <ClCompile Include="复习.cpp">
+      <Filter>源文件\C语言语法</Filter>
+    </ClCompile>
+    <ClCompile Include="辨析.cpp">
+      <Filter>源文件\C语言语法</Filter>
+    </ClCompile>
+    <ClCompile Include="计算机网络.cpp">
+      <Filter>源文件\其它</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>

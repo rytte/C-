@@ -132,6 +132,20 @@
     <ClCompile Include="02-YUV与RGB.cpp" />
     <ClCompile Include="03-PCM.cpp" />
     <ClCompile Include="22_播控.cpp" />
+    <ClCompile Include="C-01数据类型.c" />
+    <ClCompile Include="C-02变量.c" />
+    <ClCompile Include="C-03运算符.c" />
+    <ClCompile Include="C-05函数.c" />
+    <ClCompile Include="C-04逻辑结构.cpp" />
+    <ClCompile Include="C-06变参函数.c" />
+    <ClCompile Include="C-09字符串.c" />
+    <ClCompile Include="C-08指针.c" />
+    <ClCompile Include="C-07数组.c" />
+    <ClCompile Include="C-10结构体.c" />
+    <ClCompile Include="C-11联合体.c" />
+    <ClCompile Include="C-12枚举.c" />
+    <ClCompile Include="C-13Linux内存布局.c" />
+    <ClCompile Include="C-14GCC编译期.c" />
     <ClCompile Include="FFmpeg-1命令行.cpp" />
     <ClCompile Include="FFmpeg-2函数库.cpp" />
     <ClCompile Include="FFmpeg-3编解码.cpp" />
@@ -152,6 +166,7 @@
     <ClCompile Include="07类与对象.cpp" />
     <ClCompile Include="08封装.cpp" />
     <ClCompile Include="09构造析构函数.cpp" />
+    <ClCompile Include="笔记.cpp" />
     <ClCompile Include="网编-1基本概念.cpp" />
     <ClCompile Include="算法-10图.cpp" />
     <ClCompile Include="系编-10锁.cpp" />
@@ -252,7 +267,7 @@
     <ClCompile Include="组播recv.c" />
     <ClCompile Include="自定义协议clinet.c" />
     <ClCompile Include="自定义协议sever.c" />
-    <ClCompile Include="语法.c" />
+    <ClCompile Include="计算机网络.cpp" />
     <ClCompile Include="辨析.cpp" />
     <ClCompile Include="非阻塞轮询server.c" />
     <ClCompile Include="面试.cpp" />
