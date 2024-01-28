@@ -443,22 +443,10 @@
     <ClCompile Include="22_播控.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
-    <ClCompile Include="笔记.cpp">
-      <Filter>源文件</Filter>
-    </ClCompile>
     <ClCompile Include="C-01数据类型.c">
       <Filter>源文件\C语言语法</Filter>
     </ClCompile>
-    <ClCompile Include="C-02变量.c">
-      <Filter>源文件\C语言语法</Filter>
-    </ClCompile>
-    <ClCompile Include="C-03运算符.c">
-      <Filter>源文件\C语言语法</Filter>
-    </ClCompile>
-    <ClCompile Include="C-04逻辑结构.cpp">
-      <Filter>源文件\C语言语法</Filter>
-    </ClCompile>
-    <ClCompile Include="C-05函数.c">
+    <ClCompile Include="C-04函数.c">
       <Filter>源文件\C语言语法</Filter>
     </ClCompile>
     <ClCompile Include="C-06变参函数.c">
@@ -485,7 +473,7 @@
     <ClCompile Include="C-13Linux内存布局.c">
       <Filter>源文件\C语言语法</Filter>
     </ClCompile>
-    <ClCompile Include="C-14GCC编译期.c">
+    <ClCompile Include="C-14GCC编译器.c">
       <Filter>源文件\C语言语法</Filter>
     </ClCompile>
     <ClCompile Include="复习.cpp">
@@ -496,6 +484,27 @@
     </ClCompile>
     <ClCompile Include="计算机网络.cpp">
       <Filter>源文件\其它</Filter>
+    </ClCompile>
+    <ClCompile Include="C-02运算符.c">
+      <Filter>源文件\C语言语法</Filter>
+    </ClCompile>
+    <ClCompile Include="C-03逻辑结构.c">
+      <Filter>源文件\C语言语法</Filter>
+    </ClCompile>
+    <ClCompile Include="笔记.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="C-05递归函数.c">
+      <Filter>源文件\C语言语法</Filter>
+    </ClCompile>
+    <ClCompile Include="C-15宏定义.c">
+      <Filter>源文件\C语言语法</Filter>
+    </ClCompile>
+    <ClCompile Include="C-16volatile与register关键字.c">
+      <Filter>源文件\C语言语法</Filter>
+    </ClCompile>
+    <ClCompile Include="C-17工程代码组织.c">
+      <Filter>源文件\C语言语法</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>

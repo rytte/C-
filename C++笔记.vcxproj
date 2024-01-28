@@ -133,11 +133,11 @@
     <ClCompile Include="03-PCM.cpp" />
     <ClCompile Include="22_播控.cpp" />
     <ClCompile Include="C-01数据类型.c" />
-    <ClCompile Include="C-02变量.c" />
-    <ClCompile Include="C-03运算符.c" />
-    <ClCompile Include="C-05函数.c" />
-    <ClCompile Include="C-04逻辑结构.cpp" />
+    <ClCompile Include="C-02运算符.c" />
+    <ClCompile Include="C-04函数.c" />
+    <ClCompile Include="C-03逻辑结构.c" />
     <ClCompile Include="C-06变参函数.c" />
+    <ClCompile Include="C-05递归函数.c" />
     <ClCompile Include="C-09字符串.c" />
     <ClCompile Include="C-08指针.c" />
     <ClCompile Include="C-07数组.c" />
@@ -145,7 +145,10 @@
     <ClCompile Include="C-11联合体.c" />
     <ClCompile Include="C-12枚举.c" />
     <ClCompile Include="C-13Linux内存布局.c" />
-    <ClCompile Include="C-14GCC编译期.c" />
+    <ClCompile Include="C-14GCC编译器.c" />
+    <ClCompile Include="C-15宏定义.c" />
+    <ClCompile Include="C-16volatile与register关键字.c" />
+    <ClCompile Include="C-17工程代码组织.c" />
     <ClCompile Include="FFmpeg-1命令行.cpp" />
     <ClCompile Include="FFmpeg-2函数库.cpp" />
     <ClCompile Include="FFmpeg-3编解码.cpp" />
