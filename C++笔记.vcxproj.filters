@@ -128,15 +128,6 @@
     <ClCompile Include="系编-4精灵进程.cpp">
       <Filter>源文件\系统编程</Filter>
     </ClCompile>
-    <ClCompile Include="QT-1基础.cpp">
-      <Filter>源文件\QT</Filter>
-    </ClCompile>
-    <ClCompile Include="QT-2进阶.cpp">
-      <Filter>源文件\QT</Filter>
-    </ClCompile>
-    <ClCompile Include="QT-3扩展.cpp">
-      <Filter>源文件\QT</Filter>
-    </ClCompile>
     <ClCompile Include="算法-9排序算法.cpp">
       <Filter>源文件\C++算法</Filter>
     </ClCompile>
@@ -392,9 +383,6 @@
     <ClCompile Include="QML-8MVC.cpp">
       <Filter>源文件\QT</Filter>
     </ClCompile>
-    <ClCompile Include="QT-4工程.cpp">
-      <Filter>源文件\QT</Filter>
-    </ClCompile>
     <ClCompile Include="SDL-1函数库.cpp">
       <Filter>源文件\SDL</Filter>
     </ClCompile>
@@ -506,6 +494,60 @@
     <ClCompile Include="C-17工程代码组织.c">
       <Filter>源文件\C语言语法</Filter>
     </ClCompile>
+    <ClCompile Include="QT-1基础与QString.cpp">
+      <Filter>源文件\QT</Filter>
+    </ClCompile>
+    <ClCompile Include="QT-2样式表.cpp">
+      <Filter>源文件\QT</Filter>
+    </ClCompile>
+    <ClCompile Include="QT-3信号与槽.cpp">
+      <Filter>源文件\QT</Filter>
+    </ClCompile>
+    <ClCompile Include="QT-14QJson.cpp">
+      <Filter>源文件\QT</Filter>
+    </ClCompile>
+    <ClCompile Include="QT-16SQLite数据库.cpp">
+      <Filter>源文件\QT</Filter>
+    </ClCompile>
+    <ClCompile Include="QT-17工程.cpp">
+      <Filter>源文件\QT</Filter>
+    </ClCompile>
+    <ClCompile Include="QT-4对话框.cpp">
+      <Filter>源文件\QT</Filter>
+    </ClCompile>
+    <ClCompile Include="QT-5文件.cpp">
+      <Filter>源文件\QT</Filter>
+    </ClCompile>
+    <ClCompile Include="QT-6图片.cpp">
+      <Filter>源文件\QT</Filter>
+    </ClCompile>
+    <ClCompile Include="QT-7布局管理器.cpp">
+      <Filter>源文件\QT</Filter>
+    </ClCompile>
+    <ClCompile Include="QT-8定时器.cpp">
+      <Filter>源文件\QT</Filter>
+    </ClCompile>
+    <ClCompile Include="QT-9时间日期.cpp">
+      <Filter>源文件\QT</Filter>
+    </ClCompile>
+    <ClCompile Include="QT-10列表.cpp">
+      <Filter>源文件\QT</Filter>
+    </ClCompile>
+    <ClCompile Include="QT-11进程与线程.cpp">
+      <Filter>源文件\QT</Filter>
+    </ClCompile>
+    <ClCompile Include="QT-12TCP与UDP与HTTP.cpp">
+      <Filter>源文件\QT</Filter>
+    </ClCompile>
+    <ClCompile Include="QT-13mplayer.cpp">
+      <Filter>源文件\QT</Filter>
+    </ClCompile>
+    <ClCompile Include="QT-15自定义事件与控件.cpp">
+      <Filter>源文件\QT</Filter>
+    </ClCompile>
+    <ClCompile Include="31函数重入与线程安全.cpp">
+      <Filter>源文件\C++语法</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="pthread_pool.h">
@@ -525,6 +567,9 @@
     </ClInclude>
     <ClInclude Include="实例_quickdemo.h">
       <Filter>源文件\OpenCV</Filter>
+    </ClInclude>
+    <ClInclude Include="resource.h">
+      <Filter>头文件</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

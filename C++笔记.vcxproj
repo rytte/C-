@@ -132,6 +132,7 @@
     <ClCompile Include="02-YUV与RGB.cpp" />
     <ClCompile Include="03-PCM.cpp" />
     <ClCompile Include="22_播控.cpp" />
+    <ClCompile Include="31函数重入与线程安全.cpp" />
     <ClCompile Include="C-01数据类型.c" />
     <ClCompile Include="C-02运算符.c" />
     <ClCompile Include="C-04函数.c" />
@@ -152,6 +153,19 @@
     <ClCompile Include="FFmpeg-1命令行.cpp" />
     <ClCompile Include="FFmpeg-2函数库.cpp" />
     <ClCompile Include="FFmpeg-3编解码.cpp" />
+    <ClCompile Include="QT-10列表.cpp" />
+    <ClCompile Include="QT-11进程与线程.cpp" />
+    <ClCompile Include="QT-12TCP与UDP与HTTP.cpp" />
+    <ClCompile Include="QT-13mplayer.cpp" />
+    <ClCompile Include="QT-15自定义事件与控件.cpp" />
+    <ClCompile Include="QT-2样式表.cpp" />
+    <ClCompile Include="QT-3信号与槽.cpp" />
+    <ClCompile Include="QT-4对话框.cpp" />
+    <ClCompile Include="QT-5文件.cpp" />
+    <ClCompile Include="QT-6图片.cpp" />
+    <ClCompile Include="QT-7布局管理器.cpp" />
+    <ClCompile Include="QT-8定时器.cpp" />
+    <ClCompile Include="QT-9时间日期.cpp" />
     <ClCompile Include="SDL-1函数库.cpp" />
     <ClCompile Include="MySQL-1基础.cpp" />
     <ClCompile Include="01输入输出流.cpp" />
@@ -222,7 +236,7 @@
     <ClCompile Include="QML-4控件.cpp" />
     <ClCompile Include="QML-7打包.cpp" />
     <ClCompile Include="QML-8MVC.cpp" />
-    <ClCompile Include="QT-1基础.cpp" />
+    <ClCompile Include="QT-1基础与QString.cpp" />
     <ClCompile Include="系编-1多进程.cpp" />
     <ClCompile Include="算法-4双向循环链表.c" />
     <ClCompile Include="算法-1顺序表.c" />
@@ -240,9 +254,9 @@
     <ClCompile Include="算法-7队列.cpp" />
     <ClCompile Include="算法-8二叉树.c" />
     <ClCompile Include="算法-8二叉树.cpp" />
-    <ClCompile Include="QT-4工程.cpp" />
-    <ClCompile Include="QT-3扩展.cpp" />
-    <ClCompile Include="QT-2进阶.cpp" />
+    <ClCompile Include="QT-17工程.cpp" />
+    <ClCompile Include="QT-16SQLite数据库.cpp" />
+    <ClCompile Include="QT-14QJson.cpp" />
     <ClCompile Include="算法-10图.c" />
     <ClCompile Include="网编-2TCP.cpp" />
     <ClCompile Include="SDL-2绘制图形与图片.cpp" />
@@ -280,6 +294,7 @@
     <ClInclude Include="controller.h" />
     <ClInclude Include="model.h" />
     <ClInclude Include="pthread_pool.h" />
+    <ClInclude Include="resource.h" />
     <ClInclude Include="view.h" />
     <ClInclude Include="实例_quickdemo.h" />
   </ItemGroup>
