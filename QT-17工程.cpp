@@ -110,13 +110,4 @@ LIBS += -L库路径 -l库文件1 -l库文件2（文件名去除后缀）
 
 
 
-QString->String
-QString qstr;
-String str = qstr.toStdString(); //QString转换为String
-String->QString
-String str;
-QString qstr = QString::fromStdString(str); //String转换为QString
-QString转换为String中文输出乱码解决
-QString path;
-//QString转String 乱码解决
-String cstr = String((const char*)path.toLocal8Bit());
+
