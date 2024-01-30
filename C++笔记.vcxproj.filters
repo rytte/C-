@@ -548,6 +548,12 @@
     <ClCompile Include="31函数重入与线程安全.cpp">
       <Filter>源文件\C++语法</Filter>
     </ClCompile>
+    <ClCompile Include="32互斥锁与条件变量.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="QT-18调试.cpp">
+      <Filter>源文件\QT</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="pthread_pool.h">

@@ -133,6 +133,7 @@
     <ClCompile Include="03-PCM.cpp" />
     <ClCompile Include="22_播控.cpp" />
     <ClCompile Include="31函数重入与线程安全.cpp" />
+    <ClCompile Include="32互斥锁与条件变量.cpp" />
     <ClCompile Include="C-01数据类型.c" />
     <ClCompile Include="C-02运算符.c" />
     <ClCompile Include="C-04函数.c" />

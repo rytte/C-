@@ -108,3 +108,11 @@ QString path;
 //QString×ªString ÂÒÂë½â¾ö
 String cstr = String((const char*)path.toLocal8Bit());
 
+
+
+/********************/QLabel/************************************************************/
+
+setPixmap()
+clear();
+
+
