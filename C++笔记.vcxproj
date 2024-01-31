@@ -158,7 +158,7 @@
     <ClCompile Include="QT-11进程与线程.cpp" />
     <ClCompile Include="QT-12TCP与UDP与HTTP.cpp" />
     <ClCompile Include="mplayer.cpp" />
-    <ClCompile Include="QT-13.cpp" />
+    <ClCompile Include="QT-13快捷键.cpp" />
     <ClCompile Include="QT-15自定义事件与控件.cpp" />
     <ClCompile Include="QT-18调试.cpp" />
     <ClCompile Include="QT-2样式表.cpp" />

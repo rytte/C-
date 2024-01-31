@@ -533,9 +533,6 @@
     <ClCompile Include="mplayer.cpp">
       <Filter>源文件\其它</Filter>
     </ClCompile>
-    <ClCompile Include="QT-13.cpp">
-      <Filter>源文件\QT</Filter>
-    </ClCompile>
     <ClCompile Include="QML-1对象.cpp">
       <Filter>源文件\QML</Filter>
     </ClCompile>
@@ -559,6 +556,9 @@
     </ClCompile>
     <ClCompile Include="QML-8MVC.cpp">
       <Filter>源文件\QML</Filter>
+    </ClCompile>
+    <ClCompile Include="QT-13快捷键.cpp">
+      <Filter>源文件\QT</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
