@@ -63,6 +63,9 @@
     <Filter Include="源文件\C语言语法">
       <UniqueIdentifier>{cbf42b85-8f0b-4f45-b75a-093804c6b896}</UniqueIdentifier>
     </Filter>
+    <Filter Include="源文件\QML">
+      <UniqueIdentifier>{a0681e6f-8451-4634-b917-244b12cf9020}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="算法-1顺序表.c">
@@ -227,29 +230,11 @@
     <ClCompile Include="异步信号驱动server.c">
       <Filter>源文件\网络编程\IO模型实例</Filter>
     </ClCompile>
-    <ClCompile Include="QML-5动画.cpp">
-      <Filter>源文件\QT</Filter>
-    </ClCompile>
     <ClCompile Include="面试.cpp">
       <Filter>源文件\其它</Filter>
     </ClCompile>
     <ClCompile Include="数据结构与算法.cpp">
       <Filter>源文件\其它</Filter>
-    </ClCompile>
-    <ClCompile Include="QML-2元素.cpp">
-      <Filter>源文件\QT</Filter>
-    </ClCompile>
-    <ClCompile Include="QML-7打包.cpp">
-      <Filter>源文件\QT</Filter>
-    </ClCompile>
-    <ClCompile Include="QML-4控件.cpp">
-      <Filter>源文件\QT</Filter>
-    </ClCompile>
-    <ClCompile Include="QML-6工程.cpp">
-      <Filter>源文件\QT</Filter>
-    </ClCompile>
-    <ClCompile Include="QML-1对象.cpp">
-      <Filter>源文件\QT</Filter>
     </ClCompile>
     <ClCompile Include="00基础知识.cpp">
       <Filter>源文件\C++语法</Filter>
@@ -374,14 +359,8 @@
     <ClCompile Include="STM32.cpp">
       <Filter>源文件\其它</Filter>
     </ClCompile>
-    <ClCompile Include="QML-3组件.cpp">
-      <Filter>源文件\QT</Filter>
-    </ClCompile>
     <ClCompile Include="main.cpp">
       <Filter>源文件\其它\MVC实例</Filter>
-    </ClCompile>
-    <ClCompile Include="QML-8MVC.cpp">
-      <Filter>源文件\QT</Filter>
     </ClCompile>
     <ClCompile Include="SDL-1函数库.cpp">
       <Filter>源文件\SDL</Filter>
@@ -539,20 +518,47 @@
     <ClCompile Include="QT-12TCP与UDP与HTTP.cpp">
       <Filter>源文件\QT</Filter>
     </ClCompile>
-    <ClCompile Include="QT-13mplayer.cpp">
-      <Filter>源文件\QT</Filter>
-    </ClCompile>
     <ClCompile Include="QT-15自定义事件与控件.cpp">
       <Filter>源文件\QT</Filter>
     </ClCompile>
     <ClCompile Include="31函数重入与线程安全.cpp">
       <Filter>源文件\C++语法</Filter>
     </ClCompile>
-    <ClCompile Include="32互斥锁与条件变量.cpp">
-      <Filter>源文件</Filter>
-    </ClCompile>
     <ClCompile Include="QT-18调试.cpp">
       <Filter>源文件\QT</Filter>
+    </ClCompile>
+    <ClCompile Include="32互斥锁与条件变量.cpp">
+      <Filter>源文件\C++语法</Filter>
+    </ClCompile>
+    <ClCompile Include="mplayer.cpp">
+      <Filter>源文件\其它</Filter>
+    </ClCompile>
+    <ClCompile Include="QT-13.cpp">
+      <Filter>源文件\QT</Filter>
+    </ClCompile>
+    <ClCompile Include="QML-1对象.cpp">
+      <Filter>源文件\QML</Filter>
+    </ClCompile>
+    <ClCompile Include="QML-2元素.cpp">
+      <Filter>源文件\QML</Filter>
+    </ClCompile>
+    <ClCompile Include="QML-3组件.cpp">
+      <Filter>源文件\QML</Filter>
+    </ClCompile>
+    <ClCompile Include="QML-4控件.cpp">
+      <Filter>源文件\QML</Filter>
+    </ClCompile>
+    <ClCompile Include="QML-5动画.cpp">
+      <Filter>源文件\QML</Filter>
+    </ClCompile>
+    <ClCompile Include="QML-6工程.cpp">
+      <Filter>源文件\QML</Filter>
+    </ClCompile>
+    <ClCompile Include="QML-7打包.cpp">
+      <Filter>源文件\QML</Filter>
+    </ClCompile>
+    <ClCompile Include="QML-8MVC.cpp">
+      <Filter>源文件\QML</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
