@@ -464,7 +464,7 @@
     <ClCompile Include="C-05递归函数.c">
       <Filter>源文件\C语言语法</Filter>
     </ClCompile>
-    <ClCompile Include="C-15宏定义.c">
+    <ClCompile Include="C-15预处理指令.c">
       <Filter>源文件\C语言语法</Filter>
     </ClCompile>
     <ClCompile Include="C-16volatile与register关键字.c">
@@ -560,6 +560,18 @@
     <ClCompile Include="QT-13快捷键.cpp">
       <Filter>源文件\QT</Filter>
     </ClCompile>
+    <ClCompile Include="C标准库-3string.h">
+      <Filter>头文件</Filter>
+    </ClCompile>
+    <ClCompile Include="C标准库-1stdio.h">
+      <Filter>头文件</Filter>
+    </ClCompile>
+    <ClCompile Include="C-18内存管理.c">
+      <Filter>源文件\C语言语法</Filter>
+    </ClCompile>
+    <ClCompile Include="QT-2QMainWindow.cpp">
+      <Filter>源文件\QT</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="pthread_pool.h">
@@ -580,7 +592,7 @@
     <ClInclude Include="实例_quickdemo.h">
       <Filter>源文件\OpenCV</Filter>
     </ClInclude>
-    <ClInclude Include="resource.h">
+    <ClInclude Include="C标准库-2stdlib.h">
       <Filter>头文件</Filter>
     </ClInclude>
   </ItemGroup>

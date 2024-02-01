@@ -1,27 +1,7 @@
 ﻿/********************/QT基础/************************************************************/
-QMainWindow类：是窗口的框架，包含：MenuBar菜单栏，ToolBar工具栏，StatusBar状态栏，CentralWidget中央控件。
-头文件：#include<QMainWindow>
-qmake： QT += widgets
-
-UI底层界面就是CentralWidget对象。
-
-Q_OBJECT		宏定义，实现信号与槽的功能
-
-ui->setupUi		UI界面的QMainWindow窗口框架和各种控件初始化。
-
-Ctrl + F		在帮助索引中搜索相关内容。
-
-
-QT工程编译后会生成一个build文件，程序在这里执行。
-
-
-void setWindowTitle(const QString&)          //设置窗口标题
-void setWindowIcon(Icon(":/资源图片名"))     //设置窗口图标
-
-
 Qt Designer被称为Qt设计师，用于设计和构建图形用户界面（Qt Widgets）。也就是可视化图形设计界面。
 Qt Linguist被称为Qt语言家。主要任务是读取翻译文件、为翻译人员提供友好的翻译界面，是用于界面国际化的重要工具。它能帮助你很容易读懂C++语言。
-Qt Assistant被称为Qt助手，是Qt自带的一款可定制、可重新发行的帮助文件浏览器。它支持HTML文件，用户可以利用其定制自己的功能强大的帮助文档浏览器。
+Qt Assistant被称为Qt助手（也就是帮助模式），是Qt自带的一款可定制、可重新发行的帮助文件浏览器。它支持HTML文件，用户可以利用其定制自己的功能强大的帮助文档浏览器。
 
 
 

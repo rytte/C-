@@ -1,3 +1,25 @@
+/********************/QtNetwork/************************************************************/
+QtNetwork模块提供的类能够创建基于TCP / IP的客户端与服务端应用程序。为实现底层的网络访问，可以使用QTcpSocket、QTcpServer和QUdpSocket，并提供底层网络类。还提供了使用常规协议实现网络操作的QNetworkRequest、QNetworkReply、QNetworkAccessManager。
+
+QtNetwork
+作为使用IPC的方法，TCP / IP可以使用多种类进行进程内部和外部的通信。
+
+QtNetwork模块提供的类：
+
+类						说明
+QLocalServer				基于服务器的本地套接字的类
+QLocalSocket				支持本地套接字的类
+QNetworkAccessManager	处理从网络首发收据响应的类
+QSocketNotifier			监控从网络通知消息的类
+QSsl						在所有网络通信上用于SSL认证的类
+QSslSocket				支持通过客户端和服务器端加密的套接字的类
+QTcpServer				基于TCP的服务器端类
+QTcpSocket				TCP套接字
+QUdpSocket				UDP套接字
+除表中所示，Qt提供的QtNetwork模块还支持多种协议。如果需要实现内部进程间的通信，建议使用QLocalSocket类。
+
+
+
 /********************/TCP/************************************************************/
 qmake : QT += network
 

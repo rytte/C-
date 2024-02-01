@@ -148,9 +148,12 @@
     <ClCompile Include="C-12枚举.c" />
     <ClCompile Include="C-13Linux内存布局.c" />
     <ClCompile Include="C-14GCC编译器.c" />
-    <ClCompile Include="C-15宏定义.c" />
+    <ClCompile Include="C-15预处理指令.c" />
     <ClCompile Include="C-16volatile与register关键字.c" />
     <ClCompile Include="C-17工程代码组织.c" />
+    <ClCompile Include="C-18内存管理.c" />
+    <ClCompile Include="C标准库-3string.h" />
+    <ClCompile Include="C标准库-1stdio.h" />
     <ClCompile Include="FFmpeg-1命令行.cpp" />
     <ClCompile Include="FFmpeg-2函数库.cpp" />
     <ClCompile Include="FFmpeg-3编解码.cpp" />
@@ -161,6 +164,7 @@
     <ClCompile Include="QT-13快捷键.cpp" />
     <ClCompile Include="QT-15自定义事件与控件.cpp" />
     <ClCompile Include="QT-18调试.cpp" />
+    <ClCompile Include="QT-2QMainWindow.cpp" />
     <ClCompile Include="QT-2样式表.cpp" />
     <ClCompile Include="QT-3信号与槽.cpp" />
     <ClCompile Include="QT-4对话框.cpp" />
@@ -295,9 +299,9 @@
   <ItemGroup>
     <ClInclude Include="callable.h" />
     <ClInclude Include="controller.h" />
+    <ClInclude Include="C标准库-2stdlib.h" />
     <ClInclude Include="model.h" />
     <ClInclude Include="pthread_pool.h" />
-    <ClInclude Include="resource.h" />
     <ClInclude Include="view.h" />
     <ClInclude Include="实例_quickdemo.h" />
   </ItemGroup>
