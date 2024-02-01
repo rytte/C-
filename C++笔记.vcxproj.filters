@@ -413,65 +413,11 @@
     <ClCompile Include="C-01数据类型.c">
       <Filter>源文件\C语言语法</Filter>
     </ClCompile>
-    <ClCompile Include="C-04函数.c">
-      <Filter>源文件\C语言语法</Filter>
-    </ClCompile>
-    <ClCompile Include="C-06变参函数.c">
-      <Filter>源文件\C语言语法</Filter>
-    </ClCompile>
-    <ClCompile Include="C-07数组.c">
-      <Filter>源文件\C语言语法</Filter>
-    </ClCompile>
-    <ClCompile Include="C-08指针.c">
-      <Filter>源文件\C语言语法</Filter>
-    </ClCompile>
-    <ClCompile Include="C-09字符串.c">
-      <Filter>源文件\C语言语法</Filter>
-    </ClCompile>
-    <ClCompile Include="C-10结构体.c">
-      <Filter>源文件\C语言语法</Filter>
-    </ClCompile>
-    <ClCompile Include="C-11联合体.c">
-      <Filter>源文件\C语言语法</Filter>
-    </ClCompile>
-    <ClCompile Include="C-12枚举.c">
-      <Filter>源文件\C语言语法</Filter>
-    </ClCompile>
-    <ClCompile Include="C-13Linux内存布局.c">
-      <Filter>源文件\C语言语法</Filter>
-    </ClCompile>
-    <ClCompile Include="C-14GCC编译器.c">
-      <Filter>源文件\C语言语法</Filter>
-    </ClCompile>
-    <ClCompile Include="复习.cpp">
-      <Filter>源文件\C语言语法</Filter>
-    </ClCompile>
     <ClCompile Include="辨析.cpp">
       <Filter>源文件\C语言语法</Filter>
     </ClCompile>
     <ClCompile Include="计算机网络.cpp">
       <Filter>源文件\其它</Filter>
-    </ClCompile>
-    <ClCompile Include="C-02运算符.c">
-      <Filter>源文件\C语言语法</Filter>
-    </ClCompile>
-    <ClCompile Include="C-03逻辑结构.c">
-      <Filter>源文件\C语言语法</Filter>
-    </ClCompile>
-    <ClCompile Include="笔记.cpp">
-      <Filter>源文件</Filter>
-    </ClCompile>
-    <ClCompile Include="C-05递归函数.c">
-      <Filter>源文件\C语言语法</Filter>
-    </ClCompile>
-    <ClCompile Include="C-15预处理指令.c">
-      <Filter>源文件\C语言语法</Filter>
-    </ClCompile>
-    <ClCompile Include="C-16volatile与register关键字.c">
-      <Filter>源文件\C语言语法</Filter>
-    </ClCompile>
-    <ClCompile Include="C-17工程代码组织.c">
-      <Filter>源文件\C语言语法</Filter>
     </ClCompile>
     <ClCompile Include="QT-1基础与QString.cpp">
       <Filter>源文件\QT</Filter>
@@ -566,11 +512,44 @@
     <ClCompile Include="C标准库-1stdio.h">
       <Filter>头文件</Filter>
     </ClCompile>
-    <ClCompile Include="C-18内存管理.c">
-      <Filter>源文件\C语言语法</Filter>
-    </ClCompile>
     <ClCompile Include="QT-2QMainWindow.cpp">
       <Filter>源文件\QT</Filter>
+    </ClCompile>
+    <ClCompile Include="C-02运算符&amp;逻辑结构.c">
+      <Filter>源文件\C语言语法</Filter>
+    </ClCompile>
+    <ClCompile Include="C-03函数.c">
+      <Filter>源文件\C语言语法</Filter>
+    </ClCompile>
+    <ClCompile Include="C-04变参函数.c">
+      <Filter>源文件\C语言语法</Filter>
+    </ClCompile>
+    <ClCompile Include="C-05数组.c">
+      <Filter>源文件\C语言语法</Filter>
+    </ClCompile>
+    <ClCompile Include="C-06指针&amp;字符串.c">
+      <Filter>源文件\C语言语法</Filter>
+    </ClCompile>
+    <ClCompile Include="C-07结构体&amp;联合体.c">
+      <Filter>源文件\C语言语法</Filter>
+    </ClCompile>
+    <ClCompile Include="C-08枚举&amp;预处理指令.c">
+      <Filter>源文件\C语言语法</Filter>
+    </ClCompile>
+    <ClCompile Include="C-09内存管理.c">
+      <Filter>源文件\C语言语法</Filter>
+    </ClCompile>
+    <ClCompile Include="C-10GCC编译器.c">
+      <Filter>源文件\C语言语法</Filter>
+    </ClCompile>
+    <ClCompile Include="C-11关键字.c">
+      <Filter>源文件\C语言语法</Filter>
+    </ClCompile>
+    <ClCompile Include="问答.cpp">
+      <Filter>源文件\C语言语法</Filter>
+    </ClCompile>
+    <ClCompile Include="笔记.cpp">
+      <Filter>源文件</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
