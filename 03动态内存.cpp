@@ -32,8 +32,8 @@ using namespace std;
 
 void func1()
 {
-	int* p1 = new int;			//申请一个int类型大小的堆空间
-	*p1 = 10;					//为这个堆空间赋值
+	int* p1 = new int;				//申请一个int类型大小的堆空间
+	*p1 = 10;						//为这个堆空间赋值
 	cout << "*p1=" << *p1 << endl;
 	delete p1;					//释放堆空间
 }
@@ -41,7 +41,7 @@ void func1()
 
 void func2()
 {
-	int* p2 = new int[3];		//申请 3个 int类型的堆空间
+	int* p2 = new int[3];			//申请 3个 int类型的堆空间
 
 	for (int i = 0; i < 3; i++)
 		*(p2 + i) = i * 1;
