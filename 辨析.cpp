@@ -2,10 +2,10 @@
 sizeof 和 strlen 的区别
 
 	1、sizeof 是关键字
-	   strlen 是函数
+	     strlen 是函数
 
 	2、sizeof可以计算任何数据的大小 内存大小
-	   strlen只能计算字符串数据的大小
+	     strlen只能计算字符串数据的大小
 	
 	3、计算字符串大小时, sizeof 包含'\0', strlen 不包含'\0'。
 	

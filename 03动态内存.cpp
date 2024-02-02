@@ -18,64 +18,25 @@ delete[]  指针				----- 释放N个数据类型的堆空间内存，释放大�
 区别 :
 (1)malloc和free都是函数, new 和 delete 是关键字
 (2)malloc返回值为void*, new 会根据数据类型来确定返回值。
-(3)malloc和free不会调用类的构造与析构， new 会调用构造, delete 会调用析构。
+(3)malloc和free不会调用类的构造与析构， new 会调用构造， delete 会调用析构。
 
 C++中函数返回值为指针时，不会发生隐式类型转换。
 
 
-/********************/实例/************************************************************/
-#include <iostream>
-#include <cstdlib>
+//实例
+int* p1 = new int;				//申请一个int类型大小的堆空间
+delete p1;					//释放堆空间
 
-using namespace std;
+int* p2 = new int[3];			//申请 3个 int类型的堆空间
+delete[]p2;					//释放从指针p开始的堆空间数组，大小由系统自行识别
 
+int* p3 = new int(99);			//申请1个int型堆空间，同时对该int型进行赋值
+delete p3;
 
-void func1()
-{
-	int* p1 = new int;				//申请一个int类型大小的堆空间
-	*p1 = 10;						//为这个堆空间赋值
-	cout << "*p1=" << *p1 << endl;
-	delete p1;					//释放堆空间
-}
+//int *p = malloc(100);			//报错，c++中函数返回值没有隐式类型转换
+int* p4 = (int*)malloc(4);
+free(p4);
 
+char* p5 = new char('A');
+delete p5;
 
-void func2()
-{
-	int* p2 = new int[3];			//申请 3个 int类型的堆空间
-
-	for (int i = 0; i < 3; i++)
-		*(p2 + i) = i * 1;
-
-	for (int i = 0; i < 3; i++)
-		cout << "p2[" << i << "]=" << p2[i] << endl;
-
-	delete[]p2;					//释放从指针p开始的堆空间数组，大小由系统自行识别
-}
-
-
-void func3()
-{
-	int* p3 = new int(99);		//申请1个int型堆空间，同时对该int型进行赋值
-	cout << "*p3=" << *p3 << endl;
-	delete p3;
-}
-
-
-void func4()
-{
-	//int *p = malloc(100);		//报错，c++中函数返回值没有隐式类型转换
-	int* p4 = (int*)malloc(4);
-	free(p4);
-
-	char* p5 = new char('A');
-	delete p5;
-}
-
-
-int main()
-{
-	func1();
-	func2();
-	func3();
-	func4();
-}
