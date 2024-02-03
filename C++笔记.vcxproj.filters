@@ -236,7 +236,7 @@
     <ClCompile Include="数据结构与算法.cpp">
       <Filter>源文件\其它</Filter>
     </ClCompile>
-    <ClCompile Include="00基础知识.cpp">
+    <ClCompile Include="24模板元编程.cpp">
       <Filter>源文件\C++语法</Filter>
     </ClCompile>
     <ClCompile Include="01输入输出流.cpp">
@@ -348,9 +348,6 @@
       <Filter>源文件</Filter>
     </ClCompile>
     <ClCompile Include="C-01数据类型.c">
-      <Filter>源文件\C语言语法</Filter>
-    </ClCompile>
-    <ClCompile Include="辨析.cpp">
       <Filter>源文件\C语言语法</Filter>
     </ClCompile>
     <ClCompile Include="计算机网络.cpp">
@@ -479,9 +476,6 @@
     <ClCompile Include="C-11关键字.c">
       <Filter>源文件\C语言语法</Filter>
     </ClCompile>
-    <ClCompile Include="问答.cpp">
-      <Filter>源文件\C语言语法</Filter>
-    </ClCompile>
     <ClCompile Include="笔记.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
@@ -509,13 +503,13 @@
     <ClCompile Include="11static与const.cpp">
       <Filter>源文件\C++语法</Filter>
     </ClCompile>
-    <ClCompile Include="12匿名对象.cpp">
+    <ClCompile Include="12匿名对象&amp;内联函数.cpp">
       <Filter>源文件\C++语法</Filter>
     </ClCompile>
     <ClCompile Include="13继承.cpp">
       <Filter>源文件\C++语法</Filter>
     </ClCompile>
-    <ClCompile Include="14多态.cpp">
+    <ClCompile Include="14多态与虚函数.cpp">
       <Filter>源文件\C++语法</Filter>
     </ClCompile>
     <ClCompile Include="15纯虚函数与抽象类.cpp">
@@ -524,25 +518,31 @@
     <ClCompile Include="16强制类型转换.cpp">
       <Filter>源文件\C++语法</Filter>
     </ClCompile>
-    <ClCompile Include="17友元与内联函数.cpp">
+    <ClCompile Include="17友元.cpp">
       <Filter>源文件\C++语法</Filter>
     </ClCompile>
     <ClCompile Include="18文件流.cpp">
       <Filter>源文件\C++语法</Filter>
     </ClCompile>
-    <ClCompile Include="19模板.cpp">
+    <ClCompile Include="23模板.cpp">
       <Filter>源文件\C++语法</Filter>
     </ClCompile>
     <ClCompile Include="20异常处理.cpp">
       <Filter>源文件\C++语法</Filter>
     </ClCompile>
-    <ClCompile Include="21预处理器.cpp">
+    <ClCompile Include="19预处理器.cpp">
       <Filter>源文件\C++语法</Filter>
     </ClCompile>
-    <ClCompile Include="22函数重入与线程安全.cpp">
+    <ClCompile Include="21函数重入与线程安全.cpp">
       <Filter>源文件\C++语法</Filter>
     </ClCompile>
-    <ClCompile Include="23内存分布.cpp">
+    <ClCompile Include="22内存分布.cpp">
+      <Filter>源文件\C++语法</Filter>
+    </ClCompile>
+    <ClCompile Include="问答.cpp">
+      <Filter>源文件\C++语法</Filter>
+    </ClCompile>
+    <ClCompile Include="辨析.cpp">
       <Filter>源文件\C++语法</Filter>
     </ClCompile>
   </ItemGroup>

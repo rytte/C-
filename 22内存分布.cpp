@@ -1,4 +1,11 @@
 
+
+//VS2022查看类内存布局
+工具(T)->命令行(L)->开发者命令提示(C)，输入以下代码
+
+cl / d1 reportSingleClassLayout类名 文件名.cpp
+
+
 //字节对齐
 字节对齐时，不同类的属性无法填充。
 比如：
@@ -35,7 +42,7 @@ class B {};
 class C {};
 class D : public A, public B, public C {};
 
-首先是基类A的部分，然后是基类B的部分，最后是基类C的部分。每个基类部分都有自己的数据成员和虚表指针（如果有虚函数的话）。
+首先是基类A的部分，然后是基类B的部分，最后是基类C的部分。。
 
 
 //菱形继承
@@ -48,11 +55,21 @@ class D : public B, public C {};
 
 
 //虚继承
-进行虚继承的类，头部会有一个虚指针，指向虚表。
+进行虚继承的类，头部会有一个虚基指针，指向虚基表。
 class A { int a };
 class B : virtual public A { int b };
 
 顺序：A - B虚基指针 - B
+
+
+//菱形虚继承
+虚基指针部分能够代替基类 A 的成员，节省内存。 
+class A {};
+class B : virtual public A {};
+class C : virtual public A {};
+class D : public B, public C {};
+
+顺序：B虚基指针 - B - C虚基指针 - C - A - D
 
 
 //虚函数
@@ -79,7 +96,7 @@ class B : virtual public A
 
 
 
-/********************/虚继承 实例/************************************************************/
+/********************/菱形继承 实例/************************************************************/
 #include <iostream>
 using namespace std;
 

@@ -15,20 +15,20 @@ void open(const char* filename, ios::openmode mode);
 参数二：文件打开的模式。
 
 <模式标志>	<描述>
-ios::in	     只读，不存在则报错，相当于"r"。
-ios::out	 只写，存在则清空，不存在则创建，相当于"w+"。
-ios::app	 追加，在文件末尾写入。
-ios::ate	 文件打开后定位到文件末尾。
-ios::trunc	 清空。（即如果该文件已经存在，其内容将在打开文件之前被截断，把文件长度设为 0）
-ios::binary  二进制方式
+ios::in		只读，不存在则报错，相当于"r"。
+ios::out		只写，存在则清空，不存在则创建，相当于"w+"。
+ios::app		追加，在文件末尾写入。
+ios::ate		文件打开后定位到文件末尾。
+ios::trunc		清空。（即如果该文件已经存在，其内容将在打开文件之前被截断，把文件长度设为 0）
+ios::binary	二进制方式
 
 
 /************************************************************/
-通过调用 fstream类 的读写方法，来操作文件
+fstream类方法
 
 open()  			打开文件
 is_open() 			判断是否打开成功，成功返回 true ，失败返回 false 。
-close()				关闭文件
+close()			关闭文件
 
 write()  			写入数据
 << 运算符重载		写入数据(自动识别类型)
@@ -44,13 +44,13 @@ istream 和 ostream 都提供了用于重新定位文件位置指针的成员函
 这些成员函数包括关于 istream 的 seekg（"seek get"）和关于 ostream 的 seekp（"seek put"）。
 seekg 和 seekp 的参数通常是一个长整型。第二个参数可以用于指定查找方向。
 
-file.seekg(n);              // 定位到 file 的第 n 个字节（假设是 ios::beg）
+file.seekg(n);			// 定位到 file 的第 n 个字节（假设是 ios::beg）
 
-file.seekg(n, ios::cur);    // 把文件的读指针从 fileObject 当前位置向后移 n 个字节
+file.seekg(n, ios::cur);      // 把文件的读指针从 fileObject 当前位置向后移 n 个字节
 
-file.seekg(n, ios::end);    // 把文件的读指针从 fileObject 末尾往回移 n 个字节
+file.seekg(n, ios::end);     // 把文件的读指针从 fileObject 末尾往回移 n 个字节
 
-file.seekg(0, ios::end);    // 定位到 fileObject 的末尾
+file.seekg(0, ios::end);     // 定位到 fileObject 的末尾
 
 
 /************************************************************/
