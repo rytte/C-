@@ -4,6 +4,18 @@
 在多线程中往往需要访问临界资源，C++11为我们提供了mutex等相关类来保护临界资源，保证某一时刻只有一个线程可以访问临界资源。
 即：防止其它线程修改目标变量（互斥量）。
 
+
+//发生死锁的情况
+m.lock();			//加锁
+{
+	if ()
+		return;	//发生了死锁
+	...
+}
+m.unlock();		//解锁
+为了解决这个问题，也有一个类似于智能指针的独占性的锁 unique_lock;
+
+
 //四种 Mutex 锁类型
 mutex				//最基本的 Mutex 类。
 time_mutex			//定时 Mutex 类。
@@ -15,6 +27,7 @@ recursive_timed_mutex	//定时递归 Mutex 类。
 释放互斥量时需要调用与该锁层次深度相同次数的 unlock()。若到达最大lock次数，lock方法会抛出异常（std::system_error），try_lock会返回false。
 3、recursive_timed_mutex就是recursive_mutex和timed_mutex的结合体
 
+
 //两种 Lock 类（RAII风格的Mutex Wrapper：构造时给 mutex 上锁，析构时解锁）（离开定义域时销毁）
 格式：函数名<mutex> lck(mutex);
 lock_guard	(C++11)
@@ -24,11 +37,13 @@ scoped_lock	(C++17)
 unique_lock可移动，并支持延迟上锁、上锁的有时限尝试、递归锁定、所有权转移和与条件变量一同使用。
 unique_lock内部会维护一个锁的状态，所以在效率上会比lock_guard慢。
 
+
 //其他类型
 once_flag
 defer_lock	//不获得互斥的所有权，也就是使用m创建unique_lock对象，但是没有调用lock。
 try_to_lock	//尝试获得互斥的所有权而不阻塞，也就是使用m创建unique_lock对象，调用try_lock。
 adopt_lock	//假设调用方线程已拥有互斥的所有权，使用m创建unique_lock对象，认为m创建之前已经调用了lock。
+
 
 //函数
 try_lock			//尝试同时对多个互斥量上锁，没有获取到锁则不阻塞，返回false
@@ -38,8 +53,10 @@ call_once			//如果多个线程需要同时调用某个函数，call_once 可�
 try_lock_for		//尝试锁住互斥量在一段时间内，如果超过时长则失败。（timed_mutex）
 try_lock_until		//尝试锁住互斥量到一个时间点，如果超过指定时间点则失败。（timed_mutex）
 
+
 //对比unique_lock 和 lock_guard
 二者都是自释放锁；lock_guard 在时间和空间上都比unique_lock要快；lock_guard 功能单一，只能用作自释放锁；unique_lock具备lock_guard的所有能力，同时提供更多的能力，比如锁的成员函数都会被封装后导出，同时不会引入double lock和 double unlock；
+
 
 //那么为什么有时候需要unlock()？
 因为lock()锁住的代码段越少，执行越快，整个程序运行效率越高。
@@ -63,13 +80,16 @@ try_lock_until		//尝试锁住互斥量到一个时间点，如果超过指定�
 但是如果想以写模式对其加锁，线程将阻塞。这样也有问题，如果读者很多，那么写者将会长时间等待，
 如果有线程尝试以写模式加锁，那么后续的读线程将会被阻塞，这样可以避免锁长期被读者占有。
 
+
 //Lock类（RAII风格的Mutex Wrapper：内部封装 lock_shared() 和 unlock_shared() 等函数）
 share_lock(C++14)
+
 
 //写锁
 try_lock
 lock
 unlock
+
 
 //读锁
 try_lock_shared

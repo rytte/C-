@@ -209,7 +209,7 @@
     <ClCompile Include="22模板.cpp" />
     <ClCompile Include="STD-1标准库.cpp" />
     <ClCompile Include="STD-3STL迭代器.cpp" />
-    <ClCompile Include="STD-5智能指针.cpp" />
+    <ClCompile Include="STD-5STL智能指针.cpp" />
     <ClCompile Include="STD-6线程.cpp" />
     <ClCompile Include="19异常处理.cpp" />
     <ClCompile Include="网编-3UDP.cpp" />
@@ -268,6 +268,7 @@
     <ClCompile Include="UDP_client.c" />
     <ClCompile Include="UDP_server.c" />
     <ClCompile Include="双循链表server.c" />
+    <ClCompile Include="网编-5套接字函数.cpp" />
     <ClCompile Include="问答.cpp" />
     <ClCompile Include="多客户端server.c" />
     <ClCompile Include="多路复用server.c" />
