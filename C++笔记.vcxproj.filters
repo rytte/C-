@@ -236,7 +236,7 @@
     <ClCompile Include="数据结构与算法.cpp">
       <Filter>源文件\其它</Filter>
     </ClCompile>
-    <ClCompile Include="24模板元编程.cpp">
+    <ClCompile Include="23模板元编程.cpp">
       <Filter>源文件\C++语法</Filter>
     </ClCompile>
     <ClCompile Include="01输入输出流.cpp">
@@ -249,18 +249,6 @@
       <Filter>源文件\C++语法</Filter>
     </ClCompile>
     <ClCompile Include="04引用.cpp">
-      <Filter>源文件\C++语法</Filter>
-    </ClCompile>
-    <ClCompile Include="STL-1标准库.cpp">
-      <Filter>源文件\C++语法</Filter>
-    </ClCompile>
-    <ClCompile Include="STL-3容器.cpp">
-      <Filter>源文件\C++语法</Filter>
-    </ClCompile>
-    <ClCompile Include="STL-4智能指针.cpp">
-      <Filter>源文件\C++语法</Filter>
-    </ClCompile>
-    <ClCompile Include="STL-5线程.cpp">
       <Filter>源文件\C++语法</Filter>
     </ClCompile>
     <ClCompile Include="C++新特性.cpp">
@@ -404,9 +392,6 @@
     <ClCompile Include="QT-18调试.cpp">
       <Filter>源文件\QT</Filter>
     </ClCompile>
-    <ClCompile Include="STL-6互斥锁与条件变量.cpp">
-      <Filter>源文件\C++语法</Filter>
-    </ClCompile>
     <ClCompile Include="mplayer.cpp">
       <Filter>源文件\其它</Filter>
     </ClCompile>
@@ -479,9 +464,6 @@
     <ClCompile Include="笔记.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
-    <ClCompile Include="STL-2string类.cpp">
-      <Filter>源文件\C++语法</Filter>
-    </ClCompile>
     <ClCompile Include="05重载.cpp">
       <Filter>源文件\C++语法</Filter>
     </ClCompile>
@@ -521,28 +503,49 @@
     <ClCompile Include="17友元.cpp">
       <Filter>源文件\C++语法</Filter>
     </ClCompile>
-    <ClCompile Include="18文件流.cpp">
+    <ClCompile Include="22模板.cpp">
       <Filter>源文件\C++语法</Filter>
     </ClCompile>
-    <ClCompile Include="23模板.cpp">
+    <ClCompile Include="19异常处理.cpp">
       <Filter>源文件\C++语法</Filter>
     </ClCompile>
-    <ClCompile Include="20异常处理.cpp">
+    <ClCompile Include="18预处理器.cpp">
       <Filter>源文件\C++语法</Filter>
     </ClCompile>
-    <ClCompile Include="19预处理器.cpp">
+    <ClCompile Include="20函数重入与线程安全.cpp">
       <Filter>源文件\C++语法</Filter>
     </ClCompile>
-    <ClCompile Include="21函数重入与线程安全.cpp">
-      <Filter>源文件\C++语法</Filter>
-    </ClCompile>
-    <ClCompile Include="22内存分布.cpp">
+    <ClCompile Include="21内存分布.cpp">
       <Filter>源文件\C++语法</Filter>
     </ClCompile>
     <ClCompile Include="问答.cpp">
       <Filter>源文件\C++语法</Filter>
     </ClCompile>
     <ClCompile Include="辨析.cpp">
+      <Filter>源文件\C++语法</Filter>
+    </ClCompile>
+    <ClCompile Include="STD-5智能指针.cpp">
+      <Filter>源文件\C++语法</Filter>
+    </ClCompile>
+    <ClCompile Include="STD-8文件流.cpp">
+      <Filter>源文件\C++语法</Filter>
+    </ClCompile>
+    <ClCompile Include="STD-7互斥锁与条件变量.cpp">
+      <Filter>源文件\C++语法</Filter>
+    </ClCompile>
+    <ClCompile Include="STD-6线程.cpp">
+      <Filter>源文件\C++语法</Filter>
+    </ClCompile>
+    <ClCompile Include="STD-3STL迭代器.cpp">
+      <Filter>源文件\C++语法</Filter>
+    </ClCompile>
+    <ClCompile Include="STD-2string.cpp">
+      <Filter>源文件\C++语法</Filter>
+    </ClCompile>
+    <ClCompile Include="STD-1标准库.cpp">
+      <Filter>源文件\C++语法</Filter>
+    </ClCompile>
+    <ClCompile Include="STD-4STL容器.cpp">
       <Filter>源文件\C++语法</Filter>
     </ClCompile>
   </ItemGroup>
