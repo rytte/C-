@@ -83,7 +83,6 @@ namespace Outer
         {
                 void fun() {}
         }
-
 }
 
 Outer::fun();  // 调用内层命名空间中的 fun，外层的 fun 被覆盖。

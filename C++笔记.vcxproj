@@ -127,6 +127,7 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="12using与inline.cpp" />
     <ClCompile Include="23模板元编程.cpp" />
     <ClCompile Include="01-音视频概念.cpp" />
     <ClCompile Include="02-YUV与RGB.cpp" />
@@ -134,7 +135,9 @@
     <ClCompile Include="22_播控.cpp" />
     <ClCompile Include="20函数重入与线程安全.cpp" />
     <ClCompile Include="21内存分布.cpp" />
-    <ClCompile Include="Cpp11-10其它特性.cpp" />
+    <ClCompile Include="Cpp17-2表达式求值顺序确定.cpp" />
+    <ClCompile Include="Cpp17-1if和switch初始化.cpp" />
+    <ClCompile Include="Cpp11-11其它特性.cpp" />
     <ClCompile Include="Cpp11-2Lambda表达式.cpp" />
     <ClCompile Include="Cpp11-3列表初始化.cpp" />
     <ClCompile Include="Cpp11-4委托继承构造函数.cpp" />
@@ -143,9 +146,12 @@
     <ClCompile Include="Cpp11-7范围for循环.cpp" />
     <ClCompile Include="Cpp11-8强枚举类型.cpp" />
     <ClCompile Include="Cpp11-9聚合类.cpp" />
-    <ClCompile Include="Cpp新特性.cpp" />
+    <ClCompile Include="Cpp11-10字面量优化.cpp" />
+    <ClCompile Include="Cpp20-2consteval与constinit.cpp" />
+    <ClCompile Include="Cpp20-1三项比较.cpp" />
     <ClCompile Include="STD-4STL容器.cpp" />
-    <ClCompile Include="STD-7互斥锁与条件变量.cpp" />
+    <ClCompile Include="STD-5STL新容器.cpp" />
+    <ClCompile Include="STD-8互斥锁与条件变量.cpp" />
     <ClCompile Include="C-01数据类型.c" />
     <ClCompile Include="C-02运算符&amp;逻辑结构.c" />
     <ClCompile Include="C-03函数.c" />
@@ -203,7 +209,7 @@
     <ClCompile Include="10this指针&amp;空指针.cpp" />
     <ClCompile Include="系编-12线程池.cpp" />
     <ClCompile Include="11static与const.cpp" />
-    <ClCompile Include="12匿名对象&amp;内联函数.cpp" />
+    <ClCompile Include="12匿名对象.cpp" />
     <ClCompile Include="STD-2string.cpp" />
     <ClCompile Include="13继承.cpp" />
     <ClCompile Include="14多态与虚函数.cpp" />
@@ -214,13 +220,13 @@
     <ClCompile Include="21_BKPlayer.cpp" />
     <ClCompile Include="17友元.cpp" />
     <ClCompile Include="22_BKPlayer_New.cpp" />
-    <ClCompile Include="STD-8文件流.cpp" />
+    <ClCompile Include="STD-9文件流.cpp" />
     <ClCompile Include="23_bk_video_forward.cpp" />
     <ClCompile Include="22模板.cpp" />
     <ClCompile Include="STD-1标准库.cpp" />
     <ClCompile Include="STD-3STL迭代器.cpp" />
-    <ClCompile Include="STD-5STL智能指针.cpp" />
-    <ClCompile Include="STD-6线程.cpp" />
+    <ClCompile Include="STD-6STL智能指针.cpp" />
+    <ClCompile Include="STD-7线程.cpp" />
     <ClCompile Include="19异常处理.cpp" />
     <ClCompile Include="网编-3UDP.cpp" />
     <ClCompile Include="系编-3信号.cpp" />

@@ -239,9 +239,6 @@
     <ClCompile Include="23模板元编程.cpp">
       <Filter>源文件\C++语法</Filter>
     </ClCompile>
-    <ClCompile Include="01输入输出流.cpp">
-      <Filter>源文件\C++语法</Filter>
-    </ClCompile>
     <ClCompile Include="02命名空间.cpp">
       <Filter>源文件\C++语法</Filter>
     </ClCompile>
@@ -249,9 +246,6 @@
       <Filter>源文件\C++语法</Filter>
     </ClCompile>
     <ClCompile Include="04引用.cpp">
-      <Filter>源文件\C++语法</Filter>
-    </ClCompile>
-    <ClCompile Include="C++新特性.cpp">
       <Filter>源文件\C++语法</Filter>
     </ClCompile>
     <ClCompile Include="01-音视频概念.cpp">
@@ -485,7 +479,7 @@
     <ClCompile Include="11static与const.cpp">
       <Filter>源文件\C++语法</Filter>
     </ClCompile>
-    <ClCompile Include="12匿名对象&amp;内联函数.cpp">
+    <ClCompile Include="12匿名对象.cpp">
       <Filter>源文件\C++语法</Filter>
     </ClCompile>
     <ClCompile Include="13继承.cpp">
@@ -524,16 +518,13 @@
     <ClCompile Include="辨析.cpp">
       <Filter>源文件\C++语法</Filter>
     </ClCompile>
-    <ClCompile Include="STD-5智能指针.cpp">
+    <ClCompile Include="STD-9文件流.cpp">
       <Filter>源文件\C++语法</Filter>
     </ClCompile>
-    <ClCompile Include="STD-8文件流.cpp">
+    <ClCompile Include="STD-8互斥锁与条件变量.cpp">
       <Filter>源文件\C++语法</Filter>
     </ClCompile>
-    <ClCompile Include="STD-7互斥锁与条件变量.cpp">
-      <Filter>源文件\C++语法</Filter>
-    </ClCompile>
-    <ClCompile Include="STD-6线程.cpp">
+    <ClCompile Include="STD-7线程.cpp">
       <Filter>源文件\C++语法</Filter>
     </ClCompile>
     <ClCompile Include="STD-3STL迭代器.cpp">
@@ -546,6 +537,66 @@
       <Filter>源文件\C++语法</Filter>
     </ClCompile>
     <ClCompile Include="STD-4STL容器.cpp">
+      <Filter>源文件\C++语法</Filter>
+    </ClCompile>
+    <ClCompile Include="Cpp11-1新类型&amp;关键字.cpp">
+      <Filter>源文件\C++语法</Filter>
+    </ClCompile>
+    <ClCompile Include="Cpp11-2Lambda表达式.cpp">
+      <Filter>源文件\C++语法</Filter>
+    </ClCompile>
+    <ClCompile Include="Cpp11-3列表初始化.cpp">
+      <Filter>源文件\C++语法</Filter>
+    </ClCompile>
+    <ClCompile Include="Cpp11-4委托继承构造函数.cpp">
+      <Filter>源文件\C++语法</Filter>
+    </ClCompile>
+    <ClCompile Include="Cpp11-5右值引用&amp;移动语义.cpp">
+      <Filter>源文件\C++语法</Filter>
+    </ClCompile>
+    <ClCompile Include="Cpp11-6常量表达式.cpp">
+      <Filter>源文件\C++语法</Filter>
+    </ClCompile>
+    <ClCompile Include="Cpp11-7范围for循环.cpp">
+      <Filter>源文件\C++语法</Filter>
+    </ClCompile>
+    <ClCompile Include="Cpp11-8强枚举类型.cpp">
+      <Filter>源文件\C++语法</Filter>
+    </ClCompile>
+    <ClCompile Include="Cpp11-9聚合类.cpp">
+      <Filter>源文件\C++语法</Filter>
+    </ClCompile>
+    <ClCompile Include="Cpp11-11其它特性.cpp">
+      <Filter>源文件\C++语法</Filter>
+    </ClCompile>
+    <ClCompile Include="Cpp17-1if和switch初始化.cpp">
+      <Filter>源文件\C++语法</Filter>
+    </ClCompile>
+    <ClCompile Include="STD-6STL智能指针.cpp">
+      <Filter>源文件\C++语法</Filter>
+    </ClCompile>
+    <ClCompile Include="网编-5套接字函数.cpp">
+      <Filter>源文件\网络编程</Filter>
+    </ClCompile>
+    <ClCompile Include="01输入输出流.cpp">
+      <Filter>源文件\C++语法</Filter>
+    </ClCompile>
+    <ClCompile Include="12using与inline.cpp">
+      <Filter>源文件\C++语法</Filter>
+    </ClCompile>
+    <ClCompile Include="Cpp20-1三项比较.cpp">
+      <Filter>源文件\C++语法</Filter>
+    </ClCompile>
+    <ClCompile Include="Cpp20-2consteval与constinit.cpp">
+      <Filter>源文件\C++语法</Filter>
+    </ClCompile>
+    <ClCompile Include="STD-5STL新容器.cpp">
+      <Filter>源文件\C++语法</Filter>
+    </ClCompile>
+    <ClCompile Include="Cpp17-2表达式求值顺序确定.cpp">
+      <Filter>源文件\C++语法</Filter>
+    </ClCompile>
+    <ClCompile Include="Cpp11-10字面量优化.cpp">
       <Filter>源文件\C++语法</Filter>
     </ClCompile>
   </ItemGroup>
