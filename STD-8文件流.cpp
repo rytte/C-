@@ -1,15 +1,14 @@
 ﻿/********************/文件流/************************************************************/
-头文件：
 #include <fstream>
+using namespace std;
 
-创建文件对象：
-fstream 对象名();
+
+//构造函数
+fstream 对象名;
 fstream 对象名(文件名);
 
 
-Object.open() ：
-open()函数是 fstream、ifstream 和 ofstream 对象的一个成员，下面是 open() 函数的标准语法。
-
+//打开文件
 void open(const char* filename, ios::openmode mode);
 参数一：指定要打开的文件的名称和位置。
 参数二：文件打开的模式。
