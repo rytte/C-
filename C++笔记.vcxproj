@@ -285,6 +285,7 @@
     <ClCompile Include="UDP_server.c" />
     <ClCompile Include="双循链表server.c" />
     <ClCompile Include="网编-5套接字函数.cpp" />
+    <ClCompile Include="设计模式.cpp" />
     <ClCompile Include="问答.cpp" />
     <ClCompile Include="多客户端server.c" />
     <ClCompile Include="多路复用server.c" />

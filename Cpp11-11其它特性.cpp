@@ -1,3 +1,62 @@
+
+C++11
+自动类型推断（auto）：引入了auto关键字，可以让编译器根据初始化表达式的类型自动推断变量的类型。
+统一的初始化语法（Uniform initialization syntax）：可以使用花括号{}来进行初始化，无论是对变量、数组还是类的成员进行初始化。
+右值引用和移动语义（Rvalue references and move semantics）：引入了 && 作为右值引用符号，使得可以实现高效的资源转移和移动操作，避免不必要的拷贝。
+Lambda表达式：可以方便地在代码中定义匿名函数，提供了更简洁的语法和更灵活的编程方式。
+范围for循环（Range - based for loop）：可以通过范围for循环遍历容器或其他可迭代对象的元素，使得代码更加简洁和易读。
+nullptr 关键字：引入了nullptr关键字，用于表示空指针，取代了传统的NULL宏。
+智能指针（Smart pointers）：引入了shared_ptr、unique_ptr和weak_ptr等智能指针类型，提供了更安全和自动化的内存管理。
+标准库的增强：标准库进行了扩展和改进，包括新的容器类（如unordered_map和array）、新的算法（如move和emplace）、正则表达式支持等。
+多线程支持：引入了线程库、原子操作和互斥量等多线程编程的支持，方便编写并发程序。
+静态断言（Static assertions）：可以在编译时对某些条件进行断言检查，提前发现潜在的错误
+
+C++14
+二进制字面量（Binary literals）：可以直接在代码中表示二进制数值，使用前缀0b或0B。例如：0b101010。
+通用lambda表达式（Generic lambdas）：lambda表达式现在可以使用auto关键字来声明参数，使其更灵活和通用。
+返回类型推断（Return type deduction）：在函数的返回类型可以使用auto关键字进行推断，无需显式指定。
+初始化列表的返回值（Return type for initialization lists）：在函数中可以使用初始化列表作为返回值。
+constexpr函数的改进：constexpr函数在C++14中可以包含更多的计算操作，而不仅仅限于单个表达式。
+变量模板（Variable templates）：类似于函数模板，可以定义变量模板，使得变量的类型可以根据模板参数自动推断。
+泛型lambda捕获初始化（Initialization of captured variables in lambdas）：在lambda表达式中，可以使用初始化器列表来对捕获的变量进行初始化。
+类型别名模板（Type alias templates）：可以使用using关键字定义类型别名模板，使得类型别名可以具有模板参数。
+constexpr if：引入了constexpr if语句，可以根据编译时的条件来选择性地编译不同的代码块。
+变量模板的constexpr支持（constexpr support for variables templates）：变量模板可以声明为constexpr，使得编译器可以在编译时进行求值。
+
+C++17
+C++17是C++编程语言的一个重要版本，引入了许多新的特性和改进。以下是C++17的一些主要新特性：
+结构化绑定（Structured bindings）：可以将元组或其他复合类型的成员绑定到命名变量，提供了更方便的访问方式。
+if语句的初始化（if statement with initializer）：允许在if语句中进行变量的初始化操作，使得代码更加简洁。
+折叠表达式（Fold expressions）：简化了对参数包（parameter pack）进行展开操作的语法，使得代码更简洁和易读。
+constexpr if语句（constexpr if）：扩展了constexpr if语句的功能，使得可以在运行时根据条件来选择性地编译不同的代码。
+变量模板（Variable templates）：引入了变量模板的概念，使得可以定义通用的变量模板，提供了更灵活的类型推断。
+constexpr Lambda表达式（constexpr lambdas）：允许将Lambda表达式声明为constexpr，使得可以在编译时进行求值。
+字符串视图（String view）：引入了字符串视图类型，用于高效地处理字符串的查看而不进行复制操作，提高性能。
+内联变量（Inline variables）：可以使用inline关键字声明内联变量，将变量的定义和声明合并在一起。
+构造函数的类模板参数推断（Class template argument deduction for constructors）：使得类模板的实例化可以根据构造函数的参数类型进行自动推断，减少了代码冗余。
+标准库的改进：标准库进行了扩展和改进，包括新的容器类（如string_view和optional）、新的算法（如transform_reduce和clamp）、文件系统库等。
+
+C++20
+概念（Concepts）：引入了概念，用于对模板参数进行约束和限定，提供了更清晰和可读性强的模板编程方式。
+三方运算符（Three - way comparison operator）：引入了三方运算符（ <=> ），用于简化比较操作符的实现，提供了默认的比较行为。
+初始化的改进：初始化列表可以用于更多的场景，如函数参数、返回值、catch语句中的异常对象等。
+范围的改进：引入了ranges命名空间，提供了丰富的范围操作函数和算法，使得处理容器和范围更加方便和高效。
+协程（Coroutines）：引入了协程机制，使得异步编程更加简洁和直观，可以通过协程关键字和异步操作符来实现协作式的并发。
+模块（Modules）：引入了模块化编程的概念，允许将代码划分为逻辑模块，提供了更快的编译速度和更好的代码组织。
+泛型lambda表达式（Generic lambda）：使得lambda表达式可以使用auto关键字进行参数类型的推断，更加通用和灵活。
+常量求值改进：扩展了constexpr的能力，允许在constexpr函数中使用更多的语言特性和标准库函数。
+强制执行（Contracts）：引入了强制执行的机制，用于在函数调用前和调用后对条件进行检查，提供了更强的程序健壮性。
+标准库的改进：标准库进行了扩展和改进，包括新的容器类（如span和bitset）、新的算法（如std::ranges中的算法）、日期和时间库等。
+
+
+
+
+
+
+
+
+
+
 /********************/C++11其它特性/************************************************************/
 智能指针：引入了 shared_ptr 、unique_ptr 和 weak_ptr 等智能指针类型，提供了更安全和自动化的内存管理。
 多线程支持：引入了线程库、原子操作和互斥量等多线程编程的支持，方便编写并发程序。
