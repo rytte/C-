@@ -102,10 +102,130 @@ static 修饰的成员，不能够作为模板类的成员属性。
 
 （4）继承
 继承时，如果基类有设置默认参数，那么派生类就不是模板类；
-        如果基类没有设置默认参数，那么派生类要写成模板类。
+如果基类没有设置默认参数，那么派生类要写成模板类。
 
 
 总结 : 当使用模板类时，只要加了类名的地方，就一定有<>+数据类型
+
+
+//模板的模板形参优化
+模板的模板形参可以是模板别名。（C++11）
+模板的模板形参中，可以使用 typename 替换 class ，效果不变。（C++17）
+对于未决类型的内嵌类型需要用到 typename （C++20）
+template <class T> void f(T::R);        //编译错误
+template <class T> void f(typename T::R);
+
+
+//可变参数模板（C++11）
+可变参数模板的语法和可变函数有一点相似之处，就是都使用到了省略号...
+template <class ...Args>                //class ...Args 类型模板形参包
+class bar
+{
+public:
+        bar(Args ...args)                     //Args ...args 函数形参包
+        {
+                foo(args...);                    //args... 形参包展开
+        }
+};
+
+
+//折叠表达式（C++17）
+template <class ...Args>
+auto sum(Args ...args)
+{
+        return (args + ...);
+}
+
+int main()
+{
+        cout << sum(1, 5.0, 11.7) << endl;
+}
+
+展开规则（op是二元运算符）：
+表达式
+(args op ...)                           //展开为：(arg0 op (arg1 op ... (argN-1 op argN)))
+(... op args)                           //展开为：((((arg0 op arg1) op arg2) op ...) op argN)))
+(args op ... op init)                //展开为：(arg0 op (arg1 op ... (argN-1 op argN op init)))
+(init op ... op args)                //展开为：((((init op arg0) op arg1) op ...) op argN)))
+
+一元折叠表达式中空参数包的特殊处理
+编译器很难确定折叠表达式最终的求值类型
+特殊规则：
+1、只有 &&、|| 和 ，运算符能够在空参数包的一元折叠表达式中使用。
+2、其中 && 的求值结果一定为 true
+3、|| 的求值结果一定为 false
+4、而 ，的求值结果为void()
+5、其它运算符都是非法的
+
+//using 声明中的包展开（C++17）。
+在派生类中引用基类成员。
+
+//Lambda表达式初始化捕获的包展开
+template <class F, class... Args>
+auto delay_invoke(F f, Args... args)
+{
+        return [f = std::move(f), ...args = std::move(args)]() -> decltype(auto) { return std::invoke(f, args...) };
+}
+
+
+
+/********************/类模板实参推导/************************************************************/
+
+//通过初始化构造函数推导类模板的模板实参（C++17）
+std::tuple<int, double, const char*> v{ 5, 11.7, "hello" };     //显示指定参数类型
+auto v = std::make_tuple(5, 11.7, "hello");                           //使用 auto 关键字
+std::tuple v{ 5, 11.7, "hello" };                                               //C++17标准能够自动推导类型
+
+
+//别名模板的类模板实参推导（C++20）
+template <class T, class U> struct C
+{
+        C(T, U) {}
+};
+
+template <class V>
+using A = C<V*, V*>;
+
+int i{};
+double d{};
+A a1(&i, &i);           //编译成功，可以推导为A<int>
+A a2(i, i);                 //编译失败，i 无法推导为V*
+A a3(&i, &d);          //编译失败，(int *, double *)无法推导为(V*, V*)
+
+
+//聚合类型的类模板实参推导（C++20）
+template <class T>
+struct S
+{
+        T x;
+        T y;
+};
+S s1{ 1, 2 };           //编译成功 S<int>
+S s2{ 1, 2u };         //编译失败
+
+
+//用户自定义推导指引
+template <typename T1, typename T2>
+struct Mypair
+{
+        MyPair(const T1& x, const T2& y) : first(x), sencond(y) {}
+        T1 first;
+        T2 second;
+};
+MyPair p(5, "hello");           //报错，若是std的pair的话可以正确推导
+
+template <typename _T1, typename _T2> pair(_T1, _T2) -> pair(_T1, _T2);         //std的pair模板，使用到了自定义推导指引
+
+用户自定义推导指引不必一定要有模板参数
+MyPair(int, const char*)->MyPair<long long, std::string>;
+MyPair p(5, "hello");
+
+
+//SFINAE（C++11）
+SFINAE全称Substitution Failure Is Not An Error，即“替换失败不是错误”。
+指在函数模板重载的时候，当模板形参替换为指定的实参，或者由指定的函数实参推导出模板形参的过程中，
+出现了失败，就应该放弃这个重载，而不是直接编译失败。
+
 
 
 

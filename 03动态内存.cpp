@@ -40,3 +40,38 @@ free(p4);
 char* p5 = new char('A');
 delete p5;
 
+
+//支持 new 推导数组长度（C++20）
+实例：
+int* x = new int[] {1, 2, 3};
+char* s = new char[] {"hello world"};
+
+//允许数组转换为未知长度的数组（C++20）
+void f(int(&)[]){}
+int arr[1];
+int main()
+{
+	f(arr);
+	int(&r)[] = arr;
+}
+
+
+//在delete运算符中析构对象（C++）
+C++20允许由程序员来控制析构函数的执行。此前重载 delete 时会自动执行析构函数。
+struct ClassName
+{
+	ClassName(){}
+	~ClassName() { cout << "call dtor" << endl; }
+
+	void operator delete(ClassName* ptr, std::destroying_delete_it)		//原先只有delete(void* ptr)
+	{
+		ptr->~ClassName();
+		cout << "call delete" << endl;
+		::operator delete(ptr);
+	}
+};
+ClassName* x = new ClassName;
+delete x;
+
+
+

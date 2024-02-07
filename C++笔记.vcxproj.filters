@@ -479,7 +479,7 @@
     <ClCompile Include="11static与const.cpp">
       <Filter>源文件\C++语法</Filter>
     </ClCompile>
-    <ClCompile Include="12匿名对象.cpp">
+    <ClCompile Include="12explicit与匿名对象.cpp">
       <Filter>源文件\C++语法</Filter>
     </ClCompile>
     <ClCompile Include="13继承.cpp">
@@ -566,7 +566,7 @@
     <ClCompile Include="Cpp11-9聚合类.cpp">
       <Filter>源文件\C++语法</Filter>
     </ClCompile>
-    <ClCompile Include="Cpp11-11其它特性.cpp">
+    <ClCompile Include="Cpp11-15其它特性.cpp">
       <Filter>源文件\C++语法</Filter>
     </ClCompile>
     <ClCompile Include="Cpp17-1if和switch初始化.cpp">
@@ -597,6 +597,21 @@
       <Filter>源文件\C++语法</Filter>
     </ClCompile>
     <ClCompile Include="Cpp11-10字面量优化.cpp">
+      <Filter>源文件\C++语法</Filter>
+    </ClCompile>
+    <ClCompile Include="设计模式.cpp">
+      <Filter>源文件\其它</Filter>
+    </ClCompile>
+    <ClCompile Include="Cpp11-11标准属性.cpp">
+      <Filter>源文件\C++语法</Filter>
+    </ClCompile>
+    <ClCompile Include="Cpp20-3协程.cpp">
+      <Filter>源文件\C++语法</Filter>
+    </ClCompile>
+    <ClCompile Include="Cpp11-12返回值优化.cpp">
+      <Filter>源文件\C++语法</Filter>
+    </ClCompile>
+    <ClCompile Include="Cpp20-4模块.cpp">
       <Filter>源文件\C++语法</Filter>
     </ClCompile>
   </ItemGroup>

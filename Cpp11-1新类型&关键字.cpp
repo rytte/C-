@@ -157,3 +157,36 @@ static_assert(常量表达式，"自定义字符串");		//C++17标准支持单�
 
 
 
+/********************/alignof&& alignas 关键字/************************************************************/
+alignof 关键字
+用于获取类型的对齐长度（而不能使用对象）
+
+auto x = alignof(int);
+auto y = alignof(void(*)());
+
+
+/************************************************************/
+alignas 关键字
+用于控制数据对齐的长度
+
+struct alignas(8) test			//这3个alignas定义的字节数哪个长听哪个的
+{
+	alignas(16) char a;
+	alignas(double) int b;
+	double c;
+};
+
+
+/************************************************************/
+另外标准库中对齐字节长度的支持
+
+std::alignment_of			//获取类型的对齐字节长度
+std::aligned_storage		//分配一块指定对齐字节长度的大小和内存
+std::aligned_union			//获取参数类型中对齐字节长度最大的作为分配内层的对齐字节长度
+
+
+使用 new 分配指定对齐字节长度的对象（C++17）
+void* operator new (std::size_t, std::align_val_t);			//align_val_t参数用于指定对齐字节长度
+void* operator new[] (std::size_t, std::align_val_t);
+
+
