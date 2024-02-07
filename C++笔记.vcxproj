@@ -153,6 +153,7 @@
     <ClCompile Include="Cpp20-1三项比较.cpp" />
     <ClCompile Include="Cpp20-3协程.cpp" />
     <ClCompile Include="Cpp20-4模块.cpp" />
+    <ClCompile Include="Cpp20-5概念与约束.cpp" />
     <ClCompile Include="STD-4STL容器.cpp" />
     <ClCompile Include="STD-5STL新容器.cpp" />
     <ClCompile Include="STD-8互斥锁与条件变量.cpp" />
