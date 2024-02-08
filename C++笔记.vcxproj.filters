@@ -611,10 +611,10 @@
     <ClCompile Include="Cpp20-4模块.cpp">
       <Filter>源文件\C++语法</Filter>
     </ClCompile>
-    <ClCompile Include="Cpp20-5概念与约束.cpp">
+    <ClCompile Include="Cpp20-5概念.cpp">
       <Filter>源文件\C++语法</Filter>
     </ClCompile>
-    <ClCompile Include="Cpp新特性.cpp">
+    <ClCompile Include="Cpp20-6范围.cpp">
       <Filter>源文件\C++语法</Filter>
     </ClCompile>
   </ItemGroup>

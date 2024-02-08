@@ -139,7 +139,7 @@
     <ClCompile Include="Cpp11-12返回值优化.cpp" />
     <ClCompile Include="Cpp17-2表达式求值顺序确定.cpp" />
     <ClCompile Include="Cpp17-1if和switch初始化.cpp" />
-    <ClCompile Include="Cpp新特性.cpp" />
+    <ClCompile Include="Cpp20-6范围.cpp" />
     <ClCompile Include="Cpp11-2Lambda表达式.cpp" />
     <ClCompile Include="Cpp11-3列表初始化.cpp" />
     <ClCompile Include="Cpp11-4委托继承构造函数.cpp" />
@@ -153,7 +153,7 @@
     <ClCompile Include="Cpp20-1三项比较.cpp" />
     <ClCompile Include="Cpp20-3协程.cpp" />
     <ClCompile Include="Cpp20-4模块.cpp" />
-    <ClCompile Include="Cpp20-5概念与约束.cpp" />
+    <ClCompile Include="Cpp20-5概念.cpp" />
     <ClCompile Include="STD-4STL容器.cpp" />
     <ClCompile Include="STD-5STL新容器.cpp" />
     <ClCompile Include="STD-8互斥锁与条件变量.cpp" />
