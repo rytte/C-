@@ -63,7 +63,9 @@ template <int M> void f()
 f<0>();	//编译成功
 
 
-//requires 表达式
+
+/********************/requires 表达式/************************************************************/
+
 该表达式同样是一个纯右值表达式，表达式为 true 时表示满足约束条件，反之 false 表示不满足约束条件。
 template <class T>
 concept Check = requires
@@ -78,7 +80,7 @@ G<std::string> y;			//编译成功
 G<std::array<char, 10>> z;	//编译失败
 
 
-支持形参列表：
+//支持形参列表
 a.clear()  和 a+b是要求序列
 template <class T>
 concept Check = requires(T a, T b)
@@ -94,6 +96,54 @@ concept Check = requires(T a, T b)
 嵌套要求
  
 
+//简单要求
+不以 requires 关键字开始的要求，它只断言表达式的有效性，并不做表达式的求值操作。
+template <typename T> concept C = requires (T a, T b)
+{
+	a + b;
+}
+
+//类型要求
+以 typename 关键字开始的要求，紧跟 typename 的是一个类型名，通常可以用来检查嵌套类型、类模板以及别名模板特化的有效性。
+template <typename T, typename T::type = 0> struct S; 
+template <typename T> using Ref = T&;
+template <typename T> concept C = requires
+{
+	typename T::inner;		//要求嵌套类型
+	typename S<T>;		//要求类模板特化
+	typename Ref<T>;		//要求别名模板特化
+}
+
+//复合要求
+断言一个复合要求需要按照一下顺序：
+1、替换模板实参到{E}中的表达式E，检测表达式的有效性。
+2、如果使用了 noexcept ，则需要检查并确保{E}中的表达式E不会有抛出异常的可能。
+3、如果使用了 -> 后的返回值类型约束，则需要将模板实参替换到返回值类型约束中，
+并且确保表达式E的结果类型，即 decltype((E))，满足返回类型约束。
+
+复合要求示例：
+template <class T>
+concept Check = requires(T a, T b)
+{
+	{a.clear()} noexcept;
+	{a + b} noexcept -> std::same_as<int>;
+}
+
+//嵌套要求
+以 requires 开始的要求，它通常是根据局部形参来指定其它额外要求。
+template <class T>
+concept Check = requires(T a, T b)
+{
+	requires std::same_as<decltype((a + b)), int>;
+}
 
 
+//约束可变参数模板
+是将各个实参替换到概念的约束表达式后合取各个结果。
+template <class T> concept C1 = true;
+template <C1 ... T> struct s1 {};		//相当于（C1<T> && ...），也就是约束每一个参数。
+
+
+*约束可以影响类模板特化的结果，在模板实例化的时候编译器会自动选择更满足约束条件的特化版本进行实例化。
+*对 auto 和 decltype(auto) 的约束可以扩展到普遍情况。
 

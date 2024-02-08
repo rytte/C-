@@ -566,9 +566,6 @@
     <ClCompile Include="Cpp11-9聚合类.cpp">
       <Filter>源文件\C++语法</Filter>
     </ClCompile>
-    <ClCompile Include="Cpp11-15其它特性.cpp">
-      <Filter>源文件\C++语法</Filter>
-    </ClCompile>
     <ClCompile Include="Cpp17-1if和switch初始化.cpp">
       <Filter>源文件\C++语法</Filter>
     </ClCompile>
@@ -612,6 +609,12 @@
       <Filter>源文件\C++语法</Filter>
     </ClCompile>
     <ClCompile Include="Cpp20-4模块.cpp">
+      <Filter>源文件\C++语法</Filter>
+    </ClCompile>
+    <ClCompile Include="Cpp20-5概念与约束.cpp">
+      <Filter>源文件\C++语法</Filter>
+    </ClCompile>
+    <ClCompile Include="Cpp新特性.cpp">
       <Filter>源文件\C++语法</Filter>
     </ClCompile>
   </ItemGroup>

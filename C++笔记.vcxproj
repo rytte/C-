@@ -139,7 +139,7 @@
     <ClCompile Include="Cpp11-12返回值优化.cpp" />
     <ClCompile Include="Cpp17-2表达式求值顺序确定.cpp" />
     <ClCompile Include="Cpp17-1if和switch初始化.cpp" />
-    <ClCompile Include="Cpp11-15其它特性.cpp" />
+    <ClCompile Include="Cpp新特性.cpp" />
     <ClCompile Include="Cpp11-2Lambda表达式.cpp" />
     <ClCompile Include="Cpp11-3列表初始化.cpp" />
     <ClCompile Include="Cpp11-4委托继承构造函数.cpp" />
