@@ -77,3 +77,7 @@ A：抛出一个 std::bad_allloc 异常。
 
 
 
+vector 的 clear() 函数不释放内存，而仅仅改变 size 的大小。
+可以使用 swap() 函数替换成一个空vector达到释放内存的目的。
+
+
