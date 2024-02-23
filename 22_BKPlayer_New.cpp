@@ -713,3 +713,195 @@ YTHREAD_FUN_DEF MainWindow::Thread(YVoid * pUserData)
 							获取紧急 / 提示文本
 							//暂略
 						}
+
+
+
+
+
+
+{
+    "body":{
+        "messageBody":{
+            "planInfo":{
+                "platCount":1,
+                "stationInfoList":[
+                    {
+                        "atsPlatInfoId":"1",
+                        "atsStationId":"041",
+                        "index":0,
+                        "name":"1",
+                        "platFormDoorStatus":[
+                            0,
+                            1,
+                            0,
+                            0,
+                            0,
+                            0,
+                            0,
+                            0,
+                            0,
+                            0,
+                            0,
+                            0,
+                            1,
+                            0,
+                            0,
+                            0,
+                            0,
+                            0,
+                            0,
+                            0,
+                            0,
+                            0,
+                            0,
+                            0
+                        ],
+                        "platName":"龙子湖东下行站台",
+                        "stationNameCn":"龙子湖东",
+                        "trainDoorStatus":[
+                            0,
+                            0,
+                            0,
+                            0,
+                            0,
+                            0,
+                            0,
+                            1,
+                            0,
+                            0,
+                            0,
+                            0,
+                            0,
+                            0,
+                            0,
+                            0,
+                            0,
+                            0,
+                            0,
+                            0,
+                            0,
+                            0,
+                            0,
+                            0
+                        ],
+                        "trainInfoList":[
+                            {
+                                "arrivalStatus":0,
+                                "coachList":[
+                                    {
+                                        "crowdPercent":"30",
+                                        "crowded":"0",
+                                        "id":"1"
+                                    },
+                                    {
+                                        "crowdPercent":"100",
+                                        "crowded":"1",
+                                        "id":"2"
+                                    },
+                                    {
+                                        "crowdPercent":"75",
+                                        "crowded":"3",
+                                        "id":"3"
+                                    },
+                                    {
+                                        "crowdPercent":"30",
+                                        "crowded":"2",
+                                        "id":"4"
+                                    },
+                                    {
+                                        "crowdPercent":"75",
+                                        "crowded":"3",
+                                        "id":"5"
+                                    },
+                                    {
+                                        "crowdPercent":"100",
+                                        "crowded":"3",
+                                        "id":"6"
+                                    }
+                                ],
+                                "holdStatus":0,
+                                "normalClearing":0,
+                                "preArrival":0,
+                                "scheduledArrivalTime":"2023-09-20 10:07:41",
+                                "scheduledDepartTime":"2023-09-20 10:10:48",
+                                "serialId":1,
+                                "skipStatus":0,
+                                "statusCn":"5 ",
+                                "statusEn":"5 ",
+                                "statusUnitCn":"分钟",
+                                "statusUnitEn":"Min",
+                                "temporaryClearing":0,
+                                "terminal":"M1701L12S11",
+                                "terminalNameCn":"梁湖",
+                                "terminalNameEn":"LIANGHU",
+                                "trainFlagCn":"",
+                                "trainFlagEn":"",
+                                "trainGroupId":"003"
+                            },
+                            {
+                                "arrivalStatus":0,
+                                "coachList":[
+                                    {
+                                        "crowdPercent":"0",
+                                        "crowded":"1",
+                                        "id":"1"
+                                    },
+                                    {
+                                        "crowdPercent":"0",
+                                        "crowded":"1",
+                                        "id":"2"
+                                    },
+                                    {
+                                        "crowdPercent":"30",
+                                        "crowded":"2",
+                                        "id":"3"
+                                    },
+                                    {
+                                        "crowdPercent":"30",
+                                        "crowded":"2",
+                                        "id":"4"
+                                    },
+                                    {
+                                        "crowdPercent":"0",
+                                        "crowded":"1",
+                                        "id":"5"
+                                    },
+                                    {
+                                        "crowdPercent":"0",
+                                        "crowded":"1",
+                                        "id":"6"
+                                    }
+                                ],
+                                "holdStatus":0,
+                                "normalClearing":0,
+                                "preArrival":0,
+                                "scheduledArrivalTime":"2023-09-20 10:16:52",
+                                "scheduledDepartTime":"2023-09-20 10:19:59",
+                                "serialId":2,
+                                "skipStatus":0,
+                                "statusCn":"14 ",
+                                "statusEn":"14 ",
+                                "statusUnitCn":"分钟",
+                                "statusUnitEn":"Min",
+                                "temporaryClearing":0,
+                                "terminal":"M1701L12S11",
+                                "terminalNameCn":"梁湖",
+                                "terminalNameEn":"LIANGHU",
+                                "trainFlagCn":"",
+                                "trainFlagEn":"",
+                                "trainGroupId":"006"
+                            }
+                        ]
+                    }
+                ]
+            }
+        },
+        "messageCommand":"ATS_PLAN"
+    },
+    "header":{
+        "end":true,
+        "messageNo":"5d12316f-93a6-4d64-bc71-c6712de0793b",
+        "messageType":"P2P_command_message",
+        "timeout":10
+    }
+}

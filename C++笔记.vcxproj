@@ -205,6 +205,7 @@
     <ClCompile Include="06默认参数&amp;占位参数.cpp" />
     <ClCompile Include="07类&amp;封装&amp;抽象.cpp" />
     <ClCompile Include="08构造析构函数.cpp" />
+    <ClCompile Include="日志系统.cpp" />
     <ClCompile Include="笔记.cpp" />
     <ClCompile Include="网编-1基本概念.cpp" />
     <ClCompile Include="算法-10图.cpp" />
@@ -290,6 +291,7 @@
     <ClCompile Include="UDP_server.c" />
     <ClCompile Include="双循链表server.c" />
     <ClCompile Include="网编-5套接字函数.cpp" />
+    <ClCompile Include="设计模式-1单例模式.cpp" />
     <ClCompile Include="设计模式.cpp" />
     <ClCompile Include="问答.cpp" />
     <ClCompile Include="多客户端server.c" />

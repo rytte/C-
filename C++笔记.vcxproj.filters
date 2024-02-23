@@ -42,9 +42,6 @@
     <Filter Include="源文件\C++语法">
       <UniqueIdentifier>{4b5b820a-4416-4903-a698-f9ffb853d4a6}</UniqueIdentifier>
     </Filter>
-    <Filter Include="源文件\其它\MVC实例">
-      <UniqueIdentifier>{e712904c-345a-41f7-8855-4bbb9109d322}</UniqueIdentifier>
-    </Filter>
     <Filter Include="源文件\SDL">
       <UniqueIdentifier>{07a96f05-6833-404b-bba2-6ca078c71c7f}</UniqueIdentifier>
     </Filter>
@@ -65,6 +62,12 @@
     </Filter>
     <Filter Include="源文件\QML">
       <UniqueIdentifier>{a0681e6f-8451-4634-b917-244b12cf9020}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="源文件\设计模式">
+      <UniqueIdentifier>{557f9706-16fa-4b92-a4f1-4146d36b1133}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="源文件\设计模式\MVC实例">
+      <UniqueIdentifier>{e712904c-345a-41f7-8855-4bbb9109d322}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>
@@ -279,7 +282,7 @@
       <Filter>源文件\其它</Filter>
     </ClCompile>
     <ClCompile Include="main.cpp">
-      <Filter>源文件\其它\MVC实例</Filter>
+      <Filter>源文件\设计模式\MVC实例</Filter>
     </ClCompile>
     <ClCompile Include="SDL-1函数库.cpp">
       <Filter>源文件\SDL</Filter>
@@ -596,9 +599,6 @@
     <ClCompile Include="Cpp11-10字面量优化.cpp">
       <Filter>源文件\C++语法</Filter>
     </ClCompile>
-    <ClCompile Include="设计模式.cpp">
-      <Filter>源文件\其它</Filter>
-    </ClCompile>
     <ClCompile Include="Cpp11-11标准属性.cpp">
       <Filter>源文件\C++语法</Filter>
     </ClCompile>
@@ -617,22 +617,31 @@
     <ClCompile Include="Cpp20-6范围.cpp">
       <Filter>源文件\C++语法</Filter>
     </ClCompile>
+    <ClCompile Include="设计模式.cpp">
+      <Filter>源文件\设计模式</Filter>
+    </ClCompile>
+    <ClCompile Include="设计模式-1单例模式.cpp">
+      <Filter>源文件\设计模式</Filter>
+    </ClCompile>
+    <ClCompile Include="日志系统.cpp">
+      <Filter>源文件\其它</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="pthread_pool.h">
       <Filter>源文件\系统编程\线程池实例</Filter>
     </ClInclude>
     <ClInclude Include="view.h">
-      <Filter>源文件\其它\MVC实例</Filter>
+      <Filter>源文件\设计模式\MVC实例</Filter>
     </ClInclude>
     <ClInclude Include="model.h">
-      <Filter>源文件\其它\MVC实例</Filter>
+      <Filter>源文件\设计模式\MVC实例</Filter>
     </ClInclude>
     <ClInclude Include="controller.h">
-      <Filter>源文件\其它\MVC实例</Filter>
+      <Filter>源文件\设计模式\MVC实例</Filter>
     </ClInclude>
     <ClInclude Include="callable.h">
-      <Filter>源文件\其它\MVC实例</Filter>
+      <Filter>源文件\设计模式\MVC实例</Filter>
     </ClInclude>
     <ClInclude Include="实例_quickdemo.h">
       <Filter>源文件\OpenCV</Filter>
