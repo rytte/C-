@@ -1,14 +1,5 @@
-/********************/简单工厂（Simple Factory）/************************************************************/
-//优点
-1、一个调用者想创建一个对象，只要知道其名称就可以了；
-2、扩展性高，如果想增加一个产品，只要扩展一个工厂类就可以；
-3、屏蔽产品的具体实现，调用者只关心产品的接口。
-
-//缺点
-每次增加一个产品时，都需要增加一个具体类和对象实现工厂，使得系统中类的个数成倍增加，
-在一定程度上增加了系统的复杂度，同时也增加了系统具体类的依赖。
-
-//实例
+/********************/工厂模式（Factory Pattern）/************************************************************/
+//产品
 class Car
 {
 public:
@@ -37,6 +28,19 @@ public:
 };
 
 
+
+/********************/简单工厂（Simple Factory）/************************************************************/
+//优点
+1、调用者想创建一个对象，只要知道其名称就可以了；
+2、扩展性高，如果想增加一个产品，只要扩展一个工厂类就可以；
+3、屏蔽产品的具体实现，调用者只关心产品的接口。
+
+//缺点
+每次增加一个产品时，都需要增加一个具体类和对象实现工厂，使得系统中类的个数成倍增加，
+在一定程度上增加了系统的复杂度，同时也增加了系统具体类的依赖。
+
+
+//工厂实例
 enum Cartype
 {
 	BMW, AUDI
@@ -77,46 +81,16 @@ void main()
 
 }
 
-每当我们想要扩展对象的时候（增加BENZ的对象）就需要在SimpleFactory类中添加代码，增加switch后面的case选项。
+每当我们想要扩展对象的时候（增加BENZ的对象）就需要在SimpleFactory类中添加代码，增加 switch 后面的 case 选项。
 这样一来，就需要修改源代码。灵活性非常的差！！！
 
 
 
 /********************/工厂方法（Factory Method）/************************************************************/
-工厂方法的思想就是定义一个Factory基类，基类中定义了一个纯虚函数（创建产品）；
-之后定义派生类（具体产品的工厂）负责创建对应的产品。
-可以做到不同的产品在不同的工厂里面创建，能够对现有工厂以及产品的修改关闭。
+工厂方法的思想，就是在不同的工厂类里面创建不同的产品，能够对现有工厂以及产品的修改关闭。
 
 
-//实例
-class Car
-{
-public:
-	Car(string name) :_name(name) {}
-	virtual void show() = 0;
-protected:
-	string _name;
-};
-class Bmw :public Car
-{
-public:
-	Bmw(string name) :Car(name) {}
-	void show()
-	{
-		cout << "获取了一辆宝马汽车：" << _name << endl;
-	}
-};
-class Audi :public Car
-{
-public:
-	Audi(string name) :Car(name) {}
-	void show()
-	{
-		cout << "获取了一辆奥迪汽车：" << _name << endl;
-	}
-};
-
-
+//工厂实例
 class Factory					// 基类（包含纯虚函数，不能实例化对象）
 {
 public:
@@ -157,48 +131,10 @@ int main()
 
 
 /********************/抽象工厂（Abstract Factory）/************************************************************/
-//抽象工厂的思想是：
-把有关联关系的，属于一个产品簇的所有产品创建的接口函数，放在一个抽象工厂里面AbstractFactory，
-派生类（具体产品的工厂）应该负责创建该产品簇里面所有的产品。
+抽象工厂的思想，就是在工厂方法的基础上，把有关联关系的，同一系列的产品交由同一个工厂负责生产。
 
 
-//接口与类的数量：
-工厂方法模式中，通常只有一个抽象产品类，而具体工厂类只能创建一个具体产品类的实例。
-抽象工厂模式中，由于需要处理整个产品族，因此会有多个抽象产品类和多个具体产品类。
-//扩展性：
-工厂方法模式在增加新产品时，只需增加产品类和生成产品实例的工厂类，而不需要修改已有的工厂类和客户端代码，符合“开放 - 封闭”原则。
-抽象工厂模式在增加新的产品族时，需要增加新的具体工厂类和对应的具体产品类，但它不需要修改已有产品族的工厂类和客户端代码。
-
-
-//实例
-// 系列产品1：汽车
-class Car
-{
-public:
-	Car(string name) :_name(name) {}
-	virtual void show() = 0;
-protected:
-	string _name;
-};
-class Bmw :public Car
-{
-public:
-	Bmw(string name) :Car(name) {}
-	void show()
-	{
-		cout << "获取了一辆宝马汽车：" << _name << endl;
-	}
-};
-class Audi :public Car
-{
-public:
-	Audi(string name) :Car(name) {}
-	void show()
-	{
-		cout << "获取了一辆奥迪汽车：" << _name << endl;
-	}
-};
-// 系列产品2：车灯
+// 新增产品：车灯
 class Light
 {
 public:
@@ -215,16 +151,15 @@ public:
 	void show() { cout << "Audi light!" << endl; }
 };
 
-
-// 工厂方法 => 抽象工厂(对有一组关联关系的产品簇提供产品对象的统一创建)
+//工厂实例：工厂方法 => 抽象工厂(对有一组关联关系的产品簇提供产品对象的统一创建)
 class AbstractFactory
 {
 public:
 	virtual Car* createCar(string name) = 0; // 工厂方法 创建汽车
-	virtual Light* createCarLight() = 0; // 工厂方法 创建汽车关联的产品，车灯
+	virtual Light* createCarLight() = 0;		// 工厂方法 创建汽车关联的产品，车灯
 };
-// 宝马工厂
-class BMWFactory : public AbstractFactory
+
+class BMWFactory : public AbstractFactory		// 宝马工厂
 {
 public:
 	Car* createCar(string name)
@@ -236,8 +171,8 @@ public:
 		return new BmwLight();
 	}
 };
-// 奥迪工厂
-class AudiFactory : public AbstractFactory
+
+class AudiFactory : public AbstractFactory		// 奥迪工厂
 {
 public:
 	Car* createCar(string name)

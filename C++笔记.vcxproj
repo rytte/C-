@@ -154,6 +154,8 @@
     <ClCompile Include="Cpp20-3协程.cpp" />
     <ClCompile Include="Cpp20-4模块.cpp" />
     <ClCompile Include="Cpp20-5概念.cpp" />
+    <ClCompile Include="QT-19绘图系统.cpp" />
+    <ClCompile Include="QT-20宏定义.cpp" />
     <ClCompile Include="STD-10常用函数.cpp" />
     <ClCompile Include="STD-4STL容器.cpp" />
     <ClCompile Include="STD-5STL新容器.cpp" />

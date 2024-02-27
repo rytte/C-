@@ -635,14 +635,20 @@
     <ClCompile Include="设计模式-3代理模式.cpp">
       <Filter>源文件\设计模式</Filter>
     </ClCompile>
-    <ClCompile Include="STD-10常用函数.cpp">
-      <Filter>源文件</Filter>
-    </ClCompile>
     <ClCompile Include="设计模式-5观察者模式.cpp">
       <Filter>源文件\设计模式</Filter>
     </ClCompile>
     <ClCompile Include="设计模式-6策略模式.cpp">
       <Filter>源文件\设计模式</Filter>
+    </ClCompile>
+    <ClCompile Include="STD-10常用函数.cpp">
+      <Filter>源文件\C++语法</Filter>
+    </ClCompile>
+    <ClCompile Include="QT-19绘图系统.cpp">
+      <Filter>源文件\QT</Filter>
+    </ClCompile>
+    <ClCompile Include="QT-20宏定义.cpp">
+      <Filter>源文件\QT</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
