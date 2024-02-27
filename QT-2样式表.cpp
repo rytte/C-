@@ -32,3 +32,12 @@ tab->setStyleSheet("QTabBar::tab { width: 149px; height: 60px;background-color:w
         "QTabBar::tab:selected{ color:rgb(75,75,110); border-bottom:2px solid#4b4b6e; }"
         "QTabBar::tab:hover{ color:rgb(0,0,0) }");
 
+
+
+//±ß¿òÑùÊ½
+border - style:groove / ridge / double / inset / outset
+
+
+
+
+

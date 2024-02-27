@@ -154,6 +154,7 @@
     <ClCompile Include="Cpp20-3协程.cpp" />
     <ClCompile Include="Cpp20-4模块.cpp" />
     <ClCompile Include="Cpp20-5概念.cpp" />
+    <ClCompile Include="STD-10常用函数.cpp" />
     <ClCompile Include="STD-4STL容器.cpp" />
     <ClCompile Include="STD-5STL新容器.cpp" />
     <ClCompile Include="STD-8互斥锁与条件变量.cpp" />
@@ -292,6 +293,11 @@
     <ClCompile Include="双循链表server.c" />
     <ClCompile Include="网编-5套接字函数.cpp" />
     <ClCompile Include="设计模式-1单例模式.cpp" />
+    <ClCompile Include="设计模式-2工厂模式.cpp" />
+    <ClCompile Include="设计模式-4装饰器模式.cpp" />
+    <ClCompile Include="设计模式-3代理模式.cpp" />
+    <ClCompile Include="设计模式-5观察者模式.cpp" />
+    <ClCompile Include="设计模式-6策略模式.cpp" />
     <ClCompile Include="设计模式.cpp" />
     <ClCompile Include="问答.cpp" />
     <ClCompile Include="多客户端server.c" />

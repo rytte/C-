@@ -626,6 +626,24 @@
     <ClCompile Include="日志系统.cpp">
       <Filter>源文件\其它</Filter>
     </ClCompile>
+    <ClCompile Include="设计模式-2工厂模式.cpp">
+      <Filter>源文件\设计模式</Filter>
+    </ClCompile>
+    <ClCompile Include="设计模式-4装饰器模式.cpp">
+      <Filter>源文件\设计模式</Filter>
+    </ClCompile>
+    <ClCompile Include="设计模式-3代理模式.cpp">
+      <Filter>源文件\设计模式</Filter>
+    </ClCompile>
+    <ClCompile Include="STD-10常用函数.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="设计模式-5观察者模式.cpp">
+      <Filter>源文件\设计模式</Filter>
+    </ClCompile>
+    <ClCompile Include="设计模式-6策略模式.cpp">
+      <Filter>源文件\设计模式</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="pthread_pool.h">
