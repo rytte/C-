@@ -18,5 +18,5 @@ int main(int argc, char* argv[])
 
 
 //View（视图层）完成前端的数据展示；
-// Controller（控制层）是对数据的接收和触发事件的接收和传递；
+// Controller（控制层）是对数据的接收和触发事件的接收和传递；Controller越薄越好，多余业务代码应交由Model来实现。
 // Model（模型层）则是对数据的储存和处理，再传递给视图层相应或者展示。
