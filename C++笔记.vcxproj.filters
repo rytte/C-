@@ -251,7 +251,7 @@
     <ClCompile Include="04引用.cpp">
       <Filter>源文件\C++语法</Filter>
     </ClCompile>
-    <ClCompile Include="01-音视频概念.cpp">
+    <ClCompile Include="01-音视频基础.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
     <ClCompile Include="02-YUV与RGB.cpp">
@@ -260,10 +260,7 @@
     <ClCompile Include="03-PCM.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
-    <ClCompile Include="12-HTML.cpp">
-      <Filter>源文件</Filter>
-    </ClCompile>
-    <ClCompile Include="11-编解码协议.cpp">
+    <ClCompile Include="04-编解码协议.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
     <ClCompile Include="20_OPS.cpp">
@@ -320,13 +317,13 @@
     <ClCompile Include="MySQL-2SQL语法.cpp">
       <Filter>源文件\MySQL</Filter>
     </ClCompile>
-    <ClCompile Include="FFmpeg-1命令行.cpp">
+    <ClCompile Include="FFmpeg-1ffmpeg命令行.cpp">
       <Filter>源文件\FFmpeg</Filter>
     </ClCompile>
-    <ClCompile Include="FFmpeg-2函数库.cpp">
+    <ClCompile Include="FFmpeg-3函数库.cpp">
       <Filter>源文件\FFmpeg</Filter>
     </ClCompile>
-    <ClCompile Include="FFmpeg-3编解码.cpp">
+    <ClCompile Include="FFmpeg-4编解码.cpp">
       <Filter>源文件\FFmpeg</Filter>
     </ClCompile>
     <ClCompile Include="22_播控.cpp">
@@ -653,8 +650,20 @@
     <ClCompile Include="QT-16自定义控件.cpp">
       <Filter>源文件\QT</Filter>
     </ClCompile>
-    <ClCompile Include="QT-22按键事件.cpp">
+    <ClCompile Include="QT-22键盘事件.cpp">
       <Filter>源文件\QT</Filter>
+    </ClCompile>
+    <ClCompile Include="QT-23鼠标事件.cpp">
+      <Filter>源文件\QT</Filter>
+    </ClCompile>
+    <ClCompile Include="HTML.cpp">
+      <Filter>源文件\其它</Filter>
+    </ClCompile>
+    <ClCompile Include="05-封装格式.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="FFmpeg-2ffplay命令行.cpp">
+      <Filter>源文件\FFmpeg</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>

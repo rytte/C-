@@ -140,6 +140,20 @@ tie(args...) = tup			tup ±íÊ¾Ä³¸ö tuple ¶ÔÏó£¬tie() ÊÇ <tuple> Í·ÎÄ¼şÌá¹©µÄ£¬¹¦Ä
 tuple_cat(args...)			args... ±íÊ¾¶à¸ö tuple ¶ÔÏó£¬¸Ãº¯ÊıÊÇ <tuple> Í·ÎÄ¼şÌá¹©µÄ£¬¹¦ÄÜÊÇ´´½¨Ò»¸ö tuple ¶ÔÏó£¬´Ë¶ÔÏó°üº¬ args... Ö¸¶¨µÄËùÓĞ tuple ¶ÔÏóÄÚµÄÔªËØ¡£
 
 
+//ÊµÀı
+#include <tuple>  
+#include <iostream>  
+
+int main() {
+	std::tuple<int, float, std::string> myTuple = std::make_tuple(10, 20.5, "Hello");
+
+	std::cout << std::get<0>(myTuple) << ", "
+		<< std::get<1>(myTuple) << ", "
+		<< std::get<2>(myTuple) << std::endl;
+
+	return 0;
+}
+
 
 //½á¹¹»¯°ó¶¨£¨C++17£©
 1¡¢·µ»Ø¶à¸öÖµ£¨Ôª×é£©

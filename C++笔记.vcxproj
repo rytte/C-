@@ -129,7 +129,7 @@
   <ItemGroup>
     <ClCompile Include="12using与inline.cpp" />
     <ClCompile Include="23模板元编程.cpp" />
-    <ClCompile Include="01-音视频概念.cpp" />
+    <ClCompile Include="01-音视频基础.cpp" />
     <ClCompile Include="02-YUV与RGB.cpp" />
     <ClCompile Include="03-PCM.cpp" />
     <ClCompile Include="22_播控.cpp" />
@@ -154,10 +154,12 @@
     <ClCompile Include="Cpp20-3协程.cpp" />
     <ClCompile Include="Cpp20-4模块.cpp" />
     <ClCompile Include="Cpp20-5概念.cpp" />
+    <ClCompile Include="FFmpeg-2ffplay命令行.cpp" />
     <ClCompile Include="QT-16自定义控件.cpp" />
     <ClCompile Include="QT-20绘图系统.cpp" />
     <ClCompile Include="QT-21宏定义.cpp" />
-    <ClCompile Include="QT-22按键事件.cpp" />
+    <ClCompile Include="QT-22键盘事件.cpp" />
+    <ClCompile Include="QT-23鼠标事件.cpp" />
     <ClCompile Include="STD-10常用函数.cpp" />
     <ClCompile Include="STD-4STL容器.cpp" />
     <ClCompile Include="STD-5STL新容器.cpp" />
@@ -175,9 +177,9 @@
     <ClCompile Include="C-11关键字.c" />
     <ClCompile Include="C标准库-3string.h" />
     <ClCompile Include="C标准库-1stdio.h" />
-    <ClCompile Include="FFmpeg-1命令行.cpp" />
-    <ClCompile Include="FFmpeg-2函数库.cpp" />
-    <ClCompile Include="FFmpeg-3编解码.cpp" />
+    <ClCompile Include="FFmpeg-1ffmpeg命令行.cpp" />
+    <ClCompile Include="FFmpeg-3函数库.cpp" />
+    <ClCompile Include="FFmpeg-4编解码.cpp" />
     <ClCompile Include="QT-10列表控件.cpp" />
     <ClCompile Include="QT-11进程与线程.cpp" />
     <ClCompile Include="QT-12网络模块.cpp" />
@@ -198,8 +200,8 @@
     <ClCompile Include="MySQL-1基础.cpp" />
     <ClCompile Include="01输入输出流.cpp" />
     <ClCompile Include="OpenCV.cpp" />
-    <ClCompile Include="11-编解码协议.cpp" />
-    <ClCompile Include="12-HTML.cpp" />
+    <ClCompile Include="04-编解码协议.cpp" />
+    <ClCompile Include="HTML.cpp" />
     <ClCompile Include="OpenGL.cpp" />
     <ClCompile Include="GLSL.cpp" />
     <ClCompile Include="MySQL-2SQL语法.cpp" />
@@ -210,6 +212,7 @@
     <ClCompile Include="06默认参数&amp;占位参数.cpp" />
     <ClCompile Include="07类&amp;封装&amp;抽象.cpp" />
     <ClCompile Include="08构造析构函数.cpp" />
+    <ClCompile Include="05-封装格式.cpp" />
     <ClCompile Include="日志系统.cpp" />
     <ClCompile Include="笔记.cpp" />
     <ClCompile Include="网编-1基本概念.cpp" />
