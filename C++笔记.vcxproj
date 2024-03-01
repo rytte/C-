@@ -127,11 +127,12 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="02-音视频采集和处理.cpp" />
+    <ClCompile Include="04-流媒体传输.cpp" />
     <ClCompile Include="12using与inline.cpp" />
     <ClCompile Include="23模板元编程.cpp" />
     <ClCompile Include="01-音视频基础.cpp" />
-    <ClCompile Include="02-YUV与RGB.cpp" />
-    <ClCompile Include="03-PCM.cpp" />
+    <ClCompile Include="03-YUV与RGB.cpp" />
     <ClCompile Include="22_播控.cpp" />
     <ClCompile Include="20函数重入与线程安全.cpp" />
     <ClCompile Include="21内存分布.cpp" />
@@ -200,7 +201,7 @@
     <ClCompile Include="MySQL-1基础.cpp" />
     <ClCompile Include="01输入输出流.cpp" />
     <ClCompile Include="OpenCV.cpp" />
-    <ClCompile Include="04-编解码协议.cpp" />
+    <ClCompile Include="05-编解码协议.cpp" />
     <ClCompile Include="HTML.cpp" />
     <ClCompile Include="OpenGL.cpp" />
     <ClCompile Include="GLSL.cpp" />
@@ -212,7 +213,6 @@
     <ClCompile Include="06默认参数&amp;占位参数.cpp" />
     <ClCompile Include="07类&amp;封装&amp;抽象.cpp" />
     <ClCompile Include="08构造析构函数.cpp" />
-    <ClCompile Include="05-封装格式.cpp" />
     <ClCompile Include="日志系统.cpp" />
     <ClCompile Include="笔记.cpp" />
     <ClCompile Include="网编-1基本概念.cpp" />

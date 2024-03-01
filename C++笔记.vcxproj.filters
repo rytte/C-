@@ -254,13 +254,10 @@
     <ClCompile Include="01-音视频基础.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
-    <ClCompile Include="02-YUV与RGB.cpp">
+    <ClCompile Include="03-YUV与RGB.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
-    <ClCompile Include="03-PCM.cpp">
-      <Filter>源文件</Filter>
-    </ClCompile>
-    <ClCompile Include="04-编解码协议.cpp">
+    <ClCompile Include="05-编解码协议.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
     <ClCompile Include="20_OPS.cpp">
@@ -659,11 +656,14 @@
     <ClCompile Include="HTML.cpp">
       <Filter>源文件\其它</Filter>
     </ClCompile>
-    <ClCompile Include="05-封装格式.cpp">
-      <Filter>源文件</Filter>
-    </ClCompile>
     <ClCompile Include="FFmpeg-2ffplay命令行.cpp">
       <Filter>源文件\FFmpeg</Filter>
+    </ClCompile>
+    <ClCompile Include="02-音视频采集和处理.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="04-流媒体传输.cpp">
+      <Filter>源文件</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>

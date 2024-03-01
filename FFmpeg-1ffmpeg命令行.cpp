@@ -47,15 +47,14 @@ ASS颜色代码：ABGR：#00FFFFFF
 /*************************/ffmpeg命令行/***************************************************************************/
 ffmpeg - i  输入文件名  参数选项  输出文件名
 
-
 //参数选项
-- f			输出格式
+- f			输出格式，当文件名没有扩展名, 或者文件格式与扩展名不匹配, 此时就需要使用 - f 参数来手动指定格式;
 - an			去掉音频
 - vn			去掉视频
 - sn			去掉字幕
-- t			持续时长
-- ss			起始时间
-- to			终止时间
+- ss			起始时间（裁剪）
+- to			终止时间（裁剪）
+- t			视频长度（裁剪）
 - r			帧率（默认为25）
 - s			帧大小（W * H）
 - b			设定视频码率
@@ -63,28 +62,48 @@ ffmpeg - i  输入文件名  参数选项  输出文件名
 - b:a			音频码率（为保证音质，每声道码率不低于64kbps）
 - c:a			指定音频编码器
 - c:v			指定视频编码器
-- af			音频过滤器
-- vf			视频过滤器
 - map		选择轨道
-- ac			声道数
+- af			音频滤镜
+- vf			视频滤镜
+- ac			设置音频通道数。1单声道，2立体声。
+- ar			设置音频采样率
 - aspect		横纵比（4:3，16:9，1.3333等）
-- acodec		指定音频编解码器，一般后面加copy表示拷贝
-- vcodec		指定视频编解码器，一般后面加copy表示拷贝
+- acodec		指定音频编解码器。copy拷贝，libmp3lame用于mp3格式音频编码，aac，用于 AAC 格式音频编码。
+- vcodec		指定视频编解码器。copy拷贝
 - crf			只能在编码器为x264或x265时使用，取值范围0~51，值越低画质越好（码率越高），默认为23
 - filter_complex		复杂滤镜
 - pix_fmt		格式转换
 - aframes		要输出的音频帧数
+- encoders	查询当前 ffmpeg 中的 编码器
+- findstr		搜索文本字符串
+- formats		获取ffmpeg支持的音视频格式
 
-//格式选项
-h264		表示输出的是h264的视频裸流
-mp4			表示输出的是mp4的视频
-mpegts		表示ts视频流
-
+//常用-f参数值
+h264：表示输出的是h264的视频裸流
+mp4：表示 输入或输出 的 文件格式是 mp4 格式;
+avi：表示 输入或输出 的文件格式是 avi 格式;
+flv：表示 输入或输出 的文件格式是 flv 格式;
+mov：表示 输入或输出 的文件格式是 mov 格式;
+mkv：表示 输入或输出 的文件格式是 mkv 格式;
+wav：表示 输入或输出 的文件格式是 wav 格式;
+rawvideo：表示 原始视频 数据流格式, 通常用于一些专业的音视频处理;
+null：特殊的格式, 用于不产生任何输出文件, 通常用于测试或性能分析;
+image2：处理图像序列, 将 视频帧 保存为一系列的 图片或将图片序列编码成视频;
+image2pipe：用于通过管道传输图像数据的格式, 通过标准输入 / 输出(stdin / stdout) 或其他管道机制将图像数据传递给 FFmpeg 或从 FFmpeg 接收图像数据;
+mpegts：表示 MPEG 传输流格式（ts视频流），常用于流媒体传输
 
 
 //实例
-ffmpeg - i test.h264 - vcodec copy - f mp4 test.mp4						// 视频格式转换
-ffmpeg - i "concat:test1.h264|test2.h264" - vcodec copy - f h264 out12.h264	//视频拼接
+ffmpeg - i input.mp4 output.avi					//视频格式转换
+ffmpeg - i input.mp4 - b:a 128k output.mp3			//设置音频码率
+ffmpeg - i input.mp4 - ar 44100 output.mp3			//设置音频采样率
+ffmpeg - i input.mp4 - af "volume=0.25,atempo=2.0" output.mp3	//输出文件音量是输入文件的 0.25 倍 , 播放速度是输入文件的 2 倍。
+
+ffmpeg - encoders | findstr mp3					//查找 mp3 格式相关的编码器
+ffmpeg - encoders > output.txt					//将命令行内容输出到文本文件中
+
+//实例
+ffmpeg - i "concat:test1.h264|test2.h264" out12.h264	//视频拼接
 
 ffmpeg - i test.mp4 - t 0.001 - s 352x240 1.jpg		// 视频截图，在test.mp4中截图
 ffmpeg - i test.mp4 - vframes 30 - y - f gif 1.gif		// 视频截图，将test.py前30帧做成gif动图
