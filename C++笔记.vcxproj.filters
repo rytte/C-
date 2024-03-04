@@ -69,6 +69,9 @@
     <Filter Include="源文件\设计模式\MVC实例">
       <UniqueIdentifier>{e712904c-345a-41f7-8855-4bbb9109d322}</UniqueIdentifier>
     </Filter>
+    <Filter Include="源文件\音视频">
+      <UniqueIdentifier>{4c90b61a-35ab-44fd-a554-19f72598df8b}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="算法-1顺序表.c">
@@ -250,15 +253,6 @@
     </ClCompile>
     <ClCompile Include="04引用.cpp">
       <Filter>源文件\C++语法</Filter>
-    </ClCompile>
-    <ClCompile Include="01-音视频基础.cpp">
-      <Filter>源文件</Filter>
-    </ClCompile>
-    <ClCompile Include="03-YUV与RGB.cpp">
-      <Filter>源文件</Filter>
-    </ClCompile>
-    <ClCompile Include="05-编解码协议.cpp">
-      <Filter>源文件</Filter>
     </ClCompile>
     <ClCompile Include="20_OPS.cpp">
       <Filter>源文件</Filter>
@@ -659,11 +653,38 @@
     <ClCompile Include="FFmpeg-2ffplay命令行.cpp">
       <Filter>源文件\FFmpeg</Filter>
     </ClCompile>
-    <ClCompile Include="02-音视频采集和处理.cpp">
-      <Filter>源文件</Filter>
+    <ClCompile Include="音视频-1音视频基础.cpp">
+      <Filter>源文件\音视频</Filter>
     </ClCompile>
-    <ClCompile Include="04-流媒体传输.cpp">
-      <Filter>源文件</Filter>
+    <ClCompile Include="音视频-2音视频采集和处理.cpp">
+      <Filter>源文件\音视频</Filter>
+    </ClCompile>
+    <ClCompile Include="音视频-3YUV与RGB.cpp">
+      <Filter>源文件\音视频</Filter>
+    </ClCompile>
+    <ClCompile Include="音视频-4流媒体传输.cpp">
+      <Filter>源文件\音视频</Filter>
+    </ClCompile>
+    <ClCompile Include="音视频-5编解码协议.cpp">
+      <Filter>源文件\音视频</Filter>
+    </ClCompile>
+    <ClCompile Include="音视频-6RTP与RTCP协议.cpp">
+      <Filter>源文件\音视频</Filter>
+    </ClCompile>
+    <ClCompile Include="音视频-7RTP解析器.cpp">
+      <Filter>源文件\音视频</Filter>
+    </ClCompile>
+    <ClCompile Include="音视频-8FLV封装格式.cpp">
+      <Filter>源文件\音视频</Filter>
+    </ClCompile>
+    <ClCompile Include="音视频-9FLV解析器.cpp">
+      <Filter>源文件\音视频</Filter>
+    </ClCompile>
+    <ClCompile Include="音视频-10RTSP协议.cpp">
+      <Filter>源文件\音视频</Filter>
+    </ClCompile>
+    <ClCompile Include="音视频-11RTMP协议.cpp">
+      <Filter>源文件\音视频</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>

@@ -67,13 +67,16 @@ ffmpeg - i  输入文件名  参数选项  输出文件名
 - vf			视频滤镜
 - ac			设置音频通道数。1单声道，2立体声。
 - ar			设置音频采样率
-- aspect		横纵比（4:3，16:9，1.3333等）
+- aspect		设置宽高比（4:3，16:9，1.3333等）
 - acodec		指定音频编解码器。copy拷贝，libmp3lame用于mp3格式音频编码，aac，用于 AAC 格式音频编码。
-- vcodec		指定视频编解码器。copy拷贝
+- vcodec		指定视频编解码器。copy拷贝，libx264用于H.264，libvpx用于VP8，libvpx - vp9用于VP9。
 - crf			只能在编码器为x264或x265时使用，取值范围0~51，值越低画质越好（码率越高），默认为23
 - filter_complex		复杂滤镜
 - pix_fmt		格式转换
 - aframes		要输出的音频帧数
+- vframes		要输出的视频帧数
+- frames : a	要输出的音频帧数
+- frames : v	要输出的视频帧数
 - encoders	查询当前 ffmpeg 中的 编码器
 - findstr		搜索文本字符串
 - formats		获取ffmpeg支持的音视频格式
@@ -97,7 +100,10 @@ mpegts：表示 MPEG 传输流格式（ts视频流），常用于流媒体传输
 ffmpeg - i input.mp4 output.avi					//视频格式转换
 ffmpeg - i input.mp4 - b:a 128k output.mp3			//设置音频码率
 ffmpeg - i input.mp4 - ar 44100 output.mp3			//设置音频采样率
-ffmpeg - i input.mp4 - af "volume=0.25,atempo=2.0" output.mp3	//输出文件音量是输入文件的 0.25 倍 , 播放速度是输入文件的 2 倍。
+ffmpeg - i input.mp4 - af "volume=0.25,atempo=2.0" output.mp3	//输出文件音量是输入文件的 0.25 倍 , 播放速度为 2 倍。
+ffmpeg - i input.mp4 - vf "scale=1280:720" output.mp4			//输出文件尺寸调整为1280x720 像素。
+ffmpeg - i input.mp4 - vframes 100 output.mp4		//截取前 100 帧视频画面 
+ffmpeg - i input.mp4 - s 376x210 output.mp4		//将视频流 重新编码为 376x210 的分辨率输出
 
 ffmpeg - encoders | findstr mp3					//查找 mp3 格式相关的编码器
 ffmpeg - encoders > output.txt					//将命令行内容输出到文本文件中
