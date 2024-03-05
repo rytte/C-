@@ -129,8 +129,9 @@
   <ItemGroup>
     <ClCompile Include="音视频-10RTSP协议.cpp" />
     <ClCompile Include="音视频-11RTMP协议.cpp" />
+    <ClCompile Include="音视频-12HLS协议.cpp" />
     <ClCompile Include="音视频-2音视频采集和处理.cpp" />
-    <ClCompile Include="音视频-4流媒体传输.cpp" />
+    <ClCompile Include="音视频-5流媒体传输.cpp" />
     <ClCompile Include="音视频-6RTP与RTCP协议.cpp" />
     <ClCompile Include="音视频-7RTP解析器.cpp" />
     <ClCompile Include="音视频-8FLV封装格式.cpp" />
@@ -207,7 +208,7 @@
     <ClCompile Include="MySQL-1基础.cpp" />
     <ClCompile Include="01输入输出流.cpp" />
     <ClCompile Include="OpenCV.cpp" />
-    <ClCompile Include="音视频-5编解码协议.cpp" />
+    <ClCompile Include="音视频-4编解码协议.cpp" />
     <ClCompile Include="HTML.cpp" />
     <ClCompile Include="OpenGL.cpp" />
     <ClCompile Include="GLSL.cpp" />
@@ -331,6 +332,7 @@
     <ClCompile Include="辨析.cpp" />
     <ClCompile Include="非阻塞轮询server.c" />
     <ClCompile Include="面试.cpp" />
+    <ClCompile Include="音视频-13GB28181协议.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="callable.h" />

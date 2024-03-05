@@ -662,10 +662,10 @@
     <ClCompile Include="音视频-3YUV与RGB.cpp">
       <Filter>源文件\音视频</Filter>
     </ClCompile>
-    <ClCompile Include="音视频-4流媒体传输.cpp">
+    <ClCompile Include="音视频-5流媒体传输.cpp">
       <Filter>源文件\音视频</Filter>
     </ClCompile>
-    <ClCompile Include="音视频-5编解码协议.cpp">
+    <ClCompile Include="音视频-4编解码协议.cpp">
       <Filter>源文件\音视频</Filter>
     </ClCompile>
     <ClCompile Include="音视频-6RTP与RTCP协议.cpp">
@@ -684,6 +684,12 @@
       <Filter>源文件\音视频</Filter>
     </ClCompile>
     <ClCompile Include="音视频-11RTMP协议.cpp">
+      <Filter>源文件\音视频</Filter>
+    </ClCompile>
+    <ClCompile Include="音视频-12HLS协议.cpp">
+      <Filter>源文件\音视频</Filter>
+    </ClCompile>
+    <ClCompile Include="音视频-13GB28181协议.cpp">
       <Filter>源文件\音视频</Filter>
     </ClCompile>
   </ItemGroup>
