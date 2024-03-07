@@ -127,19 +127,27 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="音视频-10RTSP协议.cpp" />
-    <ClCompile Include="音视频-11RTMP协议.cpp" />
-    <ClCompile Include="音视频-12HLS协议.cpp" />
+    <ClCompile Include="流协议-4RTSP协议.cpp" />
+    <ClCompile Include="流协议-5RTMP协议.cpp" />
+    <ClCompile Include="流协议-6HLS协议.cpp" />
+    <ClCompile Include="音视频-10H264码流解析.cpp" />
+    <ClCompile Include="音视频-11AAC码流解析.cpp" />
+    <ClCompile Include="音视频-7JPEG编码.cpp" />
+    <ClCompile Include="音视频-4封装格式.cpp" />
+    <ClCompile Include="图像-2YUV数据处理.cpp" />
+    <ClCompile Include="图像-3RGB数据处理.cpp" />
+    <ClCompile Include="图像-4RGB转BMP.cpp" />
+    <ClCompile Include="图像-5RGB转YUV.cpp" />
     <ClCompile Include="音视频-2音视频采集和处理.cpp" />
-    <ClCompile Include="音视频-5流媒体传输.cpp" />
-    <ClCompile Include="音视频-6RTP与RTCP协议.cpp" />
-    <ClCompile Include="音视频-7RTP解析器.cpp" />
-    <ClCompile Include="音视频-8FLV封装格式.cpp" />
-    <ClCompile Include="音视频-9FLV解析器.cpp" />
+    <ClCompile Include="流协议-1流媒体传输.cpp" />
+    <ClCompile Include="流协议-2RTP与RTCP协议.cpp" />
+    <ClCompile Include="流协议-3RTP解析器.cpp" />
+    <ClCompile Include="音视频-5FLV封装格式.cpp" />
+    <ClCompile Include="音视频-6FLV解析器.cpp" />
     <ClCompile Include="12using与inline.cpp" />
     <ClCompile Include="23模板元编程.cpp" />
     <ClCompile Include="音视频-1音视频基础.cpp" />
-    <ClCompile Include="音视频-3YUV与RGB.cpp" />
+    <ClCompile Include="图像-1YUV与RGB.cpp" />
     <ClCompile Include="22_播控.cpp" />
     <ClCompile Include="20函数重入与线程安全.cpp" />
     <ClCompile Include="21内存分布.cpp" />
@@ -208,7 +216,7 @@
     <ClCompile Include="MySQL-1基础.cpp" />
     <ClCompile Include="01输入输出流.cpp" />
     <ClCompile Include="OpenCV.cpp" />
-    <ClCompile Include="音视频-4编解码协议.cpp" />
+    <ClCompile Include="音视频-3编解码协议.cpp" />
     <ClCompile Include="HTML.cpp" />
     <ClCompile Include="OpenGL.cpp" />
     <ClCompile Include="GLSL.cpp" />
@@ -332,7 +340,9 @@
     <ClCompile Include="辨析.cpp" />
     <ClCompile Include="非阻塞轮询server.c" />
     <ClCompile Include="面试.cpp" />
-    <ClCompile Include="音视频-13GB28181协议.cpp" />
+    <ClCompile Include="流协议-7GB28181协议.cpp" />
+    <ClCompile Include="音视频-8PCM数据处理.cpp" />
+    <ClCompile Include="音视频-9PCM转WAV.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="callable.h" />

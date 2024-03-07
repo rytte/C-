@@ -77,9 +77,16 @@ ffmpeg - i  输入文件名  参数选项  输出文件名
 - vframes		要输出的视频帧数
 - frames : a	要输出的音频帧数
 - frames : v	要输出的视频帧数
-- encoders	查询当前 ffmpeg 中的 编码器
+- encoders	查询支持的编码器
+- decodes	查询支持的解码器
 - findstr		搜索文本字符串
 - formats		获取ffmpeg支持的音视频格式
+- sample_fmts	查询采样格式
+- pix_fmts		查询像素格式
+- bsfs		查询位流格式
+- hwaccels	查询支持的硬编解列表
+- filters		查询支持的过滤器
+
 
 //常用-f参数值
 h264：表示输出的是h264的视频裸流

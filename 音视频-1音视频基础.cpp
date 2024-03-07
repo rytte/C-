@@ -55,7 +55,7 @@ IDR£ºÒ»¸öÐòÁÐµÄµÚÒ»Ö¡½Ð×ö IDRÖ¡£¨Instantaneous Decoding Refresh£¬Á¢¼´½âÂëË¢ÐÂ£©£
 
 
 //DTSÓëPTS
-DTS£¨Decode Time Stamp£©£º½âÂëÊ±¼ä´Á¡£DTSÖ÷ÒªÊÇ±êÊ¶ÄÚ´æÖÐµÄbitÁ÷Ê²Ã´Ê±ºò¿ªÊ¼ËÍÈë½âÂëÆ÷½øÐÐ½âÂë¡£
+DTS£¨Decode Time Stamp£©£º½âÂëÊ±¼ä´Á¡£DTSÖ÷ÒªÊÇ±êÊ¶ÄÚ´æÖÐµÄ bit Á÷Ê²Ã´Ê±ºò¿ªÊ¼ËÍÈë½âÂëÆ÷½øÐÐ½âÂë¡£
 PTS£¨Presentation Time Stamp£©£ºÏÔÊ¾Ê±¼ä´Á¡£PTSÖ÷ÒªÓÃÓÚ¶ÈÁ¿½âÂëºóµÄÊÓÆµÊ²Ã´Ê±ºò±»ÏÔÊ¾³öÀ´¡£
 
 
