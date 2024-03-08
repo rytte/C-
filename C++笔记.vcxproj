@@ -130,6 +130,7 @@
     <ClCompile Include="流协议-4RTSP协议.cpp" />
     <ClCompile Include="流协议-5RTMP协议.cpp" />
     <ClCompile Include="流协议-6HLS协议.cpp" />
+    <ClCompile Include="网编-6IP协议和HTTP协议.cpp" />
     <ClCompile Include="音视频-10H264码流解析.cpp" />
     <ClCompile Include="音视频-11AAC码流解析.cpp" />
     <ClCompile Include="音视频-7JPEG编码.cpp" />
@@ -336,7 +337,6 @@
     <ClCompile Include="组播recv.c" />
     <ClCompile Include="自定义协议clinet.c" />
     <ClCompile Include="自定义协议sever.c" />
-    <ClCompile Include="计算机网络.cpp" />
     <ClCompile Include="辨析.cpp" />
     <ClCompile Include="非阻塞轮询server.c" />
     <ClCompile Include="面试.cpp" />

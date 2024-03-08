@@ -329,9 +329,6 @@
     <ClCompile Include="C-01数据类型.c">
       <Filter>源文件\C语言语法</Filter>
     </ClCompile>
-    <ClCompile Include="计算机网络.cpp">
-      <Filter>源文件\其它</Filter>
-    </ClCompile>
     <ClCompile Include="QT-1基础与QString.cpp">
       <Filter>源文件\QT</Filter>
     </ClCompile>
@@ -727,6 +724,9 @@
     </ClCompile>
     <ClCompile Include="音视频-11AAC码流解析.cpp">
       <Filter>源文件\音视频</Filter>
+    </ClCompile>
+    <ClCompile Include="网编-6IP协议和HTTP协议.cpp">
+      <Filter>源文件\网络编程</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
