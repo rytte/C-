@@ -728,6 +728,9 @@
     <ClCompile Include="网编-6IP协议和HTTP协议.cpp">
       <Filter>源文件\网络编程</Filter>
     </ClCompile>
+    <ClCompile Include="网编-7应用与其他协议.cpp">
+      <Filter>源文件\网络编程</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="pthread_pool.h">
