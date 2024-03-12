@@ -130,8 +130,10 @@
     <ClCompile Include="流协议-4RTSP协议.cpp" />
     <ClCompile Include="流协议-5RTMP协议.cpp" />
     <ClCompile Include="流协议-6HLS协议.cpp" />
-    <ClCompile Include="网编-6IP协议和HTTP协议.cpp" />
-    <ClCompile Include="网编-7应用与其他协议.cpp" />
+    <ClCompile Include="网编-4IP协议和HTTP协议.cpp" />
+    <ClCompile Include="网编-6UDP实际应用.cpp" />
+    <ClCompile Include="网编-7Socket.cpp" />
+    <ClCompile Include="网编-5TCP性能调优.cpp" />
     <ClCompile Include="音视频-10H264码流解析.cpp" />
     <ClCompile Include="音视频-11AAC码流解析.cpp" />
     <ClCompile Include="音视频-7JPEG编码.cpp" />
@@ -269,7 +271,7 @@
     <ClCompile Include="系编-8POSIX信号量.cpp" />
     <ClCompile Include="系编-9多线程.cpp" />
     <ClCompile Include="算法-9排序算法.cpp" />
-    <ClCompile Include="网编-4IO模型.cpp" />
+    <ClCompile Include="网编-9IO模型.cpp" />
     <ClCompile Include="main.cpp" />
     <ClCompile Include="main_dircopy.c" />
     <ClCompile Include="OOB server.c" />
@@ -315,7 +317,7 @@
     <ClCompile Include="UDP_client.c" />
     <ClCompile Include="UDP_server.c" />
     <ClCompile Include="双循链表server.c" />
-    <ClCompile Include="网编-5套接字函数.cpp" />
+    <ClCompile Include="网编-8套接字函数.cpp" />
     <ClCompile Include="设计模式-1单例模式.cpp" />
     <ClCompile Include="设计模式-2工厂模式.cpp" />
     <ClCompile Include="设计模式-4装饰器模式.cpp" />

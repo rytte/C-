@@ -227,7 +227,7 @@
     <ClCompile Include="组播recv.c">
       <Filter>源文件\网络编程\UDP实例</Filter>
     </ClCompile>
-    <ClCompile Include="网编-4IO模型.cpp">
+    <ClCompile Include="网编-9IO模型.cpp">
       <Filter>源文件\网络编程</Filter>
     </ClCompile>
     <ClCompile Include="OOB server.c">
@@ -566,7 +566,7 @@
     <ClCompile Include="STD-6STL智能指针.cpp">
       <Filter>源文件\C++语法</Filter>
     </ClCompile>
-    <ClCompile Include="网编-5套接字函数.cpp">
+    <ClCompile Include="网编-8套接字函数.cpp">
       <Filter>源文件\网络编程</Filter>
     </ClCompile>
     <ClCompile Include="01输入输出流.cpp">
@@ -725,10 +725,16 @@
     <ClCompile Include="音视频-11AAC码流解析.cpp">
       <Filter>源文件\音视频</Filter>
     </ClCompile>
-    <ClCompile Include="网编-6IP协议和HTTP协议.cpp">
+    <ClCompile Include="网编-4IP协议和HTTP协议.cpp">
       <Filter>源文件\网络编程</Filter>
     </ClCompile>
-    <ClCompile Include="网编-7应用与其他协议.cpp">
+    <ClCompile Include="网编-6UDP实际应用.cpp">
+      <Filter>源文件\网络编程</Filter>
+    </ClCompile>
+    <ClCompile Include="网编-7Socket.cpp">
+      <Filter>源文件\网络编程</Filter>
+    </ClCompile>
+    <ClCompile Include="网编-5TCP性能调优.cpp">
       <Filter>源文件\网络编程</Filter>
     </ClCompile>
   </ItemGroup>
