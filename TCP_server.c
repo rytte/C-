@@ -47,10 +47,10 @@ int main(int argc, char* argv[])
 	memset(&c_addr, 0, sizeof(c_addr));
 	socklen_t len = sizeof(c_addr);
 
-	int cfd = accept(sfd, (struct sockaddr*)&c_addr, &len);		//获取连接套接字（并非客户端的套接字）
+	int cfd = accept(sfd, (struct sockaddr*)&c_addr, &len);				//获取连接套接字（并非客户端的套接字）
 	if (cfd == -1)
 	{
-		printf("连接失败\n");
+		printf("获取失败\n");
 		return -1;
 	}
 	printf("当前连接的对象为：%d\n", cfd);
