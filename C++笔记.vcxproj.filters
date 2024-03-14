@@ -737,6 +737,9 @@
     <ClCompile Include="网编-5TCP性能调优.cpp">
       <Filter>源文件\网络编程</Filter>
     </ClCompile>
+    <ClCompile Include="音视频-12H264编码.cpp">
+      <Filter>源文件\音视频</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="pthread_pool.h">

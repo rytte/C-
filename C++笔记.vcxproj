@@ -136,6 +136,7 @@
     <ClCompile Include="网编-5TCP性能调优.cpp" />
     <ClCompile Include="音视频-10H264码流解析.cpp" />
     <ClCompile Include="音视频-11AAC码流解析.cpp" />
+    <ClCompile Include="音视频-12H264编码.cpp" />
     <ClCompile Include="音视频-7JPEG编码.cpp" />
     <ClCompile Include="音视频-4封装格式.cpp" />
     <ClCompile Include="图像-2YUV数据处理.cpp" />
