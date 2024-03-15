@@ -78,6 +78,9 @@
     <Filter Include="源文件\音视频\流协议">
       <UniqueIdentifier>{edf4629f-4174-4494-9a79-b8269d85c428}</UniqueIdentifier>
     </Filter>
+    <Filter Include="源文件\音视频\编码标准">
+      <UniqueIdentifier>{90e23fc7-7944-4bc2-ad5d-56a2ca0914d8}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="算法-1顺序表.c">
@@ -662,19 +665,13 @@
     <ClCompile Include="音视频-2音视频采集和处理.cpp">
       <Filter>源文件\音视频</Filter>
     </ClCompile>
-    <ClCompile Include="音视频-3编解码协议.cpp">
+    <ClCompile Include="音视频-4FLV封装格式.cpp">
       <Filter>源文件\音视频</Filter>
     </ClCompile>
-    <ClCompile Include="音视频-5FLV封装格式.cpp">
+    <ClCompile Include="音视频-5FLV解析器.cpp">
       <Filter>源文件\音视频</Filter>
     </ClCompile>
-    <ClCompile Include="音视频-6FLV解析器.cpp">
-      <Filter>源文件\音视频</Filter>
-    </ClCompile>
-    <ClCompile Include="音视频-7JPEG编码.cpp">
-      <Filter>源文件\音视频</Filter>
-    </ClCompile>
-    <ClCompile Include="音视频-4封装格式.cpp">
+    <ClCompile Include="音视频-3封装格式.cpp">
       <Filter>源文件\音视频</Filter>
     </ClCompile>
     <ClCompile Include="图像-1YUV与RGB.cpp">
@@ -695,34 +692,28 @@
     <ClCompile Include="流协议-1流媒体传输.cpp">
       <Filter>源文件\音视频\流协议</Filter>
     </ClCompile>
-    <ClCompile Include="流协议-2RTP与RTCP协议.cpp">
+    <ClCompile Include="流协议-2RTP协议.cpp">
       <Filter>源文件\音视频\流协议</Filter>
     </ClCompile>
     <ClCompile Include="流协议-3RTP解析器.cpp">
       <Filter>源文件\音视频\流协议</Filter>
     </ClCompile>
-    <ClCompile Include="流协议-4RTSP协议.cpp">
+    <ClCompile Include="流协议-5RTSP协议.cpp">
       <Filter>源文件\音视频\流协议</Filter>
     </ClCompile>
-    <ClCompile Include="流协议-5RTMP协议.cpp">
+    <ClCompile Include="流协议-6RTMP协议.cpp">
       <Filter>源文件\音视频\流协议</Filter>
     </ClCompile>
-    <ClCompile Include="流协议-6HLS协议.cpp">
+    <ClCompile Include="流协议-7HLS协议.cpp">
       <Filter>源文件\音视频\流协议</Filter>
     </ClCompile>
-    <ClCompile Include="流协议-7GB28181协议.cpp">
+    <ClCompile Include="流协议-8GB28181协议.cpp">
       <Filter>源文件\音视频\流协议</Filter>
     </ClCompile>
-    <ClCompile Include="音视频-8PCM数据处理.cpp">
+    <ClCompile Include="音视频-6PCM数据处理.cpp">
       <Filter>源文件\音视频</Filter>
     </ClCompile>
-    <ClCompile Include="音视频-9PCM转WAV.cpp">
-      <Filter>源文件\音视频</Filter>
-    </ClCompile>
-    <ClCompile Include="音视频-10H264码流解析.cpp">
-      <Filter>源文件\音视频</Filter>
-    </ClCompile>
-    <ClCompile Include="音视频-11AAC码流解析.cpp">
+    <ClCompile Include="音视频-7PCM转WAV.cpp">
       <Filter>源文件\音视频</Filter>
     </ClCompile>
     <ClCompile Include="网编-4IP协议和HTTP协议.cpp">
@@ -737,8 +728,23 @@
     <ClCompile Include="网编-5TCP性能调优.cpp">
       <Filter>源文件\网络编程</Filter>
     </ClCompile>
-    <ClCompile Include="音视频-12H264编码.cpp">
-      <Filter>源文件\音视频</Filter>
+    <ClCompile Include="编码-3H264帧结构.cpp">
+      <Filter>源文件\音视频\编码标准</Filter>
+    </ClCompile>
+    <ClCompile Include="编码-4H264码流解析.cpp">
+      <Filter>源文件\音视频\编码标准</Filter>
+    </ClCompile>
+    <ClCompile Include="编码-5AAC码流解析.cpp">
+      <Filter>源文件\音视频\编码标准</Filter>
+    </ClCompile>
+    <ClCompile Include="编码-2JPEG编码.cpp">
+      <Filter>源文件\音视频\编码标准</Filter>
+    </ClCompile>
+    <ClCompile Include="编码-1编解码协议.cpp">
+      <Filter>源文件\音视频\编码标准</Filter>
+    </ClCompile>
+    <ClCompile Include="流协议-4RTCP协议.cpp">
+      <Filter>源文件\音视频\流协议</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
