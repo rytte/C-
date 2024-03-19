@@ -81,6 +81,12 @@
     <Filter Include="源文件\音视频\编码标准">
       <UniqueIdentifier>{90e23fc7-7944-4bc2-ad5d-56a2ca0914d8}</UniqueIdentifier>
     </Filter>
+    <Filter Include="源文件\音视频\封装格式">
+      <UniqueIdentifier>{917d8b33-b457-46e1-9791-95464ab9fd24}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="源文件\音视频\音频处理">
+      <UniqueIdentifier>{e8e15a29-980e-472f-aaf7-0f13f250fa7a}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="算法-1顺序表.c">
@@ -665,15 +671,6 @@
     <ClCompile Include="音视频-2音视频采集和处理.cpp">
       <Filter>源文件\音视频</Filter>
     </ClCompile>
-    <ClCompile Include="音视频-4FLV封装格式.cpp">
-      <Filter>源文件\音视频</Filter>
-    </ClCompile>
-    <ClCompile Include="音视频-5FLV解析器.cpp">
-      <Filter>源文件\音视频</Filter>
-    </ClCompile>
-    <ClCompile Include="音视频-3封装格式.cpp">
-      <Filter>源文件\音视频</Filter>
-    </ClCompile>
     <ClCompile Include="图像-1YUV与RGB.cpp">
       <Filter>源文件\音视频\图像处理</Filter>
     </ClCompile>
@@ -704,18 +701,6 @@
     <ClCompile Include="流协议-6RTMP协议.cpp">
       <Filter>源文件\音视频\流协议</Filter>
     </ClCompile>
-    <ClCompile Include="流协议-7HLS协议.cpp">
-      <Filter>源文件\音视频\流协议</Filter>
-    </ClCompile>
-    <ClCompile Include="流协议-8GB28181协议.cpp">
-      <Filter>源文件\音视频\流协议</Filter>
-    </ClCompile>
-    <ClCompile Include="音视频-6PCM数据处理.cpp">
-      <Filter>源文件\音视频</Filter>
-    </ClCompile>
-    <ClCompile Include="音视频-7PCM转WAV.cpp">
-      <Filter>源文件\音视频</Filter>
-    </ClCompile>
     <ClCompile Include="网编-4IP协议和HTTP协议.cpp">
       <Filter>源文件\网络编程</Filter>
     </ClCompile>
@@ -745,6 +730,24 @@
     </ClCompile>
     <ClCompile Include="流协议-4RTCP协议.cpp">
       <Filter>源文件\音视频\流协议</Filter>
+    </ClCompile>
+    <ClCompile Include="封装-1封装格式.cpp">
+      <Filter>源文件\音视频\封装格式</Filter>
+    </ClCompile>
+    <ClCompile Include="封装-2FLV封装格式.cpp">
+      <Filter>源文件\音视频\封装格式</Filter>
+    </ClCompile>
+    <ClCompile Include="封装-3FLV解析器.cpp">
+      <Filter>源文件\音视频\封装格式</Filter>
+    </ClCompile>
+    <ClCompile Include="音频-1PCM数据处理.cpp">
+      <Filter>源文件\音视频\音频处理</Filter>
+    </ClCompile>
+    <ClCompile Include="音频-2PCM转WAV.cpp">
+      <Filter>源文件\音视频\音频处理</Filter>
+    </ClCompile>
+    <ClCompile Include="封装-4MP4封装格式.cpp">
+      <Filter>源文件\音视频\封装格式</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>

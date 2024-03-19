@@ -2,8 +2,8 @@
 //流媒体传输协议
 1. RTP（Real - time Transport Protocol 实时传输协议）			：基于UDP，定义简单且性能好，但是需要额外的信令协议。
 2. RTCP（Real - time Transport Control Protocol 实时传输控制协议）：基于UDP，为RTP媒体流提供信道外控制。RTCP本身并不传输数据，但和RTP一起协作将多媒体数据打包和发送。
-3. RTMP（Real Time Messaging Protocol 实时消息协议）	：基于TCP，性价比高，是目前直播推流的标准使用协议
-4. RTSP（Real Time Streaming Protocol   实时流协议）		：基于TCP，HTTP与RTSP相比，HTTP传送HTML，而RTSP传送的是多媒体数据。
+3. RTSP（Real Time Streaming Protocol   实时流协议）		：基于TCP，HTTP与RTSP相比，HTTP传送HTML，而RTSP传送的是多媒体数据。应用层协议。
+4. RTMP（Real Time Messaging Protocol 实时消息协议）	：基于TCP，性价比高，是目前直播推流的标准使用协议。应用层协议。
 RTSP不会发送媒体数据，只完成服务器和客户端之间的信令交互，RTP协议负责媒体数据传输，RTCP负责RTP数据包的监视和反馈。
 RTP和RTCP没有规定传输层的类型，可用选择TCP或UDP，RTSP的传输层则是要求基于TCP。
 
@@ -15,6 +15,10 @@ RTP和RTCP没有规定传输层的类型，可用选择TCP或UDP，RTSP的传输层则是要求基于TCP。
 //WebRTC信令协议
 WebRTC信令协议有：SDP、ICE、NAT、STUN、TURN。当然，WebRTC的网络传输协议也有用到上面提及的流媒体传输协议。
 信令：用来通信连接的两侧做状态同步使用。
+
+//流式传输分为两种
+顺序流式传输(Progressive Streaming)
+实时流式传输(Real time Streaming)
 
 
 
