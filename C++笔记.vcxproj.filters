@@ -329,7 +329,7 @@
     <ClCompile Include="FFmpeg-3函数库.cpp">
       <Filter>源文件\FFmpeg</Filter>
     </ClCompile>
-    <ClCompile Include="FFmpeg-4编解码.cpp">
+    <ClCompile Include="FFmpeg-5编解码.cpp">
       <Filter>源文件\FFmpeg</Filter>
     </ClCompile>
     <ClCompile Include="22_播控.cpp">
@@ -719,7 +719,7 @@
     <ClCompile Include="编码-4H264码流解析.cpp">
       <Filter>源文件\音视频\编码标准</Filter>
     </ClCompile>
-    <ClCompile Include="编码-5AAC码流解析.cpp">
+    <ClCompile Include="编码-6AAC码流解析.cpp">
       <Filter>源文件\音视频\编码标准</Filter>
     </ClCompile>
     <ClCompile Include="编码-2JPEG编码.cpp">
@@ -748,6 +748,18 @@
     </ClCompile>
     <ClCompile Include="封装-4MP4封装格式.cpp">
       <Filter>源文件\音视频\封装格式</Filter>
+    </ClCompile>
+    <ClCompile Include="编码-5H264解析器.cpp">
+      <Filter>源文件\音视频\编码标准</Filter>
+    </ClCompile>
+    <ClCompile Include="编码-7AAC解析器.cpp">
+      <Filter>源文件\音视频\编码标准</Filter>
+    </ClCompile>
+    <ClCompile Include="FFmpeg-4常用函数.cpp">
+      <Filter>源文件\FFmpeg</Filter>
+    </ClCompile>
+    <ClCompile Include="FFmpeg-6ffplay源码分析.cpp">
+      <Filter>源文件\FFmpeg</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>

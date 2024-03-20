@@ -127,15 +127,19 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="FFmpeg-4常用函数.cpp" />
+    <ClCompile Include="FFmpeg-6ffplay源码分析.cpp" />
     <ClCompile Include="封装-4MP4封装格式.cpp" />
     <ClCompile Include="流协议-4RTCP协议.cpp" />
     <ClCompile Include="流协议-5RTSP协议.cpp" />
     <ClCompile Include="流协议-6RTMP协议.cpp" />
+    <ClCompile Include="编码-5H264解析器.cpp" />
+    <ClCompile Include="编码-7AAC解析器.cpp" />
     <ClCompile Include="网编-4IP协议和HTTP协议.cpp" />
     <ClCompile Include="网编-6UDP实际应用.cpp" />
     <ClCompile Include="网编-7Socket.cpp" />
     <ClCompile Include="网编-5TCP性能调优.cpp" />
-    <ClCompile Include="编码-5AAC码流解析.cpp" />
+    <ClCompile Include="编码-6AAC码流解析.cpp" />
     <ClCompile Include="编码-3H264帧结构.cpp" />
     <ClCompile Include="编码-4H264码流解析.cpp" />
     <ClCompile Include="编码-2JPEG编码.cpp" />
@@ -201,7 +205,7 @@
     <ClCompile Include="C标准库-1stdio.h" />
     <ClCompile Include="FFmpeg-1ffmpeg命令行.cpp" />
     <ClCompile Include="FFmpeg-3函数库.cpp" />
-    <ClCompile Include="FFmpeg-4编解码.cpp" />
+    <ClCompile Include="FFmpeg-5编解码.cpp" />
     <ClCompile Include="QT-10列表控件.cpp" />
     <ClCompile Include="QT-11进程与线程.cpp" />
     <ClCompile Include="QT-12网络模块.cpp" />
