@@ -27,6 +27,13 @@ SDL_CreateThread				创建线程
 SDL_GetWindowSize			获取窗口大小
 SDL_memset					清空缓冲区
 SDL_SetWindowTitle			设置窗口标题
+SDL_getenv					获取环境变量
+SDL_setenv					设置环境变量
+SDL_EventState				查询或设置特定类型的事件的处理状态
+SDL_SetHint					设置特定选项的提示值
+SDL_GetRendererInfo			获取渲染器信息
+SDL_CreateMutex				创建互斥锁
+SDL_CreateCond				创建条件变量
 
 //绘制图形
 SDL_SetRenderDrawColor		设置画笔颜色

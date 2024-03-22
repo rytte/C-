@@ -93,12 +93,14 @@ avcodec_parameters_alloc			创建编解码器参数
 avcodec_parameters_free			释放编解码器参数对象
 avcodec_parameters_copy			复制编解码器参数
 avcodec_error_to_string				将错误代码转换为字符串
+av_packet_alloc					分配一个AVPacket内存
 
 
 //通用函数 libavutil
 av_log							打印消息
 av_strerror						打印报错原因
 av_malloc							申请内存，返回申请到的内存
+av_strdup							复制字符串
 av_read_frame						读取一帧数据，读取的是一个AVPacket包
 av_seek_frame						在媒体文件中进行帧级别的跳转定位
 av_gettime						获取当前时间戳

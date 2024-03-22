@@ -12,21 +12,21 @@
 
 布局管理器对象成员：
 addWidget(控件对象)						//添加控件
-addSpacer(弹簧对象)						//添加弹簧
+addSpacerItem(弹簧对象)					//添加弹簧
 
 //实例：
 QSpacerItem * p = new QSpacerItem(40, 40, Expanding, Expanding);			//创建弹簧指针，构造函数传参
 QHBoxLayout* hbox = new QHBoxLayout[2];
-hbox[0]->addSpacer(p);								//向水平布局管理器中添加弹簧对象
+hbox[0]->addSpacerItem(p);								//向水平布局管理器中添加弹簧对象
 hbox[0]->addWidget(&bt1);							//向水平布局管理器中添加控件对象
-hbox[0]->addSpacer(p);
+hbox[0]->addSpacerItem(p);
 hbox[0]->addWidget(&bt2);
-hbox[0]->addSpacer(p);
-hbox[1]->addSpacer(p);
+hbox[0]->addSpacerItem(p);
+hbox[1]->addSpacerItem(p);
 hbox[1]->addWidget(&bt3);
-hbox[1]->addSpacer(p);
+hbox[1]->addSpacerItem(p);
 hbox[1]->addWidget(&bt4);
-hbox[1]->addSpacer(p);
+hbox[1]->addSpacerItem(p);
 QVBoxLayout* vbox = new QVBoxLayout;
 vbox->addLayout(&hbox[0]);							//将水平布局管理器添加到垂直布局管理器中
 vbox->addLayout(&hbox[1]);

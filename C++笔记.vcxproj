@@ -127,6 +127,7 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="CMakeLists.txt" />
     <ClCompile Include="FFmpeg-4常用函数.cpp" />
     <ClCompile Include="FFmpeg-6ffplay源码分析.cpp" />
     <ClCompile Include="封装-4MP4封装格式.cpp" />

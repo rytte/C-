@@ -761,6 +761,9 @@
     <ClCompile Include="FFmpeg-6ffplay源码分析.cpp">
       <Filter>源文件\FFmpeg</Filter>
     </ClCompile>
+    <ClCompile Include="CMakeLists.txt">
+      <Filter>源文件\其它</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="pthread_pool.h">

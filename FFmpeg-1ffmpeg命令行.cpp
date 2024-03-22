@@ -77,15 +77,25 @@ ffmpeg - i  输入文件名  参数选项  输出文件名
 - vframes		要输出的视频帧数
 - frames : a	要输出的音频帧数
 - frames : v	要输出的视频帧数
-- encoders	查询支持的编码器
-- decodes	查询支持的解码器
 - findstr		搜索文本字符串
-- formats		获取ffmpeg支持的音视频格式
-- sample_fmts	查询采样格式
-- pix_fmts		查询像素格式
-- bsfs		查询位流格式
-- hwaccels	查询支持的硬编解列表
-- filters		查询支持的过滤器
+
+//查询命令
+- version		显示版本 
+- buildconf	显示编译配置 
+- formats		显示支持的音视频格式(muxers + demuxers)
+- filters		显示支持的过滤器
+- muxers		显示支持的复用器
+- demuxers	显示支持的解复用器
+- codecs		显示支持的编解码器(decoders + encoders)
+- sample_fmts 显示支持的音频采样格式
+- decoders	显示支持的解码器
+- encoders	显示支持的编码器
+- bsfs		显示支持的比特流filter
+- protocols	显示支持的协议
+- pix_fmts		显示支持的像素格式
+- layouts		显示标准声道名称
+- colors		显示支持的颜色名称
+- hwaccels	显示支持的硬编解列表
 
 
 //常用-f参数值
