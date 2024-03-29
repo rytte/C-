@@ -50,7 +50,7 @@ git config --global --unset https.proxy
 	"unitCn" : "∑÷",
 	"unitEn" : "min",
 	"destStationName" : "…Ó€⁄",
-	"destStationNameEn" : "ShangHai"
+	"destStationNameEn" : "ShenZhen"
 }
 ]
 

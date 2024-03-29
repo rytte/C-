@@ -135,3 +135,34 @@ set (EXECUTABLE_OUTPUT_PATH ${PROJECT_SOURCE_DIR}/bin)
 所以，这里set的意思是把存放elf文件的位置设置为工程根目录下的bin目录。
 
 
+
+cmake_minimum_required (VERSION 2.8)
+
+project (demo)
+
+set (EXECUTABLE_OUTPUT_PATH ${PROJECT_SOURCE_DIR}/bin)
+
+aux_source_directory (src SRC_LIST)
+
+include_directories (include)
+
+add_executable (main ${SRC_LIST})
+
+
+
+"********************"动态库和静态库的编译"************************************************************"
+cmake_minimum_required (VERSION 3.5)
+
+project (demo)
+
+set (SRC_LIST ${PROJECT_SOURCE_DIR}/testFunc/testFunc.c)
+
+add_library (testFunc_shared SHARED ${SRC_LIST})
+add_library (testFunc_static STATIC ${SRC_LIST})
+
+set_target_properties (testFunc_shared PROPERTIES OUTPUT_NAME "testFunc")
+set_target_properties (testFunc_static PROPERTIES OUTPUT_NAME "testFunc")
+
+set (LIBRARY_OUTPUT_PATH ${PROJECT_SOURCE_DIR}/lib)
+
+

@@ -130,6 +130,8 @@
     <ClCompile Include="CMakeLists.txt" />
     <ClCompile Include="FFmpeg-4常用函数.cpp" />
     <ClCompile Include="FFmpeg-6ffplay源码分析.cpp" />
+    <ClCompile Include="Live555.cpp" />
+    <ClCompile Include="QT-24打包.cpp" />
     <ClCompile Include="封装-4MP4封装格式.cpp" />
     <ClCompile Include="流协议-4RTCP协议.cpp" />
     <ClCompile Include="流协议-5RTSP协议.cpp" />

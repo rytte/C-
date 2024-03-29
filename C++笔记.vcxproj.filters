@@ -764,6 +764,12 @@
     <ClCompile Include="CMakeLists.txt">
       <Filter>源文件\其它</Filter>
     </ClCompile>
+    <ClCompile Include="Live555.cpp">
+      <Filter>源文件\其它</Filter>
+    </ClCompile>
+    <ClCompile Include="QT-24打包.cpp">
+      <Filter>源文件\QT</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="pthread_pool.h">
