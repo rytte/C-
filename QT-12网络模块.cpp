@@ -1,5 +1,7 @@
 /********************/QtNetwork/************************************************************/
-QtNetwork模块提供的类能够创建基于TCP / IP的客户端与服务端应用程序。为实现底层的网络访问，可以使用QTcpSocket、QTcpServer和QUdpSocket，并提供底层网络类。还提供了使用常规协议实现网络操作的QNetworkRequest、QNetworkReply、QNetworkAccessManager。
+QtNetwork模块提供的类能够创建基于TCP / IP的客户端与服务端应用程序。
+为实现底层的网络访问，可以使用QTcpSocket、QTcpServer和QUdpSocket，并提供底层网络类。
+还提供了使用常规协议实现网络操作的QNetworkRequest、QNetworkReply、QNetworkAccessManager。
 
 QtNetwork
 作为使用IPC的方法，TCP / IP可以使用多种类进行进程内部和外部的通信。
@@ -23,17 +25,15 @@ QUdpSocket				UDP套接字
 /********************/TCP/************************************************************/
 qmake : QT += network
 
-头文件<QTcpServer>		TCP服务器类
-头文件<QTcpSocket>		TCP套接字类
-bool listen(const QHostAddress & address = QHostAddress::Any, quint16 port = 0)	//绑定服务器IP地址并监听
+#include <QTcpSocket>		TCP套接字类
+#include <QTcpServer>		TCP服务器类
 
-参数：QHostAddress：主机地址类
-头文件<QHostAddress>
-QHostAddress(const QString & address)
+bool listen(const QHostAddress & address = QHostAddress::Any, quint16 port = 0);		//绑定服务器IP地址并监听
+void	close();																//关闭服务器监听
+virtual QTcpSocket * nextPendingConnection()		//获取新客户端套接字。取出后就从QTcpServer客户端队列中删除，因此每次获取的都是最新的套接字。
 
-virtual QTcpSocket * nextPendingConnection()		//获取新客户端套接字
-//取出后就从QTcpServer客户端队列中删除，因此每次获取的都是最新的套接字。
 
+//读写函数
 qint64 	read(char* data, qint64 maxSize)
 QByteArray 	read(qint64 maxSize)
 QByteArray 	readAll()
@@ -42,24 +42,27 @@ qint64 	write(const char* data)
 qint64 	write(const QByteArray & byteArray)
 
 
-新客户端连接信号：signals:newConnection()
-准备读取数据信号：readyRead()
-
-void disconnectFromHost()				//客户端断开连接方法
+新客户端连接信号：newConnection()
 客户端断开信号：disconnected()
+接收到数据信号：readyRead()
+
+
+//客户端发送连接请求
+virtual void connectToHost(const QString & hostName, quint16 port, QIODevice::OpenMode openMode = ReadWrite, QAbstractSocket::NetworkLayerProtocol protocol = AnyIPProtocol)
+virtual void connectToHost(const QHostAddress & address, quint16 port, QIODevice::OpenMode openMode = ReadWrite)
+
+virtual bool waitForConnected(int msecs = 30000);	//连接超时时间，失败返回0。
+virtual void disconnectFromHost();					//客户端断开连接
+
+QHostAddress peerAddress() const		//获取当前的IP地址
+quint16 peerPort() const					//获取当前的端口号
 
 
 服务器创建：
 1、绑定监听：qmake : QT += network。创建服务器类对象，调用listen()方法绑定并监听
-2、获取套接字：关联新客户端连接信号"newConnection"到槽函数，在槽函数中使用获取通信套接字
-3、接收数据：关联"readyRead"信号，到自定义槽函数中使用套接字的read()方法接收。
-4、发送数据：发送信息按钮设置为槽函数，使用套接字的write()方法发送数据。
-
-virtual void connectToHost(const QString & hostName, quint16 port, QIODevice::OpenMode openMode = ReadWrite, QAbstractSocket::NetworkLayerProtocol protocol = AnyIPProtocol)
-virtual void connectToHost(const QHostAddress & address, quint16 port, QIODevice::OpenMode openMode = ReadWrite)
-//发送连接请求
-QHostAddress peerAddress() const		//获取当前的IP地址
-quint16 peerPort() const				//获取当前的端口号
+2、获取套接字：QTcpServer连接新客户端连接信号"newConnection"到槽函数，在槽函数中使用获取通信套接字QTcpSocket
+3、接收数据：QTcpSocket连接"readyRead"信号，到自定义槽函数中使用QTcpSocket的read()方法接收。
+4、发送数据：发送信息按钮设置为槽函数，使用QTcpSocket的write()方法发送数据。
 
 
 客户端创建：
@@ -69,7 +72,47 @@ quint16 peerPort() const				//获取当前的端口号
 4、发送数据：发送信息按钮设置为槽函数，使用套接字的write()方法发送数据。
 
 
-/************************************************************/
+
+/********************/UDP/************************************************************/
+#include <QUdpSocket>
+qint64 	writeDatagram(const char* data, qint64 size, const QHostAddress & address, quint16 port)	//发送数据
+qint64 	writeDatagram(const QNetworkDatagram & datagram)
+qint64 	writeDatagram(const QByteArray & datagram, const QHostAddress & host, quint16 port)
+
+qint64 	readDatagram(char* data, qint64 maxSize, QHostAddress * address = nullptr, quint16 * port = nullptr)	//接收数据
+
+广播：直接调用writeDatagram()方法，写入广播地址。QUdpSocket类默认具有广播属性。
+
+组播：
+bool joinMulticastGroup(const QHostAddress & groupAddress)		//加入组播
+bool joinMulticastGroup(const QHostAddress & groupAddress, const QNetworkInterface & iface)
+
+bool leaveMulticastGroup(const QHostAddress & groupAddress)		//退出组播
+bool leaveMulticastGroup(const QHostAddress & groupAddress, const QNetworkInterface & iface)
+
+bool bind(const QHostAddress & address, quint16 port, QAbstractSocket::BindMode mode)	//绑定端口号
+
+
+
+/********************/HTTP协议/************************************************************/
+QT += network
+#include <QNetworkAccessManager>		网络访问管理器类：管理http的发送请求和接收响应
+#include <QNetworkRequest>			网络请求类：用于放入请求内容
+#include <QNetWorkReply>				网络响应类：用于存放响应信息
+
+QNetworkRequest(const QUrl & url = QUrl())				//构造函数，传入参数为url网址
+QNetworkReply * get(const QNetworkRequest & request)		//参数为请求内容
+结束响应信号：void finished(QNetworkReply * reply)
+
+http通信流程：
+1、创建http的管理类对象QNetworkAccessManager
+2、创建请求对象QNetworkRequest：url:是www网络上信息资源的唯一地址。
+3、管理类对象调用get()方法发起http请求。
+4、通过finished信号关联上槽函数，在槽函数中获取http的内容
+
+
+
+/********************/文件传输/************************************************************/
 //文件传输
 发送端					  接收端
 1	发送文件名和文件大小	  接收文件名，创建空文件；创建变量接收文件大小
@@ -106,41 +149,3 @@ file.open()			打开文件
 每次接收到文件后，发送0x1000。发送方若没接收到该标志则重发
 接收时校对第一段数据，选择处理程序
 
-
-
-/********************/UDP/************************************************************/
-头文件<QUdpSocket>
-qint64 	writeDatagram(const char* data, qint64 size, const QHostAddress & address, quint16 port)	//发送数据
-qint64 	writeDatagram(const QNetworkDatagram & datagram)
-qint64 	writeDatagram(const QByteArray & datagram, const QHostAddress & host, quint16 port)
-
-qint64 	readDatagram(char* data, qint64 maxSize, QHostAddress * address = nullptr, quint16 * port = nullptr)	//接收数据
-
-广播：直接调用writeDatagram()方法，写入广播地址。QUdpSocket类默认具有广播属性。
-
-组播：
-bool joinMulticastGroup(const QHostAddress & groupAddress)		//加入组播
-bool joinMulticastGroup(const QHostAddress & groupAddress, const QNetworkInterface & iface)
-
-bool leaveMulticastGroup(const QHostAddress & groupAddress)		//退出组播
-bool leaveMulticastGroup(const QHostAddress & groupAddress, const QNetworkInterface & iface)
-
-bool bind(const QHostAddress & address, quint16 port, QAbstractSocket::BindMode mode)	//绑定端口号
-
-
-
-/********************/HTTP协议/************************************************************/
-QT += network
-头文件<QNetworkAccessManager>		网络访问管理器类：管理http的发送请求和接收响应
-头文件<QNetworkRequest>				网络请求类：用于放入请求内容
-头文件<QNetWorkReply>				网络响应类：用于存放响应信息
-
-QNetworkRequest(const QUrl & url = QUrl())				//构造函数，传入参数为url网址
-QNetworkReply * get(const QNetworkRequest & request)		//参数为请求内容
-结束响应信号：void finished(QNetworkReply * reply)
-
-http通信流程：
-1、创建http的管理类对象QNetworkAccessManager
-2、创建请求对象QNetworkRequest：url:是www网络上信息资源的唯一地址。
-3、管理类对象调用get()方法发起http请求。
-4、通过finished信号关联上槽函数，在槽函数中获取http的内容

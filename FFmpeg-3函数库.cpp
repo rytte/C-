@@ -98,6 +98,8 @@ av_packet_alloc					分配一个AVPacket内存
 
 //通用函数 libavutil
 av_log							打印消息
+av_log_get_level					返回当前Log等级
+av_log_set_level					设置当前Log的级别
 av_strerror						打印报错原因
 av_malloc							申请内存，返回申请到的内存
 av_strdup							复制字符串
@@ -190,6 +192,9 @@ avfilter_version					获取libavfilter库的版本号
 
 
 /*************************/ffmpeg的常用结构体/***************************************************************************/
+AVIOContext，URLProtocol，URLContext主要存储视音频使用的协议的类型以及状态。
+URLProtocol存储输入视音频使用的封装格式。每种协议都对应一个URLProtocol结构。（注意：FFMPEG中文件也被当做一种协议“file”）
+
 常用结构体如下;
 
 AVFormatContext		封装格式上下文结构体，统领全局的结构体，保存了视频文件封装格式等相关信息;
@@ -203,8 +208,7 @@ AVCodec				每一种音视频编解码器（例如：H.264解码器）都对应�
 AVPacket				存储一帧压缩编码数据;
 AVFrame				存储一帧解码后的数据（可以是视频解码后的像素数据，也可以是音频采样后的数据）;
 
-
-struct AVDictionary {};
+struct AVDictionary{};
 struct AVRational {};
 typedef signed char int8_t;
 typedef unsigned char uint8_t;
@@ -224,6 +228,29 @@ struct AVFormatContext			//封装格式上下文结构体
 	int  bit_rate：							音视频的码率（单位bps，转换为kbps需要除以1000）;
 	AVDictionary *metadata;					元数据;
 };
+
+视频的元数据（metadata）信息可以通过 AVDictionary 获取。元数据存储在AVDictionaryEntry结构体中，是一种key - value对的格式;
+struct AVDictionaryEntry 
+{
+	char* key;
+	char* value;
+};
+
+在ffmpeg中通过av_dict_get()函数获得视频的元数据信息。
+
+第一种方式，提取存在的、特定的键值对信息
+AVDictionaryEntry * m = NULL;
+m = av_dict_get(pFormatCtx->metadata, "author", m, 0);
+printf("作者：%s\n ", m->value);
+m = av_dict_get(pFormatCtx->metadata, "description", m, 0);
+printf("描述：%s\n ", m->value);
+
+另外一种是循环遍历所有的数据
+while (m = av_dict_get(pFormatCtx->metadata, "", m, AV_DICT_IGNORE_SUFFIX)) 
+{
+	printf("%s\t:%s\r\n", m->key, m->value);
+}
+
 
 struct AVInputFormat			//输入的format结构体
 {

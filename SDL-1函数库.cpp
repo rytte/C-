@@ -1,4 +1,4 @@
-/******************************/SDL/******************************************************************************************/
+/******************************/SDL函数库/******************************************************************************************/
 C++没有自带的图形库，所以一般在windows下可以用win32API来绘制，或者DirectX。考虑跨平台也可以OpenGL。
 这些都比较复杂，考虑一个最基本的跨平台绘制图形工具，所以推荐SDL库。
 
@@ -10,8 +10,8 @@ SDL库是Simple DirectMedia Layer的缩写，简单直接的多媒体层。
 #include "SDL.h"
 
 //图片视频渲染通用
-SDL_Init						初始化SDL，成功返回 0						SDL_Init( SDL_INIT_VIDEO | SDL_INIT_VIDEO | SDL_INIT_TIMER );
-SDL_CreateWindow				创建窗口，返回 SDL_Window*					SDL_CreateWindow(  )
+SDL_Init						初始化SDL，成功返回
+SDL_CreateWindow				创建窗口，返回 SDL_Window*	
 SDL_CreateRenderer			创建渲染器，返回 SDL_Renderer*
 SDL_CreateWindowAndRenderer	创建窗口和渲染器
 SDL_RenderClear				清除当前渲染目标
@@ -61,8 +61,17 @@ SDL_PauseAudioDevice			开始播放（非回调版）
 SDL_QueueAudio				在回调设备上填充音频数据，而不用回调函数（非回调版）
 
 //事件 SDL_Event
-SDL_WaitEvent				等待事件
-SDL_PushEvent				发送事件
+SDL_PollEvent					将队列头中的事件抛出来
+SDL_WaitEvent				当队列中有事件时，抛出事件。否则处于阻塞状态，释放 CPU
+SDL_WaitEventTimeout			与SDL_WaitEvent的区别时，当到达超时时间后，退出阻塞状态
+SDL_PeekEvent				从队列中取出事件，但该事件不从队列中删除
+SDL_PushEvent				向队列中插入事件
+
+SDL_WindowEvent				Window窗口相关的事件
+SDL_KeyboardEvent			键盘相关的事件
+SDL_MouseMotionEvent			鼠标移动相关的事件
+SDL_QuitEvent					退出事件
+SDL_UserEvent					用户自定义事件
 
 //清理资源
 SDL_DestroyTexture			释放纹理

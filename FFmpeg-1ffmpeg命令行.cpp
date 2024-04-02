@@ -78,6 +78,7 @@ ffmpeg - i  输入文件名  参数选项  输出文件名
 - frames : a	要输出的音频帧数
 - frames : v	要输出的视频帧数
 - findstr		搜索文本字符串
+- q:v			图像压缩，参数：压缩等级
 
 //查询命令
 - version		显示版本 

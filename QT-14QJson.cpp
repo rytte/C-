@@ -1,21 +1,21 @@
 /********************/QJSON/************************************************************/
-头文件<QJsonDocument>		json文本类。
+#include <QJsonDocument>
 static QJsonDocument QJsonDocument::fromJson(const QByteArray& json, QJsonParseError* error = nullptr)
-				//用于检查数据是否符合json格式	  参数一：传入数据		参数二：错误管理类对象，是一个枚举类型
+					//用于检查数据是否符合json格式	  参数一：传入数据		参数二：错误管理类对象
 QJsonObject object()const		//将json数据转换成json对象返回。
 QByteArray toJson()const		//把文本内容转换成字符串返回。
 
 
-头文件<QJsonObject>			json对象类。
+#include <QJsonObject>
 QJsonValue value(const QString& key) const			//通过键查找json值返回。
 QJsonObject::iterator 	insert(const QString& key, const QJsonValue& value)		//加入一组键值对
 
-头文件<QJsonValue>			json数据类型。
+#include <QJsonValue>
 QJsonObject toObject() const						//转换为json对象返回
 QString toString() const							//转换为字符串
 QJsonArray toArray() const							//转换为json数组
 
-头文件<QJsonArray>			json数组类
+#include <QJsonArray>
 QJonValue at(int i)const							//下标索引对应元素
 int count()const									//获取数组的成员数
 void insert(int i, const QJsonValue& value)			//在下标i的位置插入元素

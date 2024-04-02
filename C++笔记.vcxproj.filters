@@ -290,16 +290,16 @@
     <ClCompile Include="SDL-1函数库.cpp">
       <Filter>源文件\SDL</Filter>
     </ClCompile>
-    <ClCompile Include="SDL-2绘制图形与图片.cpp">
+    <ClCompile Include="SDL-3绘制图形与图片.cpp">
       <Filter>源文件\SDL</Filter>
     </ClCompile>
-    <ClCompile Include="SDL-3视频播放.cpp">
+    <ClCompile Include="SDL-4视频播放.cpp">
       <Filter>源文件\SDL</Filter>
     </ClCompile>
-    <ClCompile Include="SDL-4音频播放_有回调.cpp">
+    <ClCompile Include="SDL-5音频播放_有回调.cpp">
       <Filter>源文件\SDL</Filter>
     </ClCompile>
-    <ClCompile Include="SDL-5音频播放_无回调.cpp">
+    <ClCompile Include="SDL-6音频播放_无回调.cpp">
       <Filter>源文件\SDL</Filter>
     </ClCompile>
     <ClCompile Include="OpenCV.cpp">
@@ -769,6 +769,18 @@
     </ClCompile>
     <ClCompile Include="QT-24打包.cpp">
       <Filter>源文件\QT</Filter>
+    </ClCompile>
+    <ClCompile Include="FTP.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="QT-25中文乱码问题.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="UML.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="SDL-2核心API.cpp">
+      <Filter>源文件\SDL</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
