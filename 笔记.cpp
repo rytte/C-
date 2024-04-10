@@ -17,6 +17,7 @@ git config --global --unset https.proxy
 [
 {
 	"tripNum":1,
+	"trainType" : "",
 	"trainTypeCn" : "普通车",
 	"trainTypeEn" : "Local",
 	"curStationName":"深大",
@@ -29,6 +30,9 @@ git config --global --unset https.proxy
 	"holdStatus" : 1,
 	"holdStatusCn" : "扣车",
 	"holdStatusEn" : "holdStatus",
+	"nearStation" : 0,
+	"nearStationCn" : "即将到站",
+	"nearStationEn" : "Arriving",
 	"crowdings" : [0, 1, 0, 2] ,
 	"temperature" : [0, 1, 0, 2]
 },

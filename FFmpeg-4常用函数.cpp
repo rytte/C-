@@ -56,6 +56,7 @@ int avformat_open_input(AVFormatContext** ps, const char* url,          //打开输
 【注意】如果您想使用自定义IO，请预先分配format上下文并设置其PB字段。
 
 
+
 int avformat_find_stream_info(AVFormatContext* ic, AVDictionary** options);             //上下文获取流信息
 
 读取媒体文件的包以获取流信息。
@@ -73,9 +74,109 @@ void av_dump_format(AVFormatContext* ic, int index, const char* url, int is_outp
 
 打印输入或输出格式的详细信息，如时长、码率、流、容器、节目、元数据、边数据、编解码器和时基。
 【ic】要分析的上下文
-【index】要转储其信息的流的索引
+【index】要转储其信息的流的索引，-1为自动选择
 【url】要打印的URL，如源文件或目标文件
-【is_output】选择指定的上下文是输入上下文(0)还是输出上下文(1)
+【is_output】选择指定的上下文是输入上下文(0)还是输出上下文(1)，输入文件的话为0
+
+
+
+int av_find_best_stream(AVFormatContext* ic,
+        enum AVMediaType type,
+        int wanted_stream_nb,
+        int related_stream,
+        const struct AVCodec** decoder_ret,
+        int flags);
+
+在文件中找到“最佳”流。
+根据各种试探法将最佳流确定为最有可能是用户期望的流。
+如果DECODER参数非空，则av_find_Best_stream将查找流的编解码器的默认解码器；找不到解码器的流将被忽略。
+
+【ic】媒体文件句柄
+【type】流类型：视频、音频、字幕等。
+【wanted_stream_nb】用户请求的流编号，或 - 1用于自动选择
+【related_stream】尝试找到相关的流(例如，在同一程序中)添加到此程序，如果没有，则为 - 1
+【decoder_ret】如果不为NULL，则返回所选流的解码器
+【flags】标志；当前未定义任何标志，设为0
+【返回值】如果成功，则返回非负流编号；如果找不到请求类型的流，则返回AVERROR_STREAM_NOT_FOUND；
+如果找到流，但没有解码器，则返回AVERROR_DECODER_NOT_FOUND
+【注意】如果av_find_best_stream成功返回，并且decder_ret不为NULL，则可以保证将 * decder_ret设置为有效的AVCodec。
+
+
+
+AVCodecContext* avcodec_alloc_context3(const AVCodec* codec);
+
+分配一个AVCodecContext并将其字段设置为默认值。生成的结构应该用avcodec_Free_Context()释放。
+【codec】如果不为NULL，则为给定的编解码器分配私有数据并初始化默认值。然后使用不同的编解码器调用avcodec_open2()是非法的。
+如果为NULL，则特定于编解码器的默认设置将不会被初始化，这可能会导致不佳的默认设置(这主要对编码器很重要，例如libx264)。
+【返回值】使用默认值填充的AVCodecContext，如果失败则为NULL。
+
+
+
+int avcodec_parameters_to_context(AVCodecContext* codec, const struct AVCodecParameters* par);
+
+根据提供的编解码器参数的值填充编解码器上下文。
+将释放编解码器中具有PAR中对应字段的任何已分配字段，并将其替换为PAR中相应字段的副本。
+不会触及编解码器中没有PAR中对应字段的字段。
+【返回值】 >= 0成功时，失败时为负AVERROR代码。
+
+
+
+const AVCodec* avcodec_find_decoder(enum AVCodecID id);
+
+查找具有匹配编解码器ID的注册解码器。
+【id】请求的解码器的ID
+【返回值】找到则返回一个解码器，没找到则返回NULL。
+
+
+
+int avcodec_open2(AVCodecContext* avctx, const AVCodec* codec, AVDictionary** options);
+
+初始化AVCodecContext以使用给定的AVCodec。
+在使用此函数之前，必须为上下文分配avcodec_alloc_context3()。
+
+函数avcodec_find_decder_by_name()、avcodec_find_encode_by_name()、avcodec_find_decoder()
+和avcodec_find_encode()为检索编解码器提供了一种简单的方法。
+
+根据编解码器的不同，您可能还需要在编解码器上下文中设置用于解码的选项
+(例如，在比特流中信息不可用的情况下，例如宽度、高度或像素或音频采样格式，例如在对原始音频或视频进行解码时)。
+
+编解码器上下文中的选项可以通过在Options AVDicary中设置它们，
+或者通过在上下文本身中直接设置值，或者通过在调用此函数之前使用av_opt_set()API来设置。
+
+例如:
+ * @code
+ * av_dict_set(&opts, "b", "2.5M", 0);
+ * codec = avcodec_find_decoder(AV_CODEC_ID_H264);
+ * if (!codec)
+ *     exit(1);
+ *
+ * context = avcodec_alloc_context3(codec);
+ *
+ * if (avcodec_open2(context, codec, opts) < 0)
+ *     exit(1);
+ * @endcode
+ *
+在AVCodec参数可用的情况下(例如，当使用libavFormat对流进行解复用并访问解复用器中包含的AVStream时)，
+可以使用avcodec_参数_to_Context()将编解码器参数复制到编解码器上下文中，如下例所示：
+ *
+ * @code
+ * AVStream *stream = ...;
+ * context = avcodec_alloc_context3(codec);
+ * if (avcodec_parameters_to_context(context, stream->codecpar) < 0)
+ *     exit(1);
+ * if (avcodec_open2(context, codec, NULL) < 0)
+ *     exit(1);
+ * @endcode
+ *
+【注意】始终在使用解码例程(如@ref avcodec_receive_frame())之前调用此函数。
+【avctx】要初始化的上下文。
+【codec】要为其打开此上下文的编解码器。
+如果之前已将非空编解码器传递给avcodec_alloc_context3()或用于此上下文，则此参数必须为NULL或等于先前传递的编解码器。
+【options】用AVCodecContext和编解码器私有选项填充的词典可以为空，这些选项设置在avctx中已经设置的选项之上。
+返回时，此对象将填充在avctx编解码器上下文中找不到的选项。
+【返回值】成功时为零，错误时为负值
+【参阅】avcodec_alloc_context3(), avcodec_find_decoder(), avcodec_find_encoder(),
+av_dict_set(), av_opt_set(), av_opt_find(), avcodec_parameters_to_context()
 
 
 
@@ -85,13 +186,186 @@ void avformat_close_input(AVFormatContext** s);
 
 
 
+
 AVPacket* av_packet_alloc(void);							//分配一个AVPacket内存
 
-分配一个AVPacket并将其字段设置为默认值。
-结果结构必须使用av_Packet_Free()来释放。
-@返回包含缺省值的AVPacket，失败则返回空。
-@NOTE这只会分配AVPacket本身，不会分配数据缓冲区。
-这些必须通过其他方式进行分配，例如av_new_Packet。
-@查看av_new_Packet
+分配一个AVPacket并将其字段设置为默认值。结果 struct 必须使用av_Packet_Free()来释放。
+【返回值】使用缺省值填充的AVPacket，如果失败则为NULL
+【注意】这只分配AVPacket本身，而不是数据缓冲区。必须通过其他方式进行分配，如av_new_Packet。
+【参阅】av_new_Packet
+
+
+
+AVFrame* av_frame_alloc(void);
+
+分配一个AVFrame并将其字段设置为默认值。结果 struct 必须使用av_Frame_Free()释放。
+【返回值】使用默认值填充的AVFrame，如果失败则为NULL
+【注意】这只会分配AVFrame本身，而不会分配数据缓冲区。
+这些缓冲区必须通过其他方式分配，例如，使用av_Frame_Get_Buffer()或手动分配。
+
+
+
+int av_image_alloc(uint8_t * pointers[4], int linesizes[4], int w, int h, enum AVPixelFormat pix_fmt, int align);
+
+分配一个大小为w和h、像素格式为pix_fmt的图像，并相应地填充指针和行大小。
+必须使用av_freep(&pointers[0])释放已分配的图像缓冲区。
+【pointers】要用每个图像平面的指针填充的数组
+【linesizes】用每个平面的线条大小填充的数组
+【w】以像素为单位的图像宽度
+【h】以像素为单位的图像高度
+【pix_fmt】图像的AVPixelFormat
+【align】用于缓冲区大小对齐的值
+【返回值】图像缓冲区所需的大小(以字节为单位)，出现故障时为负错误代码
+
+
+
+/*************************/视频转换函数/***************************************************************************/
+void* av_malloc(size_t size)
+
+分配一个内存块，其对齐方式适合所有内存访问(包括向量，如果CPU上可用)。
+【size】要分配的内存块的大小(字节)
+【返回值】指向已分配块的指针，如果无法分配该块，则返回`NULL`
+
+
+
+int av_image_get_buffer_size(enum AVPixelFormat pix_fmt, int width, int height, int align);
+
+返回存储具有给定参数的图像所需的数据量的大小(以字节为单位)。
+【pix_fmt】图像的像素格式。
+【width】以像素为单位的图像宽度。
+【height】以像素为单位的图像高度。
+【align】假定的线大小对齐
+【返回值】缓冲区大小(以字节为单位)，出现故障时为负错误代码
+
+
+
+int av_image_fill_arrays(uint8_t * dst_data[4], int dst_linesize[4],
+        const uint8_t * src,
+        enum AVPixelFormat pix_fmt, int width, int height, int align);
+
+根据指定的图像参数和提供的数组设置数据指针和linesizes。
+通过使用指向图像数据缓冲区的src地址来填充给定图像的字段。
+根据指定的像素格式，将设置一个或多个图像数据指针和行大小。
+如果指定平面格式，将设置多个指向不同图片平面的指针，并且不同平面的线条大小将存储在LINES_SIZES数组中。
+使用src == NULL调用以获取src缓冲区所需的大小。
+要在一次调用中分配缓冲区并填充DST_DATA和DST_LINESIZE，请使用av_Image_alloc()。
+【dst_data[4]】要填写的数据指针。
+【dst_linesize[4]】DST_DATA中要填充的图像的linesize。
+【src】将包含或包含实际图像数据的缓冲区，可以为NULL。
+【pix_fmt】图像的像素格式。
+【width】以像素为单位的图像宽度。
+【height】以像素为单位的图像高度。
+【align】在src中用于行大小对齐的值
+【返回值】src所需的大小(以字节为单位)，失败时为负错误代码
+
+
+
+struct SwsContext* sws_getContext(int srcW, int srcH, enum AVPixelFormat srcFormat,
+        int dstW, int dstH, enum AVPixelFormat dstFormat,
+        int flags, SwsFilter * srcFilter,
+        SwsFilter * dstFilter, const double* param);
+
+分配并返回SwsContext。您需要它来使用sws_scale()执行缩放 / 转换操作。
+【srcW】源图像的宽度。
+【srcH】源图像的高度。
+【srcFormat】源图像格式。
+【dstW】目标图像的宽度。
+【dstH】目标图像的高度。
+【dstFormat】设置目标图像格式。
+【flags】标志指定用于重新缩放的算法和选项
+【srcFilter】过滤器
+【dstFilter】过滤器
+【param】用于调整SWS_BICUBIC参数[0]和[1]使用的定标器的额外参数调整基函数的形状，
+参数param[0]调整SWS_GAUSS参数[0]的f(1)和param[1]f`(1)调整指数，从而调整SWS_LANCZOS参数[0]的截止频率调整窗函数的宽度
+【返回值】指向分配的上下文SwsContext的指针，如果出现错误，则为NULL
+【注意】此函数将在编写更合理的替代方案后删除
+
+
+
+int sws_scale(struct SwsContext* c, const uint8_t* const srcSlice[],
+        const int srcStride[], int srcSliceY, int srcSliceH,
+        uint8_t* const dst[], const int dstStride[]);
+
+缩放srcSlice中的图像切片，并将生成的缩放切片放入DST中的图像中。切片是图像中的一系列连续行。
+切片必须按顺序提供，可以是从上到下或从下到上的顺序。如果以非连续顺序提供切片，则函数的行为是未定义的。
+
+【c】之前使用sws_getContext()创建的伸缩上下文。
+【srcSlice[]】包含指向源片平面的指针的数组。
+【srcStride[]】包含源图像每个平面的步幅的数组。
+【srcSliceY】要处理的切片在源图像中的位置，即切片第一行的图像中的编号(从零开始计数。
+【srcSliceH】源片的高度，即片中的行数
+【dst[]】包含指向目标图像平面的指针的数组
+【dstStride[]】包含目标图像每个平面的步幅的数组
+【返回值】输出片的高度
+
+
+
+/*************************/音频转换函数/***************************************************************************/
+int av_samples_get_buffer_size(int* linesize, int nb_channels, int nb_samples, enum AVSampleFormat sample_fmt, int align);
+
+获取给定音频参数所需的缓冲区大小。
+【linesize】计算的linesize，可以为NULL。
+【nb_channels】通道的数量。
+【nb_samples】单个通道中的采样数。
+【sample_fmt】采样格式。
+【align】缓冲区大小对齐(0 = 默认，1 = 无对齐)。
+【返回值】所需的缓冲区大小，或故障时的负错误代码
+
+
+
+void av_channel_layout_default(AVChannelLayout* ch_layout, int nb_channels);
+
+获取给定数量的频道的默认频道布局。
+【ch_layout】要初始化的布局结构
+【nb_channels】通道数
+
+
+
+int swr_alloc_set_opts2(struct SwrContext** ps,
+        const AVChannelLayout* out_ch_layout, enum AVSampleFormat out_sample_fmt, int out_sample_rate,
+        const AVChannelLayout* in_ch_layout, enum AVSampleFormat  in_sample_fmt, int  in_sample_rate,
+        int log_offset, void* log_ctx);
+
+如果需要，分配SwrContext并设置 / 重置公共参数。
+该函数不需要为 * ps分配SWR_ALLOC()。
+另一方面，swr_alloc()可以使用swr_alloc_set_opts2()来设置所分配的上下文上的参数。
+【ps】指向现有SWR上下文的指针(如果可用)，或指向空的指针(如果不可用)。如果成功， * ps将设置为已分配的上下文。
+【out_ch_layout】输出通道布局(例如，AV_Channel_Layout_*)。
+【out_sample_fmt】输出样本格式(AV_SAMPLE_FMT_*)。
+【out_sample_rate】输出采样率(频率单位为赫兹)。
+【in_ch_layout】输入频道布局(例如，AV_Channel_Layout_*)。
+【in_sample_fmt】输入样本格式(AV_SAMPLE_FMT_*)。
+【in_sample_rate】输入采样率(频率单位为赫兹)。
+【log_offset】记录级别偏移量。
+【log_ctx】父日志记录上下文可以为空
+【返回值】成功时为0，错误时为负AVERROR代码。出错时，释放SWR上下文并将 * ps设置为空。
+
+
+
+int swr_init(struct SwrContext* s);
+
+在设置用户参数后初始化上下文。
+【注意】必须使用AVOption API配置上下文
+【s】要初始化的SWR上下文
+【返回值】故障情况下的AVERROR错误代码。
+
+
+
+int swr_convert(struct SwrContext* s, uint8_t** out, int out_count, const uint8_t** in, int in_count);
+
+转换音频。
+in和in_count可以设置为0，以在结束时清除最后几个样本。
+如果提供的输入多于输出空间，则输入将被缓冲。
+您可以使用swr_get_out_samples()来检索给定数量的输入样本所需的输出样本数量的上限，从而避免这种缓冲。
+只要有可能，转换将直接运行而不进行复制。
+【s】已分配SWR上下文，已设置参数。
+【out】输出缓冲区，在压缩音频的情况下只需要设置第一个缓冲区。
+【out_count】每通道样本数中可用于输出的空间量。
+【in】输入缓冲区，在压缩音频的情况下只需要设置第一个缓冲区。
+【in_count】一个通道中提供的输入样本数
+【返回值】每通道输出的样本数，错误时为负值
+
+
+
 
 

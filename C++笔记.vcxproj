@@ -129,7 +129,9 @@
   <ItemGroup>
     <ClCompile Include="CMakeLists.txt" />
     <ClCompile Include="FFmpeg-4常用函数.cpp" />
-    <ClCompile Include="FFmpeg-6ffplay源码分析.cpp" />
+    <ClCompile Include="FFmpeg-5结构体.cpp" />
+    <ClCompile Include="FFmpeg-8ffplay源码分析.cpp" />
+    <ClCompile Include="FFmpeg-7音频解码.cpp" />
     <ClCompile Include="FTP.cpp" />
     <ClCompile Include="Live555.cpp" />
     <ClCompile Include="QT-24打包.cpp" />
@@ -212,7 +214,7 @@
     <ClCompile Include="C标准库-1stdio.h" />
     <ClCompile Include="FFmpeg-1ffmpeg命令行.cpp" />
     <ClCompile Include="FFmpeg-3函数库.cpp" />
-    <ClCompile Include="FFmpeg-5编解码.cpp" />
+    <ClCompile Include="FFmpeg-6视频解码.cpp" />
     <ClCompile Include="QT-10列表控件.cpp" />
     <ClCompile Include="QT-11进程与线程.cpp" />
     <ClCompile Include="QT-12网络模块.cpp" />

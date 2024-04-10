@@ -329,7 +329,7 @@
     <ClCompile Include="FFmpeg-3函数库.cpp">
       <Filter>源文件\FFmpeg</Filter>
     </ClCompile>
-    <ClCompile Include="FFmpeg-5编解码.cpp">
+    <ClCompile Include="FFmpeg-6视频解码.cpp">
       <Filter>源文件\FFmpeg</Filter>
     </ClCompile>
     <ClCompile Include="22_播控.cpp">
@@ -758,7 +758,7 @@
     <ClCompile Include="FFmpeg-4常用函数.cpp">
       <Filter>源文件\FFmpeg</Filter>
     </ClCompile>
-    <ClCompile Include="FFmpeg-6ffplay源码分析.cpp">
+    <ClCompile Include="FFmpeg-8ffplay源码分析.cpp">
       <Filter>源文件\FFmpeg</Filter>
     </ClCompile>
     <ClCompile Include="CMakeLists.txt">
@@ -781,6 +781,12 @@
     </ClCompile>
     <ClCompile Include="SDL-2核心API.cpp">
       <Filter>源文件\SDL</Filter>
+    </ClCompile>
+    <ClCompile Include="FFmpeg-5结构体.cpp">
+      <Filter>源文件\FFmpeg</Filter>
+    </ClCompile>
+    <ClCompile Include="FFmpeg-7音频解码.cpp">
+      <Filter>源文件\FFmpeg</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
