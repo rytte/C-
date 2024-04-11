@@ -172,9 +172,9 @@ FU Header格式如下：
 
 
 //总结
-总的来说，H264的码流的打包方式有两种, 一种为annex - b byte stream format 的格式，
+总的来说，H264的码流的打包方式有两种, 一种为annex - b（也叫byte stream format）的格式，
 这个是绝大部分编码器的默认输出格式，就是每个帧的开头的3~4个字节是H264的start_code, 0x00000001或者0x000001；
-另一种是原始的NAL打包格式，就是开始的若干字节（1，2，4字节）是NAL的长度，而不是start_code, 
+另一种是原始的NAL打包格式AVCC，就是开始的若干字节（1，2，4字节）是NAL的长度，而不是start_code, 
 此时必须借助某个全局的数据来获得编码器的profile, level, PPS, SPS等信息才可以解码。
 
 
@@ -182,7 +182,7 @@ FU Header格式如下：
 这里需要了解下H264打包方式，所谓打包方式就是如何组织一连串的NALU单元为完整的H264码流，目前有两种主流格式：
 Annex-B 和 AVCC，两种格式都有防止竞争字节。
 
-//一、Annex-B: :
+//一、Annex-B:
 通过起始码startCode(0x00000001或0x000001)来分割NALU,打包方式如下：
 [start Code]–[NALU]–[start code]–[NALU]…
 
@@ -190,7 +190,7 @@ Annex B格式通常用于实时的流格式，比如说传输流，通过无线�
 在这些格式中通常会周期性的重复SPS和PPS包，经常是在每一个关键帧之前，
 因此据此建立解码器可以一个随机访问的点，这样就可以加入一个正在进行的流，及播放一个已经在传输的流。
 
-//二、AVCC:
+//二、AVCC:（主要应用于MP4、FLV、MKV格式）
 ([extradata]) | ([length] NALU) | ([length] NALU) | …
 这种模式也叫AVC1格式，和上述Annex-b相比没有起始码。 
 其中AVCC这种格式下NALU一般没有sps、pps等参数信息，这些信息属于额外数据extradata存放在其他地方。

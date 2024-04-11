@@ -770,15 +770,6 @@
     <ClCompile Include="QT-24打包.cpp">
       <Filter>源文件\QT</Filter>
     </ClCompile>
-    <ClCompile Include="FTP.cpp">
-      <Filter>源文件</Filter>
-    </ClCompile>
-    <ClCompile Include="QT-25中文乱码问题.cpp">
-      <Filter>源文件</Filter>
-    </ClCompile>
-    <ClCompile Include="UML.cpp">
-      <Filter>源文件</Filter>
-    </ClCompile>
     <ClCompile Include="SDL-2核心API.cpp">
       <Filter>源文件\SDL</Filter>
     </ClCompile>
@@ -787,6 +778,15 @@
     </ClCompile>
     <ClCompile Include="FFmpeg-7音频解码.cpp">
       <Filter>源文件\FFmpeg</Filter>
+    </ClCompile>
+    <ClCompile Include="FTP.cpp">
+      <Filter>源文件\其它</Filter>
+    </ClCompile>
+    <ClCompile Include="QT-25中文乱码问题.cpp">
+      <Filter>源文件\QT</Filter>
+    </ClCompile>
+    <ClCompile Include="UML.cpp">
+      <Filter>源文件\其它</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
