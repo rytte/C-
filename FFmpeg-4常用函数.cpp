@@ -219,6 +219,54 @@ int av_image_alloc(uint8_t * pointers[4], int linesizes[4], int w, int h, enum A
 
 
 
+int av_frame_copy(AVFrame * dst, const AVFrame * src);
+
+将帧数据从src复制到dst。
+此函数不分配任何内容，dst必须已经初始化并使用与src相同的参数进行分配。
+此函数仅复制帧数据(即数据 / 扩展数据数组的内容)，而不复制任何其他属性。
+【返回值】 >= 0表示成功，出错表示为负值
+
+
+
+int av_frame_copy_props(AVFrame * dst, const AVFrame * src);
+
+仅将“METADATA”字段从src复制到dst。
+对于此函数而言，元数据是那些不影响缓冲区中数据布局的字段。
+例如PTS、采样率(用于音频)或采样纵横比(用于视频)，但不包括宽度 / 高度或频道布局。
+Side数据也会被复制。
+
+
+
+AVFrame* av_frame_clone(const AVFrame * src);
+
+创建引用与src相同的数据的新框架。（申请内存并复制属性，不复制内容数据）
+这是av_Frame_alloc() + av_Frame_ref()的快捷方式。
+【返回值】成功时新创建的AVFrame，错误时为空。
+
+
+
+int av_frame_ref(AVFrame * dst, const AVFrame * src);
+
+设置对源框架所描述的数据的新引用。
+将帧属性从src复制到dst，并从src为每个AVBufferRef创建一个新的引用。
+如果不对src进行引用计数，则分配新的缓冲区并复制数据。
+【注意】在调用此函数之前，必须使用av_Frame_unref(Dst)取消引用dst，或者使用av_Frame_alloc()重新分配dst，否则将发生未定义的行为。
+【返回值】成功时为0，错误时为负值
+
+
+
+void av_frame_unref(AVFrame * frame);
+
+取消引用帧引用的所有缓冲区并重置帧字段。（取消帧引用并清空内容数据，保留属性数据）
+
+
+
+int av_read_frame(AVFormatContext * s, AVPacket * pkt);
+
+应在一个线程中同时解码音视频，若在两个线程中分别解码音视频则需要另外申请一个AVFormatContext
+
+
+
 /*************************/视频转换函数/***************************************************************************/
 void* av_malloc(size_t size)
 
@@ -315,7 +363,7 @@ int av_samples_get_buffer_size(int* linesize, int nb_channels, int nb_samples, e
 
 void av_channel_layout_default(AVChannelLayout* ch_layout, int nb_channels);
 
-获取给定数量的频道的默认频道布局。
+修改给定的通道布局的通道数
 【ch_layout】要初始化的布局结构
 【nb_channels】通道数
 

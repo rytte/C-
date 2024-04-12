@@ -38,25 +38,24 @@ while (1)
 		break;
 
 	if (packet->stream_index == videoIndex)
-		continue;
-
-	//发送一个包数据
-	avcodec_send_packet(pCodecCtx, packet);
-
-	while (1)
 	{
-		//获取解码后的帧数据
-		ret = avcodec_receive_frame(pCodecCtx, frame);
-		if (ret < 0) break;
-		else if (ret == AVERROR(EAGAIN) || ret == AVERROR_EOF) break;
+		//发送一个包数据
+		avcodec_send_packet(pCodecCtx, packet);
 
-		//>>解码后的数据处理<<
-		......
+		while (1)
+		{
+			//获取解码后的帧数据
+			ret = avcodec_receive_frame(pCodecCtx, frame);
+			if (ret < 0) break;
+			else if (ret == AVERROR(EAGAIN) || ret == AVERROR_EOF) break;
 
-		//释放帧内存
-		av_frame_unref(frame);
+			//>>解码后的数据处理<<
+			......
+
+			//释放帧内存
+			av_frame_unref(frame);
+		}
 	}
-
 	av_packet_unref(packet);
 }
 

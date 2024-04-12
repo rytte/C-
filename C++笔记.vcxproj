@@ -138,7 +138,9 @@
     <ClCompile Include="QT-25中文乱码问题.cpp" />
     <ClCompile Include="SDL-2核心API.cpp" />
     <ClCompile Include="UML.cpp" />
+    <ClCompile Include="备份.cpp" />
     <ClCompile Include="封装-4MP4封装格式.cpp" />
+    <ClCompile Include="工具链.cpp" />
     <ClCompile Include="流协议-4RTCP协议.cpp" />
     <ClCompile Include="流协议-5RTSP协议.cpp" />
     <ClCompile Include="流协议-6RTMP协议.cpp" />
