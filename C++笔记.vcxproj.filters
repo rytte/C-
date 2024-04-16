@@ -392,30 +392,6 @@
     <ClCompile Include="mplayer.cpp">
       <Filter>源文件\其它</Filter>
     </ClCompile>
-    <ClCompile Include="QML-1对象.cpp">
-      <Filter>源文件\QML</Filter>
-    </ClCompile>
-    <ClCompile Include="QML-2元素.cpp">
-      <Filter>源文件\QML</Filter>
-    </ClCompile>
-    <ClCompile Include="QML-3组件.cpp">
-      <Filter>源文件\QML</Filter>
-    </ClCompile>
-    <ClCompile Include="QML-4控件.cpp">
-      <Filter>源文件\QML</Filter>
-    </ClCompile>
-    <ClCompile Include="QML-5动画.cpp">
-      <Filter>源文件\QML</Filter>
-    </ClCompile>
-    <ClCompile Include="QML-6工程.cpp">
-      <Filter>源文件\QML</Filter>
-    </ClCompile>
-    <ClCompile Include="QML-7打包.cpp">
-      <Filter>源文件\QML</Filter>
-    </ClCompile>
-    <ClCompile Include="QML-8MVC.cpp">
-      <Filter>源文件\QML</Filter>
-    </ClCompile>
     <ClCompile Include="QT-13快捷键.cpp">
       <Filter>源文件\QT</Filter>
     </ClCompile>
@@ -796,6 +772,33 @@
     </ClCompile>
     <ClCompile Include="FFmpeg-8拉流.cpp">
       <Filter>源文件\FFmpeg</Filter>
+    </ClCompile>
+    <ClCompile Include="QML-1总示例.cpp">
+      <Filter>源文件\QML</Filter>
+    </ClCompile>
+    <ClCompile Include="QML-2对象.cpp">
+      <Filter>源文件\QML</Filter>
+    </ClCompile>
+    <ClCompile Include="QML-3元素.cpp">
+      <Filter>源文件\QML</Filter>
+    </ClCompile>
+    <ClCompile Include="QML-4组件.cpp">
+      <Filter>源文件\QML</Filter>
+    </ClCompile>
+    <ClCompile Include="QML-5控件.cpp">
+      <Filter>源文件\QML</Filter>
+    </ClCompile>
+    <ClCompile Include="QML-6动画.cpp">
+      <Filter>源文件\QML</Filter>
+    </ClCompile>
+    <ClCompile Include="QML-7工程.cpp">
+      <Filter>源文件\QML</Filter>
+    </ClCompile>
+    <ClCompile Include="QML-8打包.cpp">
+      <Filter>源文件\QML</Filter>
+    </ClCompile>
+    <ClCompile Include="QML-9MVC.cpp">
+      <Filter>源文件\QML</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
