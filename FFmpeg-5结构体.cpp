@@ -223,6 +223,13 @@ int av_frame_ref(AVFrame* dst, const AVFrame* src);	// 增加引用计数
 void av_frame_unref(AVFrame* frame);				// 减少引用计数 
 int av_frame_get_buffer(AVFrame* frame, int align);	// 分配缓冲区
 
+//内存分配和引用
+avcodec_receive_frame() //开始时调用av_frame_unref(frame)减引用
+av_frame_ref()			//需要提前av_frame_alloc为dst分配内存。《只需要一个帧的引用并且需要与原始帧共享数据》
+av_frame_clone()		//就是av_frame_alloc()+av_frame_ref()。《需要一个帧的完全独立的副本》
+av_frame_copy()		//浅拷贝，复制框架而不复制缓冲区数据《需要一个帧的浅拷贝并且不需要修改数据》
+av_frame_unref()		//取消引用帧引用的所有缓冲区并重置帧字段。当帧引用为0时会自动清空数据并释放内存。
+
 
 //常规解码流程使用
 AVFrame* pFrame = av_frame_alloc();  // [1]

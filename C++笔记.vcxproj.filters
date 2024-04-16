@@ -758,7 +758,7 @@
     <ClCompile Include="FFmpeg-4常用函数.cpp">
       <Filter>源文件\FFmpeg</Filter>
     </ClCompile>
-    <ClCompile Include="FFmpeg-8ffplay源码分析.cpp">
+    <ClCompile Include="FFmpeg-9ffplay源码分析.cpp">
       <Filter>源文件\FFmpeg</Filter>
     </ClCompile>
     <ClCompile Include="CMakeLists.txt">
@@ -777,6 +777,24 @@
       <Filter>源文件\FFmpeg</Filter>
     </ClCompile>
     <ClCompile Include="FFmpeg-7音频解码.cpp">
+      <Filter>源文件\FFmpeg</Filter>
+    </ClCompile>
+    <ClCompile Include="QT-25中文乱码问题.cpp">
+      <Filter>源文件\QT</Filter>
+    </ClCompile>
+    <ClCompile Include="工具链.cpp">
+      <Filter>源文件\其它</Filter>
+    </ClCompile>
+    <ClCompile Include="FTP.cpp">
+      <Filter>源文件\其它</Filter>
+    </ClCompile>
+    <ClCompile Include="UML.cpp">
+      <Filter>源文件\其它</Filter>
+    </ClCompile>
+    <ClCompile Include="备份.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="FFmpeg-8拉流.cpp">
       <Filter>源文件\FFmpeg</Filter>
     </ClCompile>
   </ItemGroup>
@@ -800,6 +818,9 @@
       <Filter>源文件\OpenCV</Filter>
     </ClInclude>
     <ClInclude Include="C标准库-2stdlib.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="ffmpeg.h">
       <Filter>头文件</Filter>
     </ClInclude>
   </ItemGroup>

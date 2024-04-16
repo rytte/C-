@@ -1,5 +1,5 @@
 ﻿/*************************/ffmpeg函数库/***************************************************************************/
-
+#include "ffmpeg.h"
 libavutil
 核心工具库，例如log模块。下面很多功能模块都会依赖该库作一些基本的音视频处理操作。
 
@@ -188,6 +188,10 @@ avfilter_inout_alloc					创建输入输出结构
 avfilter_inout_free					释放输入输出结构
 avfilter_graph_config				配置滤镜图
 avfilter_version					获取libavfilter库的版本号
+
+
+
+
 
 
 
