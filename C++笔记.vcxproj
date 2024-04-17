@@ -134,7 +134,9 @@
     <ClCompile Include="FFmpeg-7音频解码.cpp" />
     <ClCompile Include="FFmpeg-8拉流.cpp" />
     <ClCompile Include="FTP.cpp" />
-    <ClCompile Include="Live555.cpp" />
+    <ClCompile Include="Live-1概述.cpp" />
+    <ClCompile Include="Live-2testOnDemandRTSPServer.cpp" />
+    <ClCompile Include="Live-3Medium.cpp" />
     <ClCompile Include="QML-1总示例.cpp" />
     <ClCompile Include="QT-24打包.cpp" />
     <ClCompile Include="QT-25中文乱码问题.cpp" />
