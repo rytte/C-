@@ -20,7 +20,7 @@ lambda表达式
 6、 异常说明			Exception attr异常属性，可选
 
 示例：
-auto a = [](return ready);		//在lambda表达式中，只有捕获列表和函数体以外，其他都是可选
+auto a = [] {return ready};		//在lambda表达式中，只有捕获列表和函数体以外，其他都是可选
 
 示例：
 int x = 5;

@@ -364,7 +364,7 @@ int sws_scale(struct SwsContext* c, const uint8_t* const srcSlice[],
 
 
 
-/*************************/音频转换函数/***************************************************************************/
+/*************************/音频转换函数;/***************************************************************************/
 int av_samples_get_buffer_size(int* linesize, int nb_channels, int nb_samples, enum AVSampleFormat sample_fmt, int align);
 
 // 获取给定音频参数所需的缓冲区大小。
@@ -431,5 +431,61 @@ int swr_convert(struct SwrContext* s, uint8_t** out, int out_count, const uint8_
 
 
 
+/*************************/推流;/***************************************************************************/
+int avformat_alloc_output_context2(AVFormatContext** ctx, const AVOutputFormat* oformat,
+        const char* format_name, const char* filename);
+
+// 为输出格式分配AVFormatContext。
+//  AvFormat_Free_CONTEXT()可用于释放上下文和框架在其中分配的所有内容。
+// 【ctx】指针对象被设置为创建的格式上下文，如果失败，则设置为空
+// 【oformat】用于分配上下文的格式，如果为 NULL 则使用format_name和filename
+// 【format_name】用于分配上下文的输出格式的名称，如果为 NULL，则使用文件名代替。
+// 【filename】用于分配上下文的文件名，可以为 NULL
+// 【返回值】成功时 >= 0，失败时为负的 AVERROR 代码
+
+
+
+AVStream* avformat_new_stream(AVFormatContext* s, const struct AVCodec* c);
+
+// 为媒体文件添加新数据流。
+// 在解多路复用时，解多路复用器会在 read_header() 中调用它。
+// 如果在 s.ctx_flags 中设置了 AVFMTCTX_NOHEADER 标志，则也可以在 read_packet() 中调用它。
+// 在进行多路复用时，用户应在调用 avformat_write_header() 之前调用它。
+// 用户需要调用 avformat_free_context()，以清理 avformat_new_stream() 分配的资源。
+// 【s】媒体文件句柄
+// 【c】未使用，无任何作用
+// 【返回值】新创建的数据流，否则错误时为 NULL。
+
+
+
+int avcodec_parameters_copy(AVCodecParameters* dst, const AVCodecParameters* src);
+
+// 将 src 的内容复制到 dst。dst 中已分配的字段将被释放，并替换为 src 中相应字段的新分配副本。
+// 【返回值】成功时 >= 0，失败时为负的 AVERROR 代码。
+
+
+
+int avio_open(AVIOContext** s, const char* url, int flags);
+
+// 创建并初始化AVIOContext，用于访问url 所指示的资源。
+// 【注意】当url所指示的资源以读写模式打开时，AVIOContext只能用于写入。
+// 【s】用于返回指向已创建AVIOContext 的指针。如果失败，指向的值将被设置为 NULL。
+// 【url】要访问的资源
+// 【flags】 用于控制如何打开url所指示资源的标记
+// 【返回值】成功时返回 >= 0，失败时返回与AVERROR代码相对应的负值
+
+
+
+int avformat_write_header(AVFormatContext* s, AVDictionary** options);
+
+// 分配流私有数据并将流标题写入输出媒体文件。
+// 【s】媒体文件句柄，必须用 avformat_alloc_context()分配。
+// 其 AVFormatContext.oformat 字段必须设置为所需的输出格式；
+// 其 AVFormatContext.pb 字段必须设置为已打开的 AVIOContext。
+// 参数 options 一个包含 AVFormatContext 和 muxer - private 选项的 AVDictionary。
+// 返回时，该参数将被销毁，取而代之的是一个包含未找到的选项的 dict。可以为空。
+// 【返回值】 AVSTREAM_INIT_IN_WRITE_HEADER 如果编解码器尚未在 avformat_init_output() 中完全初始化，则返回成功。
+// 【返回值】 AVSTREAM_INIT_IN_INIT_OUTPUT 如果编解码器已在 avformat_init_output()中完全初始化，则执行成功。
+// 【返回值】 AVERROR 失败时为负的 AVERROR。
 
 
