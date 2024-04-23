@@ -87,6 +87,9 @@
     <Filter Include="源文件\音视频\音频处理">
       <UniqueIdentifier>{e8e15a29-980e-472f-aaf7-0f13f250fa7a}</UniqueIdentifier>
     </Filter>
+    <Filter Include="源文件\Live555">
+      <UniqueIdentifier>{21a2c306-3dbc-46b2-a2b5-4f399874ce04}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="算法-1顺序表.c">
@@ -740,9 +743,6 @@
     <ClCompile Include="CMakeLists.txt">
       <Filter>源文件\其它</Filter>
     </ClCompile>
-    <ClCompile Include="Live555.cpp">
-      <Filter>源文件\其它</Filter>
-    </ClCompile>
     <ClCompile Include="QT-24打包.cpp">
       <Filter>源文件\QT</Filter>
     </ClCompile>
@@ -799,6 +799,15 @@
     </ClCompile>
     <ClCompile Include="QML-9MVC.cpp">
       <Filter>源文件\QML</Filter>
+    </ClCompile>
+    <ClCompile Include="Live-1概述.cpp">
+      <Filter>源文件\Live555</Filter>
+    </ClCompile>
+    <ClCompile Include="Live-2testOnDemandRTSPServer.cpp">
+      <Filter>源文件\Live555</Filter>
+    </ClCompile>
+    <ClCompile Include="Live-3Medium.cpp">
+      <Filter>源文件\Live555</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
