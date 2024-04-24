@@ -1,7 +1,7 @@
 #pragma once
 
-#include "ffmpeg_include/libavformat/avformat.h"
-#include "ffmpeg_include/libavcodec/avcodec.h"
-#include "ffmpeg_include/libavdevice/avdevice.h"
+#include "ffmpeg/libavformat/avformat.h"
+#include "ffmpeg/libavcodec/avcodec.h"
+#include "ffmpeg/libavdevice/avdevice.h"
 
 

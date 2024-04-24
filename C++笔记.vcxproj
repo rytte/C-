@@ -137,6 +137,7 @@
     <ClCompile Include="Live-1概述.cpp" />
     <ClCompile Include="Live-2testOnDemandRTSPServer.cpp" />
     <ClCompile Include="Live-3Medium.cpp" />
+    <ClCompile Include="Live-4客户端.cpp" />
     <ClCompile Include="QML-1总示例.cpp" />
     <ClCompile Include="QT-24打包.cpp" />
     <ClCompile Include="QT-25中文乱码问题.cpp" />
@@ -372,6 +373,7 @@
     <ClInclude Include="controller.h" />
     <ClInclude Include="C标准库-2stdlib.h" />
     <ClInclude Include="ffmpeg.h" />
+    <ClInclude Include="live555.h" />
     <ClInclude Include="model.h" />
     <ClInclude Include="pthread_pool.h" />
     <ClInclude Include="view.h" />

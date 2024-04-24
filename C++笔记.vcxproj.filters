@@ -809,6 +809,9 @@
     <ClCompile Include="Live-3Medium.cpp">
       <Filter>源文件\Live555</Filter>
     </ClCompile>
+    <ClCompile Include="Live-4客户端.cpp">
+      <Filter>源文件\Live555</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="pthread_pool.h">
@@ -833,6 +836,9 @@
       <Filter>头文件</Filter>
     </ClInclude>
     <ClInclude Include="ffmpeg.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="live555.h">
       <Filter>头文件</Filter>
     </ClInclude>
   </ItemGroup>
