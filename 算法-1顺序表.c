@@ -1,9 +1,10 @@
 #include <stdio.h>
 
 #define MAX 10				//定义最大长度
-int count = 0;				//定义数组数量，数组末位下标为[count-1]
+int count = 0;					//定义当前数量，数组末位下标为[count-1]
 
-typedef struct seqnode		//定义数据节点
+//定义数据节点
+typedef struct seqnode		
 {
 	int data;
 }seqnode;
@@ -17,7 +18,8 @@ void order_add(seqnode* seqlist, int data);
 
 int main(void)
 {
-	seqnode seqlist[MAX] = { 0 };		//初始化一个空顺序表
+	//初始化一个空顺序表
+	seqnode seqlist[MAX] = { 0 };
 
 	//增删数据，输入数字大于0则加入表，小于零则删除对应绝对值的数据，等于零则遍历表。
 	int data;

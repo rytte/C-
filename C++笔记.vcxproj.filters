@@ -257,9 +257,6 @@
     <ClCompile Include="面试.cpp">
       <Filter>源文件\其它</Filter>
     </ClCompile>
-    <ClCompile Include="数据结构与算法.cpp">
-      <Filter>源文件\其它</Filter>
-    </ClCompile>
     <ClCompile Include="23模板元编程.cpp">
       <Filter>源文件\C++语法</Filter>
     </ClCompile>
@@ -811,6 +808,12 @@
     </ClCompile>
     <ClCompile Include="Live-4客户端.cpp">
       <Filter>源文件\Live555</Filter>
+    </ClCompile>
+    <ClCompile Include="SDP格式.cpp">
+      <Filter>源文件\其它</Filter>
+    </ClCompile>
+    <ClCompile Include="算法-0数据结构.c">
+      <Filter>源文件\C语言算法</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
