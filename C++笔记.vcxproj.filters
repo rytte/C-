@@ -122,7 +122,7 @@
     <ClCompile Include="算法-5内核链表.cpp">
       <Filter>源文件\C++算法</Filter>
     </ClCompile>
-    <ClCompile Include="算法-6栈.c">
+    <ClCompile Include="算法-8链式栈.c">
       <Filter>源文件\C语言算法</Filter>
     </ClCompile>
     <ClCompile Include="算法-6栈.cpp">
@@ -813,6 +813,12 @@
       <Filter>源文件\其它</Filter>
     </ClCompile>
     <ClCompile Include="算法-0数据结构.c">
+      <Filter>源文件\C语言算法</Filter>
+    </ClCompile>
+    <ClCompile Include="算法-6顺序栈.c">
+      <Filter>源文件\C语言算法</Filter>
+    </ClCompile>
+    <ClCompile Include="算法-7共享栈.c">
       <Filter>源文件\C语言算法</Filter>
     </ClCompile>
   </ItemGroup>

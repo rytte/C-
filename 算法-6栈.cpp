@@ -30,7 +30,7 @@ public:
 	}
 
 	//³öÕ»
-	void pop(void)
+	int pop(void)
 	{
 		if (top == NULL)
 		{
@@ -40,8 +40,9 @@ public:
 
 		node* temp = top;
 		top = temp->next;
-		cout << "³öÕ»£º" << temp->data << endl;
+		int ret = temp->data;
 		delete temp;
+		return  ret;
 	}
 
 	//±éÀúÕ»
@@ -77,7 +78,7 @@ int main(void)
 		if (data > 0)
 			stack.push(data);
 		else if (data < 0)
-			stack.pop();
+			cout << stack.pop() << endl;
 		else
 		{
 			stack.show();

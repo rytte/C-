@@ -117,7 +117,7 @@ public:
 			pos->prev->next = pos->next;			//先剔除
 			pos->next->prev = pos->prev;
 
-			pos->next = head->next;					//再头插
+			pos->next = head->next;				//再头插
 			pos->prev = head;
 			head->next->prev = pos;
 			head->next = pos;
