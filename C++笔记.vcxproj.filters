@@ -122,25 +122,25 @@
     <ClCompile Include="算法-5内核链表.cpp">
       <Filter>源文件\4-C++算法</Filter>
     </ClCompile>
-    <ClCompile Include="算法-9链式栈.c">
+    <ClCompile Include="算法-7链式栈.c">
       <Filter>源文件\3-算法与数据结构</Filter>
     </ClCompile>
     <ClCompile Include="算法-6栈.cpp">
       <Filter>源文件\4-C++算法</Filter>
     </ClCompile>
-    <ClCompile Include="算法-7队列.c">
+    <ClCompile Include="算法-10链式队列.c">
       <Filter>源文件\3-算法与数据结构</Filter>
     </ClCompile>
     <ClCompile Include="算法-7队列.cpp">
       <Filter>源文件\4-C++算法</Filter>
     </ClCompile>
-    <ClCompile Include="算法-10二叉树.c">
+    <ClCompile Include="算法-11二叉树.c">
       <Filter>源文件\3-算法与数据结构</Filter>
     </ClCompile>
     <ClCompile Include="算法-8二叉树.cpp">
       <Filter>源文件\4-C++算法</Filter>
     </ClCompile>
-    <ClCompile Include="算法-11排序算法.c">
+    <ClCompile Include="算法-12排序算法.c">
       <Filter>源文件\3-算法与数据结构</Filter>
     </ClCompile>
     <ClCompile Include="系编-1多进程.cpp">
@@ -161,7 +161,7 @@
     <ClCompile Include="算法-10图.cpp">
       <Filter>源文件\4-C++算法</Filter>
     </ClCompile>
-    <ClCompile Include="算法-12图.c">
+    <ClCompile Include="算法-13图.c">
       <Filter>源文件\3-算法与数据结构</Filter>
     </ClCompile>
     <ClCompile Include="系编-5消息队列.cpp">
@@ -821,7 +821,13 @@
     <ClCompile Include="算法-8共享栈.c">
       <Filter>源文件\3-算法与数据结构</Filter>
     </ClCompile>
-    <ClCompile Include="算法-15约瑟夫环.c">
+    <ClCompile Include="算法-20约瑟夫环.c">
+      <Filter>源文件\3-算法与数据结构</Filter>
+    </ClCompile>
+    <ClCompile Include="算法-9顺序循环队列.c">
+      <Filter>源文件\3-算法与数据结构</Filter>
+    </ClCompile>
+    <ClCompile Include="算法-21二叉树按层遍历.c">
       <Filter>源文件\3-算法与数据结构</Filter>
     </ClCompile>
   </ItemGroup>
