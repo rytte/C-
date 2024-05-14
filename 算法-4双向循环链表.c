@@ -16,6 +16,7 @@ void del(node* head, int data);
 void show_next(node* head);
 void show_prev(node* head);
 void reverse(node* head);
+void odd_even(int len, node* head);
 
 
 int main(void)
@@ -153,3 +154,18 @@ void reverse(node* head)
 	}
 }
 
+//奇升偶降
+void odd_even(int len, node* head)
+{
+	node* pos, * n;
+	for (pos = head->prev->prev; pos != head; pos = n)
+	{
+		n = pos->prev;
+		if (pos->data % 2 == 0)
+		{
+			// 如果是偶数，则尾插到链表最后
+			add_tail(head, pos->data);
+			del(head, pos->data);
+		}
+	}
+}

@@ -30,8 +30,8 @@ int main(void)
 			add_tail(head, data);		//尾插
 		else if (data < 0)
 			del(head, -data);
-		else
-			show(head);
+
+		show(head);
 	}
 
 	return 0;
@@ -55,7 +55,6 @@ void add_head(node* head, int data)
 
 	p->next = head->next;		//新节点指向头结点的指向
 	head->next = p;				//头结点指向新节点
-	show(head);
 }
 
 //添加数据，尾插
@@ -71,7 +70,6 @@ void add_tail(node* head, int data)
 		pos = pos->next;
 	}
 	pos->next = p;				//尾结点指向新节点
-	show(head);
 }
 
 //删除数据
@@ -94,7 +92,6 @@ void del(node* head, int data)
 		{
 			prev->next = pos->next;
 			free(pos);
-			show(head);
 			return;
 		}
 	}

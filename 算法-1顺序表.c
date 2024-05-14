@@ -21,7 +21,7 @@ int main(void)
 	//初始化一个空顺序表
 	seqnode seqlist[MAX] = { 0 };
 
-	//增删数据，输入数字大于0则加入表，小于零则删除对应绝对值的数据，等于零则遍历表。
+	//增删数据，输入数字大于0则加入表，小于零则删除对应绝对值的数据。
 	int data;
 	while (1)
 	{
@@ -31,8 +31,8 @@ int main(void)
 			order_add(seqlist, data);
 		else if (data < 0)
 			del(seqlist, -data);
-		else
-			show(seqlist);
+
+		show(seqlist);
 	}
 
 	return 0;
@@ -50,7 +50,6 @@ void add(seqnode* seqlist, int data)
 	}
 	seqlist[count].data = data;
 	count++;
-	show(seqlist);
 }
 
 
@@ -73,7 +72,6 @@ void del(seqnode* seqlist, int data)
 			}
 			seqlist[count - 1].data = 0;					//最后一个数据清零
 			count--;
-			show(seqlist);
 			return;										//处理完后退出函数
 		}
 	}
@@ -119,7 +117,6 @@ void order_add(seqnode* seqlist, int data)
 	}
 	seqlist[i].data = data;
 	count++;
-	show(seqlist);
 }
 
 

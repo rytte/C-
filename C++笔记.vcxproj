@@ -151,8 +151,9 @@
     <ClCompile Include="流协议-5RTSP协议.cpp" />
     <ClCompile Include="流协议-6RTMP协议.cpp" />
     <ClCompile Include="算法-0数据结构.c" />
+    <ClCompile Include="算法-15约瑟夫环.c" />
     <ClCompile Include="算法-6顺序栈.c" />
-    <ClCompile Include="算法-7共享栈.c" />
+    <ClCompile Include="算法-8共享栈.c" />
     <ClCompile Include="编码-5H264解析器.cpp" />
     <ClCompile Include="编码-7AAC解析器.cpp" />
     <ClCompile Include="网编-4IP协议和HTTP协议.cpp" />
@@ -322,16 +323,16 @@
     <ClCompile Include="算法-4双向循环链表.cpp" />
     <ClCompile Include="算法-5内核链表.c" />
     <ClCompile Include="算法-5内核链表.cpp" />
-    <ClCompile Include="算法-8链式栈.c" />
+    <ClCompile Include="算法-9链式栈.c" />
     <ClCompile Include="算法-6栈.cpp" />
     <ClCompile Include="算法-7队列.c" />
     <ClCompile Include="算法-7队列.cpp" />
-    <ClCompile Include="算法-8二叉树.c" />
+    <ClCompile Include="算法-10二叉树.c" />
     <ClCompile Include="算法-8二叉树.cpp" />
     <ClCompile Include="QT-18工程.cpp" />
     <ClCompile Include="QT-17SQLite数据库.cpp" />
     <ClCompile Include="QT-14QJson.cpp" />
-    <ClCompile Include="算法-10图.c" />
+    <ClCompile Include="算法-12图.c" />
     <ClCompile Include="网编-2TCP.cpp" />
     <ClCompile Include="SDL-3绘制图形与图片.cpp" />
     <ClCompile Include="SDL-4视频播放.cpp" />
@@ -358,7 +359,7 @@
     <ClCompile Include="实例_quickdemo.cpp" />
     <ClCompile Include="广播send.c" />
     <ClCompile Include="异步信号驱动server.c" />
-    <ClCompile Include="算法-9排序算法.c" />
+    <ClCompile Include="算法-11排序算法.c" />
     <ClCompile Include="系编-4精灵进程.cpp" />
     <ClCompile Include="文件传输client.c" />
     <ClCompile Include="文件传输server.c" />
@@ -376,6 +377,7 @@
     <ClInclude Include="controller.h" />
     <ClInclude Include="C标准库-2stdlib.h" />
     <ClInclude Include="ffmpeg.h" />
+    <ClInclude Include="kernel_list.h" />
     <ClInclude Include="live555.h" />
     <ClInclude Include="model.h" />
     <ClInclude Include="pthread_pool.h" />
