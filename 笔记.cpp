@@ -186,3 +186,10 @@ RECOVER_TO_PLAN_MODE
         ]
     }
 ]
+
+
+AVRational time_base = m_pFormatCtx->streams[m_videoIndex]->time_base;
+int64_t duration = m_pFormatCtx->streams[m_videoIndex]->duration;
+double microseconds = av_rescale_q(duration, time_base, AVRational({ 1,AV_TIME_BASE }));
+printf("Video duration: %.3f seconds\n", microseconds / 1000 / 1000);
+
