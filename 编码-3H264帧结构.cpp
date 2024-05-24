@@ -21,15 +21,22 @@ NAL Unit Header 由起始码和Nal Type组成。
 NAL Unit Body 通常是RBSP数据，即编码后的比特流数据。
 
 
+//结构拆分
+H264比特流 = 起始码 + NALU + 起始码 + NALU
+NALU = NALU Header + EBSP
+EBSP = RBSP（0x03处理）
+RBSP = SODB + rbsp_trailing_bits
+
+H264比特流 = （起始码 + NALU Header + SODB + rbsp_trailing_bits） * N
+H264比特流 = （0x000001 0x67 SODB 0x01 0x00） * N
+
+
 //RBSP、SODB、EBSP三者的区别和联系
 （1）SODB（String Of Data Bits，原始数据比特流）：最原始的编码数据，没有任何附加数据
 （2）RBSP（Raw Byte Sequence Payload，原始字节序列载荷）：在 SODB 的基础上加了rbsp_stop_ont_bit（bit 值为 1）并用 0 按字节补位对齐
 （3）EBSP（Encapsulated Byte Sequence Payload，扩展字节序列载荷）：在 RBSP 的基础上增加了防止伪起始码字节（0X03）
 （4）NALU是对RBSP的封装。而RTP之类的是对NALU的封装。
 
-NALU = NALU Header + RBSP
-其实严格来说，这个等式是不成立的，因为RBSP并不等于NALU刨去NALU Header。严格来说，NALU的组成部分应为：
-NALU = NALU Header + EBSP
 
 //RBSP尾部
 有两种，大多数类型的NALU，使用RBSP尾部。nal_unit_type等于1~5时，使用条带RBSP尾部。
@@ -37,6 +44,14 @@ RBSP尾部（rbsp_trailing_bits）：含rbsp_stop_one_bit（值为1）并使用r
 条带RBSP尾部（rbsp_slice_trailing_bits）：含rbsp_trailing_bits（即上一尾部），
 ——当entropy_coding_mode_flag值为1即当前采用的熵编码为CABAC，而且more_rbsp_trailing_data()返回为true，
 ——也即RBSP中有更多数据时，添加一个或多个0x0000。
+
+
+//特殊数据
+0x000000		结束码
+0x000001		起始码
+0x000002		保留使用
+0x000003		防止竞争
+
 
 //防止竞争
 EBSP相较于RBSP，多了防止竞争的一个字节：0x03。
@@ -51,23 +66,6 @@ EBSP相较于RBSP，多了防止竞争的一个字节：0x03。
 0x000001 -----------> 0x00000301
 0x000002 -----------> 0x00000302
 0x000003 -----------> 0x00000303
-
-
-//结构拆分
-H264比特流 = 起始码 + NALU + 起始码 + NALU
-NALU = NALU Header + EBSP
-EBSP =  RBSP（0x03处理）
-RBSP = SODB + rbsp_trailing_bits
-
-H264比特流 = （起始码 + NALU Header + SODB + rbsp_trailing_bits）* N
-H264比特流 = （0x000001 0x67 SODB 0x01 0x00）* N
-
-
-//特殊数据
-0x000000		结束码
-0x000001		起始码
-0x000002		保留使用
-0x000003		防止竞争
 
 
 

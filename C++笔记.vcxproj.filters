@@ -737,7 +737,7 @@
     <ClCompile Include="FFmpeg-9ffplay源码分析.cpp">
       <Filter>源文件\FFmpeg</Filter>
     </ClCompile>
-    <ClCompile Include="CMakeLists.txt">
+    <ClCompile Include="CMake.cmake">
       <Filter>源文件\其它</Filter>
     </ClCompile>
     <ClCompile Include="QT-24打包.cpp">
