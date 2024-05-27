@@ -689,10 +689,10 @@
     <ClCompile Include="网编-5TCP性能调优.cpp">
       <Filter>源文件\6-网络编程</Filter>
     </ClCompile>
-    <ClCompile Include="编码-3H264帧结构.cpp">
+    <ClCompile Include="编码-4H264码流解析.cpp">
       <Filter>源文件\音视频\编码标准</Filter>
     </ClCompile>
-    <ClCompile Include="编码-4H264码流解析.cpp">
+    <ClCompile Include="编码-3H264编码原理.cpp">
       <Filter>源文件\音视频\编码标准</Filter>
     </ClCompile>
     <ClCompile Include="编码-6AAC码流解析.cpp">

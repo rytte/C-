@@ -166,8 +166,8 @@
     <ClCompile Include="网编-7Socket.cpp" />
     <ClCompile Include="网编-5TCP性能调优.cpp" />
     <ClCompile Include="编码-6AAC码流解析.cpp" />
-    <ClCompile Include="编码-3H264帧结构.cpp" />
     <ClCompile Include="编码-4H264码流解析.cpp" />
+    <ClCompile Include="编码-3H264编码原理.cpp" />
     <ClCompile Include="编码-2JPEG编码.cpp" />
     <ClCompile Include="封装-1封装格式.cpp" />
     <ClCompile Include="图像-2YUV数据处理.cpp" />
