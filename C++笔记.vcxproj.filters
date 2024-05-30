@@ -830,6 +830,9 @@
     <ClCompile Include="算法-21二叉树按层遍历.c">
       <Filter>源文件\3-算法与数据结构</Filter>
     </ClCompile>
+    <ClCompile Include="计组.cpp">
+      <Filter>源文件\其它</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="pthread_pool.h">
