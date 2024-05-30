@@ -154,8 +154,9 @@
     <ClCompile Include="流协议-5RTSP协议.cpp" />
     <ClCompile Include="流协议-6RTMP协议.cpp" />
     <ClCompile Include="算法-0数据结构.c" />
+    <ClCompile Include="算法-12二叉树按层遍历.c" />
+    <ClCompile Include="算法-14KMP算法.c" />
     <ClCompile Include="算法-20约瑟夫环.c" />
-    <ClCompile Include="算法-21二叉树按层遍历.c" />
     <ClCompile Include="算法-6顺序栈.c" />
     <ClCompile Include="算法-8共享栈.c" />
     <ClCompile Include="算法-9顺序循环队列.c" />

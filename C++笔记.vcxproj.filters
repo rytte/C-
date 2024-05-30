@@ -827,11 +827,14 @@
     <ClCompile Include="算法-9顺序循环队列.c">
       <Filter>源文件\3-算法与数据结构</Filter>
     </ClCompile>
-    <ClCompile Include="算法-21二叉树按层遍历.c">
-      <Filter>源文件\3-算法与数据结构</Filter>
-    </ClCompile>
     <ClCompile Include="计组.cpp">
       <Filter>源文件\其它</Filter>
+    </ClCompile>
+    <ClCompile Include="算法-14KMP算法.c">
+      <Filter>源文件\3-算法与数据结构</Filter>
+    </ClCompile>
+    <ClCompile Include="算法-12二叉树按层遍历.c">
+      <Filter>源文件\3-算法与数据结构</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
