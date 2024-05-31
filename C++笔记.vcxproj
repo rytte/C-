@@ -155,7 +155,8 @@
     <ClCompile Include="流协议-6RTMP协议.cpp" />
     <ClCompile Include="算法-0数据结构.c" />
     <ClCompile Include="算法-12二叉树按层遍历.c" />
-    <ClCompile Include="算法-14KMP算法.c" />
+    <ClCompile Include="算法-13并查集.c" />
+    <ClCompile Include="算法-16KMP算法.c" />
     <ClCompile Include="算法-20约瑟夫环.c" />
     <ClCompile Include="算法-6顺序栈.c" />
     <ClCompile Include="算法-8共享栈.c" />
@@ -339,7 +340,7 @@
     <ClCompile Include="QT-18工程.cpp" />
     <ClCompile Include="QT-17SQLite数据库.cpp" />
     <ClCompile Include="QT-14QJson.cpp" />
-    <ClCompile Include="算法-13图.c" />
+    <ClCompile Include="算法-15图.c" />
     <ClCompile Include="网编-2TCP.cpp" />
     <ClCompile Include="SDL-3绘制图形与图片.cpp" />
     <ClCompile Include="SDL-4视频播放.cpp" />
@@ -366,7 +367,7 @@
     <ClCompile Include="实例_quickdemo.cpp" />
     <ClCompile Include="广播send.c" />
     <ClCompile Include="异步信号驱动server.c" />
-    <ClCompile Include="算法-12排序算法.c" />
+    <ClCompile Include="算法-14排序算法.c" />
     <ClCompile Include="系编-4精灵进程.cpp" />
     <ClCompile Include="文件传输client.c" />
     <ClCompile Include="文件传输server.c" />
