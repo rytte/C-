@@ -47,7 +47,7 @@ KMP算法，最坏时间复杂度 O(m+n)
 
 //我的：next下标从0开始
 char* source[] = "abccacceee"
-char* temp[] = "abccabd"
+char* tempss[] = "abccabd"
 int next[] = {}
 next[0]  a：i++ (j = 0)
 next[1]  b：i++; j = 0;
