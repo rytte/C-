@@ -130,6 +130,7 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="C++调用Python.cpp" />
     <ClCompile Include="CMake.cmake" />
     <ClCompile Include="FFmpeg-4常用函数.cpp" />
     <ClCompile Include="FFmpeg-5结构体.cpp" />
@@ -151,6 +152,7 @@
     <ClCompile Include="封装-4MP4封装格式.cpp" />
     <ClCompile Include="工具链.cpp" />
     <ClCompile Include="操作系统.cpp" />
+    <ClCompile Include="Python调用C++.cpp" />
     <ClCompile Include="流协议-4RTCP协议.cpp" />
     <ClCompile Include="流协议-5RTSP协议.cpp" />
     <ClCompile Include="流协议-6RTMP协议.cpp" />
@@ -392,6 +394,9 @@
     <ClInclude Include="pthread_pool.h" />
     <ClInclude Include="view.h" />
     <ClInclude Include="实例_quickdemo.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="script.py" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

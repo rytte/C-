@@ -90,6 +90,9 @@
     <Filter Include="源文件\7-设计模式\MVC实例">
       <UniqueIdentifier>{e712904c-345a-41f7-8855-4bbb9109d322}</UniqueIdentifier>
     </Filter>
+    <Filter Include="源文件\Python与C++相互调用">
+      <UniqueIdentifier>{91b8e302-feb5-4420-80d1-5e58fa8734e2}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="算法-1顺序表.c">
@@ -842,6 +845,12 @@
     <ClCompile Include="操作系统.cpp">
       <Filter>源文件\其它</Filter>
     </ClCompile>
+    <ClCompile Include="Python调用C++.cpp">
+      <Filter>源文件\Python与C++相互调用</Filter>
+    </ClCompile>
+    <ClCompile Include="C++调用Python.cpp">
+      <Filter>源文件\Python与C++相互调用</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="pthread_pool.h">
@@ -874,5 +883,8 @@
     <ClInclude Include="kernel_list.h">
       <Filter>头文件</Filter>
     </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="script.py" />
   </ItemGroup>
 </Project>

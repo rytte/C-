@@ -1,0 +1,115 @@
+#include <Python.h>
+#include <iostream>
+
+
+//技巧：可以将Module、Argument、Object、Class、Function封装成一个或多个类来管理。
+
+//.pro：添加头文件和库文件
+//INCLUDEPATH += C:\Users\13055\AppData\Local\Programs\Python\Python310\include
+//LIBS += -LC:\Users\13055\AppData\Local\Programs\Python\Python310\libs -lpython310
+
+
+int main(int argc, char* argv[])
+{
+    // 初始化Python解释器
+    Py_Initialize();
+
+    // 添加Python脚本的目录到你的PYTHONPATH
+    PyRun_SimpleString("import sys; sys.path.append(\"../python_cpp\")");
+
+    // 加载Python脚本模块
+    PyObject* pName = PyUnicode_FromString("script");
+    PyObject* pModule = PyImport_Import(pName);
+
+    if (pModule == nullptr)
+    {
+        PyErr_Print();
+        std::cerr << "Failed to load \"script\" module." << std::endl;
+        return -1;
+    }
+
+
+    //////////////////////////函数调用//////////////////////////
+        // 获取函数对象
+    PyObject* pFunc = PyObject_GetAttrString(pModule, "add_numbers");
+
+    if (PyCallable_Check(pFunc))
+    {
+        // 准备参数
+        PyObject* pArgs = PyTuple_New(2);
+        PyTuple_SetItem(pArgs, 0, PyLong_FromLong(2));
+        PyTuple_SetItem(pArgs, 1, PyLong_FromLong(3));
+
+        // 调用函数并获取结果
+        PyObject* pValue = PyObject_CallObject(pFunc, pArgs);
+
+        if (pValue != nullptr)
+        {
+            // 将结果转换为整数并打印
+            long result = PyLong_AsLong(pValue);
+            std::cout << "Result of add_numbers(2, 3): " << result << std::endl;
+        }
+        else
+        {
+            PyErr_Print();
+        }
+    }
+    else
+    {
+        if (PyErr_Occurred())
+        {
+            PyErr_Print();
+        }
+        std::cerr << "Cannot find function \"add_numbers\"" << std::endl;
+    }
+
+
+    //////////////////////////类调用//////////////////////////
+        // 获取模块中的类
+    PyObject* pClass = PyObject_GetAttrString(pModule, "MyClass");
+
+    if (pClass && PyType_Check(pClass))
+    {
+        // 创建一个包含构造函数参数的元组
+        PyObject* pArgs = PyTuple_New(1);               // 假设有一个参数
+        PyTuple_SetItem(pArgs, 0, PyLong_FromLong(42)); // 将值42放在元组的第一个位置
+
+        // 调用构造函数创建类的实例
+        PyObject* pInstance = PyObject_CallObject(pClass, pArgs);
+
+        if (pInstance && PyObject_IsInstance(pInstance, (PyObject*)pClass))
+        {
+            // 调用print_value方法
+            PyObject* pResult = PyObject_CallMethod(pInstance, "print_value", nullptr);
+
+            // 如果print_value方法没有返回值（或者我们不关心它），则忽略pResult，否则打印异常
+            if (!pResult)
+            {
+                PyErr_Print(); // 打印异常信息
+            }
+        }
+        else
+        {
+            if (PyErr_Occurred())
+            {
+                PyErr_Print();
+            }
+            std::cerr << "Failed to create instance of MyClass.\n";
+        }
+    }
+    else
+    {
+        if (PyErr_Occurred())
+        {
+            PyErr_Print();
+        }
+        std::cerr << "Failed to get MyClass from module.\n";
+    }
+
+
+
+    // 关闭Python解释器
+    Py_Finalize();
+
+    return 0;
+}
