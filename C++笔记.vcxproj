@@ -153,6 +153,8 @@
     <ClCompile Include="工具链.cpp" />
     <ClCompile Include="操作系统.cpp" />
     <ClCompile Include="Python调用C++.cpp" />
+    <ClCompile Include="文件-1系统IO.cpp" />
+    <ClCompile Include="文件-2标准IO.cpp" />
     <ClCompile Include="流协议-4RTCP协议.cpp" />
     <ClCompile Include="流协议-5RTSP协议.cpp" />
     <ClCompile Include="流协议-6RTMP协议.cpp" />
