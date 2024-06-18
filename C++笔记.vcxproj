@@ -132,6 +132,23 @@
   <ItemGroup>
     <ClCompile Include="C++调用Python.cpp" />
     <ClCompile Include="CMake.cmake" />
+    <ClCompile Include="demo3-10内存映射.c" />
+    <ClCompile Include="demo3-1lcdinfo.c" />
+    <ClCompile Include="demo3-2red.c" />
+    <ClCompile Include="demo3-3德国国旗.c" />
+    <ClCompile Include="demo3-4小方块颜色.c" />
+    <ClCompile Include="demo3-5圆.c" />
+    <ClCompile Include="demo3-6char.c" />
+    <ClCompile Include="demo3-7bmp图片显示.c" />
+    <ClCompile Include="demo3-8小图片显示.c" />
+    <ClCompile Include="demo3-9显示任意图片.c" />
+    <ClCompile Include="demo5-1touch.c" />
+    <ClCompile Include="demo5-2多次获取坐标.c" />
+    <ClCompile Include="demo5-3滑动获取坐标.c" />
+    <ClCompile Include="demo5-4滑动获取方向.c" />
+    <ClCompile Include="demo5-5进度条.c" />
+    <ClCompile Include="demo5-6画板.c" />
+    <ClCompile Include="demo5-7简易相册.c" />
     <ClCompile Include="FFmpeg-4常用函数.cpp" />
     <ClCompile Include="FFmpeg-5结构体.cpp" />
     <ClCompile Include="FFmpeg-9ffplay源码分析.cpp" />
@@ -155,6 +172,9 @@
     <ClCompile Include="Python调用C++.cpp" />
     <ClCompile Include="文件-1系统IO.cpp" />
     <ClCompile Include="文件-2标准IO.cpp" />
+    <ClCompile Include="文件-3开发板显示.cpp" />
+    <ClCompile Include="文件-4目录IO.cpp" />
+    <ClCompile Include="文件-5Linux输入子系统.cpp" />
     <ClCompile Include="流协议-4RTCP协议.cpp" />
     <ClCompile Include="流协议-5RTSP协议.cpp" />
     <ClCompile Include="流协议-6RTMP协议.cpp" />
@@ -182,6 +202,7 @@
     <ClCompile Include="图像-4RGB转BMP.cpp" />
     <ClCompile Include="图像-5RGB转YUV.cpp" />
     <ClCompile Include="计组.cpp" />
+    <ClCompile Include="逆向-1逆向工程.cpp" />
     <ClCompile Include="音视频-2音视频采集和处理.cpp" />
     <ClCompile Include="流协议-1流媒体传输.cpp" />
     <ClCompile Include="流协议-2RTP协议.cpp" />

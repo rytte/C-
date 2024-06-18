@@ -96,6 +96,15 @@
     <Filter Include="源文件\8-设计模式\MVC实例">
       <UniqueIdentifier>{e712904c-345a-41f7-8855-4bbb9109d322}</UniqueIdentifier>
     </Filter>
+    <Filter Include="源文件\5-文件IO\开发板显示demo">
+      <UniqueIdentifier>{726e186d-4625-4c55-8e6a-4ea2356a4299}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="源文件\5-文件IO\开发板坐标demo">
+      <UniqueIdentifier>{04607b51-0595-4391-83cc-5d5b9d88c519}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="源文件\逆向工程">
+      <UniqueIdentifier>{da4c4e0a-0faa-4220-87cc-9df02265895a}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="算法-1顺序表.c">
@@ -859,6 +868,69 @@
     </ClCompile>
     <ClCompile Include="文件-2标准IO.cpp">
       <Filter>源文件\5-文件IO</Filter>
+    </ClCompile>
+    <ClCompile Include="文件-3开发板显示.cpp">
+      <Filter>源文件\5-文件IO</Filter>
+    </ClCompile>
+    <ClCompile Include="demo3-1lcdinfo.c">
+      <Filter>源文件\5-文件IO\开发板显示demo</Filter>
+    </ClCompile>
+    <ClCompile Include="demo3-2red.c">
+      <Filter>源文件\5-文件IO\开发板显示demo</Filter>
+    </ClCompile>
+    <ClCompile Include="demo3-3德国国旗.c">
+      <Filter>源文件\5-文件IO\开发板显示demo</Filter>
+    </ClCompile>
+    <ClCompile Include="demo3-4小方块颜色.c">
+      <Filter>源文件\5-文件IO\开发板显示demo</Filter>
+    </ClCompile>
+    <ClCompile Include="demo3-5圆.c">
+      <Filter>源文件\5-文件IO\开发板显示demo</Filter>
+    </ClCompile>
+    <ClCompile Include="demo3-6char.c">
+      <Filter>源文件\5-文件IO\开发板显示demo</Filter>
+    </ClCompile>
+    <ClCompile Include="demo3-7bmp图片显示.c">
+      <Filter>源文件\5-文件IO\开发板显示demo</Filter>
+    </ClCompile>
+    <ClCompile Include="demo3-8小图片显示.c">
+      <Filter>源文件\5-文件IO\开发板显示demo</Filter>
+    </ClCompile>
+    <ClCompile Include="demo3-9显示任意图片.c">
+      <Filter>源文件\5-文件IO\开发板显示demo</Filter>
+    </ClCompile>
+    <ClCompile Include="demo3-10内存映射.c">
+      <Filter>源文件\5-文件IO\开发板显示demo</Filter>
+    </ClCompile>
+    <ClCompile Include="文件-4目录IO.cpp">
+      <Filter>源文件\5-文件IO</Filter>
+    </ClCompile>
+    <ClCompile Include="文件-5Linux输入子系统.cpp">
+      <Filter>源文件\5-文件IO</Filter>
+    </ClCompile>
+    <ClCompile Include="demo5-1touch.c">
+      <Filter>源文件\5-文件IO\开发板坐标demo</Filter>
+    </ClCompile>
+    <ClCompile Include="demo5-2多次获取坐标.c">
+      <Filter>源文件\5-文件IO\开发板坐标demo</Filter>
+    </ClCompile>
+    <ClCompile Include="demo5-3滑动获取坐标.c">
+      <Filter>源文件\5-文件IO\开发板坐标demo</Filter>
+    </ClCompile>
+    <ClCompile Include="demo5-4滑动获取方向.c">
+      <Filter>源文件\5-文件IO\开发板坐标demo</Filter>
+    </ClCompile>
+    <ClCompile Include="demo5-5进度条.c">
+      <Filter>源文件\5-文件IO\开发板坐标demo</Filter>
+    </ClCompile>
+    <ClCompile Include="demo5-6画板.c">
+      <Filter>源文件\5-文件IO\开发板坐标demo</Filter>
+    </ClCompile>
+    <ClCompile Include="demo5-7简易相册.c">
+      <Filter>源文件\5-文件IO\开发板坐标demo</Filter>
+    </ClCompile>
+    <ClCompile Include="逆向-1逆向工程.cpp">
+      <Filter>源文件\逆向工程</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
