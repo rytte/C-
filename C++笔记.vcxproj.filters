@@ -105,6 +105,9 @@
     <Filter Include="源文件\逆向工程">
       <UniqueIdentifier>{da4c4e0a-0faa-4220-87cc-9df02265895a}</UniqueIdentifier>
     </Filter>
+    <Filter Include="源文件\Win32 API">
+      <UniqueIdentifier>{6431d9e7-eca4-4142-b161-a468ef8c5a08}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="算法-1顺序表.c">
@@ -932,6 +935,30 @@
     <ClCompile Include="逆向-1逆向工程.cpp">
       <Filter>源文件\逆向工程</Filter>
     </ClCompile>
+    <ClCompile Include="Win-1介绍.cpp">
+      <Filter>源文件\Win32 API</Filter>
+    </ClCompile>
+    <ClCompile Include="Win-2程序.cpp">
+      <Filter>源文件\Win32 API</Filter>
+    </ClCompile>
+    <ClCompile Include="Win-3窗口类.cpp">
+      <Filter>源文件\Win32 API</Filter>
+    </ClCompile>
+    <ClCompile Include="Win-4消息处理.cpp">
+      <Filter>源文件\Win32 API</Filter>
+    </ClCompile>
+    <ClCompile Include="Win-8常用消息.cpp">
+      <Filter>源文件\Win32 API</Filter>
+    </ClCompile>
+    <ClCompile Include="Win-6WM_PAINT消息.cpp">
+      <Filter>源文件\Win32 API</Filter>
+    </ClCompile>
+    <ClCompile Include="Win-5消息队列.cpp">
+      <Filter>源文件\Win32 API</Filter>
+    </ClCompile>
+    <ClCompile Include="Win-7鼠标和键盘消息.cpp">
+      <Filter>源文件\Win32 API</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="pthread_pool.h">
@@ -964,8 +991,5 @@
     <ClInclude Include="kernel_list.h">
       <Filter>头文件</Filter>
     </ClInclude>
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="script.py" />
   </ItemGroup>
 </Project>

@@ -165,6 +165,14 @@
     <ClCompile Include="SDL-2核心API.cpp" />
     <ClCompile Include="SDP格式.cpp" />
     <ClCompile Include="UML.cpp" />
+    <ClCompile Include="Win-2程序.cpp" />
+    <ClCompile Include="Win-1介绍.cpp" />
+    <ClCompile Include="Win-3窗口类.cpp" />
+    <ClCompile Include="Win-4消息处理.cpp" />
+    <ClCompile Include="Win-5消息队列.cpp" />
+    <ClCompile Include="Win-7鼠标和键盘消息.cpp" />
+    <ClCompile Include="Win-8常用消息.cpp" />
+    <ClCompile Include="Win-6WM_PAINT消息.cpp" />
     <ClCompile Include="备份.cpp" />
     <ClCompile Include="封装-4MP4封装格式.cpp" />
     <ClCompile Include="工具链.cpp" />
@@ -417,9 +425,6 @@
     <ClInclude Include="pthread_pool.h" />
     <ClInclude Include="view.h" />
     <ClInclude Include="实例_quickdemo.h" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="script.py" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
