@@ -172,7 +172,7 @@
     <ClCompile Include="Win-5消息队列.cpp" />
     <ClCompile Include="Win-7鼠标和键盘消息.cpp" />
     <ClCompile Include="Win-8常用消息.cpp" />
-    <ClCompile Include="Win-6WM_PAINT消息.cpp" />
+    <ClCompile Include="Win-6绘图消息.cpp" />
     <ClCompile Include="备份.cpp" />
     <ClCompile Include="封装-4MP4封装格式.cpp" />
     <ClCompile Include="工具链.cpp" />
