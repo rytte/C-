@@ -210,7 +210,8 @@
     <ClCompile Include="图像-4RGB转BMP.cpp" />
     <ClCompile Include="图像-5RGB转YUV.cpp" />
     <ClCompile Include="计组.cpp" />
-    <ClCompile Include="逆向-1逆向工程.cpp" />
+    <ClCompile Include="逆向-1汇编语言.cpp" />
+    <ClCompile Include="逆向-2逆向工程.cpp" />
     <ClCompile Include="音视频-2音视频采集和处理.cpp" />
     <ClCompile Include="流协议-1流媒体传输.cpp" />
     <ClCompile Include="流协议-2RTP协议.cpp" />
