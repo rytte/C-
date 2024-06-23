@@ -932,9 +932,6 @@
     <ClCompile Include="demo5-7简易相册.c">
       <Filter>源文件\5-文件IO\开发板坐标demo</Filter>
     </ClCompile>
-    <ClCompile Include="逆向-1逆向工程.cpp">
-      <Filter>源文件\逆向工程</Filter>
-    </ClCompile>
     <ClCompile Include="Win-1介绍.cpp">
       <Filter>源文件\Win32 API</Filter>
     </ClCompile>
@@ -950,14 +947,23 @@
     <ClCompile Include="Win-8常用消息.cpp">
       <Filter>源文件\Win32 API</Filter>
     </ClCompile>
-    <ClCompile Include="Win-6WM_PAINT消息.cpp">
-      <Filter>源文件\Win32 API</Filter>
-    </ClCompile>
     <ClCompile Include="Win-5消息队列.cpp">
       <Filter>源文件\Win32 API</Filter>
     </ClCompile>
     <ClCompile Include="Win-7鼠标和键盘消息.cpp">
       <Filter>源文件\Win32 API</Filter>
+    </ClCompile>
+    <ClCompile Include="逆向-1汇编语言.cpp">
+      <Filter>源文件\逆向工程</Filter>
+    </ClCompile>
+    <ClCompile Include="逆向-3逆向工程.cpp">
+      <Filter>源文件\逆向工程</Filter>
+    </ClCompile>
+    <ClCompile Include="Win-6绘图消息.cpp">
+      <Filter>源文件\Win32 API</Filter>
+    </ClCompile>
+    <ClCompile Include="逆向-2汇编与C++映射.cpp">
+      <Filter>源文件\逆向工程</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
