@@ -108,19 +108,20 @@ start: mov ax, 1
        ret
 
 
-int fun(int N)
+int fun(int cx)
 {
     int ax = 2;
     do {
         ax = ax + ax;
-        N--;
-    } while (N != 0);
+        cx--;
+    } while (cx != 0);
     return ax;
 }
 
 int main(void)
 {
-    int bx = fun(N)
+    int cx = N;
+    int bx = fun(cx)
         return 0;
 }
 
