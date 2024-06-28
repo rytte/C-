@@ -956,7 +956,7 @@
     <ClCompile Include="逆向-1汇编语言.cpp">
       <Filter>源文件\逆向工程</Filter>
     </ClCompile>
-    <ClCompile Include="逆向-4逆向工程.cpp">
+    <ClCompile Include="逆向-5逆向工程.cpp">
       <Filter>源文件\逆向工程</Filter>
     </ClCompile>
     <ClCompile Include="Win-6绘图消息.cpp">
@@ -966,6 +966,9 @@
       <Filter>源文件\逆向工程</Filter>
     </ClCompile>
     <ClCompile Include="逆向-2汇编语言.cpp">
+      <Filter>源文件\逆向工程</Filter>
+    </ClCompile>
+    <ClCompile Include="逆向-4汇编器NASM.cpp">
       <Filter>源文件\逆向工程</Filter>
     </ClCompile>
   </ItemGroup>
