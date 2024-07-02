@@ -102,11 +102,11 @@
     <Filter Include="源文件\5-文件IO\开发板坐标demo">
       <UniqueIdentifier>{04607b51-0595-4391-83cc-5d5b9d88c519}</UniqueIdentifier>
     </Filter>
-    <Filter Include="源文件\逆向工程">
-      <UniqueIdentifier>{da4c4e0a-0faa-4220-87cc-9df02265895a}</UniqueIdentifier>
-    </Filter>
     <Filter Include="源文件\Win32 API">
       <UniqueIdentifier>{6431d9e7-eca4-4142-b161-a468ef8c5a08}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="源文件\汇编语言">
+      <UniqueIdentifier>{da4c4e0a-0faa-4220-87cc-9df02265895a}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>
@@ -857,9 +857,6 @@
     <ClCompile Include="算法-13并查集.c">
       <Filter>源文件\3-算法与数据结构</Filter>
     </ClCompile>
-    <ClCompile Include="操作系统.cpp">
-      <Filter>源文件\其它</Filter>
-    </ClCompile>
     <ClCompile Include="Python调用C++.cpp">
       <Filter>源文件\Python与C++相互调用</Filter>
     </ClCompile>
@@ -953,23 +950,29 @@
     <ClCompile Include="Win-7鼠标和键盘消息.cpp">
       <Filter>源文件\Win32 API</Filter>
     </ClCompile>
-    <ClCompile Include="逆向-1汇编语言.cpp">
-      <Filter>源文件\逆向工程</Filter>
+    <ClCompile Include="汇编-1指令与寄存器.cpp">
+      <Filter>源文件\汇编语言</Filter>
     </ClCompile>
-    <ClCompile Include="逆向-5逆向工程.cpp">
-      <Filter>源文件\逆向工程</Filter>
+    <ClCompile Include="汇编-6逆向工程.cpp">
+      <Filter>源文件\汇编语言</Filter>
     </ClCompile>
     <ClCompile Include="Win-6绘图消息.cpp">
       <Filter>源文件\Win32 API</Filter>
     </ClCompile>
-    <ClCompile Include="逆向-3汇编与C++映射.cpp">
-      <Filter>源文件\逆向工程</Filter>
+    <ClCompile Include="汇编-3汇编与C++映射.cpp">
+      <Filter>源文件\汇编语言</Filter>
     </ClCompile>
-    <ClCompile Include="逆向-2汇编语言.cpp">
-      <Filter>源文件\逆向工程</Filter>
+    <ClCompile Include="汇编-2中断.cpp">
+      <Filter>源文件\汇编语言</Filter>
     </ClCompile>
-    <ClCompile Include="逆向-4汇编器NASM.cpp">
-      <Filter>源文件\逆向工程</Filter>
+    <ClCompile Include="汇编-5汇编器NASM.cpp">
+      <Filter>源文件\汇编语言</Filter>
+    </ClCompile>
+    <ClCompile Include="汇编-4汇编与C++相互调用.cpp">
+      <Filter>源文件\汇编语言</Filter>
+    </ClCompile>
+    <ClCompile Include="系编-0操作系统.cpp">
+      <Filter>源文件\6-系统编程</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>

@@ -172,7 +172,7 @@ export QT_MESSAGE_PATTERN = "`echo -e "% {if - debug}\033[32m% {endif}% {if - cr
 \033[30m – \033[37m 设置前景色
 \033[40m – \033[47m 设置背景色
 
-//字体背景颜色
+//字体前景颜色
 30：黑
 31：红
 32：绿
