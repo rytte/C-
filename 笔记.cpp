@@ -14,14 +14,40 @@ git config --global --unset https.proxy
 
 
 
-
+{
+    "body": {
+        "messageBody": "{\"background_color\":\"black\",\"devid\":\"0.22.1.8.1\",\"limit_style\":\"unlimited\",\"msg_priority\":\"s\",\"pass\":\"central\",\"sceneLayout\":\"d2a9e819-fc73-455b-87cc-9610f5169e8e\",\"stationsvr_id\":\"PC-Bk_Test\",\"stationsvr_pass\":\"admin\",\"stationsvr_user\":\"root\",\"text\":\"各位乘客请注意，由于深圳突降暴雨，地面湿滑，请各位乘客有序排队进站乘车，切勿拥挤，谢谢配合！\",\"text_color\":\"white\",\"text_direction\":\"to_left\",\"text_fontSize\":-1,\"text_scrollInterval\":-1,\"user\":\"central\"}\n",
+        "messageCommand" : "PLAY_PROMPT_TEXT"
+    },
+    "header" : {
+        "end": true,
+        "messageNo" : "39c43a88-ec11-4e02-9400-e2fd7969bb35",
+        "messageReceiver" : "bk_player",
+        "messageSender" : "Bk_Test_Tool",
+        "messageType" : "P2P_command_message",
+        "timeout" : 1,
+        "zzflag" : "end"
+    }
+}
 
 {
-        "messageCommand": "READ_ARRANGEMENT",
-        "messageBody" : {
-                "text_id": "dabe86b385423212342323"
-        }
+    "messageNo": "1684661317418221568",
+    "messageBody" : {
+        "text_id": "1684661302385836032",
+        "text_fontSize" : 0,
+        "background_color" : "",
+        "text_direction" : "",
+        "text_scrollInterval" : 0,
+        "msg_priority" : "9",
+        "text" : "不能重试下发同一条文字信息 test",
+        "text_color" : "",
+        "limit_style" : "timer",
+        "textEn" : "test",
+        "limit_time" : "2024-04-15 15:05:16,2099-12-31 23:59:59"
+    },
+    "messageCommand": "PLAY_PROMPT_TEXT"
 }
+
 
 READ_ARRANGEMENT
 

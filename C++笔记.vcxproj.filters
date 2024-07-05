@@ -974,6 +974,9 @@
     <ClCompile Include="系编-0操作系统.cpp">
       <Filter>源文件\6-系统编程</Filter>
     </ClCompile>
+    <ClCompile Include="网编-0计算机网络.cpp">
+      <Filter>源文件\7-网络编程</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="pthread_pool.h">

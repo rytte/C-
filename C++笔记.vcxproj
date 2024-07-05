@@ -197,6 +197,7 @@
     <ClCompile Include="算法-9顺序循环队列.c" />
     <ClCompile Include="编码-5H264解析器.cpp" />
     <ClCompile Include="编码-7AAC解析器.cpp" />
+    <ClCompile Include="网编-0计算机网络.cpp" />
     <ClCompile Include="网编-4IP协议和HTTP协议.cpp" />
     <ClCompile Include="网编-6UDP实际应用.cpp" />
     <ClCompile Include="网编-7Socket.cpp" />
