@@ -132,10 +132,12 @@ FEIL* stream	ÎÄ¼şÁ÷Ö¸Õë
 ¡¾Í·ÎÄ¼ş¡¿
 #include <stdio.h>
 ¡¾º¯ÊıÔ­ĞÍ¡¿
-int printf(const char* format, ...);				// ¸ñÊ½»¯Êä³ö£¬Êä³öµ½ÆÁÄ»£¨stdout£©
-int fprintf(FILE* stream, const char* format, ...);	// ¸ñÊ½»¯Êä³ö£¬Êä³öµ½Ö¸¶¨ÎÄ¼şÖĞ£¨±ê×¼IO£©
-int dprintf(int fd, const char* format, ...);		// ¸ñÊ½»¯Êä³ö£¬Êä³öµ½Ö¸¶¨ÎÄ¼şÖĞ£¨ÏµÍ³IO£©
-int sprintf(char* str, const char* format, ...);	// ×éºÏ×Ö·û´®£¬½«¸ñÊ½»¯µÄ×éºÏºóµÄ×Ö·û´®´æ´¢µ½strÖĞ
+int printf(const char* format, ...);						// ¸ñÊ½»¯Êä³ö£¬Êä³öµ½ÆÁÄ»£¨stdout£©
+int dprintf(int fd, const char* format, ...);				// ¸ñÊ½»¯Êä³ö£¬Êä³öµ½Ö¸¶¨ÎÄ¼şÖĞ£¨ÏµÍ³IO£©
+int fprintf(FILE* stream, const char* format, ...);			// ¸ñÊ½»¯Êä³ö£¬Êä³öµ½Ö¸¶¨ÎÄ¼şÖĞ£¨±ê×¼IO£©
+int vfprintf(FILE* stream, const char* format, va_list arg);// ¸ñÊ½»¯Êä³ö£¬Êä³öµ½Ö¸¶¨ÎÄ¼şÖĞ£¨±ê×¼IO£©£¬ÓÃÓÚ±ä²Îº¯ÊıµÄ¹¹½¨
+int sprintf(char* str, const char* format, ...);			// ×éºÏ×Ö·û´®£¬½«¸ñÊ½»¯µÄ×éºÏºóµÄ×Ö·û´®´æ´¢µ½strÖĞ
+int vsprintf(char* str, const char* format, va_list arg);	// ×éºÏ×Ö·û´®£¬½«¸ñÊ½»¯µÄ×éºÏºóµÄ×Ö·û´®´æ´¢µ½strÖĞ£¬ÓÃÓÚ±ä²Îº¯ÊıµÄ¹¹½¨
 int snprintf(char* str, size_t size, const char* format, ...);	// ×éºÏ×Ö·û´®£¬½«¸ñÊ½»¯µÄ×éºÏºóµÄsize-1¸ö×Ö·û´®´æ´¢µ½strÖĞ£¨·ÀÖ¹Ô½½ç£©
 ¡¾²ÎÊı¡¿
 const char* format 	¸ñÊ½»¯·ûºÅ% d% s
@@ -154,6 +156,36 @@ int fscanf(FILE* stream, const char* format, ...);		// ´ÓÎÄ¼ş¸ñÊ½»¯ÊäÈë£¬°Ñ×Ö·û´
 int sscanf(const char* str, const char* format, ...);	// ´Ó×Ö·û´®¸ñÊ½»¯ÊäÈë£¬°Ñ×Ö·û´®×ª»¯Îª·Ç×Ö·û´®£¨²ğ·Ö×Ö·û´®£©
 ¡¾note¡¿
 ¸ñÊ½»¯ÊäÈë / Êä³ö£¬ĞèÒªÓëÎÄ¼şÖĞµÄÊı¾İ·Ö¸î·û¶ÔÓ¦£¬£¨ÓĞ·ûºÅ¿ÉÄÜÎŞ·¨Ê¶±ğ£©
+
+
+
+//ÊµÀı£ºsprintfÓëvsprintfµÄ¶Ô±È
+#include <stdio.h>  
+#include <stdarg.h>  
+
+void my_vsprintf(char* str, const char* format, ...)	// ¶¨ÒåÒ»¸öÊ¹ÓÃvsprintfµÄº¯Êı 
+{
+	va_list args;
+	va_start(args, format);
+	vsprintf(str, format, args); // Ê¹ÓÃvsprintf  
+	va_end(args);
+}
+
+int main() 
+{
+	char buffer1[100];
+	char buffer2[100];
+	int number = 123;
+
+	my_vsprintf(buffer1, "The number is %d.", number);
+	sprintf(buffer2, "The number is %d.", number);
+
+	// ´òÓ¡½á¹û  
+	printf("%s\n", buffer1); // Êä³ö: The number is 123.  
+	printf("%s\n", buffer2); // Êä³ö: The number is 123.  
+
+	return 0;
+}
 
 
 
@@ -298,3 +330,5 @@ int main(int argc, char const* argv[])
 
 	return 0;
 }
+
+

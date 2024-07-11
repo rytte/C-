@@ -14,21 +14,24 @@ git config --global --unset https.proxy
 
 
 
+
+
 {
     "body": {
-        "messageBody": "{\"background_color\":\"black\",\"devid\":\"0.22.1.8.1\",\"limit_style\":\"unlimited\",\"msg_priority\":\"s\",\"pass\":\"central\",\"sceneLayout\":\"d2a9e819-fc73-455b-87cc-9610f5169e8e\",\"stationsvr_id\":\"PC-Bk_Test\",\"stationsvr_pass\":\"admin\",\"stationsvr_user\":\"root\",\"text\":\"各位乘客请注意，由于深圳突降暴雨，地面湿滑，请各位乘客有序排队进站乘车，切勿拥挤，谢谢配合！\",\"text_color\":\"white\",\"text_direction\":\"to_left\",\"text_fontSize\":-1,\"text_scrollInterval\":-1,\"user\":\"central\"}\n",
+        "messageBody": "{\"background_color\":\"black\",\"devid\":\"0.22.1.8.1\",\"limit_style\":\"limit_time\",\"limit_time\":\"2\",\"msg_priority\":\"s\",\"pass\":\"central\",\"sceneLayout\":\"d2a9e819-fc73-455b-87cc-9610f5169e8e\",\"stationsvr_id\":\"PC-Bk_Test\",\"stationsvr_pass\":\"admin\",\"stationsvr_user\":\"root\",\"text\":\"各位乘客请注意，由于深圳突降暴雨，地面湿滑，请各位乘客有序排队进站乘车，切勿拥挤，谢谢配合！\",\"text_color\":\"white\",\"text_direction\":\"to_left\",\"text_fontSize\":20,\"text_scrollInterval\":90,\"user\":\"central\"}\n",
         "messageCommand" : "PLAY_PROMPT_TEXT"
     },
-    "header" : {
-        "end": true,
-        "messageNo" : "39c43a88-ec11-4e02-9400-e2fd7969bb35",
-        "messageReceiver" : "bk_player",
-        "messageSender" : "Bk_Test_Tool",
-        "messageType" : "P2P_command_message",
-        "timeout" : 1,
-        "zzflag" : "end"
+        "header" : {
+            "end": true,
+            "messageNo" : "39c43a88-ec11-4e02-9400-e2fd7969bb35",
+            "messageReceiver" : "bk_player",
+            "messageSender" : "Bk_Test_Tool",
+            "messageType" : "P2P_command_message",
+            "timeout" : 1,
+            "zzflag" : "end"
     }
 }
+
 
 {
     "messageNo": "1684661317418221568",
@@ -47,15 +50,6 @@ git config --global --unset https.proxy
     },
     "messageCommand": "PLAY_PROMPT_TEXT"
 }
-
-
-READ_ARRANGEMENT
-
-PLAY_PROMPT_TEXT
-
-PLAY_EXCLUSIVE_TEXT
-
-RECOVER_TO_PLAN_MODE
 
 
 

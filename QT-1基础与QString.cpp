@@ -167,3 +167,9 @@ delete this						销毁窗口
 类中有和标准库函数同名的函数，
 加上::使用标准库函数
 不加::使用类中成员函数
+
+
+
+//获取父控件的两种方式
+MainWindow* myParent = (MainWindow*)topLevelWidget();			//顶层父控件
+MainWindow* myParent = qobject_cast<MainWindow*>(parent());		//父控件

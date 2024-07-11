@@ -90,7 +90,7 @@ case 常量二: /*语句二*/; break;
 case 常量三: /*语句三*/; break;
 default:
 }
-① case 后的必须是整型常量，可以是一个范围，a 。。。 b，空格不可省略
+① case 后的必须是整型常量，可以是一个范围，a 。。。 b。
 ② default 的位置没有固定，如果放在 case 语句之前，需要加上 break;
 ③ switch 语句中的表达式或者变量，必须是整型
 
@@ -121,3 +121,5 @@ do - while(0) 一般用于语句控制，可使用 break 跳出代码块。起到 goto 的作用。
 break	跳出整个 for / while / switch 循环，只能跳一层
 continue	用于跳出 for / while 的单次循环，进入下一次循环
 goto		无条件跳转到标签位置（使用场景：代码调试阶段可以适当使用；用于驱动）
+
+

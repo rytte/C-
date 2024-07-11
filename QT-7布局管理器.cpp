@@ -34,8 +34,8 @@ ui->centralwidget->setLayout(&vbox);				//将垂直布局管理器加入到当前窗口
 
 
 void setSizePolicy(水平策略, 垂直策略)				//控件的策略模式设置方法
-void serMaximumSize(最大长度，最大宽度)				//设置最大尺寸
-void serMinimumSize(最小长度，最小宽度)				//设置最小尺寸
+void setMaximumSize(最大长度，最大宽度)				//设置最大尺寸
+void setMinimumSize(最小长度，最小宽度)				//设置最小尺寸
 
 
 //栅栏布局管理器实例：
