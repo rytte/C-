@@ -1,137 +1,94 @@
-/********************/标准IO/************************************************************/
+/********************/标准IO;/************************************************************/
+
+//头文件
+#include <stdio.h>
+
 
 //fopen()函数
-【头文件】
-#include <stdio.h>
-【函数原型】
-FILE* fopen(const char* path, const char* mode);
-【参数】
-const char* path  打开文件的路径
-const char* mode 打开文件对象的权限
+FILE* fopen(const char* path, const char* mode);	//打开文件并返回该文件指针，失败返回NULL
+
+参数1：打开文件的路径
+参数2：打开文件对象的权限
+const char* mode
 {
 	r	以只读方式打开文件，从文件开头处操作.
-	r + 以可读可写的方式打开文件，
+	r + 以可读可写的方式打开文件
 	w	以只写方式打开文件，如果文件存在就清空，不存在就创建
 	w + 以读写方式打开文件，如果文件存在就清空，不存在就创建
 	a	以只写方式打开文件，如果文件存在就追加写入，不存在就创建
 	a + 以读写方式打开文件，如果文件存在就追加写入，不存在就创建
 }
-【返回值】
-成功： 返回一个文件指针
-失败： NULL
 
 
 //fclose()函数
-【头文件】
-#include <stdio.h>
-【函数原型】
-int fclose(FILE* stream);
-【参数】
-FILE* stream  需要关闭的文件的文件指针
-【返回值】
-成功： 返回0
-失败： 返回-1(EOF)
+int fclose(FILE* stream);		//关闭文件返回0，失败返回-1
+
+参数：需要关闭的文件的文件指针;
 
 
 //fread()函数
 //fwrite()函数
-【头文件】
-#include <stdio.h>
-【函数原型】
-size_t fread(void* ptr, size_t size, size_t nmemb, FILE* stream);
-size_t fwrite(const void* ptr, size_t size, size_t nmemb, FILE* stream);
-【参数】
-void* ptr		要读写的存储缓冲位置，
-size_t size 	每一块存储区的大小（字节）
-size_t nmemb	打算使用多少块存储区来操作数据
-FILE* stream 	操作对象的文件流指针
-【返回值】
-成功：读取或者写入的完整的数据块的个数
-失败：小于等于零
+size_t fread(       void* ptr, size_t size, size_t count, FILE* stream);//读取(size*count个字节)文件数据到ptr所指缓冲区中，并返回读取的完整数据块(count)的个数
+size_t fwrite(const void* ptr, size_t size, size_t count, FILE* stream);//写入(size*count个字节)文件数据到ptr所指缓冲区中，并返回写入的完整数据块(count)的个数
+
+失败时，返回值小于等于0
+参数1：要读写的存储缓冲位置
+参数2：每一块存储区的大小（字节）
+参数3：使用多少块存储区读写数据
+参数4：读写的文件流指针;
 
 
-//clearerr()清除错误码函数
-//feof()检查占位符函数是否到末尾
-//ferror()获取错误码函数
-//fileno()检查文件描述符函数
-【头文件】
-#include <stdio.h>
-【函数原型】
-void clearerr(FILE* stream); // 清除文件的错误编码
-int feof(FILE* stream);		// 检查占位符是否到文件的末尾
-【返回值】
-成功：非零时，在文件的末尾
-失败：为零时，不在文件末尾位置
-【note】
-feof的缺陷：就算文件光标移动到了文件末尾，也还需要再读一次，才能获得非零值
-【函数原型】
-int ferror(FILE* stream);  	// 检查文件操作过程出错编码
-【返回值】
-成功：为零时，说明操作没有错误
-失败：非零时，表示遇到错误
-【函数原型】
-int fileno(FILE* stream);		// 检查文件描述符是多少
-【返回值】
-成功：返回文件描述符
-失败：-1
+//ferror()函数
+int ferror(FILE* stream);  		// 检测文件流在最近一次输入输出操作中是否发生了错误。返回0表示没有错误，返回一个非零值，表示文件处于错误状态。
 
+//clearerr()函数
+void clearerr(FILE* stream);	// 清除文件的错误编码
+
+//feof()函数
+int feof(FILE* stream);			// 检查占位符是否到文件的末尾。不在末尾返回0，在末尾返回非0。缺陷：就算文件光标移动到了文件末尾，也还需要再读一次，才能获得非零值
+
+//fileno()函数
+int fileno(FILE* stream);		// 获取文件描述符。成功返回文件描述符，失败返回-1
 
 
 //fseek()偏移函数
-【头文件】
-#include <stdio.h>
-【函数原型】
-int fseek(FILE* stream, long offset, int whence);
+int fseek(FILE* stream, long offset, int whence);		//成功返回0，失败返回-1
 long ftell(FILE* stream);	// 返回当前文件位置距离文件开头处的长度
 void rewind(FILE* stream);	// 将偏移量直接偏移到文件开头
-【参数】
-FILE* stream  偏移文件的对象指针
-long offset  偏移量 字节
-int whence 基准点
+
+参数1：偏移文件的指针
+参数2：偏移量(字节)
+参数3：基准点
+int whence
 {
 	SEEK_SET,  // 文件起始位置
 	SEEK_CUR,  // 文件当前位置
-	SEEK_END	// 文件末尾位置
+	SEEK_END   // 文件末尾位置
 }
-【返回值】
-成功：0
-失败：-1
 
 
 //标准输入函数
-【头文件】
-#include <stdio.h>
-【函数原型】
-int fgetc(FILE* stream);						// 从文件里面读取一个字符
-char* fgets(char* str, int n, FILE* stream)		// 从文件中读取n-1字符串存储到指针str所指向的数据缓冲区，读到换行符结束
-【返回值】
-成功：返回str, 若到达文件末尾或者没有读取到任何字符，str 的内容保持不变，并返回 NULL.
-失败： NULL
-【函数原型】
+int fgetc(FILE* stream);					// 从文件里面读取一个字符并返回，失败返回NULL
+char* fgets(char* str, int n, FILE* stream);// 从文件中读取n-1字符串存储到指针str所指向的数据缓冲区，读到换行符结束。同时返回str, 若没有读取到任何字符则返回 NULL.
+
 int getc(FILE* stream);		// 从文件中获取一个字节（fgetc与getc区别：fgetc是函数，getc是宏函数）
 int getchar(void);			// 获取缓冲区的一个字符
-char* gets(char* str)；		//获取缓冲区的一个字符串（经常导致内存溢出被停用）
+char* gets(char* str);		// 获取缓冲区的一个字符串（经常导致内存溢出被停用）
 
-#include<errno.h>
+
 //标准输出函数
-【头文件】
-#include <stdio.h>
-【函数原型】
 int fputc(int c, FILE* stream);				// 输出一个字符到文件中
 int fputs(const char* s, FILE* stream);		// 输出一个字符串到文件中
 int putc(int c, FILE* stream);				// 输出一个字符到文件中，fputc函数，putc宏定义
 int putchar(int c);							// 输出一个字符
 int puts(const char* s);					// 输出一个字符串
 【参数】
-int c			字符或者无符号字符 ASCII
+int c			要写入文件的字符。虽然参数类型为 int, 但实际上只使用其低八位（即一个字节），这允许通过ASCII码值写入任何字符。
 const char* s	字符串数据
-FEIL* stream	文件流指针
+FILE* stream	文件流指针
 
 
 //格式化输出
-【头文件】
-#include <stdio.h>
-【函数原型】
 int printf(const char* format, ...);						// 格式化输出，输出到屏幕（stdout）
 int dprintf(int fd, const char* format, ...);				// 格式化输出，输出到指定文件中（系统IO）
 int fprintf(FILE* stream, const char* format, ...);			// 格式化输出，输出到指定文件中（标准IO）
@@ -140,17 +97,14 @@ int sprintf(char* str, const char* format, ...);			// 组合字符串，将格式化的组合
 int vsprintf(char* str, const char* format, va_list arg);	// 组合字符串，将格式化的组合后的字符串存储到str中，用于变参函数的构建
 int snprintf(char* str, size_t size, const char* format, ...);	// 组合字符串，将格式化的组合后的size-1个字符串存储到str中（防止越界）
 【参数】
-const char* format 	格式化符号% d% s
+const char* format 	可含有"%d%s"等格式化字符的格式化字符串
 FILE* stream 		文件流指针
 int fd 				文件描述符
-char* str 			str存储字符串的位置
+char* str 			存储字符串的缓冲区指针
 size_t size 		组合字符串的大小
 
 
 //格式化输入
-【头文件】
-#include <stdio.h>
-【函数原型】
 int scanf(const char* format, ...);						// 从键盘格式化输入
 int fscanf(FILE* stream, const char* format, ...);		// 从文件格式化输入，把字符串转化为非字符串（从文件中获取数据）
 int sscanf(const char* str, const char* format, ...);	// 从字符串格式化输入，把字符串转化为非字符串（拆分字符串）

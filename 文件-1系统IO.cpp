@@ -1,15 +1,15 @@
 /********************/系统IO与标准IO/************************************************************/
 
 //系统IO（文件IO）
-系统IO又称文件IO，它与操作系统绑定。系统IO通过系统调用（系统内核提供的函数）来实现数据的读取和写入。
+系统IO又称文件IO，通过系统调用（系统内核提供的函数）来实现数据的读取和写入。它与操作系统绑定，不同操作系统使用不同的函数。
 特点：
 1、不带缓冲机制：系统IO直接读写实际文件，不带缓存。
 2、操作对象：可以操作普通文件、驱动文件（如设备文件、网络文件等）。
 3、系统调用：每次操作都会执行相关系统调用，频繁的系统调用会增加系统开销。
-4、文件描述符：用文件描述符表示一个打开的文件，可以访问不同类型的文件，如普通文件、设备文件和管道文件等。
+4、文件描述符：用文件描述符表示一个打开的文件。
 
 //标准IO
-标准IO是由标准C库（第三方库<stdio.h>）提供的接口函数，它是对系统IO的封装和扩展，具有可移植性。
+标准IO是由标准C库<stdio.h>提供的接口函数，它是对系统IO的封装和扩展，具有可移植性。
 特点：
 1、带缓冲机制：标准IO带有缓存机制，可以减少系统调用的次数，提高性能。包括全缓存、行缓存和不缓存等类型。
 2、操作对象：标准IO主要操作普通文件。
@@ -39,16 +39,18 @@ __file_no[2]	固定屏幕输出 宏STDERR perror
 /********************/Linux系统IO函数/************************************************************/
 
 //open()函数
-【头文件】
 #include <sys/types.h>
 #include <sys/stat.h>
 #include <fcntl.h>
-【函数原型】
+
 int open(const char* pathname, int flags);
 int open(const char* pathname, int flags, mode_t mode);
-【参数】
-const char* pathname  文件对象的访问路径
-flags				  文件对象操作权限
+
+参数1：文件路径
+参数2：文件操作权限
+参数3：新建文件的权限设置
+
+int flags
 {
 	O_RDONLY	只读权限
 	O_WRONLY	只写权限
@@ -59,7 +61,7 @@ flags				  文件对象操作权限
 	O_NOCTTY	无权限，默认
 	O_APPEND	文件内容追加，主要写文件。
 }
-mode(建立新文件时才会生效)
+mode_t mode(建立新文件时才会生效)
 {
 	S_IRWXU 00700 权限，代表该文件所有者具有可读、可写及可执行的权限。
 	S_IRUSR 或S_IREAD， 00400权限，代表该文件所有者具有可读取的权限。
@@ -76,59 +78,46 @@ mode(建立新文件时才会生效)
 }
 【返回值】
 成功：返回一个新的文件描述符(默认从3开始)
-失败：-1
+失败： - 1;
 
 
 //read()函数
-【头文件】
-#include <unistd.h>
-【函数原型】
-ssize_t read(int fd, void* buf, size_t count);
-【参数】
-int fd 	     需要读取的文件描述对象
-void* buf    读取数据的缓冲区，需要存储空间
-size_t count 计算读取的字节大小 字节为单位（想要读取的字节数）
-【返回值】
-成功：返回读到了实际字节数
-失败：-1
-
-
 //write()函数
-【头文件】
 #include <unistd.h>
-【函数原型】
+
+ssize_t read(int fd, void* buf, size_t count);
 ssize_t write(int fd, const void* buf, size_t count);
-【参数】
-int fd			要往哪个文件中写数据
-const void* buf 即将要写入的数据的缓冲区
-size_t count	想要写入的字节数
+
+参数1：文件描述符
+参数2：存放读取 / 写入数据的缓冲区
+参数3：想要读取 / 写入的字节数
 【返回值】
-成功：实际写入的字节数
-失败：-1
+成功：返回实际读到 / 写入的字节数
+失败： - 1;
 
 
 //close()函数
-【头文件】
 #include <unistd.h>
-【函数原型】
+
 int close(int fd);
-【参数】
-int fd需要关系的文件
+
+参数：需要关闭的文件
+
 【返回值】
 成功：0
-失败：-1
+失败： - 1;
 
 
 //lseek()偏移函数
-【头文件】
 #include <sys/types.h>
 #include <unistd.h>
-【函数原型】
+
 off_t lseek(int fd, off_t offset, int whence);
-【参数】
-int fd			对哪个文件进行文件位置偏移的修改
-off_t offset	相对于基准点的偏移量
-int whence		基准点
+
+参数1：对哪个文件进行文件位置偏移的修改
+参数2：相对于基准点的偏移量
+参数3：基准点
+int whence
 {
 	SEEK_SET  文件的开头
 	SEEK_CUR  文件的当前位置
@@ -136,19 +125,18 @@ int whence		基准点
 }
 【返回值】
 成功：偏移量（字节数）
-失败：-1；
+失败： - 1;
 
 
 //stat()文件属性函数
-【头文件】
 #include <sys/types.h>
 #include <sys/stat.h>
 #include <unistd.h>
-【函数原型】
+
 int stat(const char* pathname, struct stat* buf);
-【参数】
-const char* pathname  需要查看的文件的路径名
-struct stat* buf   文件属性结构体指针
+
+参数1：文件的路径名
+参数2：文件属性结构体指针
 struct stat 
 {
 	dev_t     st_dev;         /* 文件存储的设备号*/
@@ -165,11 +153,8 @@ struct stat
 	struct timespec st_mtim;  /* 最后修改文件的时间 */
 	struct timespec st_ctim;  /* 最后修改文件属性的时间 */
 }
-【返回值】
-成功：0
-失败：-1
-【note】
-*st_mode：可以帮助我们判断文件的类型和权限
+
+其中st_mode：可以帮助我们判断文件的类型和权限
 文件类型
 {
 	//stat(pathname, &st);
@@ -217,16 +202,19 @@ struct stat
 	S_IWOTH     00002   others have write permission
 	S_IXOTH     00001   others have execute permission
 }
+【返回值】
+成功：0
+失败：-1
 
 
 //access()文件存在函数
-【头文件】
 #include <unistd.h>
-【函数原型】
+
 int access(const char* pathname, int mode);
-【参数】
-const char* pathname  需要判断的文件的路径
-int mode			  判断文件对应的权限
+
+参数1：文件路径
+参数2：判断文件对应的权限
+int mode
 {
 	R_OK	读权限
 	W_OK	写权限
@@ -239,13 +227,12 @@ int mode			  判断文件对应的权限
 
 
 //getpwuid()获取文件所有者
-【头文件】
 #include <sys/types.h>
 #include <pwd.h>
-【函数原型】
+
 struct passwd* getpwuid(uid_t uid);
-【参数】
-文件属性结构体的中的uid
+
+参数：文件属性结构体的中的uid
 【返回值】
 结构体类型指针，指向对应的用户名
 struct passwd
@@ -261,18 +248,17 @@ struct passwd
 
 
 //dup()重定向文件描述符函数
-【头文件】
 #include <unistd.h>
-【函数原型】
+
 int dup(int oldfd);
 int dup2(int oldfd, int newfd);
-【参数】
-int oldfd  需要重定向的旧文件描述符
-int newfd 指定的新的重定向文件描述符
+
+参数1：旧文件描述符
+参数2：指定新的文件描述符
 【返回值】
 成功：返回新的文件描述符
 失败：-1
-如果没有指定新的文件描述符，在原本的文件描述符基础上往后加一。
+如果没有指定新的文件描述符，在原本的文件描述符基础上往后加1。
 
 
 

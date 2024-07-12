@@ -180,8 +180,8 @@
     <ClCompile Include="Python调用C++.cpp" />
     <ClCompile Include="文件-1系统IO.cpp" />
     <ClCompile Include="文件-2标准IO.cpp" />
-    <ClCompile Include="文件-3开发板显示.cpp" />
-    <ClCompile Include="文件-4目录IO.cpp" />
+    <ClCompile Include="文件-4开发板显示.cpp" />
+    <ClCompile Include="文件-3目录IO.cpp" />
     <ClCompile Include="文件-5Linux输入子系统.cpp" />
     <ClCompile Include="汇编-4汇编与C++相互调用.cpp" />
     <ClCompile Include="流协议-4RTCP协议.cpp" />
@@ -261,10 +261,10 @@
     <ClCompile Include="STD-8互斥锁与条件变量.cpp" />
     <ClCompile Include="C-01数据类型.c" />
     <ClCompile Include="C-02运算符&amp;逻辑结构.c" />
-    <ClCompile Include="C-03函数.c" />
-    <ClCompile Include="C-04变参函数.c" />
+    <ClCompile Include="C-04函数.c" />
+    <ClCompile Include="C-05变参函数.c" />
     <ClCompile Include="C-06指针&amp;字符串.c" />
-    <ClCompile Include="C-05数组.c" />
+    <ClCompile Include="C-03数组.c" />
     <ClCompile Include="C-07结构体&amp;联合体.c" />
     <ClCompile Include="C-08枚举&amp;预处理指令.c" />
     <ClCompile Include="C-09内存管理.c" />

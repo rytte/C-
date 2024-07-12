@@ -16,7 +16,6 @@ int (*p)(char);		函数指针，是一个指向参数为 char 类型、返回值为 int 类型的指针
 int array[10] = { 0,1,2,3,4,5,6,7,8,9 }, value;
 value = array[0]; //也可写成：value=*array;
 value = array[3]; //也可写成：value=*(array+3);
-value = array[4]; //也可写成：value=*(array+4);
 
 *指针加减一个整数，其移动的位数是以指针所指类型为单位计算的。
 
@@ -31,6 +30,43 @@ p->a 等价于(*p).a
 
 返回类型(*函数指针名称)(参数列表);
 int (*callback)(int, int);
+
+
+//回调函数实例
+int add(int a, int b)
+{
+	return a + b;
+}
+
+void printsum(int (*fun)(int, int))
+{
+	int sum = fun(1, 2);
+	printf("%d", sum);
+}
+
+void main()
+{
+	printsum(add);
+}
+
+//回调函数实例：使用typedef简化函数类型
+typedef int(*callfun)(int, int);
+
+int add(int a, int b)
+{
+	return a + b;
+}
+
+void printsum(callfun addfun)
+{
+	int sum = addfun(1, 2);
+	printf("%d", sum);
+}
+
+void main()
+{
+	printsum(add);
+}
 
 
 //二级指针

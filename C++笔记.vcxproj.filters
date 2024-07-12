@@ -57,38 +57,8 @@
     <Filter Include="源文件\1-C语言语法">
       <UniqueIdentifier>{cbf42b85-8f0b-4f45-b75a-093804c6b896}</UniqueIdentifier>
     </Filter>
-    <Filter Include="源文件\2-C++语法">
-      <UniqueIdentifier>{4b5b820a-4416-4903-a698-f9ffb853d4a6}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="源文件\3-算法与数据结构">
-      <UniqueIdentifier>{e847bea2-d726-48c1-91f4-cf494f31368c}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="源文件\4-C++算法">
-      <UniqueIdentifier>{4012d9f2-eac0-4de7-b310-1d3a79d9c17f}</UniqueIdentifier>
-    </Filter>
     <Filter Include="源文件\Python与C++相互调用">
       <UniqueIdentifier>{91b8e302-feb5-4420-80d1-5e58fa8734e2}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="源文件\5-文件IO">
-      <UniqueIdentifier>{8c0c4afd-0443-40a0-9092-f58abb76899a}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="源文件\6-系统编程">
-      <UniqueIdentifier>{95c2ac80-0f9d-4374-87c8-5d2066699a18}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="源文件\6-系统编程\线程池实例">
-      <UniqueIdentifier>{0c115c3b-7e04-4eb4-8629-45a435ccd784}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="源文件\7-网络编程">
-      <UniqueIdentifier>{b7d41051-f21b-4d2b-ba24-71404e5032ab}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="源文件\7-网络编程\TCP实例">
-      <UniqueIdentifier>{826dff55-4d32-4fc5-a6ab-9b20d40e31c8}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="源文件\7-网络编程\UDP实例">
-      <UniqueIdentifier>{01f71f25-881c-4759-ac06-12fa6937965c}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="源文件\7-网络编程\IO模型实例">
-      <UniqueIdentifier>{29bf2d8a-94fb-403a-9142-3c138c2e961a}</UniqueIdentifier>
     </Filter>
     <Filter Include="源文件\8-设计模式">
       <UniqueIdentifier>{557f9706-16fa-4b92-a4f1-4146d36b1133}</UniqueIdentifier>
@@ -96,196 +66,232 @@
     <Filter Include="源文件\8-设计模式\MVC实例">
       <UniqueIdentifier>{e712904c-345a-41f7-8855-4bbb9109d322}</UniqueIdentifier>
     </Filter>
-    <Filter Include="源文件\5-文件IO\开发板显示demo">
-      <UniqueIdentifier>{726e186d-4625-4c55-8e6a-4ea2356a4299}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="源文件\5-文件IO\开发板坐标demo">
-      <UniqueIdentifier>{04607b51-0595-4391-83cc-5d5b9d88c519}</UniqueIdentifier>
-    </Filter>
     <Filter Include="源文件\Win32 API">
       <UniqueIdentifier>{6431d9e7-eca4-4142-b161-a468ef8c5a08}</UniqueIdentifier>
     </Filter>
     <Filter Include="源文件\汇编语言">
       <UniqueIdentifier>{da4c4e0a-0faa-4220-87cc-9df02265895a}</UniqueIdentifier>
     </Filter>
+    <Filter Include="源文件\2-文件IO">
+      <UniqueIdentifier>{8c0c4afd-0443-40a0-9092-f58abb76899a}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="源文件\2-文件IO\开发板显示demo">
+      <UniqueIdentifier>{726e186d-4625-4c55-8e6a-4ea2356a4299}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="源文件\2-文件IO\开发板坐标demo">
+      <UniqueIdentifier>{04607b51-0595-4391-83cc-5d5b9d88c519}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="源文件\3-系统编程">
+      <UniqueIdentifier>{95c2ac80-0f9d-4374-87c8-5d2066699a18}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="源文件\3-系统编程\线程池实例">
+      <UniqueIdentifier>{0c115c3b-7e04-4eb4-8629-45a435ccd784}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="源文件\4-网络编程">
+      <UniqueIdentifier>{b7d41051-f21b-4d2b-ba24-71404e5032ab}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="源文件\4-网络编程\TCP实例">
+      <UniqueIdentifier>{826dff55-4d32-4fc5-a6ab-9b20d40e31c8}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="源文件\4-网络编程\UDP实例">
+      <UniqueIdentifier>{01f71f25-881c-4759-ac06-12fa6937965c}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="源文件\4-网络编程\IO模型实例">
+      <UniqueIdentifier>{29bf2d8a-94fb-403a-9142-3c138c2e961a}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="源文件\5-算法与数据结构">
+      <UniqueIdentifier>{e847bea2-d726-48c1-91f4-cf494f31368c}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="源文件\6-C++语法">
+      <UniqueIdentifier>{4b5b820a-4416-4903-a698-f9ffb853d4a6}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="源文件\7-C++算法">
+      <UniqueIdentifier>{4012d9f2-eac0-4de7-b310-1d3a79d9c17f}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="源文件\6-C++语法\STD标准库">
+      <UniqueIdentifier>{cd9bd5c2-a065-459a-afed-eb4976bd7392}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="源文件\6-C++语法\Cpp新特性">
+      <UniqueIdentifier>{d3fe5939-92c7-42ef-9bc6-412ef1ae0549}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="算法-1顺序表.c">
-      <Filter>源文件\3-算法与数据结构</Filter>
+      <Filter>源文件\5-算法与数据结构</Filter>
     </ClCompile>
     <ClCompile Include="算法-1顺序表.cpp">
-      <Filter>源文件\4-C++算法</Filter>
+      <Filter>源文件\7-C++算法</Filter>
     </ClCompile>
     <ClCompile Include="算法-2单向链表.c">
-      <Filter>源文件\3-算法与数据结构</Filter>
+      <Filter>源文件\5-算法与数据结构</Filter>
     </ClCompile>
     <ClCompile Include="算法-2单向链表.cpp">
-      <Filter>源文件\4-C++算法</Filter>
+      <Filter>源文件\7-C++算法</Filter>
     </ClCompile>
     <ClCompile Include="算法-3单向循环链表.c">
-      <Filter>源文件\3-算法与数据结构</Filter>
+      <Filter>源文件\5-算法与数据结构</Filter>
     </ClCompile>
     <ClCompile Include="算法-3单向循环链表.cpp">
-      <Filter>源文件\4-C++算法</Filter>
+      <Filter>源文件\7-C++算法</Filter>
     </ClCompile>
     <ClCompile Include="算法-4双向循环链表.c">
-      <Filter>源文件\3-算法与数据结构</Filter>
+      <Filter>源文件\5-算法与数据结构</Filter>
     </ClCompile>
     <ClCompile Include="算法-4双向循环链表.cpp">
-      <Filter>源文件\4-C++算法</Filter>
+      <Filter>源文件\7-C++算法</Filter>
     </ClCompile>
     <ClCompile Include="算法-5内核链表.c">
-      <Filter>源文件\3-算法与数据结构</Filter>
+      <Filter>源文件\5-算法与数据结构</Filter>
     </ClCompile>
     <ClCompile Include="算法-5内核链表.cpp">
-      <Filter>源文件\4-C++算法</Filter>
+      <Filter>源文件\7-C++算法</Filter>
     </ClCompile>
     <ClCompile Include="算法-7链式栈.c">
-      <Filter>源文件\3-算法与数据结构</Filter>
+      <Filter>源文件\5-算法与数据结构</Filter>
     </ClCompile>
     <ClCompile Include="算法-6栈.cpp">
-      <Filter>源文件\4-C++算法</Filter>
+      <Filter>源文件\7-C++算法</Filter>
     </ClCompile>
     <ClCompile Include="算法-10链式队列.c">
-      <Filter>源文件\3-算法与数据结构</Filter>
+      <Filter>源文件\5-算法与数据结构</Filter>
     </ClCompile>
     <ClCompile Include="算法-7队列.cpp">
-      <Filter>源文件\4-C++算法</Filter>
+      <Filter>源文件\7-C++算法</Filter>
     </ClCompile>
     <ClCompile Include="算法-11二叉树.c">
-      <Filter>源文件\3-算法与数据结构</Filter>
+      <Filter>源文件\5-算法与数据结构</Filter>
     </ClCompile>
     <ClCompile Include="算法-8二叉树.cpp">
-      <Filter>源文件\4-C++算法</Filter>
+      <Filter>源文件\7-C++算法</Filter>
     </ClCompile>
     <ClCompile Include="算法-14排序算法.c">
-      <Filter>源文件\3-算法与数据结构</Filter>
+      <Filter>源文件\5-算法与数据结构</Filter>
     </ClCompile>
     <ClCompile Include="系编-1多进程.cpp">
-      <Filter>源文件\6-系统编程</Filter>
+      <Filter>源文件\3-系统编程</Filter>
     </ClCompile>
     <ClCompile Include="系编-2管道通信.cpp">
-      <Filter>源文件\6-系统编程</Filter>
+      <Filter>源文件\3-系统编程</Filter>
     </ClCompile>
     <ClCompile Include="系编-3信号.cpp">
-      <Filter>源文件\6-系统编程</Filter>
+      <Filter>源文件\3-系统编程</Filter>
     </ClCompile>
     <ClCompile Include="系编-4精灵进程.cpp">
-      <Filter>源文件\6-系统编程</Filter>
+      <Filter>源文件\3-系统编程</Filter>
     </ClCompile>
     <ClCompile Include="算法-9排序算法.cpp">
-      <Filter>源文件\4-C++算法</Filter>
+      <Filter>源文件\7-C++算法</Filter>
     </ClCompile>
     <ClCompile Include="算法-10图.cpp">
-      <Filter>源文件\4-C++算法</Filter>
+      <Filter>源文件\7-C++算法</Filter>
     </ClCompile>
     <ClCompile Include="算法-15图.c">
-      <Filter>源文件\3-算法与数据结构</Filter>
+      <Filter>源文件\5-算法与数据结构</Filter>
     </ClCompile>
     <ClCompile Include="系编-5消息队列.cpp">
-      <Filter>源文件\6-系统编程</Filter>
+      <Filter>源文件\3-系统编程</Filter>
     </ClCompile>
     <ClCompile Include="系编-6共享内存.cpp">
-      <Filter>源文件\6-系统编程</Filter>
+      <Filter>源文件\3-系统编程</Filter>
     </ClCompile>
     <ClCompile Include="系编-7信号量.cpp">
-      <Filter>源文件\6-系统编程</Filter>
+      <Filter>源文件\3-系统编程</Filter>
     </ClCompile>
     <ClCompile Include="系编-8POSIX信号量.cpp">
-      <Filter>源文件\6-系统编程</Filter>
+      <Filter>源文件\3-系统编程</Filter>
     </ClCompile>
     <ClCompile Include="系编-9多线程.cpp">
-      <Filter>源文件\6-系统编程</Filter>
+      <Filter>源文件\3-系统编程</Filter>
     </ClCompile>
     <ClCompile Include="系编-10锁.cpp">
-      <Filter>源文件\6-系统编程</Filter>
+      <Filter>源文件\3-系统编程</Filter>
     </ClCompile>
     <ClCompile Include="系编-11条件变量.cpp">
-      <Filter>源文件\6-系统编程</Filter>
+      <Filter>源文件\3-系统编程</Filter>
     </ClCompile>
     <ClCompile Include="系编-12线程池.cpp">
-      <Filter>源文件\6-系统编程</Filter>
+      <Filter>源文件\3-系统编程</Filter>
     </ClCompile>
     <ClCompile Include="main_dircopy.c">
-      <Filter>源文件\6-系统编程\线程池实例</Filter>
+      <Filter>源文件\3-系统编程\线程池实例</Filter>
     </ClCompile>
     <ClCompile Include="pthread_pool.c">
-      <Filter>源文件\6-系统编程\线程池实例</Filter>
+      <Filter>源文件\3-系统编程\线程池实例</Filter>
     </ClCompile>
     <ClCompile Include="网编-1基本概念.cpp">
-      <Filter>源文件\7-网络编程</Filter>
+      <Filter>源文件\4-网络编程</Filter>
     </ClCompile>
     <ClCompile Include="网编-2TCP.cpp">
-      <Filter>源文件\7-网络编程</Filter>
+      <Filter>源文件\4-网络编程</Filter>
     </ClCompile>
     <ClCompile Include="网编-3UDP.cpp">
-      <Filter>源文件\7-网络编程</Filter>
+      <Filter>源文件\4-网络编程</Filter>
     </ClCompile>
     <ClCompile Include="TCP_client.c">
-      <Filter>源文件\7-网络编程\TCP实例</Filter>
+      <Filter>源文件\4-网络编程\TCP实例</Filter>
     </ClCompile>
     <ClCompile Include="TCP_server.c">
-      <Filter>源文件\7-网络编程\TCP实例</Filter>
+      <Filter>源文件\4-网络编程\TCP实例</Filter>
     </ClCompile>
     <ClCompile Include="多客户端server.c">
-      <Filter>源文件\7-网络编程\TCP实例</Filter>
+      <Filter>源文件\4-网络编程\TCP实例</Filter>
     </ClCompile>
     <ClCompile Include="双循链表server.c">
-      <Filter>源文件\7-网络编程\TCP实例</Filter>
+      <Filter>源文件\4-网络编程\TCP实例</Filter>
     </ClCompile>
     <ClCompile Include="文件传输client.c">
-      <Filter>源文件\7-网络编程\TCP实例</Filter>
+      <Filter>源文件\4-网络编程\TCP实例</Filter>
     </ClCompile>
     <ClCompile Include="文件传输server.c">
-      <Filter>源文件\7-网络编程\TCP实例</Filter>
+      <Filter>源文件\4-网络编程\TCP实例</Filter>
     </ClCompile>
     <ClCompile Include="自定义协议clinet.c">
-      <Filter>源文件\7-网络编程\TCP实例</Filter>
+      <Filter>源文件\4-网络编程\TCP实例</Filter>
     </ClCompile>
     <ClCompile Include="自定义协议sever.c">
-      <Filter>源文件\7-网络编程\TCP实例</Filter>
+      <Filter>源文件\4-网络编程\TCP实例</Filter>
     </ClCompile>
     <ClCompile Include="UDP_client.c">
-      <Filter>源文件\7-网络编程\UDP实例</Filter>
+      <Filter>源文件\4-网络编程\UDP实例</Filter>
     </ClCompile>
     <ClCompile Include="UDP_server.c">
-      <Filter>源文件\7-网络编程\UDP实例</Filter>
+      <Filter>源文件\4-网络编程\UDP实例</Filter>
     </ClCompile>
     <ClCompile Include="广播send.c">
-      <Filter>源文件\7-网络编程\UDP实例</Filter>
+      <Filter>源文件\4-网络编程\UDP实例</Filter>
     </ClCompile>
     <ClCompile Include="组播recv.c">
-      <Filter>源文件\7-网络编程\UDP实例</Filter>
+      <Filter>源文件\4-网络编程\UDP实例</Filter>
     </ClCompile>
     <ClCompile Include="网编-9IO模型.cpp">
-      <Filter>源文件\7-网络编程</Filter>
+      <Filter>源文件\4-网络编程</Filter>
     </ClCompile>
     <ClCompile Include="OOB server.c">
-      <Filter>源文件\7-网络编程\IO模型实例</Filter>
+      <Filter>源文件\4-网络编程\IO模型实例</Filter>
     </ClCompile>
     <ClCompile Include="多路复用server.c">
-      <Filter>源文件\7-网络编程\IO模型实例</Filter>
+      <Filter>源文件\4-网络编程\IO模型实例</Filter>
     </ClCompile>
     <ClCompile Include="非阻塞轮询server.c">
-      <Filter>源文件\7-网络编程\IO模型实例</Filter>
+      <Filter>源文件\4-网络编程\IO模型实例</Filter>
     </ClCompile>
     <ClCompile Include="异步信号驱动server.c">
-      <Filter>源文件\7-网络编程\IO模型实例</Filter>
+      <Filter>源文件\4-网络编程\IO模型实例</Filter>
     </ClCompile>
     <ClCompile Include="面试.cpp">
       <Filter>源文件\其它</Filter>
     </ClCompile>
     <ClCompile Include="23模板元编程.cpp">
-      <Filter>源文件\2-C++语法</Filter>
+      <Filter>源文件\6-C++语法</Filter>
     </ClCompile>
     <ClCompile Include="02命名空间.cpp">
-      <Filter>源文件\2-C++语法</Filter>
+      <Filter>源文件\6-C++语法</Filter>
     </ClCompile>
     <ClCompile Include="03动态内存.cpp">
-      <Filter>源文件\2-C++语法</Filter>
+      <Filter>源文件\6-C++语法</Filter>
     </ClCompile>
     <ClCompile Include="04引用.cpp">
-      <Filter>源文件\2-C++语法</Filter>
+      <Filter>源文件\6-C++语法</Filter>
     </ClCompile>
     <ClCompile Include="20_OPS.cpp">
       <Filter>源文件</Filter>
@@ -425,13 +431,13 @@
     <ClCompile Include="C-02运算符&amp;逻辑结构.c">
       <Filter>源文件\1-C语言语法</Filter>
     </ClCompile>
-    <ClCompile Include="C-03函数.c">
+    <ClCompile Include="C-04函数.c">
       <Filter>源文件\1-C语言语法</Filter>
     </ClCompile>
-    <ClCompile Include="C-04变参函数.c">
+    <ClCompile Include="C-05变参函数.c">
       <Filter>源文件\1-C语言语法</Filter>
     </ClCompile>
-    <ClCompile Include="C-05数组.c">
+    <ClCompile Include="C-03数组.c">
       <Filter>源文件\1-C语言语法</Filter>
     </ClCompile>
     <ClCompile Include="C-06指针&amp;字符串.c">
@@ -456,160 +462,73 @@
       <Filter>源文件</Filter>
     </ClCompile>
     <ClCompile Include="05重载.cpp">
-      <Filter>源文件\2-C++语法</Filter>
+      <Filter>源文件\6-C++语法</Filter>
     </ClCompile>
     <ClCompile Include="06默认参数&amp;占位参数.cpp">
-      <Filter>源文件\2-C++语法</Filter>
+      <Filter>源文件\6-C++语法</Filter>
     </ClCompile>
     <ClCompile Include="07类&amp;封装&amp;抽象.cpp">
-      <Filter>源文件\2-C++语法</Filter>
+      <Filter>源文件\6-C++语法</Filter>
     </ClCompile>
     <ClCompile Include="08构造析构函数.cpp">
-      <Filter>源文件\2-C++语法</Filter>
+      <Filter>源文件\6-C++语法</Filter>
     </ClCompile>
     <ClCompile Include="09参数列表初始化.cpp">
-      <Filter>源文件\2-C++语法</Filter>
+      <Filter>源文件\6-C++语法</Filter>
     </ClCompile>
     <ClCompile Include="10this指针&amp;空指针.cpp">
-      <Filter>源文件\2-C++语法</Filter>
+      <Filter>源文件\6-C++语法</Filter>
     </ClCompile>
     <ClCompile Include="11static与const.cpp">
-      <Filter>源文件\2-C++语法</Filter>
+      <Filter>源文件\6-C++语法</Filter>
     </ClCompile>
     <ClCompile Include="12explicit与匿名对象.cpp">
-      <Filter>源文件\2-C++语法</Filter>
+      <Filter>源文件\6-C++语法</Filter>
     </ClCompile>
     <ClCompile Include="13继承.cpp">
-      <Filter>源文件\2-C++语法</Filter>
+      <Filter>源文件\6-C++语法</Filter>
     </ClCompile>
     <ClCompile Include="14多态与虚函数.cpp">
-      <Filter>源文件\2-C++语法</Filter>
+      <Filter>源文件\6-C++语法</Filter>
     </ClCompile>
     <ClCompile Include="15纯虚函数与抽象类.cpp">
-      <Filter>源文件\2-C++语法</Filter>
+      <Filter>源文件\6-C++语法</Filter>
     </ClCompile>
     <ClCompile Include="16强制类型转换.cpp">
-      <Filter>源文件\2-C++语法</Filter>
+      <Filter>源文件\6-C++语法</Filter>
     </ClCompile>
     <ClCompile Include="17友元.cpp">
-      <Filter>源文件\2-C++语法</Filter>
+      <Filter>源文件\6-C++语法</Filter>
     </ClCompile>
     <ClCompile Include="22模板.cpp">
-      <Filter>源文件\2-C++语法</Filter>
+      <Filter>源文件\6-C++语法</Filter>
     </ClCompile>
     <ClCompile Include="19异常处理.cpp">
-      <Filter>源文件\2-C++语法</Filter>
+      <Filter>源文件\6-C++语法</Filter>
     </ClCompile>
     <ClCompile Include="18预处理器.cpp">
-      <Filter>源文件\2-C++语法</Filter>
+      <Filter>源文件\6-C++语法</Filter>
     </ClCompile>
     <ClCompile Include="20函数重入与线程安全.cpp">
-      <Filter>源文件\2-C++语法</Filter>
+      <Filter>源文件\6-C++语法</Filter>
     </ClCompile>
     <ClCompile Include="21内存分布.cpp">
-      <Filter>源文件\2-C++语法</Filter>
+      <Filter>源文件\6-C++语法</Filter>
     </ClCompile>
     <ClCompile Include="问答.cpp">
-      <Filter>源文件\2-C++语法</Filter>
+      <Filter>源文件\6-C++语法</Filter>
     </ClCompile>
     <ClCompile Include="辨析.cpp">
-      <Filter>源文件\2-C++语法</Filter>
-    </ClCompile>
-    <ClCompile Include="STD-9文件流.cpp">
-      <Filter>源文件\2-C++语法</Filter>
-    </ClCompile>
-    <ClCompile Include="STD-8互斥锁与条件变量.cpp">
-      <Filter>源文件\2-C++语法</Filter>
-    </ClCompile>
-    <ClCompile Include="STD-7线程.cpp">
-      <Filter>源文件\2-C++语法</Filter>
-    </ClCompile>
-    <ClCompile Include="STD-3STL迭代器.cpp">
-      <Filter>源文件\2-C++语法</Filter>
-    </ClCompile>
-    <ClCompile Include="STD-2string.cpp">
-      <Filter>源文件\2-C++语法</Filter>
-    </ClCompile>
-    <ClCompile Include="STD-1标准库.cpp">
-      <Filter>源文件\2-C++语法</Filter>
-    </ClCompile>
-    <ClCompile Include="STD-4STL容器.cpp">
-      <Filter>源文件\2-C++语法</Filter>
-    </ClCompile>
-    <ClCompile Include="Cpp11-1新类型&amp;关键字.cpp">
-      <Filter>源文件\2-C++语法</Filter>
-    </ClCompile>
-    <ClCompile Include="Cpp11-2Lambda表达式.cpp">
-      <Filter>源文件\2-C++语法</Filter>
-    </ClCompile>
-    <ClCompile Include="Cpp11-3列表初始化.cpp">
-      <Filter>源文件\2-C++语法</Filter>
-    </ClCompile>
-    <ClCompile Include="Cpp11-4委托继承构造函数.cpp">
-      <Filter>源文件\2-C++语法</Filter>
-    </ClCompile>
-    <ClCompile Include="Cpp11-5右值引用&amp;移动语义.cpp">
-      <Filter>源文件\2-C++语法</Filter>
-    </ClCompile>
-    <ClCompile Include="Cpp11-6常量表达式.cpp">
-      <Filter>源文件\2-C++语法</Filter>
-    </ClCompile>
-    <ClCompile Include="Cpp11-7范围for循环.cpp">
-      <Filter>源文件\2-C++语法</Filter>
-    </ClCompile>
-    <ClCompile Include="Cpp11-8强枚举类型.cpp">
-      <Filter>源文件\2-C++语法</Filter>
-    </ClCompile>
-    <ClCompile Include="Cpp11-9聚合类.cpp">
-      <Filter>源文件\2-C++语法</Filter>
-    </ClCompile>
-    <ClCompile Include="Cpp17-1if和switch初始化.cpp">
-      <Filter>源文件\2-C++语法</Filter>
-    </ClCompile>
-    <ClCompile Include="STD-6STL智能指针.cpp">
-      <Filter>源文件\2-C++语法</Filter>
+      <Filter>源文件\6-C++语法</Filter>
     </ClCompile>
     <ClCompile Include="网编-8套接字函数.cpp">
-      <Filter>源文件\7-网络编程</Filter>
+      <Filter>源文件\4-网络编程</Filter>
     </ClCompile>
     <ClCompile Include="01输入输出流.cpp">
-      <Filter>源文件\2-C++语法</Filter>
+      <Filter>源文件\6-C++语法</Filter>
     </ClCompile>
     <ClCompile Include="12using与inline.cpp">
-      <Filter>源文件\2-C++语法</Filter>
-    </ClCompile>
-    <ClCompile Include="Cpp20-1三项比较.cpp">
-      <Filter>源文件\2-C++语法</Filter>
-    </ClCompile>
-    <ClCompile Include="Cpp20-2consteval与constinit.cpp">
-      <Filter>源文件\2-C++语法</Filter>
-    </ClCompile>
-    <ClCompile Include="STD-5STL新容器.cpp">
-      <Filter>源文件\2-C++语法</Filter>
-    </ClCompile>
-    <ClCompile Include="Cpp17-2表达式求值顺序确定.cpp">
-      <Filter>源文件\2-C++语法</Filter>
-    </ClCompile>
-    <ClCompile Include="Cpp11-10字面量优化.cpp">
-      <Filter>源文件\2-C++语法</Filter>
-    </ClCompile>
-    <ClCompile Include="Cpp11-11标准属性.cpp">
-      <Filter>源文件\2-C++语法</Filter>
-    </ClCompile>
-    <ClCompile Include="Cpp20-3协程.cpp">
-      <Filter>源文件\2-C++语法</Filter>
-    </ClCompile>
-    <ClCompile Include="Cpp11-12返回值优化.cpp">
-      <Filter>源文件\2-C++语法</Filter>
-    </ClCompile>
-    <ClCompile Include="Cpp20-4模块.cpp">
-      <Filter>源文件\2-C++语法</Filter>
-    </ClCompile>
-    <ClCompile Include="Cpp20-5概念.cpp">
-      <Filter>源文件\2-C++语法</Filter>
-    </ClCompile>
-    <ClCompile Include="Cpp20-6范围.cpp">
-      <Filter>源文件\2-C++语法</Filter>
+      <Filter>源文件\6-C++语法</Filter>
     </ClCompile>
     <ClCompile Include="设计模式.cpp">
       <Filter>源文件\8-设计模式</Filter>
@@ -634,9 +553,6 @@
     </ClCompile>
     <ClCompile Include="设计模式-6策略模式.cpp">
       <Filter>源文件\8-设计模式</Filter>
-    </ClCompile>
-    <ClCompile Include="STD-10常用函数.cpp">
-      <Filter>源文件\2-C++语法</Filter>
     </ClCompile>
     <ClCompile Include="QT-20绘图系统.cpp">
       <Filter>源文件\QT</Filter>
@@ -696,16 +612,16 @@
       <Filter>源文件\音视频\流协议</Filter>
     </ClCompile>
     <ClCompile Include="网编-4IP协议和HTTP协议.cpp">
-      <Filter>源文件\7-网络编程</Filter>
+      <Filter>源文件\4-网络编程</Filter>
     </ClCompile>
     <ClCompile Include="网编-6UDP实际应用.cpp">
-      <Filter>源文件\7-网络编程</Filter>
+      <Filter>源文件\4-网络编程</Filter>
     </ClCompile>
     <ClCompile Include="网编-7Socket.cpp">
-      <Filter>源文件\7-网络编程</Filter>
+      <Filter>源文件\4-网络编程</Filter>
     </ClCompile>
     <ClCompile Include="网编-5TCP性能调优.cpp">
-      <Filter>源文件\7-网络编程</Filter>
+      <Filter>源文件\4-网络编程</Filter>
     </ClCompile>
     <ClCompile Include="编码-4H264码流解析.cpp">
       <Filter>源文件\音视频\编码标准</Filter>
@@ -831,31 +747,31 @@
       <Filter>源文件\其它</Filter>
     </ClCompile>
     <ClCompile Include="算法-0数据结构.c">
-      <Filter>源文件\3-算法与数据结构</Filter>
+      <Filter>源文件\5-算法与数据结构</Filter>
     </ClCompile>
     <ClCompile Include="算法-6顺序栈.c">
-      <Filter>源文件\3-算法与数据结构</Filter>
+      <Filter>源文件\5-算法与数据结构</Filter>
     </ClCompile>
     <ClCompile Include="算法-8共享栈.c">
-      <Filter>源文件\3-算法与数据结构</Filter>
+      <Filter>源文件\5-算法与数据结构</Filter>
     </ClCompile>
     <ClCompile Include="算法-20约瑟夫环.c">
-      <Filter>源文件\3-算法与数据结构</Filter>
+      <Filter>源文件\5-算法与数据结构</Filter>
     </ClCompile>
     <ClCompile Include="算法-9顺序循环队列.c">
-      <Filter>源文件\3-算法与数据结构</Filter>
+      <Filter>源文件\5-算法与数据结构</Filter>
     </ClCompile>
     <ClCompile Include="计组.cpp">
       <Filter>源文件\其它</Filter>
     </ClCompile>
     <ClCompile Include="算法-16KMP算法.c">
-      <Filter>源文件\3-算法与数据结构</Filter>
+      <Filter>源文件\5-算法与数据结构</Filter>
     </ClCompile>
     <ClCompile Include="算法-12二叉树按层遍历.c">
-      <Filter>源文件\3-算法与数据结构</Filter>
+      <Filter>源文件\5-算法与数据结构</Filter>
     </ClCompile>
     <ClCompile Include="算法-13并查集.c">
-      <Filter>源文件\3-算法与数据结构</Filter>
+      <Filter>源文件\5-算法与数据结构</Filter>
     </ClCompile>
     <ClCompile Include="Python调用C++.cpp">
       <Filter>源文件\Python与C++相互调用</Filter>
@@ -864,70 +780,70 @@
       <Filter>源文件\Python与C++相互调用</Filter>
     </ClCompile>
     <ClCompile Include="文件-1系统IO.cpp">
-      <Filter>源文件\5-文件IO</Filter>
+      <Filter>源文件\2-文件IO</Filter>
     </ClCompile>
     <ClCompile Include="文件-2标准IO.cpp">
-      <Filter>源文件\5-文件IO</Filter>
+      <Filter>源文件\2-文件IO</Filter>
     </ClCompile>
-    <ClCompile Include="文件-3开发板显示.cpp">
-      <Filter>源文件\5-文件IO</Filter>
+    <ClCompile Include="文件-4开发板显示.cpp">
+      <Filter>源文件\2-文件IO</Filter>
     </ClCompile>
     <ClCompile Include="demo3-1lcdinfo.c">
-      <Filter>源文件\5-文件IO\开发板显示demo</Filter>
+      <Filter>源文件\2-文件IO\开发板显示demo</Filter>
     </ClCompile>
     <ClCompile Include="demo3-2red.c">
-      <Filter>源文件\5-文件IO\开发板显示demo</Filter>
+      <Filter>源文件\2-文件IO\开发板显示demo</Filter>
     </ClCompile>
     <ClCompile Include="demo3-3德国国旗.c">
-      <Filter>源文件\5-文件IO\开发板显示demo</Filter>
+      <Filter>源文件\2-文件IO\开发板显示demo</Filter>
     </ClCompile>
     <ClCompile Include="demo3-4小方块颜色.c">
-      <Filter>源文件\5-文件IO\开发板显示demo</Filter>
+      <Filter>源文件\2-文件IO\开发板显示demo</Filter>
     </ClCompile>
     <ClCompile Include="demo3-5圆.c">
-      <Filter>源文件\5-文件IO\开发板显示demo</Filter>
+      <Filter>源文件\2-文件IO\开发板显示demo</Filter>
     </ClCompile>
     <ClCompile Include="demo3-6char.c">
-      <Filter>源文件\5-文件IO\开发板显示demo</Filter>
+      <Filter>源文件\2-文件IO\开发板显示demo</Filter>
     </ClCompile>
     <ClCompile Include="demo3-7bmp图片显示.c">
-      <Filter>源文件\5-文件IO\开发板显示demo</Filter>
+      <Filter>源文件\2-文件IO\开发板显示demo</Filter>
     </ClCompile>
     <ClCompile Include="demo3-8小图片显示.c">
-      <Filter>源文件\5-文件IO\开发板显示demo</Filter>
+      <Filter>源文件\2-文件IO\开发板显示demo</Filter>
     </ClCompile>
     <ClCompile Include="demo3-9显示任意图片.c">
-      <Filter>源文件\5-文件IO\开发板显示demo</Filter>
+      <Filter>源文件\2-文件IO\开发板显示demo</Filter>
     </ClCompile>
     <ClCompile Include="demo3-10内存映射.c">
-      <Filter>源文件\5-文件IO\开发板显示demo</Filter>
+      <Filter>源文件\2-文件IO\开发板显示demo</Filter>
     </ClCompile>
-    <ClCompile Include="文件-4目录IO.cpp">
-      <Filter>源文件\5-文件IO</Filter>
+    <ClCompile Include="文件-3目录IO.cpp">
+      <Filter>源文件\2-文件IO</Filter>
     </ClCompile>
     <ClCompile Include="文件-5Linux输入子系统.cpp">
-      <Filter>源文件\5-文件IO</Filter>
+      <Filter>源文件\2-文件IO</Filter>
     </ClCompile>
     <ClCompile Include="demo5-1touch.c">
-      <Filter>源文件\5-文件IO\开发板坐标demo</Filter>
+      <Filter>源文件\2-文件IO\开发板坐标demo</Filter>
     </ClCompile>
     <ClCompile Include="demo5-2多次获取坐标.c">
-      <Filter>源文件\5-文件IO\开发板坐标demo</Filter>
+      <Filter>源文件\2-文件IO\开发板坐标demo</Filter>
     </ClCompile>
     <ClCompile Include="demo5-3滑动获取坐标.c">
-      <Filter>源文件\5-文件IO\开发板坐标demo</Filter>
+      <Filter>源文件\2-文件IO\开发板坐标demo</Filter>
     </ClCompile>
     <ClCompile Include="demo5-4滑动获取方向.c">
-      <Filter>源文件\5-文件IO\开发板坐标demo</Filter>
+      <Filter>源文件\2-文件IO\开发板坐标demo</Filter>
     </ClCompile>
     <ClCompile Include="demo5-5进度条.c">
-      <Filter>源文件\5-文件IO\开发板坐标demo</Filter>
+      <Filter>源文件\2-文件IO\开发板坐标demo</Filter>
     </ClCompile>
     <ClCompile Include="demo5-6画板.c">
-      <Filter>源文件\5-文件IO\开发板坐标demo</Filter>
+      <Filter>源文件\2-文件IO\开发板坐标demo</Filter>
     </ClCompile>
     <ClCompile Include="demo5-7简易相册.c">
-      <Filter>源文件\5-文件IO\开发板坐标demo</Filter>
+      <Filter>源文件\2-文件IO\开发板坐标demo</Filter>
     </ClCompile>
     <ClCompile Include="Win-1介绍.cpp">
       <Filter>源文件\Win32 API</Filter>
@@ -972,15 +888,105 @@
       <Filter>源文件\汇编语言</Filter>
     </ClCompile>
     <ClCompile Include="系编-0操作系统.cpp">
-      <Filter>源文件\6-系统编程</Filter>
+      <Filter>源文件\3-系统编程</Filter>
     </ClCompile>
     <ClCompile Include="网编-0计算机网络.cpp">
-      <Filter>源文件\7-网络编程</Filter>
+      <Filter>源文件\4-网络编程</Filter>
+    </ClCompile>
+    <ClCompile Include="STD-1标准库.cpp">
+      <Filter>源文件\6-C++语法\STD标准库</Filter>
+    </ClCompile>
+    <ClCompile Include="STD-2string.cpp">
+      <Filter>源文件\6-C++语法\STD标准库</Filter>
+    </ClCompile>
+    <ClCompile Include="STD-3STL迭代器.cpp">
+      <Filter>源文件\6-C++语法\STD标准库</Filter>
+    </ClCompile>
+    <ClCompile Include="STD-4STL容器.cpp">
+      <Filter>源文件\6-C++语法\STD标准库</Filter>
+    </ClCompile>
+    <ClCompile Include="STD-5STL新容器.cpp">
+      <Filter>源文件\6-C++语法\STD标准库</Filter>
+    </ClCompile>
+    <ClCompile Include="STD-6STL智能指针.cpp">
+      <Filter>源文件\6-C++语法\STD标准库</Filter>
+    </ClCompile>
+    <ClCompile Include="STD-7线程.cpp">
+      <Filter>源文件\6-C++语法\STD标准库</Filter>
+    </ClCompile>
+    <ClCompile Include="STD-8互斥锁与条件变量.cpp">
+      <Filter>源文件\6-C++语法\STD标准库</Filter>
+    </ClCompile>
+    <ClCompile Include="STD-9文件流.cpp">
+      <Filter>源文件\6-C++语法\STD标准库</Filter>
+    </ClCompile>
+    <ClCompile Include="STD-10常用函数.cpp">
+      <Filter>源文件\6-C++语法\STD标准库</Filter>
+    </ClCompile>
+    <ClCompile Include="Cpp11-1新类型&amp;关键字.cpp">
+      <Filter>源文件\6-C++语法\Cpp新特性</Filter>
+    </ClCompile>
+    <ClCompile Include="Cpp11-2Lambda表达式.cpp">
+      <Filter>源文件\6-C++语法\Cpp新特性</Filter>
+    </ClCompile>
+    <ClCompile Include="Cpp11-3列表初始化.cpp">
+      <Filter>源文件\6-C++语法\Cpp新特性</Filter>
+    </ClCompile>
+    <ClCompile Include="Cpp11-4委托继承构造函数.cpp">
+      <Filter>源文件\6-C++语法\Cpp新特性</Filter>
+    </ClCompile>
+    <ClCompile Include="Cpp11-5右值引用&amp;移动语义.cpp">
+      <Filter>源文件\6-C++语法\Cpp新特性</Filter>
+    </ClCompile>
+    <ClCompile Include="Cpp11-6常量表达式.cpp">
+      <Filter>源文件\6-C++语法\Cpp新特性</Filter>
+    </ClCompile>
+    <ClCompile Include="Cpp11-7范围for循环.cpp">
+      <Filter>源文件\6-C++语法\Cpp新特性</Filter>
+    </ClCompile>
+    <ClCompile Include="Cpp11-8强枚举类型.cpp">
+      <Filter>源文件\6-C++语法\Cpp新特性</Filter>
+    </ClCompile>
+    <ClCompile Include="Cpp11-9聚合类.cpp">
+      <Filter>源文件\6-C++语法\Cpp新特性</Filter>
+    </ClCompile>
+    <ClCompile Include="Cpp11-10字面量优化.cpp">
+      <Filter>源文件\6-C++语法\Cpp新特性</Filter>
+    </ClCompile>
+    <ClCompile Include="Cpp11-11标准属性.cpp">
+      <Filter>源文件\6-C++语法\Cpp新特性</Filter>
+    </ClCompile>
+    <ClCompile Include="Cpp11-12返回值优化.cpp">
+      <Filter>源文件\6-C++语法\Cpp新特性</Filter>
+    </ClCompile>
+    <ClCompile Include="Cpp17-1if和switch初始化.cpp">
+      <Filter>源文件\6-C++语法\Cpp新特性</Filter>
+    </ClCompile>
+    <ClCompile Include="Cpp17-2表达式求值顺序确定.cpp">
+      <Filter>源文件\6-C++语法\Cpp新特性</Filter>
+    </ClCompile>
+    <ClCompile Include="Cpp20-1三项比较.cpp">
+      <Filter>源文件\6-C++语法\Cpp新特性</Filter>
+    </ClCompile>
+    <ClCompile Include="Cpp20-2consteval与constinit.cpp">
+      <Filter>源文件\6-C++语法\Cpp新特性</Filter>
+    </ClCompile>
+    <ClCompile Include="Cpp20-3协程.cpp">
+      <Filter>源文件\6-C++语法\Cpp新特性</Filter>
+    </ClCompile>
+    <ClCompile Include="Cpp20-4模块.cpp">
+      <Filter>源文件\6-C++语法\Cpp新特性</Filter>
+    </ClCompile>
+    <ClCompile Include="Cpp20-5概念.cpp">
+      <Filter>源文件\6-C++语法\Cpp新特性</Filter>
+    </ClCompile>
+    <ClCompile Include="Cpp20-6范围.cpp">
+      <Filter>源文件\6-C++语法\Cpp新特性</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="pthread_pool.h">
-      <Filter>源文件\6-系统编程\线程池实例</Filter>
+      <Filter>源文件\3-系统编程\线程池实例</Filter>
     </ClInclude>
     <ClInclude Include="view.h">
       <Filter>源文件\8-设计模式\MVC实例</Filter>

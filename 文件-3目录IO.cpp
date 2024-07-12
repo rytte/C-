@@ -1,28 +1,20 @@
-
+/********************/目录IO/************************************************************/
 
 //opendir()打开目录函数
-【头文件】
 #include <sys/types.h>
 #include <dirent.h>
-【函数原型】
-DIR * opendir(const char* name);
-【参数】
-const char* name 需要打开目录的位置
-【返回值】
-成功：返回指向目录文件的流指针，指向目录
-失败： NULL
+
+DIR * opendir(const char* name);	//打开目录并返回目录文件的指针，失败返回NULL
+
+参数：需要打开目录的路径
 
 
 //readdir()读取目录函数
-【头文件】
 #include <dirent.h>
-【函数原型】
-struct dirent* readdir(DIR * dirp);
-【参数】
-DIR* dirp  要读取的目录对应的目录文件流指针
-【返回值】
-成功： 返回目录结构体指针
-失败： NULL
+
+struct dirent* readdir(DIR * dirp);		//读取目录并返回包含目录信息的目录结构体指针，失败返回NULL
+
+参数：要读取的目录的目录文件流指针
 struct dirent 
 {
     ino_t          d_ino;       /* 节点编号*/
@@ -45,29 +37,21 @@ d_type：文件类型
 
 
 //closedir()关闭目录函数
-【头文件】
 #include <sys/types.h>
 #include <dirent.h>
-【函数原型】
-int closedir(DIR * dirp);
-【参数】
-DIR* dirp 需要关闭的目录流指针
-【返回值】
-成功：0
-失败：-1
+
+int closedir(DIR * dirp);		//成功返回0，失败返回-1
+
+参数：需要关闭的目录流指针
 
 
 //mkdir()创建目录函数
-【头文件】
 #include <sys/stat.h>
-【函数原型】
-int mkdir(const char* path, mode_t mode);
-【参数】
-const char* path    目录文件的目录名
-mode_t mode         目录文件创建权限 0777
-【返回值】
-成功：0
-失败：-1
+
+int mkdir(const char* path, mode_t mode);		//成功返回0，失败返回-1
+
+参数1：目录文件路径
+参数2：目录文件创建权限，如0777
 
 
 
