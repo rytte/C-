@@ -159,6 +159,10 @@
     <ClCompile Include="Live-2testOnDemandRTSPServer.cpp" />
     <ClCompile Include="Live-3Medium.cpp" />
     <ClCompile Include="Live-4客户端.cpp" />
+    <ClCompile Include="Pool-1对象池.cpp" />
+    <ClCompile Include="Pool-2内存池.cpp" />
+    <ClCompile Include="Pool-3线程池.cpp" />
+    <ClCompile Include="Pool-4缓存池.cpp" />
     <ClCompile Include="QML-1总示例.cpp" />
     <ClCompile Include="QT-24打包.cpp" />
     <ClCompile Include="QT-25中文乱码问题.cpp" />
@@ -255,7 +259,7 @@
     <ClCompile Include="QT-21宏定义.cpp" />
     <ClCompile Include="QT-22键盘事件.cpp" />
     <ClCompile Include="QT-23鼠标事件.cpp" />
-    <ClCompile Include="STD-10常用函数.cpp" />
+    <ClCompile Include="STD-10_functional_.cpp" />
     <ClCompile Include="STD-4STL容器.cpp" />
     <ClCompile Include="STD-5STL新容器.cpp" />
     <ClCompile Include="STD-8互斥锁与条件变量.cpp" />

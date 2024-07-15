@@ -1,8 +1,36 @@
 /********************/std::function/************************************************************/
 #include <functional>
 
+std::function 提供了一种通用的方式来存储、复制和调用任何可调用的目标（Callable Target），包括函数、Lambda 表达式、函数对象、绑定表达式以及其他函数指针等。
+std::function 的设计目的是为了提供一种类型安全的、多态的方式来回调任何可调用实体。
+
+使用 std::function 时需要注意性能开销。
+
+
+//简单使用实例
+#include <functional>  
+#include <iostream>  
+
+int add(int a, int b) {
+	return a + b;
+}
+
+int main() {
+	std::function<int(int, int)> func = add;
+	std::cout << "func(5, 3) = " << func(5, 3) << std::endl; // 输出 8  
+
+	// 使用 Lambda 表达式  
+	std::function<int(int, int)> funcLambda = [](int a, int b) { return a * b; };
+	std::cout << "funcLambda(5, 3) = " << funcLambda(5, 3) << std::endl; // 输出 15  
+
+	return 0;
+}
+
+//实现多态
 //通过函数指针实现多态
 #include<iostream>
+#include <functional>
+
 typedef int (*func)();
 
 int print1() {
@@ -71,9 +99,11 @@ int main()
 /********************/std::bind/************************************************************/
 #include <functional>
 
+
 //两大作用：
-1、将可调用对象与参数一起绑定为另一个std::function供调用
-2、将n元可调用对象转成m(m < n)元可调用对象，绑定一部分参数，这里需要使用std::placeholders
+1、将可调用对象（如函数、成员函数、
+函数对象、lambda 表达式等）与其参数绑定起来，形成一个新的可调用对象。
+2、将n元可调用对象转成m(m < n)元可调用对象，绑定一部分参数，不绑定的参数使用std::placeholders占位符。
 
 
 //绑定普通函数
@@ -81,11 +111,10 @@ double callableFunc(double x, double y) { return x / y; }
 auto NewCallable = std::bind(callableFunc, std::placeholders::_1, 2);
 std::cout << NewCallable(10) << '\n';
 
-1、bind的第一个参数是函数名，普通函数做实参时，会隐式转换成函数指针。
-因此std::bind(callableFunc, _1, 2)等价于std::bind(&callableFunc, _1, 2)；
-2、_1表示占位符，位于<functional>中，std::placeholders::_1；
-3、第一个参数被占位符占用，表示这个参数以调用时传入的参数为准，在这里调用NewCallable时，
-给它传入了10，其实就想到于调用callableFunc(10, 2);
+参数1：函数名，普通函数做实参时，会隐式转换成函数指针。因此std::bind(callableFunc, _1, 2)等价于std::bind(&callableFunc, _1, 2)；
+参数2：_1表示占位符，位于<functional>中，std::placeholders::_1；
+第一个参数被占位符占用，表示这个参数以调用时传入的参数为准，在这里调用NewCallable时，给它传入了10，其实就想到于调用callableFunc(10, 2);
+参数3：绑定(固定)的参数。
 
 
 //绑定一个成员函数

@@ -114,6 +114,9 @@
     <Filter Include="源文件\6-C++语法\Cpp新特性">
       <UniqueIdentifier>{d3fe5939-92c7-42ef-9bc6-412ef1ae0549}</UniqueIdentifier>
     </Filter>
+    <Filter Include="源文件\6-C++语法\池设计">
+      <UniqueIdentifier>{695f25cc-708c-4bf0-8923-6797f087857b}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="算法-1顺序表.c">
@@ -920,7 +923,7 @@
     <ClCompile Include="STD-9文件流.cpp">
       <Filter>源文件\6-C++语法\STD标准库</Filter>
     </ClCompile>
-    <ClCompile Include="STD-10常用函数.cpp">
+    <ClCompile Include="STD-10_functional_.cpp">
       <Filter>源文件\6-C++语法\STD标准库</Filter>
     </ClCompile>
     <ClCompile Include="Cpp11-1新类型&amp;关键字.cpp">
@@ -982,6 +985,18 @@
     </ClCompile>
     <ClCompile Include="Cpp20-6范围.cpp">
       <Filter>源文件\6-C++语法\Cpp新特性</Filter>
+    </ClCompile>
+    <ClCompile Include="Pool-1对象池.cpp">
+      <Filter>源文件\6-C++语法\池设计</Filter>
+    </ClCompile>
+    <ClCompile Include="Pool-2内存池.cpp">
+      <Filter>源文件\6-C++语法\池设计</Filter>
+    </ClCompile>
+    <ClCompile Include="Pool-3线程池.cpp">
+      <Filter>源文件\6-C++语法\池设计</Filter>
+    </ClCompile>
+    <ClCompile Include="Pool-4缓存池.cpp">
+      <Filter>源文件\6-C++语法\池设计</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>

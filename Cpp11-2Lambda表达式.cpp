@@ -94,7 +94,7 @@ void doSomething(CallbackFunc callback)     // 一个接受函数指针作为回调的函数
 }
 
 
-//2、使用std::functional
+//2、使用std::function
 #include <functional>  
 void doSomething(std::function<void(int)> callback)
 {

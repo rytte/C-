@@ -83,8 +83,8 @@ operator++(int)     //后缀
 成员函数，自定义mystring类(字符串类)
 
 
-/********************/仿函数/************************************************************/
-仿函数：本质上是()运算符的重载，在C++的大部分算法库中，都是使用的仿函数。
+/********************/函数对象(仿函数)/************************************************************/
+函数对象：本质上是()运算符的重载，在C++的大部分算法库中，都是使用的函数对象。
 
 假设有多个类的成员函数使用到了相同的公有函数，那么我们可以把公有函数写成仿函数。
 
@@ -324,55 +324,55 @@ int main()
 
 
 
-/********************/仿函数实例/************************************************************/
+/********************/函数对象实例/************************************************************/
 #include <iostream>
 
 using namespace std;
 
 class Fun {
 public:
-        //求2个数值的和
-        int operator()(int a, int b)
-        {
-                return a + b;
-        }
+    //求2个数值的和
+    int operator()(int a, int b)
+    {
+        return a + b;
+    }
 
-        //要求写 y=kx+3的算法函数
-        int operator()(int x)
-        {
-                return k * x + 3;
-        }
-        //要求写 y=a*x*x+b*x+c
-        int operator()(int x, int, int)
-        {
-                return a * x * x + b * x + c;
-        }
+    //要求写 y=kx+3的算法函数
+    int operator()(int x)
+    {
+        return k * x + 3;
+    }
+    //要求写 y=a*x*x+b*x+c
+    int operator()(int x, int, int)
+    {
+        return a * x * x + b * x + c;
+    }
 
 private:
-        int k;
+    int k;
 
-        int a;
-        int b;
-        int c;
+    int a;
+    int b;
+    int c;
 };
 
 class Test {
 public:
-        int add(int a, int b)
-        {
-                return a + b;
-        }
+    int add(int a, int b)
+    {
+        return a + b;
+    }
 };
 
 int main()
 {
-        Fun f;
-        cout << f(1, 2) << endl;
-        cout << f(3) << endl;//-----y = k*3+3;
+    Fun f;
+    cout << f(1, 2) << endl;
+    cout << f(3) << endl;//-----y = k*3+3;
 
-        cout << f(4, 0, 0) << endl;//-----y=a*4*4+b*4+c;
+    cout << f(4, 0, 0) << endl;//-----y=a*4*4+b*4+c;
 
-        Test A;
-        cout << A.add(1, 2) << endl;
+    Test A;
+    cout << A.add(1, 2) << endl;
 }
 
