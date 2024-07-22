@@ -166,3 +166,68 @@ HSV色彩空间
 H（0 - 180）	色调
 S（0 - 255）	饱和度
 V（0 - 255）	明度
+
+
+
+/******************************/OCL模块/******************************************************************************************/
+
+#include <opencv2/opencv.hpp>
+#include <opencv2/core/ocl.hpp>
+
+int main() {
+    // 检查是否启用了 OpenCL
+    if (cv::ocl::haveOpenCL()) {
+        std::cout << "OpenCL is available and enabled." << std::endl;
+    }
+    else {
+        std::cout << "OpenCL is not available." << std::endl;
+    }
+
+    // 使用 UMat 进行高斯模糊
+    cv::Mat image = cv::imread("example.jpg");
+    if (image.empty()) {
+        std::cerr << "Error loading image!" << std::endl;
+        return -1;
+    }
+
+    cv::UMat uimage, blurredImage;
+    image.copyTo(uimage);
+
+    cv::GaussianBlur(uimage, blurredImage, cv::Size(15, 15), 0);
+
+    cv::Mat result;
+    blurredImage.copyTo(result);
+    cv::imwrite("blurred_example.jpg", result);
+
+    return 0;
+}
+
+UMat矩阵数据会自行调用GPU。
+
+
+
+
+/******************************/CUDA模块/******************************************************************************************/
+
+#include <opencv2/opencv.hpp>
+#include <opencv2/cudafilters.hpp>
+
+int main() {
+    cv::Mat image = cv::imread("example.jpg");
+    if (image.empty()) {
+        std::cerr << "Error loading image!" << std::endl;
+        return -1;
+    }
+
+    cv::cuda::GpuMat d_image, d_result;
+    d_image.upload(image);
+
+    cv::Ptr<cv::cuda::Filter> filter = cv::cuda::createGaussianFilter(d_image.type(), d_result.type(), cv::Size(15, 15), 0);
+    filter->apply(d_image, d_result);
+
+    cv::Mat result;
+    d_result.download(result);
+    cv::imwrite("cuda_blurred_example.jpg", result);
+
+    return 0;
+}
