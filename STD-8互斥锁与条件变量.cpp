@@ -140,7 +140,10 @@ wait_for()：达到指定时长。其内部实现为转化成wait_until()。
 wait_until()：抵达指定时间点。其内部会执行两次Pred。
 
 bool wait_for(std::unique_lock<mutex>& _Lck, const chrono::duration<_Rep, _Period>& _Rel_time);
-bool wait_for(std::unique_lock<mutex>& _Lck, const chrono::duration<_Rep, _Period>& _Rel_time, _Predicate _Pred);
+bool wait_for(std::unique_lock<mutex>& _Lck, const chrono::duration<_Rep, _Period>& _Rel_time, _Predicate _Pred); 
+	//若_Pred为true，则不阻塞返回true。
+	//若_Pred为false，则阻塞等待超时返回false。
+
 
 bool wait_until(std::unique_lock<mutex>& _Lck, const chrono::time_point<_Clock, _Duration>& _Abs_time);
 bool wait_until(std::unique_lock<mutex>& _Lck, const chrono::time_point<_Clock, _Duration>& _Abs_time, _Predicate _Pred);

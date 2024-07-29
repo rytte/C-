@@ -8,6 +8,13 @@ CMake是一个跨平台的安装（编译）工具，用于生成Makefile文件。
 生成Makefile文件，执行：make
 生成编译后的可执行文件。
 
+#CMake-GUI的使用
+1、在源码文件夹内新建build文件夹
+2、打开CMake-GUI，"Where is the source code:" 选择源码文件夹，"Where is the bunaries:"选择build文件夹
+3、点击"Configure"，选择Visual Studio 17 2022 Win64，点击"Finish"
+4、点击"Configure"，点击"Generate"
+5、打开build文件夹下的sln文件，生成解决方案。将会在build/src/Debug文件夹下生成库文件
+
 
 #变量
 变量类型：所有变量都是 string 类型
