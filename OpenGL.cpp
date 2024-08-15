@@ -47,13 +47,26 @@ OpenGL的大部分工作都是关于把3D坐标转变为适应你屏幕的2D像�
 
 
 
+//标准化设备坐标
+OpenGL仅当3D坐标的3个轴（x、y和z）为标准化设备坐标（ - 1.0到1.0）时才处理它。
+
+
+in关键字，用于在顶点着色器中声明所有的输入顶点属性，如位置属性。
+out关键字，用于在片段着色器中声明所有的输出片段属性。
+vec3数据类型，表示三维向量。
+vec4数据类型，表示四维向量。
+
+分别使用vec::x、vec::y、vec::z和vec::w来获取。
+注意vec.w分量不是用作表达空间中的位置的（我们处理的是3D不是4D），而是用在所谓透视除法(Perspective Division)上。
+
+layout(location = 0)用于设定输入变量的位置值(Location)
 
 
 
-
-
-
-
+//一个VAO会储存以下这些内容
+glEnableVertexAttribArray和glDisableVertexAttribArray的调用。
+通过glVertexAttribPointer设置的顶点属性配置。
+通过glVertexAttribPointer调用与顶点属性关联的VBO。
 
 
 

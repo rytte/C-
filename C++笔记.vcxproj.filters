@@ -998,6 +998,12 @@
     <ClCompile Include="Pool-4缓存池.cpp">
       <Filter>源文件\6-C++语法\池设计</Filter>
     </ClCompile>
+    <ClCompile Include="开源协议.cpp">
+      <Filter>源文件\其它</Filter>
+    </ClCompile>
+    <ClCompile Include="docker.cpp">
+      <Filter>源文件\其它</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="pthread_pool.h">
