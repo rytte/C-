@@ -2,6 +2,19 @@
 通过cpython的C API调用实现。
 
 
+//Qt Creator配置Python解释器
+1、工具 >> 选项 >> 环境 >> External Tools
+2、添加 >> Add Category >> 重命名为RunPy
+3、添加 >> Add Tool >> 重命名为Python3
+4、执行档：C:\Users\13055\miniconda3\python.exe
+参数：% { CurrentDocument:FilePath }
+工作目录：% { CurrentDocument:Path }
+Base environment：System Environment
+5、Apply >> OK
+6、运行点击：工具 >> 外部 >> RunPy >> Python3
+
+
+
 /********************/python调用C++/************************************************************/
 cython：cython是python语言的一个超集，它允许Python程序员编写C扩展模块。
 pybind11：pybind11是一个轻量级的仅头文件库，主要用于创建现有C++代码的Python绑定。
@@ -10,13 +23,18 @@ Boost.Python：Boost.Python是Boost库的一部分，它提供了一套用于创建Python扩展的API
 SWIG：通过SWIG，你可以为C / C++函数和类创建包装器，这些包装器使得Python等语言能够调用这些C / C++代码。
 cffi：cffi是一个Python的外部函数接口，它提供了一个简单且快速的方式来调用C代码。
 
+
 //pybind11为主流方式
+流程：使用pybind11库将cpp文件编译成python库文件，供python代码使用
+
 1、安装 pybind11：pip install pybind11。（pip 安装的 pybind11 主要用于开发，并不包含编译 Python 扩展所需的头文件）
-2、从 GitHub 克隆 pybind11 仓库或使用其他方式获取 pybind11 头文件。
+2、从 GitHub 克隆 pybind11 仓库获取 pybind11 头文件。(https://github.com/pybind/pybind11) pybind11源文件夹放在工程目录下
 3、编写 C++ 代码 (example.cpp)
 4、编译 C++ 代码（CMake）
+mkdir build
+cd build
 cmake ..
-make (或者MSBuild project.sln)
+make (或者MSBuild pybind11.sln)
 将生成一个名为 example.cpython - *.so（在 Unix 系统上）或 example.cp3 * .pyd（在 Windows 上）的共享库文件，其中 * 是你的 Python 版本号。
 5、在 Python 中使用模块
 import example  
