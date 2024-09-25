@@ -36,7 +36,7 @@ cd build
 cmake ..
 make (或者MSBuild pybind11.sln)
 将生成一个名为 example.cpython - *.so（在 Unix 系统上）或 example.cp3 * .pyd（在 Windows 上）的共享库文件，其中 * 是你的 Python 版本号。
-5、在 Python 中使用模块
+5、在 Python 中使用模块    //导入时该目录下需要有pyd文件，以及相关的链接库文件
 import example  
 print(example.add(3, 4))  //输出 7
 
@@ -69,6 +69,13 @@ set(CMAKE_CXX_STANDARD_REQUIRED ON)
 add_subdirectory(pybind11 - 2.12.0 / )
 pybind11_add_module(example main.cpp)
 
+//带依赖库
+//include_directories(${ PROJECT_SOURCE_DIR } / FFmpeg / include)
+//link_directories(${ PROJECT_SOURCE_DIR } / FFmpeg / lib)
+//target_link_libraries(example PRIVATE
+//    ${ PROJECT_SOURCE_DIR } / FFmpeg / lib / avformat.lib
+//    ${ PROJECT_SOURCE_DIR } / FFmpeg / lib / avcodec.lib
+//)
 
 
 ////////绑定类////////
@@ -94,6 +101,7 @@ private:
 // pybind_example.cpp  
 // 静态函数使用def_static替代def
 // 重载函数使用py::overload_cast<>转换
+// 私有成员无需绑定
 #include <pybind11/pybind11.h>  
 #include "myclass.h"  
 
@@ -117,5 +125,14 @@ my_obj = example.MyClass(10)
 print(my_obj.get_value())  # 输出: 10
 my_obj.set_value(20)
 print(my_obj.get_value())  # 输出 : 20
+
+
+
+
+
+
+
+
+
 
 
