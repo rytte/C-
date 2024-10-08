@@ -489,3 +489,18 @@ int avformat_write_header(AVFormatContext* s, AVDictionary** options);
 // 【返回值】 AVERROR 失败时为负的 AVERROR。
 
 
+
+
+int av_seek_frame(AVFormatContext* s, int stream_index, int64_t timestamp, int flags);
+
+功能：
+通过时间戳跳转到指定流（stream_index）中的关键帧。
+该函数会根据提供的时间戳跳转到指定的关键帧，并使用标志（flags）来决定跳转的方向和模式。
+参数：
+AVFormatContext* s：媒体文件的格式上下文（文件句柄）。
+int stream_index：目标流的索引。如果是 - 1，FFmpeg 会自动选择一个默认的流（通常是视频流），时间戳会根据该流自动转换。
+int64_t timestamp：时间戳，单位是指定流的 time_base，用于定位目标帧。如果 stream_index == -1，时间戳是以 AV_TIME_BASE 为单位的。
+int flags：用于指定跳转的模式和方向，如：
+AVSEEK_FLAG_BACKWARD：向后跳转到最近的关键帧。
+AVSEEK_FLAG_ANY：允许跳转到非关键帧。
+AVSEEK_FLAG_FRAME：以帧为单位进行跳转。

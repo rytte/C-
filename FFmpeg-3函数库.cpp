@@ -54,7 +54,7 @@ avdevice_version					获取libavdevice库的版本号
 avformat_alloc_context				创建格式上下文，返回 AVFormatContext *
 avformat_open_input				打开输入文件，并关联格式上下文
 avformat_find_stream_info			上下文获取流信息
-avformat_seek_file					根据时间戳定位文件的位置；例如我们托方播放器的进度条进行快近和快退时，就可以使用此函数进行定位播放
+avformat_seek_file					根据时间戳定位文件的位置；例如我们托方播放器的进度条进行快进和快退时，就可以使用此函数进行定位播放
 avformat_free_context				释放不使用的AVFormatContext的内存
 avformat_close_input				关闭解复用器。关闭后可以不使用avformat_free_context()进行释放
 avformat_write_header				写入封装格式头部
