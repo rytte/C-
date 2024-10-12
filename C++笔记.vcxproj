@@ -170,6 +170,7 @@
     <ClCompile Include="SDL-2核心API.cpp" />
     <ClCompile Include="SDP格式.cpp" />
     <ClCompile Include="UML.cpp" />
+    <ClCompile Include="VS库文件.cpp" />
     <ClCompile Include="Win-2程序.cpp" />
     <ClCompile Include="Win-1介绍.cpp" />
     <ClCompile Include="Win-3窗口类.cpp" />

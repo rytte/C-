@@ -1004,6 +1004,9 @@
     <ClCompile Include="docker.cpp">
       <Filter>源文件\其它</Filter>
     </ClCompile>
+    <ClCompile Include="VS库文件.cpp">
+      <Filter>源文件\其它</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="pthread_pool.h">
