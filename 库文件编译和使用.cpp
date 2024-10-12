@@ -4,6 +4,7 @@
 2、创建build目录并进入
 3、执行：cmake .. -G "MinGW Makefiles" -DCMAKE_C_COMPILER=gcc -DCMAKE_CXX_COMPILER=g++
 4、执行：mingw32 - make
+5、生成.a文件
 
 
 //VS添加库文件
