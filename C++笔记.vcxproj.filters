@@ -1004,7 +1004,7 @@
     <ClCompile Include="docker.cpp">
       <Filter>源文件\其它</Filter>
     </ClCompile>
-    <ClCompile Include="VS库文件.cpp">
+    <ClCompile Include="库文件编译和使用.cpp">
       <Filter>源文件\其它</Filter>
     </ClCompile>
   </ItemGroup>

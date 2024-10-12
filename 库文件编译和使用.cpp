@@ -1,9 +1,16 @@
 
-//添加库文件
+//使用mingw编译库文件
+1、使用QtCreator的mingw：将"D:/Qt/Tools/mingw730_64/bin"添加到系统环境变量。（也可以另行下载安装mingw）
+2、创建build目录并进入
+3、执行：cmake .. -G "MinGW Makefiles" -DCMAKE_C_COMPILER=gcc -DCMAKE_CXX_COMPILER=g++
+4、执行：mingw32 - make
+
+
+//VS添加库文件
 "调试 >> 调试属性"  进入属性页
 "C/C++ >> 常规 >> 附加包含目录" 填写头文件目录路径
 "链接器 >> 常规 >> 附加库目录" 填写库文件目录路径
-"链接器 >> 输入 >> 附加依赖项" 填写所有所需的库文件名，包含后缀
+"链接器 >> 输入 >> 附加依赖项" 填写所有.lib文件名，包含后缀。.dll文件放在可执行文件目录下。
 
 
 //常见问题
