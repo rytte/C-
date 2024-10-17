@@ -137,11 +137,32 @@ print(my_obj.get_value())  # 输出 : 20
 
 
 
+/********************/pybind11传递指针数据/************************************************************/
+//C++向python函数传入指针数据
+uint8_t* data;
+int len = 100;
 
 
+【方法1：使用 py::array】
+
+py::array_t<uint8_t> arr({ len });
+auto buf = arr.mutable_data();
+//循环内
+std::copy(data, data + len, buf);
+传入data的地方使用arr
+
+//python中
+data_array = np.array(data)     // 将 py::array 转换为 numpy 数组
 
 
+【方法2：传递数据地址】
+传入data的地方使用： reinterpret_cast<uint64>(data);
 
+//python中，使用 ctypes 从地址创建数组
+data_array = (ctypes.c_uint8 * length).from_address(data)
 
-
-
+【方法3：使用PyObject】
+和方法二相同，传递的是地址，但可以封装携带更多参数
+py::dict data_dict;     // 创建一个字典，包含指针和长度
+data_dict["pointer"] = reinterpret_cast<intptr_t>(data);
+data_dict["length"] = length;

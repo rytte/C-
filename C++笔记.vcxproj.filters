@@ -117,6 +117,9 @@
     <Filter Include="源文件\6-C++语法\池设计">
       <UniqueIdentifier>{695f25cc-708c-4bf0-8923-6797f087857b}</UniqueIdentifier>
     </Filter>
+    <Filter Include="源文件\SoundTouch">
+      <UniqueIdentifier>{5314c157-179a-4964-982c-9556c9c94943}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="算法-1顺序表.c">
@@ -1006,6 +1009,9 @@
     </ClCompile>
     <ClCompile Include="库文件编译和使用.cpp">
       <Filter>源文件\其它</Filter>
+    </ClCompile>
+    <ClCompile Include="SoundTouch.cpp">
+      <Filter>源文件\SoundTouch</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>

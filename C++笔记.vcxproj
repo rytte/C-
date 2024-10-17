@@ -169,6 +169,7 @@
     <ClCompile Include="QT-25中文乱码问题.cpp" />
     <ClCompile Include="SDL-2核心API.cpp" />
     <ClCompile Include="SDP格式.cpp" />
+    <ClCompile Include="SoundTouch.cpp" />
     <ClCompile Include="UML.cpp" />
     <ClCompile Include="库文件编译和使用.cpp" />
     <ClCompile Include="Win-2程序.cpp" />
