@@ -85,7 +85,7 @@ mov word ptr[bx + 0eh], 70                  //dec.sr = dec.sr + 70;
 mov si, 0                                   //i = 0;
 mov byte ptr [bx + 10h + si], 'V'           //dec.cp[i] = 'V';
 inc si                                      //i++
-mov byte ptr [bx + 10h + si], 'A'           //dec.cp[i] = 'A'
+mov byte ptr [bx + 10h + si], 'A'           //dec.cp[i] = 'A';
 inc si                                      //i++
 mov byte ptr [bx + 10h + si], 'X'           //dec.cp[i] = 'X';
 

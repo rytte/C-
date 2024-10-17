@@ -26,17 +26,26 @@ cffi：cffi是一个Python的外部函数接口，它提供了一个简单且快速的方式来调用C代码。
 
 //pybind11为主流方式
 流程：使用pybind11库将cpp文件编译成python库文件，供python代码使用
+pybind11 是一个 header - only library，只需要头文件（还有cmake）即可使用
 
-1、安装 pybind11：pip install pybind11。（pip 安装的 pybind11 主要用于开发，并不包含编译 Python 扩展所需的头文件）
-2、从 GitHub 克隆 pybind11 仓库获取 pybind11 头文件。(https://github.com/pybind/pybind11) pybind11源文件夹放在工程目录下
-3、编写 C++ 代码 (example.cpp)
-4、编译 C++ 代码（CMake）
+1、获取头文件，以及cmake支持文件
+方法一：
+安装 pybind11：pip install pybind11
+查看安装的路径：pip show pybind11
+cmake中
+set(pybind11_DIR C : / Users / 13055 / miniconda3 / Lib / site - packages / pybind11 / share / cmake / pybind11)
+find_package(pybind11 REQUIRED)
+方法二：
+从 GitHub 获取。(https://github.com/pybind/pybind11) pybind11源文件夹放在工程目录下
+cmake：add_subdirectory(pybind11 - 2.13.6 /)
+2、编写 C++ 代码 (example.cpp)
+3、编译 C++ 代码（CMake）
 mkdir build
 cd build
 cmake ..
 make (或者MSBuild pybind11.sln)
 将生成一个名为 example.cpython - *.so（在 Unix 系统上）或 example.cp3 * .pyd（在 Windows 上）的共享库文件，其中 * 是你的 Python 版本号。
-5、在 Python 中使用模块    //导入时该目录下需要有pyd文件，以及相关的链接库文件
+4、在 Python 中使用模块    //导入时该目录下需要有pyd文件，以及相关的链接库文件
 import example  
 print(example.add(3, 4))  //输出 7
 
