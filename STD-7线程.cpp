@@ -12,7 +12,7 @@ using namespace std;
 
 
 //构造函数
-thread thread_object(callable, args...);		
+thread t(callable, args...);		
 
 callable：可调用对象
 ①函数指针

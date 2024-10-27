@@ -17,21 +17,15 @@ FLV body = PreviousTagSize0 + Tag1 + PreviousTagSize1 + Tag2 + ... + PreviousTag
 Tag 里面还分为两部分，Tag Header + Tag Data
 
 Tag Header 介绍
-1、TagType，类型。主要有 3 种类型，如下：
-Script Tag，TagType 等于 18，这种 Tag 只有一个，而且在开头的位置，主要是存储文件的基本信息，帧率，采样率，持续时间之类的。
-Video Tag，TagType 等于 9，存放一帧视频的数据，通常是一帧。
-Audio Tag，TagType 等于 8，存放一帧音频的数据，通常是一帧。
+1、TagType，用于承载音视频数据和元数据（Metadata）。主要有 3 种类型：
+Script Tag，TagType 等于 18，只有一个，且在开头的位置，用于承载元数据（Metadata），如分辨率、帧率、码率等。脚本数据标签包含一个脚本数据头部（Header）和一个脚本数据负载（Payload）。脚本数据头部用于描述脚本数据负载的类型和长度。
+Video Tag，TagType 等于 9，存放一帧视频的数据。音频标签包含一个音频头部（Header）和一个音频负载（Payload）。音频头部用于描述音频负载的编码格式、采样率、声道数等信息。
+Audio Tag，TagType 等于 8，存放一帧音频的数据。视频标签包含一个视频头部（Header）和一个视频负载（Payload）。视频头部用于描述视频负载的编码格式、帧类型等信息。
 
 2、DataSize，后面的 Tag Data 部分的大小。
 3、TimeStamp，占 3 字节，当前这一帧视频 或者 音频的解码时间。
-4、TimeStampExtended，占1 字节，解码时间扩展，因为 TimeStamp 字段只有 3 字节，如果存不下 dts（解码时间），就需要用 TimeStampExtended 来扩展，TimeStampExtended 会作为最高位的字节。
+4、TimeStampExtended，占1 字节，解码时间扩展，因为 TimeStamp 字段只有 3 字节，如果存不下 dts，就需要用 TimeStampExtended 来扩展。
 5、StreamId，这个字段总是0，但是不知道干嘛的，后面补充。
-
-//TagType详解
-FLV 标签（Tag）用于承载音视频数据和元数据（Metadata）：
-音频标签（Audio Tag）：用于承载音频数据，如 AAC、MP3 等。音频标签包含一个音频头部（Audio Header）和一个音频负载（Audio Payload）。音频头部用于描述音频负载的编码格式、采样率、声道数等信息。
-视频标签（Video Tag）：用于承载视频数据，如 H.264、VP6 等。视频标签包含一个视频头部（Video Header）和一个视频负载（Video Payload）。视频头部用于描述视频负载的编码格式、帧类型等信息。
-脚本数据标签（Script Data Tag）：用于承载元数据（Metadata），如分辨率、帧率、码率等。脚本数据标签包含一个脚本数据头部（Script Data Header）和一个脚本数据负载（Script Data Payload）。脚本数据头部用于描述脚本数据负载的类型和长度。
 
 
 //Tag Data
