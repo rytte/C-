@@ -26,153 +26,103 @@
 
 //实例
 #include <iostream>
+#include <vector>
 #include <string>
-#include <unordered_map>
-#include <list>
-using namespace std;
+#include <memory>
 
-class Observer
+// Observer Interface - 观察者接口
+class Observer 
 {
 public:
-	// 处理消息的接口
-	virtual void handle(int msgid) = 0;
-};
-// 第一个观察者实例
-class Observer1 :public Observer
-{
-public:
-	void handle(int msgid)
-	{
-		switch (msgid)
-		{
-		case 1:
-			cout << "Observer1 recv 1 msg!" << endl;
-			break;
-		case 2:
-			cout << "Observer1 recv 2 msg!" << endl;
-			break;
-		default:
-			cout << "Observer1 recv unkown msg!" << endl;
-			break;
-		}
-	}
-};
-// 第二个观察者实例
-class Observer2 :public Observer
-{
-public:
-	void handle(int msgid)
-	{
-		switch (msgid)
-		{
-		case 2:
-			cout << "Observer2 recv 2 msg!" << endl;
-			break;
-		default:
-			cout << "Observer2 recv unkown msg!" << endl;
-			break;
-		}
-	}
-};
-// 第三个观察者实例
-class Observer3 :public Observer
-{
-public:
-	void handle(int msgid)
-	{
-		switch (msgid)
-		{
-		case 1:
-			cout << "Observer3 recv 1 msg!" << endl;
-			break;
-		case 3:
-			cout << "Observer3 recv 3 msg!" << endl;
-			break;
-		default:
-			cout << "Observer3 recv unkown msg!" << endl;
-			break;
-		}
-	}
+    virtual void update(const std::string& message) = 0;
 };
 
-// 主题类
-class Subject
+// Concrete Observer - 具体观察者
+class ConcreteObserver : public Observer 
 {
 public:
-	// 给主题对象增加观察者对象
-	void addObserver(Observer* obser, int msgid)
-	{
-		_subMap[msgid].push_back(obser);
-	}
-	// 主题发生改变，通知相应的观察者处理事件
-	void dispatch(int msgid)
-	{
-		auto it = _subMap.find(msgid);
-		if (it != _subMap.end())
-		{
-			for (Observer* obs : it->second)
-			{
-				obs->handle(msgid);
-			}
-		}
-	}
+    ConcreteObserver(const std::string& name) : name(name) {}
+
+    void update(const std::string& message) override 
+    {
+        std::cout << "Observer " << name << " received message: " << message << std::endl;
+    }
+
 private:
-	unordered_map<int, list<Observer*>> _subMap;
+    std::string name;
 };
 
-
-我们可以看到主题类（Subject）的数据成员是一个unordered_map。使用这个是因为我们不需要数据是有序的，为了提高增删查的速率，使用了无序map。
-使用map的好处是，它作为一个键值对，可以存储我们想要的数据类型：（消息类型，订阅此消息类型的观察者们）。
-因为同样的消息类型，可能有多个观察者，所以，unordered_map的第二个参数我们使用了list，来存储订阅此消息类型的所有观察者。
-
-并且，在主题类（Subject）的成员方法addObserver中，我们使用了一个中括号运算符（[]）重载的特性：
-如果当前容器中存有相应的msgid键的话，就直接添加对应的值（Obser）；
-如果当前容器中没有相应的msgid键的话，就直接添加该键，并且添加一个默认的值。
-
-这一行代码也可以用下面的代码代替：
-
-
-auto it = _subMap.find(msgid);
-if (it != _subMap.end())
+// Subject Interface - 主题接口
+class Subject 
 {
-	it->second.push_back(obser);
-}
-else
+public:
+    virtual void addObserver(std::shared_ptr<Observer> observer) = 0;
+    virtual void removeObserver(std::shared_ptr<Observer> observer) = 0;
+    virtual void notifyObservers() = 0;
+};
+
+// Concrete Subject - 具体主题
+class ConcreteSubject : public Subject 
 {
-	list<Observer*> lis;
-	lis.push_back(obser);
-	_subMap.insert({ msgid, lis });
-}
+public:
+    void addObserver(std::shared_ptr<Observer> observer) override 
+    {
+        observers.push_back(observer);
+    }
 
+    void removeObserver(std::shared_ptr<Observer> observer) override 
+    {
+        observers.erase(std::remove(observers.begin(), observers.end(), observer), observers.end());
+    }
 
-int main()
+    void notifyObservers() override 
+    {
+        for (const auto& observer : observers) 
+        {
+            observer->update(message);
+        }
+    }
+
+    // Set state and notify observers
+    void setMessage(const std::string& msg) 
+    {
+        message = msg;
+        notifyObservers();
+    }
+
+private:
+    std::vector<std::shared_ptr<Observer>> observers;
+    std::string message;
+};
+
+// Main function
+int main() 
 {
-	Subject sub;
-	Observer* p1 = new Observer1();
-	Observer* p2 = new Observer2();
-	Observer* p3 = new Observer3();
+    // Create Subject
+    ConcreteSubject subject;
 
-	sub.addObserver(p1, 1);
-	sub.addObserver(p1, 2);
-	sub.addObserver(p2, 2);
-	sub.addObserver(p3, 1);
-	sub.addObserver(p3, 3);
+    // Create Observers
+    auto observer1 = std::make_shared<ConcreteObserver>("Observer1");
+    auto observer2 = std::make_shared<ConcreteObserver>("Observer2");
 
-	int msgid = 0;
-	for (;;)
-	{
-		cout << "请输入消息id：";
-		cin >> msgid;
-		if (msgid == -1)
-			break;
-		sub.dispatch(msgid);
-	}
+    // Add Observers to Subject
+    subject.addObserver(observer1);
+    subject.addObserver(observer2);
 
-	return 0;
+    // Change Subject state and notify Observers
+    subject.setMessage("Hello, Observers!");
+
+    // Remove an observer and send another message
+    subject.removeObserver(observer1);
+    subject.setMessage("This is another message.");
+
+    return 0;
 }
 
 
-可以看到，首先将每个观察者（p1、p3、p3）所感兴趣的消息，添加到主题类（Subject）中；
-之后用户自己输入状态改变信息（mgsid），这个时候主题类Subject通过dispatch方法，通知给所有的观察者。
-
+解释
+Subject 类（主题类）维护观察者列表并在状态变化时通知它们。
+Observer 接口定义了观察者需要实现的 update 方法，用于接收通知。
+ConcreteSubject 类实现了 addObserver、removeObserver 和 notifyObservers 方法。setMessage 方法用来修改状态并触发通知。
+ConcreteObserver 类实现了 update 方法，在接收到消息时打印输出。
 

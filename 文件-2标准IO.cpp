@@ -17,7 +17,12 @@ const char* mode
 	w + 以读写方式打开文件，如果文件存在就清空，不存在就创建
 	a	以只写方式打开文件，如果文件存在就追加写入，不存在就创建
 	a + 以读写方式打开文件，如果文件存在就追加写入，不存在就创建
-}
+};
+
+
+//转换
+int fileno(FILE* stream);					//将文件指针转换为文件描述符。成功返回文件描述符，失败返回-1
+FILE* fdopen(int fd, const char* mode);		//将文件描述符转换为文件指针。	
 
 
 //fclose()函数
@@ -46,9 +51,6 @@ void clearerr(FILE* stream);	// 清除文件的错误编码
 
 //feof()函数
 int feof(FILE* stream);			// 检查占位符是否到文件的末尾。不在末尾返回0，在末尾返回非0。缺陷：就算文件光标移动到了文件末尾，也还需要再读一次，才能获得非零值
-
-//fileno()函数
-int fileno(FILE* stream);		// 获取文件描述符。成功返回文件描述符，失败返回-1
 
 
 //fseek()偏移函数

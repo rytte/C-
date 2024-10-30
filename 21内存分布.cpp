@@ -42,7 +42,7 @@ class B {};
 class C {};
 class D : public A, public B, public C {};
 
-首先是基类A的部分，然后是基类B的部分，最后是基类C的部分。。
+首先是基类A的部分，然后是基类B的部分，最后是基类C的部分。
 
 
 //菱形继承

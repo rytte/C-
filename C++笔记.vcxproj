@@ -430,7 +430,7 @@
     <ClCompile Include="自定义协议sever.c" />
     <ClCompile Include="辨析.cpp" />
     <ClCompile Include="非阻塞轮询server.c" />
-    <ClCompile Include="面试.cpp" />
+    <ClCompile Include="试合.cpp" />
     <ClCompile Include="音频-1PCM数据处理.cpp" />
     <ClCompile Include="音频-2PCM转WAV.cpp" />
   </ItemGroup>

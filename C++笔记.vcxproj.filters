@@ -287,7 +287,7 @@
     <ClCompile Include="异步信号驱动server.c">
       <Filter>源文件\4-网络编程\IO模型实例</Filter>
     </ClCompile>
-    <ClCompile Include="面试.cpp">
+    <ClCompile Include="试合.cpp">
       <Filter>源文件\其它</Filter>
     </ClCompile>
     <ClCompile Include="23模板元编程.cpp">

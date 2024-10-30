@@ -3,7 +3,8 @@ H.264，也称为MPEG - 4 AVC（Advanced Video Coding，高级视频编码）
 
 
 //H264帧结构
-H264将其组织成为序列(GOP)、图⽚(pictrue)、【NALU】、⽚(Slice)、宏块(Macroblock)、⼦块(subblock)、【像素】五个层次。
+MPEG 视频基本码流（Elementary Stream，ES）结构分为五层
+图像组(GOP)、帧(Frame)、【NALU】、⽚(Slice)、宏块(Macroblock)、⼦块(subblock)、【像素】五个层次。
 H264视频码流是由若干个GOP组成，而GOP由一个I帧和多个P帧 / B帧组成，一个帧含一个或多个片。
 如果采用DP（数据分割）机制，那么一个片由多个NALU组成。不采用DP机制时，一个片就是一个NALU。
 同时片也由宏块（MB）组成。宏块是编码处理的基本单元。
@@ -127,8 +128,8 @@ SPS（Sequence Paramater Set，序列参数集）主要记录了编码视频的�
 PPS（Picture Paramater Set，图像参数集）主要记录编码数据所依赖的参数，如参考帧，图像序列计算方法等。
 Islice / Pslice / Bslice：编码帧片数据：在编码I帧、P帧或者B帧的时候会将待编码的图像分成一个或多个Slice(片)，对每个Slice单独编码生成Slice编码数据；在多线程的时候多个Slice可以并行编码提高编码速度。
 
-SPS和PPS记录的数据是GOP里面图像的信息或者单个图像的信息，这些信息都是公共的部分，比如一个GOP的图像分辨率都是一样的；
-所以通常SPS和PPS Nal Unit数据放在GOP的IDR帧前面或者I帧前面，通常说PPS和SPS在IDR / I帧里面。
+通常每个GOP中只有一个SPS和一个PPS，放在IDR / I帧之前(内部)，且SPS在PPS的前面，他们记录了整个GOP中的每张图像的信息或者单个图像的信息。
+I/IDR帧内部：SPS、PPS、I Slice * n
 
 
 //举例
