@@ -1,18 +1,18 @@
 /********************/委托构造函数/************************************************************/
-某个类型的一个构造函数可以委托同类型的另一个构造函数对对象进行初始化，
-前者称为委托构造函数，后者称为代理构造函数，
-在代理构造函数执行完毕后，再执行委托构造函数的函数体。
+一个类的构造函数调用其另一个构造函数进行初始化，
+主动调用的函数称为委托构造函数，被调用的函数称为代理构造函数。
+那么就会先执行被调用的代理构造函数，完毕后再执行委托构造函数。
 
 //语法
-即在委托构造函数的列表初始化位置传参调用代理构造函数。
+在委托构造函数的列表初始化位置传参调用代理构造函数。
 
 class classname
 {
 public:
-	Myclass() : Myclass(0, 'c') {}
-	Myclass(int x) : Myclass(x, 'c') {}
-	Myclass(char y) : Myclass(0, y) {};
-	Myclass(int x, char y) :a(x), b(y) { CommonInit(); }
+	Myclass() : Myclass(0, 'c') {}							//委托构造
+	Myclass(int x) : Myclass(x, 'c') {}						//委托构造
+	Myclass(char y) : Myclass(0, y) {};						//委托构造
+	Myclass(int x, char y) :a(x), b(y) { CommonInit(); }	//代理构造
 private:
 	void CommonInit() {}
 	int a;

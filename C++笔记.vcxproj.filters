@@ -344,10 +344,10 @@
     <ClCompile Include="实例_quickdemo.cpp">
       <Filter>源文件\OpenCV</Filter>
     </ClCompile>
-    <ClCompile Include="OpenGL.cpp">
+    <ClCompile Include="GL-2OpenGL.cpp">
       <Filter>源文件\OpenGL</Filter>
     </ClCompile>
-    <ClCompile Include="GLSL.cpp">
+    <ClCompile Include="GL-3GLSL.cpp">
       <Filter>源文件\OpenGL</Filter>
     </ClCompile>
     <ClCompile Include="MySQL-1基础.cpp">
@@ -1033,6 +1033,9 @@
     </ClCompile>
     <ClCompile Include="解析-4常用协议.cpp">
       <Filter>源文件\音视频\Json解析</Filter>
+    </ClCompile>
+    <ClCompile Include="GL-1Linux图形系统.cpp">
+      <Filter>源文件\OpenGL</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>

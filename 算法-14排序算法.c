@@ -54,7 +54,7 @@ void Insert_sort(int* arr, int len)
 	{
 		int temp = arr[i];			//保存节点i的值
 		int n;
-		for (n = i; n >= 0; n--)
+		for (n = i; n > 0; n--)
 		{
 			if (temp < arr[n - 1])	//比较若更小则交换该位置与前面的值
 				arr[n] = arr[n - 1];

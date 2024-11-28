@@ -157,6 +157,7 @@
     <ClCompile Include="FFmpeg-7音频解码.cpp" />
     <ClCompile Include="FFmpeg-8拉流.cpp" />
     <ClCompile Include="FTP.cpp" />
+    <ClCompile Include="GL-1Linux图形系统.cpp" />
     <ClCompile Include="Live-1概述.cpp" />
     <ClCompile Include="Live-2testOnDemandRTSPServer.cpp" />
     <ClCompile Include="Live-3Medium.cpp" />
@@ -311,8 +312,8 @@
     <ClCompile Include="OpenCV.cpp" />
     <ClCompile Include="编码-1编解码协议.cpp" />
     <ClCompile Include="HTML.cpp" />
-    <ClCompile Include="OpenGL.cpp" />
-    <ClCompile Include="GLSL.cpp" />
+    <ClCompile Include="GL-2OpenGL.cpp" />
+    <ClCompile Include="GL-3GLSL.cpp" />
     <ClCompile Include="MySQL-2SQL语法.cpp" />
     <ClCompile Include="02命名空间.cpp" />
     <ClCompile Include="03动态内存.cpp" />
