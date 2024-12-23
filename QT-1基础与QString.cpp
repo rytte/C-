@@ -132,6 +132,12 @@ QString path;
 String cstr = String((const char*)path.toLocal8Bit());
 
 
+//字符编码
+UTF8		(UTF8)
+Local8Bits	(本地系统的编码:GBK、ISO - 8859 - 1等)
+Latin1		(ANSI)
+
+
 
 /********************/QLabel/************************************************************/
 

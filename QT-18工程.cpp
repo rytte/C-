@@ -1,13 +1,22 @@
 /********************/qmake/************************************************************/
 QT工程pro文件模板变量（TEMPLATE）
 
-模板变量告诉qmake为这个应用程序生成哪种makefile。下面是可供使用的选择：
+模板变量告诉qmake为这个应用程序生成哪种 makefile。下面是可供使用的选择：
 
-app - 建立一个应用程序的makefile。这是默认值，所以如果模板没有被指定，这个将被使用。
-lib - 建立一个库的makefile。
-vcapp - 建立一个应用程序的Visual Studio项目文件。
-vclib - 建立一个库的Visual Studio项目文件。
-subdirs - 这是一个特殊的模板，它可以创建一个能够进入特定目录并且为一个项目文件生成makefile并且为它调用make的makefile。
+
+[TEMPLATE 值]	[描述]
+app				生成一个应用程序（可执行文件）（这是默认值）
+lib				生成一个静态库（.a 文件或.lib 文件）
+subdirs			父级项目，包含多个子项目（多个子目录）
+app_bundle		生成一个应用程序包（通常用于 macOS.app）
+qt_library		生成一个 Qt 库
+vcs				用于与版本控制系统集成（不常用）
+static			静态库类型，通常与 lib 相似
+plugin			生成插件
+shadow_build	支持影像构建（将构建文件与源代码分开）
+lib_bundle		用于库文件的包
+vcapp			建立一个应用程序的Visual Studio项目文件。
+vclib			建立一个库的Visual Studio项目文件。
 
 
 /************************************************************/

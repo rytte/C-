@@ -5,7 +5,19 @@
 using namespace std;
 
 
+//编码
+string		//二进制数据（不确定编码）
+wstring		//不跨平台，Window:UTF16 Linux:UTF32
+u8string	//utf8编码
+u16string	//utf16编码
 
+
+//注意
+string 和C语言字符串一样会被'\0'截断
+解决方法：std::string str("hello\0world", 11);  //指定长度
+
+
+//实例
 string s1 = "abdc";				// 字符串的赋值
 
 string s2;						//字符串的复制
