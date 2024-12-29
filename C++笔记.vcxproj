@@ -318,7 +318,6 @@
     <ClCompile Include="01输入输出流.cpp" />
     <ClCompile Include="OpenCV.cpp" />
     <ClCompile Include="编码-1编解码协议.cpp" />
-    <ClCompile Include="HTML.cpp" />
     <ClCompile Include="GL-2OpenGL.cpp" />
     <ClCompile Include="GL-3GLSL.cpp" />
     <ClCompile Include="MySQL-2SQL语法.cpp" />
@@ -453,6 +452,11 @@
     <ClInclude Include="pthread_pool.h" />
     <ClInclude Include="view.h" />
     <ClInclude Include="实例_quickdemo.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="HTML.htm">
+      <DeploymentContent>true</DeploymentContent>
+    </None>
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

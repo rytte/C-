@@ -581,9 +581,6 @@
     <ClCompile Include="QT-23鼠标事件.cpp">
       <Filter>源文件\QT</Filter>
     </ClCompile>
-    <ClCompile Include="HTML.cpp">
-      <Filter>源文件\其它</Filter>
-    </ClCompile>
     <ClCompile Include="FFmpeg-2ffplay命令行.cpp">
       <Filter>源文件\FFmpeg</Filter>
     </ClCompile>
@@ -1093,5 +1090,10 @@
     <ClInclude Include="kernel_list.h">
       <Filter>头文件</Filter>
     </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="HTML.htm">
+      <Filter>源文件\Javascript</Filter>
+    </None>
   </ItemGroup>
 </Project>
