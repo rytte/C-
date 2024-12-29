@@ -454,6 +454,7 @@
     <ClInclude Include="实例_quickdemo.h" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="CSS样式表.cpp" />
     <None Include="HTML.htm">
       <DeploymentContent>true</DeploymentContent>
     </None>
