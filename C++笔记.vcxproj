@@ -158,6 +158,13 @@
     <ClCompile Include="FFmpeg-8拉流.cpp" />
     <ClCompile Include="FTP.cpp" />
     <ClCompile Include="GL-1Linux图形系统.cpp" />
+    <ClCompile Include="JS-1基本介绍.cpp" />
+    <ClCompile Include="JS-2类型&amp;对象&amp;函数.cpp" />
+    <ClCompile Include="JS-3原型&amp;继承&amp;作用域.cpp" />
+    <ClCompile Include="JS-4常用对象cpp.cpp" />
+    <ClCompile Include="JS-5DOM.cpp" />
+    <ClCompile Include="JS-6BOM.cpp" />
+    <ClCompile Include="JS-7高级语法.cpp" />
     <ClCompile Include="Live-1概述.cpp" />
     <ClCompile Include="Live-2testOnDemandRTSPServer.cpp" />
     <ClCompile Include="Live-3Medium.cpp" />
