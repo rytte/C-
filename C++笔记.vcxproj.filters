@@ -123,7 +123,7 @@
     <Filter Include="源文件\音视频\Json解析">
       <UniqueIdentifier>{4907c30b-bdbe-4e47-9ebc-a9d7d159bdd3}</UniqueIdentifier>
     </Filter>
-    <Filter Include="源文件\HTML&amp;CSS&amp;JS">
+    <Filter Include="源文件\HTML&amp;CSS&amp;JS&amp;TS">
       <UniqueIdentifier>{383d0706-3cd9-4e2c-9e2b-9c211ca06317}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
@@ -1038,25 +1038,40 @@
       <Filter>源文件\OpenGL</Filter>
     </ClCompile>
     <ClCompile Include="JS-1基本介绍.cpp">
-      <Filter>源文件\HTML&amp;CSS&amp;JS</Filter>
+      <Filter>源文件\HTML&amp;CSS&amp;JS&amp;TS</Filter>
     </ClCompile>
     <ClCompile Include="JS-2类型&amp;对象&amp;函数.cpp">
-      <Filter>源文件\HTML&amp;CSS&amp;JS</Filter>
+      <Filter>源文件\HTML&amp;CSS&amp;JS&amp;TS</Filter>
     </ClCompile>
     <ClCompile Include="JS-3原型&amp;继承&amp;作用域.cpp">
-      <Filter>源文件\HTML&amp;CSS&amp;JS</Filter>
+      <Filter>源文件\HTML&amp;CSS&amp;JS&amp;TS</Filter>
     </ClCompile>
     <ClCompile Include="JS-4常用对象cpp.cpp">
-      <Filter>源文件\HTML&amp;CSS&amp;JS</Filter>
+      <Filter>源文件\HTML&amp;CSS&amp;JS&amp;TS</Filter>
     </ClCompile>
     <ClCompile Include="JS-5DOM.cpp">
-      <Filter>源文件\HTML&amp;CSS&amp;JS</Filter>
+      <Filter>源文件\HTML&amp;CSS&amp;JS&amp;TS</Filter>
     </ClCompile>
     <ClCompile Include="JS-6BOM.cpp">
-      <Filter>源文件\HTML&amp;CSS&amp;JS</Filter>
+      <Filter>源文件\HTML&amp;CSS&amp;JS&amp;TS</Filter>
     </ClCompile>
-    <ClCompile Include="JS-7高级语法.cpp">
-      <Filter>源文件\HTML&amp;CSS&amp;JS</Filter>
+    <ClCompile Include="JS-7异常&amp;JSON&amp;AJAX.cpp">
+      <Filter>源文件\HTML&amp;CSS&amp;JS&amp;TS</Filter>
+    </ClCompile>
+    <ClCompile Include="TS.cpp">
+      <Filter>源文件\HTML&amp;CSS&amp;JS&amp;TS</Filter>
+    </ClCompile>
+    <ClCompile Include="JS-8Cookie&amp;WebStorage&amp;闭包.cpp">
+      <Filter>源文件\HTML&amp;CSS&amp;JS&amp;TS</Filter>
+    </ClCompile>
+    <ClCompile Include="JS-9ECMAScript6新特性.cpp">
+      <Filter>源文件\HTML&amp;CSS&amp;JS&amp;TS</Filter>
+    </ClCompile>
+    <ClCompile Include="JS-10ECMAScript7&amp;8&amp;9新特性.cpp">
+      <Filter>源文件\HTML&amp;CSS&amp;JS&amp;TS</Filter>
+    </ClCompile>
+    <ClCompile Include="JS-11ECMAScript10&amp;11新特性.cpp">
+      <Filter>源文件\HTML&amp;CSS&amp;JS&amp;TS</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -1093,10 +1108,10 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="HTML.htm">
-      <Filter>源文件\HTML&amp;CSS&amp;JS</Filter>
+      <Filter>源文件\HTML&amp;CSS&amp;JS&amp;TS</Filter>
     </None>
     <None Include="CSS样式表.cpp">
-      <Filter>源文件\HTML&amp;CSS&amp;JS</Filter>
+      <Filter>源文件\HTML&amp;CSS&amp;JS&amp;TS</Filter>
     </None>
   </ItemGroup>
 </Project>

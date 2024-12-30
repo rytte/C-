@@ -158,13 +158,17 @@
     <ClCompile Include="FFmpeg-8拉流.cpp" />
     <ClCompile Include="FTP.cpp" />
     <ClCompile Include="GL-1Linux图形系统.cpp" />
+    <ClCompile Include="JS-10ECMAScript7&amp;8&amp;9新特性.cpp" />
+    <ClCompile Include="JS-11ECMAScript10&amp;11新特性.cpp" />
     <ClCompile Include="JS-1基本介绍.cpp" />
     <ClCompile Include="JS-2类型&amp;对象&amp;函数.cpp" />
     <ClCompile Include="JS-3原型&amp;继承&amp;作用域.cpp" />
     <ClCompile Include="JS-4常用对象cpp.cpp" />
     <ClCompile Include="JS-5DOM.cpp" />
     <ClCompile Include="JS-6BOM.cpp" />
-    <ClCompile Include="JS-7高级语法.cpp" />
+    <ClCompile Include="JS-7异常&amp;JSON&amp;AJAX.cpp" />
+    <ClCompile Include="JS-8Cookie&amp;WebStorage&amp;闭包.cpp" />
+    <ClCompile Include="JS-9ECMAScript6新特性.cpp" />
     <ClCompile Include="Live-1概述.cpp" />
     <ClCompile Include="Live-2testOnDemandRTSPServer.cpp" />
     <ClCompile Include="Live-3Medium.cpp" />
@@ -179,6 +183,7 @@
     <ClCompile Include="SDL-2核心API.cpp" />
     <ClCompile Include="SDP格式.cpp" />
     <ClCompile Include="SoundTouch.cpp" />
+    <ClCompile Include="TS.cpp" />
     <ClCompile Include="UML.cpp" />
     <ClCompile Include="解析-1视频格式.cpp" />
     <ClCompile Include="封装-5TS封装格式.cpp" />

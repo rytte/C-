@@ -136,5 +136,45 @@ statusText	                            ·µ»Ø×´Ì¬ÎÄ±¾£¨±ÈÈç ¡°OK¡± »ò ¡°Not Found¡
 
 
 //GETÇëÇó
+¡¾users.json¡¿
+[
+{"name":"ËïÎò¿Õ", "age" : 18, "gender" : "ÄĞ"},
+{ "name":"Öí°Ë½ä","age" : 19,"gender" : "ÄĞ" },
+{ "name":"ÌÆÉ®","age" : 20,"gender" : "ÄĞ" },
+{ "name":"É³ºÍÉĞ","age" : 21,"gender" : "ÄĞ" }
+]
+¡¾index.html¡¿
+var ajax = new XMLHttpRequest();        //²½ÖèÒ»£º´´½¨Òì²½¶ÔÏó
+ajax.open("get", "users.json");         //²½Öè¶ş£ºÉèÖÃÇëÇóµÄurl²ÎÊı£¬²ÎÊıÒ»ÊÇÇëÇóµÄÀàĞÍ£¬²ÎÊı¶şÊÇÇëÇóµÄurl
+ajax.send();                            //²½ÖèÈı£º·¢ËÍÇëÇó
+ajax.onreadystatechange = function()    //²½ÖèËÄ£º×¢²áÊÂ¼ş onreadystatechange ×´Ì¬¸Ä±ä¾Í»áµ÷ÓÃ
+{
+    if (ajax.readyState == 4 && ajax.status == 200) //²½ÖèÎå£ºÈç¹ûÄÜ¹»½øµ½Õâ¸öÅĞ¶Ï£¬ËµÃ÷Êı¾İÍêÃÀµÄ»ØÀ´ÁË£¬²¢ÇÒÇëÇóµÄÒ³ÃæÊÇ´æÔÚµÄ
+    {
+        console.log(ajax.responseText);//ÊäÈëÏìÓ¦µÄÄÚÈİ
+    }
+};
+
+
+//POSTÇëÇó
+¡¾users.json¡¿
+[
+{"name":"ËïÎò¿Õ", "age" : 18, "gender" : "ÄĞ"},
+{ "name":"Öí°Ë½ä","age" : 19,"gender" : "ÄĞ" },
+{ "name":"ÌÆÉ®","age" : 20,"gender" : "ÄĞ" },
+{ "name":"É³ºÍÉĞ","age" : 21,"gender" : "ÄĞ" }
+]
+¡¾index.html¡¿
+var ajax = new XMLHttpRequest();        //²½ÖèÒ»£º´´½¨Òì²½¶ÔÏó
+ajax.open("post", "users.json");        //²½Öè¶ş£ºÉèÖÃÇëÇóµÄÀàĞÍ¼°url£¬×¢Òâ£ºpostÇëÇóÒ»¶¨ÒªÌí¼ÓÇëÇóÍ·²ÅĞĞ²»È»»á±¨´í
+ajax.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+ajax.send();                            //²½ÖèÈı£º·¢ËÍÇëÇó
+ajax.onreadystatechange = function()    //²½ÖèËÄ£º×¢²áÊÂ¼ş onreadystatechange ×´Ì¬¸Ä±ä¾Í»áµ÷ÓÃ
+{  
+    if (ajax.readyState == 4 && ajax.status == 200) //²½ÖèÎå£ºÈç¹ûÄÜ¹»½øµ½Õâ¸öÅĞ¶Ï£¬ËµÃ÷Êı¾İÍêÃÀµÄ»ØÀ´ÁË£¬²¢ÇÒÇëÇóµÄÒ³ÃæÊÇ´æÔÚµÄ
+    {
+        console.log(ajax.responseText);//ÊäÈëÏìÓ¦µÄÄÚÈİ
+    }
+};
 
 
