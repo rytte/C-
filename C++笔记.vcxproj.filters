@@ -1073,6 +1073,9 @@
     <ClCompile Include="JS-11ECMAScript10&amp;11新特性.cpp">
       <Filter>源文件\HTML&amp;CSS&amp;JS&amp;TS</Filter>
     </ClCompile>
+    <ClCompile Include="JSX.cpp">
+      <Filter>源文件\HTML&amp;CSS&amp;JS&amp;TS</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="pthread_pool.h">

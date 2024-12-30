@@ -169,6 +169,7 @@
     <ClCompile Include="JS-7异常&amp;JSON&amp;AJAX.cpp" />
     <ClCompile Include="JS-8Cookie&amp;WebStorage&amp;闭包.cpp" />
     <ClCompile Include="JS-9ECMAScript6新特性.cpp" />
+    <ClCompile Include="JSX.cpp" />
     <ClCompile Include="Live-1概述.cpp" />
     <ClCompile Include="Live-2testOnDemandRTSPServer.cpp" />
     <ClCompile Include="Live-3Medium.cpp" />
