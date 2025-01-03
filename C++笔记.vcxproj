@@ -199,7 +199,6 @@
     <ClCompile Include="Win-7鼠标和键盘消息.cpp" />
     <ClCompile Include="Win-8常用消息.cpp" />
     <ClCompile Include="Win-6绘图消息.cpp" />
-    <ClCompile Include="备份.cpp" />
     <ClCompile Include="封装-4MP4封装格式.cpp" />
     <ClCompile Include="工具链.cpp" />
     <ClCompile Include="开源协议.cpp" />
@@ -257,7 +256,6 @@
     <ClCompile Include="23模板元编程.cpp" />
     <ClCompile Include="音视频-1音视频基础.cpp" />
     <ClCompile Include="图像-1YUV与RGB.cpp" />
-    <ClCompile Include="22_播控.cpp" />
     <ClCompile Include="20函数重入与线程安全.cpp" />
     <ClCompile Include="21内存分布.cpp" />
     <ClCompile Include="Cpp11-11标准属性.cpp" />
@@ -352,13 +350,9 @@
     <ClCompile Include="14多态与虚函数.cpp" />
     <ClCompile Include="15纯虚函数与抽象类.cpp" />
     <ClCompile Include="系编-2管道通信.cpp" />
-    <ClCompile Include="20_OPS.cpp" />
     <ClCompile Include="16强制类型转换.cpp" />
-    <ClCompile Include="21_BKPlayer.cpp" />
     <ClCompile Include="17友元.cpp" />
-    <ClCompile Include="22_BKPlayer_New.cpp" />
     <ClCompile Include="STD-9文件流.cpp" />
-    <ClCompile Include="23_bk_video_forward.cpp" />
     <ClCompile Include="22模板.cpp" />
     <ClCompile Include="STD-1标准库.cpp" />
     <ClCompile Include="STD-3STL迭代器.cpp" />

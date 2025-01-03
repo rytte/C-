@@ -305,18 +305,6 @@
     <ClCompile Include="04引用.cpp">
       <Filter>源文件\6-C++语法</Filter>
     </ClCompile>
-    <ClCompile Include="20_OPS.cpp">
-      <Filter>源文件</Filter>
-    </ClCompile>
-    <ClCompile Include="21_BKPlayer.cpp">
-      <Filter>源文件</Filter>
-    </ClCompile>
-    <ClCompile Include="22_BKPlayer_New.cpp">
-      <Filter>源文件</Filter>
-    </ClCompile>
-    <ClCompile Include="23_bk_video_forward.cpp">
-      <Filter>源文件</Filter>
-    </ClCompile>
     <ClCompile Include="STM32.cpp">
       <Filter>源文件\其它</Filter>
     </ClCompile>
@@ -367,9 +355,6 @@
     </ClCompile>
     <ClCompile Include="FFmpeg-6视频解码.cpp">
       <Filter>源文件\FFmpeg</Filter>
-    </ClCompile>
-    <ClCompile Include="22_播控.cpp">
-      <Filter>源文件</Filter>
     </ClCompile>
     <ClCompile Include="C-01数据类型.c">
       <Filter>源文件\1-C语言语法</Filter>
@@ -706,9 +691,6 @@
     </ClCompile>
     <ClCompile Include="UML.cpp">
       <Filter>源文件\其它</Filter>
-    </ClCompile>
-    <ClCompile Include="备份.cpp">
-      <Filter>源文件</Filter>
     </ClCompile>
     <ClCompile Include="FFmpeg-8拉流.cpp">
       <Filter>源文件\FFmpeg</Filter>
