@@ -1076,6 +1076,12 @@
     <ClCompile Include="JSX&amp;TSX.cpp">
       <Filter>源文件\HTML&amp;CSS&amp;JS&amp;TS</Filter>
     </ClCompile>
+    <ClCompile Include="NAPI.cpp">
+      <Filter>源文件\HTML&amp;CSS&amp;JS&amp;TS</Filter>
+    </ClCompile>
+    <ClCompile Include="Bootstrap.cpp">
+      <Filter>源文件\HTML&amp;CSS&amp;JS&amp;TS</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="pthread_pool.h">
@@ -1114,6 +1120,9 @@
       <Filter>源文件\HTML&amp;CSS&amp;JS&amp;TS</Filter>
     </None>
     <None Include="CSS样式表.cpp">
+      <Filter>源文件\HTML&amp;CSS&amp;JS&amp;TS</Filter>
+    </None>
+    <None Include="Node.js">
       <Filter>源文件\HTML&amp;CSS&amp;JS&amp;TS</Filter>
     </None>
   </ItemGroup>

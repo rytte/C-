@@ -130,6 +130,7 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="Bootstrap.cpp" />
     <ClCompile Include="C++调用Python.cpp" />
     <ClCompile Include="CMake.cmake" />
     <ClCompile Include="demo3-10内存映射.c" />
@@ -174,6 +175,7 @@
     <ClCompile Include="Live-2testOnDemandRTSPServer.cpp" />
     <ClCompile Include="Live-3Medium.cpp" />
     <ClCompile Include="Live-4客户端.cpp" />
+    <ClCompile Include="NAPI.cpp" />
     <ClCompile Include="Pool-1对象池.cpp" />
     <ClCompile Include="Pool-2内存池.cpp" />
     <ClCompile Include="Pool-3线程池.cpp" />
@@ -464,6 +466,7 @@
     <None Include="HTML.htm">
       <DeploymentContent>true</DeploymentContent>
     </None>
+    <None Include="Node.js" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

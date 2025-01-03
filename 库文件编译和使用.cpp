@@ -20,11 +20,11 @@
 1 > SoundTouch_x64.lib(SoundTouch.obj) : error LNK2038 : 检测到“RuntimeLibrary”的不匹配项: 值“MT_StaticRelease”不匹配值“MTd_StaticDebug”(main.obj 中)
 
 R"(链接不到库：
-1、库文件位数于系统位数不一致
-2、库文件架构与系统架构不一致
+1、库文件位数与系统位数不一致（64位 / 32位）
+2、库文件架构与系统架构不一致（x86_64 / arm / aarch64）
 3、库文件路径添加错误
-4、库文件编译器与项目编译器不一致
+4、库文件编译器与项目编译器不一致（MSVC / MinGW / GCC）
+5、(动态库)编译器导入导出符号不一致：extern "C" 以C风格导出
 )"
 1 > main.obj : error LNK2019 : 无法解析的外部符号 "public: __cdecl soundtouch::SoundTouch::SoundTouch(void)" (? ? 0SoundTouch@soundtouch@@QEAA@XZ)，函数 main 中引用了该符号
-
 
