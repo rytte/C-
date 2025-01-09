@@ -17,6 +17,20 @@ Cygwin将Unix程序编译为Windows本地代码，然后在Windows上运行。
 MSYS2适用于需要在Windows上编译和运行Unix / Linux程序的场景，
 MinGW - w64适用于编译Windows本地应用程序的场景，
 Cygwin适用于需要最完整的Linux / Unix环境的场景。
+MSYS2和Cygwin被WSL2取代。
+
+
+// MinGW安装
+https://github.com/niXman/mingw-builds-binaries/releases (跳转至MinGW - w64的GitHub仓库)
+
+版本标识的解释："电脑系统架构-gcc版本号-release-操作系统接口协议-异常处理模型"
+i686为32位，x86_64为64位
+win32为windows操作系统，posix为其他操作系统
+dwarf针对32位，seh针对64位
+优先选择ucrt
+
+解压后添加至环境变量即可。
+
 
 
 /********************/Pacman/************************************************************/

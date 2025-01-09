@@ -132,6 +132,9 @@
     <Filter Include="源文件\Python\外部">
       <UniqueIdentifier>{c424f554-1e1a-4c07-a8d4-d17a2be1e7b3}</UniqueIdentifier>
     </Filter>
+    <Filter Include="源文件\Python\模块">
+      <UniqueIdentifier>{2a5c5769-0b00-40e6-80d3-cfa48ebb7f29}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="算法-1顺序表.c">
@@ -1070,6 +1073,12 @@
     <ClCompile Include="Bootstrap.cpp">
       <Filter>源文件\HTML&amp;CSS&amp;JS&amp;TS</Filter>
     </ClCompile>
+    <ClCompile Include="React.cpp">
+      <Filter>源文件\HTML&amp;CSS&amp;JS&amp;TS</Filter>
+    </ClCompile>
+    <ClCompile Include="Vue.cpp">
+      <Filter>源文件\HTML&amp;CSS&amp;JS&amp;TS</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="pthread_pool.h">
@@ -1164,88 +1173,49 @@
     <None Include="python\17-可迁移环境制作.py">
       <Filter>源文件\Python</Filter>
     </None>
-    <None Include="python\21-json模块.py">
+    <None Include="python\30-外部模块.py">
       <Filter>源文件\Python</Filter>
     </None>
-    <None Include="python\22-time模块.py">
+    <None Include="python\31-chatterbot.py">
       <Filter>源文件\Python</Filter>
     </None>
-    <None Include="python\23-calendar模块.py">
+    <None Include="python\32-bilibili_api.py">
       <Filter>源文件\Python</Filter>
     </None>
-    <None Include="python\24-math模块.py">
+    <None Include="python\33-eage-tts.py">
       <Filter>源文件\Python</Filter>
     </None>
-    <None Include="python\25-statistics模块.py">
+    <None Include="python\34-aiohttp.py">
       <Filter>源文件\Python</Filter>
     </None>
-    <None Include="python\26-operator模块.py">
+    <None Include="python\35-langid.py">
       <Filter>源文件\Python</Filter>
     </None>
-    <None Include="python\27-threading模块.py">
+    <None Include="python\36-pypinyin.py">
       <Filter>源文件\Python</Filter>
     </None>
-    <None Include="python\28-socket模块.py">
+    <None Include="python\37-pykakasi.py">
       <Filter>源文件\Python</Filter>
     </None>
-    <None Include="python\29-asyncio模块.py">
+    <None Include="python\38-pyautogui.py">
       <Filter>源文件\Python</Filter>
     </None>
-    <None Include="python\30-subprocess模块.py">
+    <None Include="python\39-openai.py">
       <Filter>源文件\Python</Filter>
     </None>
-    <None Include="python\31-re模块.py">
+    <None Include="python\40-pygame.py">
       <Filter>源文件\Python</Filter>
     </None>
-    <None Include="python\32-sys模块.py">
+    <None Include="python\41-requests.py">
       <Filter>源文件\Python</Filter>
     </None>
-    <None Include="python\33-timedate模块.py">
+    <None Include="python\42-NoneBot.py">
       <Filter>源文件\Python</Filter>
     </None>
-    <None Include="python\40-外部模块.py">
+    <None Include="python\43-slack_sdk.py">
       <Filter>源文件\Python</Filter>
     </None>
-    <None Include="python\51-chatterbot.py">
-      <Filter>源文件\Python</Filter>
-    </None>
-    <None Include="python\52-bilibili_api.py">
-      <Filter>源文件\Python</Filter>
-    </None>
-    <None Include="python\53-eage-tts.py">
-      <Filter>源文件\Python</Filter>
-    </None>
-    <None Include="python\54-aiohttp.py">
-      <Filter>源文件\Python</Filter>
-    </None>
-    <None Include="python\55-langid.py">
-      <Filter>源文件\Python</Filter>
-    </None>
-    <None Include="python\56-pypinyin.py">
-      <Filter>源文件\Python</Filter>
-    </None>
-    <None Include="python\57-pykakasi.py">
-      <Filter>源文件\Python</Filter>
-    </None>
-    <None Include="python\58-pyautogui.py">
-      <Filter>源文件\Python</Filter>
-    </None>
-    <None Include="python\59-openai.py">
-      <Filter>源文件\Python</Filter>
-    </None>
-    <None Include="python\60-pygame.py">
-      <Filter>源文件\Python</Filter>
-    </None>
-    <None Include="python\61-requests.py">
-      <Filter>源文件\Python</Filter>
-    </None>
-    <None Include="python\62-NoneBot.py">
-      <Filter>源文件\Python</Filter>
-    </None>
-    <None Include="python\63-slack_sdk.py">
-      <Filter>源文件\Python</Filter>
-    </None>
-    <None Include="python\64-Fastapi.py">
+    <None Include="python\44-Fastapi.py">
       <Filter>源文件\Python</Filter>
     </None>
     <None Include="python\app.py">
@@ -1283,6 +1253,51 @@
     </None>
     <None Include="python\外部\ex11-websocket.py">
       <Filter>源文件\Python\外部</Filter>
+    </None>
+    <None Include="ex12-yolo.py">
+      <Filter>源文件\Python\外部</Filter>
+    </None>
+    <None Include="45-Django.py">
+      <Filter>源文件\Python</Filter>
+    </None>
+    <None Include="python\模块-01json.py">
+      <Filter>源文件\Python\模块</Filter>
+    </None>
+    <None Include="python\模块-02time.py">
+      <Filter>源文件\Python\模块</Filter>
+    </None>
+    <None Include="python\模块-03calendar.py">
+      <Filter>源文件\Python\模块</Filter>
+    </None>
+    <None Include="python\模块-04math.py">
+      <Filter>源文件\Python\模块</Filter>
+    </None>
+    <None Include="python\模块-05statistics.py">
+      <Filter>源文件\Python\模块</Filter>
+    </None>
+    <None Include="python\模块-06operator.py">
+      <Filter>源文件\Python\模块</Filter>
+    </None>
+    <None Include="python\模块-07threading.py">
+      <Filter>源文件\Python\模块</Filter>
+    </None>
+    <None Include="python\模块-08socket.py">
+      <Filter>源文件\Python\模块</Filter>
+    </None>
+    <None Include="python\模块-09asyncio.py">
+      <Filter>源文件\Python\模块</Filter>
+    </None>
+    <None Include="python\模块-10subprocess.py">
+      <Filter>源文件\Python\模块</Filter>
+    </None>
+    <None Include="python\模块-11re.py">
+      <Filter>源文件\Python\模块</Filter>
+    </None>
+    <None Include="python\模块-12sys.py">
+      <Filter>源文件\Python\模块</Filter>
+    </None>
+    <None Include="python\模块-13timedate.py">
+      <Filter>源文件\Python\模块</Filter>
     </None>
   </ItemGroup>
 </Project>
