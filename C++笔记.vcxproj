@@ -151,6 +151,7 @@
     <ClCompile Include="demo5-6画板.c" />
     <ClCompile Include="demo5-7简易相册.c" />
     <ClCompile Include="docker.cpp" />
+    <ClCompile Include="ex13-yolo训练结果.py" />
     <ClCompile Include="FFmpeg-10笔记.cpp" />
     <ClCompile Include="FFmpeg-4常用函数.cpp" />
     <ClCompile Include="FFmpeg-5结构体.cpp" />

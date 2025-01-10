@@ -48,10 +48,10 @@ def index(request):
 	return HttpResponse("Hello World!")
 
 注意：
-1、django中的视图函数必须带request这个参数
-2、视图函数必须return，一般返回的都是要传给前端的数据
+1、视图函数必须带request这个参数
+2、视图函数必须return，返回的都是要传给前端的数据
 
-#URL和函数的映射
+#URL和视图函数的映射
 大家使用网站时，在网站内的页面跳转都会改变URL，不同的URL就需要后台调用不同的功能给用户使用。所以每个URL都得有函数来执行相应的代码。此过程需要修改urls.py
 打开urls.py，导入 from index import views
 在列表变量 urlpatterns 中，添 path('index/', views.index)，参数一为URL，参数二为触发的函数名。
@@ -138,6 +138,55 @@ def temp_learn(request):
 2、django内部进行渲染（模板语法执行并替换成数据）
 3、最终得到只包含html标签的字符串
 4、将渲染完成的字符串传给用户浏览器。
+
+
+#模板的继承
+首先编写基础模板，也就是重复的部分。{% block xxx %}{% endblock %}是占位符，即子模板自行实现的部分，xxx是块名。
+
+【base.html】
+{% load static %}
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+
+    <!-- 标题块，可以被子模板覆盖 -->
+    {% block title %}{% endblock %}
+
+    <link rel="stylesheet" href="{% static 'plugins/bootstrap-3.4.1-dist/css/bootstrap.css' %}">
+</head>
+<body>
+    <!-- 导航栏 -->
+    <nav class="navbar navbar-default">
+        <!-- 导航栏内容 -->
+    </nav>
+
+    <!-- 主体部分，可以被子模板覆盖 -->
+    {% block content %}{% endblock %}
+
+    <!-- 引入 jQuery 和 Bootstrap JS 文件 -->
+    <script rel="script" src="{% static 'js/jquery-3.6.0.min.js' %}"></script>
+    <script rel="script" src="{% static 'plugins/bootstrap-3.4.1-dist/js/bootstrap.js' %}"></script>
+</body>
+</html>
+
+
+然后使用{% extends 'base.html' %}继承，并实现{% block xxx %}{% endblock %}部分。
+【derived.html】
+<!-- 继承语法 -->
+{% extends 'base.html' %}
+
+<!-- 页面标题 -->
+{% block title %}
+    <title>【EmployeeManager】部门列表</title>
+{% endblock %}
+
+<!-- 页面主体 -->
+{% block content %}
+    <div class="container">
+        <!-- 主体内容将在这里添加 -->
+    </div>
+{% endblock %}
 
 
 
@@ -260,7 +309,7 @@ DATABASES = {
 
 
 #增加表
-在相应【app/models.py】中写一个类就是创建一张表。
+在相应【app/models.py】中写一个继承于 models.Model 类就是创建一张表。
 
 class UserInfo(models.Model):
     # 创建字段
@@ -424,4 +473,57 @@ def user_add(request):
     </form>
 </body>
 </html>
+
+
+# model中字段对象常用的方法参数
+max_length          一般是CharField()中用，字符的最大长度
+verbose_name        用来注释字段名，方便别人知道该字段是什么意思。如果调用django的admin模块来后台管理的话，字段名会自动替换成verbose_name
+primary_key         声明主键，主键是唯一且非空的，一般都是写primary_key=True，不写则默认为 False
+default             默认值
+max_digits          DecimalField()用，规定数字最长是多少（不包括正负号）
+decimal_places      DecimalField()用，规定显示小数点后几位
+null&blank          声明该字段可以为空，组合使用，一般都是写null=True, blank=True，不写则默认为 False
+choices             添加django的约束，给这个参数赋值时得用元组
+
+
+#设置表间关系：外键
+每个员工有自己属于的部门，需要设置字段来表示，而且部门与员工之间是一对多的关系，需要在"多"的那个表设置外键
+
+PS:一般表间联系都是用 id，而不是用名称这种的字段名。因为 id 字段存储消耗小，这样节省存储开销。
+Q：不写外键行不行？直接声明一个整型字段，存部门 id。
+A：这样是不行的。因为这个关系是有约束的，部门 id 必须是部门表内存在的 id，而不是乱填的。所以还是老老实实用外键。
+
+在员工表中设置外键：
+dep = models.ForeignKey(to="Department", to_field="id") #生成表后，django会自动在此字段名后加上_id，即dep_id。
+假设部门表有部门被裁撤了，那么员工表中，原属于该部门的员工改怎么办？
+不管？肯定是不行的，因为上面说到了，这个关系是有约束的，dep_id必须在部门表中存在此id，对此，有许多解决方法：
+
+1、删除关联的员工：一般叫级联删除，相应参数为 on_delete=models.CASCADE
+2、不删置为空：这样写，必须设置允许该字段可以为空，相应参数为 null=True, blank=True, on_delete=models.SET_NULL
+
+这里我们就设置级联删除：dep = models.ForeignKey(to="Department", to_field="id", on_delete=models.CASCADE)
+
+
+class Department(models.Model):
+	"""部门表"""
+	dep_name = models.CharField(verbose_name="部门名称", max_length=32)
+
+
+class Employee(models.Model):
+	"""员工表"""
+	name = models.CharField(verbose_name="员工姓名", max_length=16)
+	password = models.CharField(verbose_name="员工密码", max_length=64)
+	age = models.IntegerField(verbose_name="员工年龄")
+	account = models.DecimalField(verbose_name="账户余额", max_digits=10, decimal_places=2, default=0)
+	create_time = models.DateTimeField(verbose_name="入职时间")
+
+	# 添加Django中的约束
+	gender_choices = (
+		(1, "男"),
+		(2, "女"),
+	)
+	gender = models.SmallInterField(verbose_name="员工性别", choices=gender_choices)
+
+	#生成表时，Django会生成dep_id字段而不是dep字段
+	dep = models.ForeignKey(to="Department", to_field="id", on_delete=models.CASCADE)
 

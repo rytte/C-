@@ -1079,6 +1079,9 @@
     <ClCompile Include="Vue.cpp">
       <Filter>源文件\HTML&amp;CSS&amp;JS&amp;TS</Filter>
     </ClCompile>
+    <ClCompile Include="ex13-yolo训练结果.py">
+      <Filter>源文件\Python\外部</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="pthread_pool.h">
