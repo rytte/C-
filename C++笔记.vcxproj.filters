@@ -24,9 +24,6 @@
     <Filter Include="源文件\OpenGL">
       <UniqueIdentifier>{d01ab72c-4960-412b-8194-420e9e80edca}</UniqueIdentifier>
     </Filter>
-    <Filter Include="源文件\MySQL">
-      <UniqueIdentifier>{00b792e8-2386-4be8-b208-fd473ca6da18}</UniqueIdentifier>
-    </Filter>
     <Filter Include="源文件\FFmpeg">
       <UniqueIdentifier>{935589c3-b953-4032-a96c-535bc886468e}</UniqueIdentifier>
     </Filter>
@@ -123,9 +120,6 @@
     <Filter Include="源文件\音视频\Json解析">
       <UniqueIdentifier>{4907c30b-bdbe-4e47-9ebc-a9d7d159bdd3}</UniqueIdentifier>
     </Filter>
-    <Filter Include="源文件\HTML&amp;CSS&amp;JS&amp;TS">
-      <UniqueIdentifier>{383d0706-3cd9-4e2c-9e2b-9c211ca06317}</UniqueIdentifier>
-    </Filter>
     <Filter Include="源文件\Python">
       <UniqueIdentifier>{ffeae56c-da45-41a9-b8e0-25cd3621594e}</UniqueIdentifier>
     </Filter>
@@ -134,6 +128,21 @@
     </Filter>
     <Filter Include="源文件\Python\模块">
       <UniqueIdentifier>{2a5c5769-0b00-40e6-80d3-cfa48ebb7f29}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="源文件\数据库">
+      <UniqueIdentifier>{7ba8f025-87ec-4b4e-a5cf-e5a69b0b1384}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="源文件\数据库\MySQL">
+      <UniqueIdentifier>{00b792e8-2386-4be8-b208-fd473ca6da18}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="源文件\前端">
+      <UniqueIdentifier>{383d0706-3cd9-4e2c-9e2b-9c211ca06317}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="源文件\前端\Vue">
+      <UniqueIdentifier>{0d9e247d-ff17-4542-aa3e-c5d47a9d7698}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="源文件\前端\JavaScript">
+      <UniqueIdentifier>{3f659ab5-dde0-4ec4-94cf-7b214e9c4631}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>
@@ -351,10 +360,10 @@
       <Filter>源文件\OpenGL</Filter>
     </ClCompile>
     <ClCompile Include="MySQL-1基础.cpp">
-      <Filter>源文件\MySQL</Filter>
+      <Filter>源文件\数据库\MySQL</Filter>
     </ClCompile>
     <ClCompile Include="MySQL-2SQL语法.cpp">
-      <Filter>源文件\MySQL</Filter>
+      <Filter>源文件\数据库\MySQL</Filter>
     </ClCompile>
     <ClCompile Include="FFmpeg-1ffmpeg命令行.cpp">
       <Filter>源文件\FFmpeg</Filter>
@@ -1028,59 +1037,62 @@
     <ClCompile Include="GL-1Linux图形系统.cpp">
       <Filter>源文件\OpenGL</Filter>
     </ClCompile>
-    <ClCompile Include="JS-1基本介绍.cpp">
-      <Filter>源文件\HTML&amp;CSS&amp;JS&amp;TS</Filter>
-    </ClCompile>
-    <ClCompile Include="JS-2类型&amp;对象&amp;函数.cpp">
-      <Filter>源文件\HTML&amp;CSS&amp;JS&amp;TS</Filter>
-    </ClCompile>
-    <ClCompile Include="JS-3原型&amp;继承&amp;作用域.cpp">
-      <Filter>源文件\HTML&amp;CSS&amp;JS&amp;TS</Filter>
-    </ClCompile>
-    <ClCompile Include="JS-4常用对象cpp.cpp">
-      <Filter>源文件\HTML&amp;CSS&amp;JS&amp;TS</Filter>
-    </ClCompile>
-    <ClCompile Include="JS-5DOM.cpp">
-      <Filter>源文件\HTML&amp;CSS&amp;JS&amp;TS</Filter>
-    </ClCompile>
-    <ClCompile Include="JS-6BOM.cpp">
-      <Filter>源文件\HTML&amp;CSS&amp;JS&amp;TS</Filter>
-    </ClCompile>
-    <ClCompile Include="JS-7异常&amp;JSON&amp;AJAX.cpp">
-      <Filter>源文件\HTML&amp;CSS&amp;JS&amp;TS</Filter>
-    </ClCompile>
     <ClCompile Include="TS.cpp">
-      <Filter>源文件\HTML&amp;CSS&amp;JS&amp;TS</Filter>
-    </ClCompile>
-    <ClCompile Include="JS-8Cookie&amp;WebStorage&amp;闭包.cpp">
-      <Filter>源文件\HTML&amp;CSS&amp;JS&amp;TS</Filter>
-    </ClCompile>
-    <ClCompile Include="JS-9ES6新特性.cpp">
-      <Filter>源文件\HTML&amp;CSS&amp;JS&amp;TS</Filter>
-    </ClCompile>
-    <ClCompile Include="JS-10ES7&amp;8&amp;9新特性.cpp">
-      <Filter>源文件\HTML&amp;CSS&amp;JS&amp;TS</Filter>
-    </ClCompile>
-    <ClCompile Include="JS-11ES10&amp;11新特性.cpp">
-      <Filter>源文件\HTML&amp;CSS&amp;JS&amp;TS</Filter>
+      <Filter>源文件\前端</Filter>
     </ClCompile>
     <ClCompile Include="JSX&amp;TSX.cpp">
-      <Filter>源文件\HTML&amp;CSS&amp;JS&amp;TS</Filter>
+      <Filter>源文件\前端</Filter>
     </ClCompile>
     <ClCompile Include="NAPI.cpp">
-      <Filter>源文件\HTML&amp;CSS&amp;JS&amp;TS</Filter>
-    </ClCompile>
-    <ClCompile Include="Bootstrap.cpp">
-      <Filter>源文件\HTML&amp;CSS&amp;JS&amp;TS</Filter>
-    </ClCompile>
-    <ClCompile Include="React.cpp">
-      <Filter>源文件\HTML&amp;CSS&amp;JS&amp;TS</Filter>
-    </ClCompile>
-    <ClCompile Include="Vue.cpp">
-      <Filter>源文件\HTML&amp;CSS&amp;JS&amp;TS</Filter>
+      <Filter>源文件\前端</Filter>
     </ClCompile>
     <ClCompile Include="ex13-yolo训练结果.py">
       <Filter>源文件\Python\外部</Filter>
+    </ClCompile>
+    <ClCompile Include="SQLite3.cpp">
+      <Filter>源文件\数据库</Filter>
+    </ClCompile>
+    <ClCompile Include="Vue.cpp">
+      <Filter>源文件\前端\Vue</Filter>
+    </ClCompile>
+    <ClCompile Include="JS-1基本介绍.cpp">
+      <Filter>源文件\前端\JavaScript</Filter>
+    </ClCompile>
+    <ClCompile Include="JS-2类型&amp;对象&amp;函数.cpp">
+      <Filter>源文件\前端\JavaScript</Filter>
+    </ClCompile>
+    <ClCompile Include="JS-3原型&amp;继承&amp;作用域.cpp">
+      <Filter>源文件\前端\JavaScript</Filter>
+    </ClCompile>
+    <ClCompile Include="JS-4常用对象.cpp">
+      <Filter>源文件\前端\JavaScript</Filter>
+    </ClCompile>
+    <ClCompile Include="JS-5DOM.cpp">
+      <Filter>源文件\前端\JavaScript</Filter>
+    </ClCompile>
+    <ClCompile Include="JS-6BOM.cpp">
+      <Filter>源文件\前端\JavaScript</Filter>
+    </ClCompile>
+    <ClCompile Include="JS-7异常&amp;JSON&amp;AJAX.cpp">
+      <Filter>源文件\前端\JavaScript</Filter>
+    </ClCompile>
+    <ClCompile Include="JS-8Cookie&amp;WebStorage&amp;闭包.cpp">
+      <Filter>源文件\前端\JavaScript</Filter>
+    </ClCompile>
+    <ClCompile Include="JS-9ES6新特性.cpp">
+      <Filter>源文件\前端\JavaScript</Filter>
+    </ClCompile>
+    <ClCompile Include="JS-10ES7&amp;8&amp;9新特性.cpp">
+      <Filter>源文件\前端\JavaScript</Filter>
+    </ClCompile>
+    <ClCompile Include="JS-11ES10&amp;11新特性.cpp">
+      <Filter>源文件\前端\JavaScript</Filter>
+    </ClCompile>
+    <ClCompile Include="Bootstrap.html">
+      <Filter>源文件\前端</Filter>
+    </ClCompile>
+    <ClCompile Include="Vue-8语法.vue">
+      <Filter>源文件\前端\Vue</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -1117,13 +1129,13 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="HTML.htm">
-      <Filter>源文件\HTML&amp;CSS&amp;JS&amp;TS</Filter>
+      <Filter>源文件\前端</Filter>
     </None>
     <None Include="CSS样式表.cpp">
-      <Filter>源文件\HTML&amp;CSS&amp;JS&amp;TS</Filter>
+      <Filter>源文件\前端</Filter>
     </None>
     <None Include="Node.js">
-      <Filter>源文件\HTML&amp;CSS&amp;JS&amp;TS</Filter>
+      <Filter>源文件\前端</Filter>
     </None>
     <None Include="python\01-Python基础.py">
       <Filter>源文件\Python</Filter>
@@ -1301,6 +1313,21 @@
     </None>
     <None Include="python\模块-13timedate.py">
       <Filter>源文件\Python\模块</Filter>
+    </None>
+    <None Include="Vue-3响应式.vue">
+      <Filter>源文件\前端\Vue</Filter>
+    </None>
+    <None Include="Vue-1嵌入.vue">
+      <Filter>源文件\前端\Vue</Filter>
+    </None>
+    <None Include="Vue-2模板语法.vue">
+      <Filter>源文件\前端\Vue</Filter>
+    </None>
+    <None Include="jQuery.html">
+      <Filter>源文件\前端</Filter>
+    </None>
+    <None Include="Vue-4计算属性.vue">
+      <Filter>源文件\前端\Vue</Filter>
     </None>
   </ItemGroup>
 </Project>

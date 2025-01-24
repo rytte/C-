@@ -1,0 +1,54 @@
+
+
+Bootstrap 是一个开源的前端框架，旨在帮助开发者更快速地构建响应式、现代化的网站和网页应用。
+
+【安装】
+npm i bootstrap@5.3.0-alpha1 将在当前目录下生成Bootstrap的npm包
+在html中导入
+<!doctype html>
+<html lang="zh-cn">
+<head>
+    <meta charset="gbk">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Bootstrap</title>
+
+    <link href="node_modules/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">  <!-- 导入css -->
+</head>
+<body>
+    <script src="https://cdn.bootcdn.net/ajax/libs/jquery/1.9.1/jquery.min.js"></script>  <!-- Bootstrap5之前的版本依赖jquery -->
+    <script src="node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"></script>  <!-- 导入js -->
+</body>
+</html>
+
+也可以使用CDN导入
+CSS	https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css
+JS	https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js
+
+或者到官网下载编译好的文件 https://v5.bootcss.com/docs/getting-started/download/
+
+
+【插件】
+const bootstrap = require('bootstrap') 或 import bootstrap from 'bootstrap' 会将所有 Bootstrap 的插件加载到一个 bootstrap 对象上。 
+bootstrap 模块本身导出（export）所有插件。
+Bootstrap 的所有 jQuery 插件都放在软件包顶级目录下的 /js/dist/*.js 中，每个插件都可以独立加载。
+
+
+【兼容性】
+虽然 Bootstrap CSS 可以与任何框架一起使用，
+但是 Bootstrap JavaScript 与 React、Vue 和 Angular 等 JavaScript 框架并不完全兼容。
+Bootstrap 和其他框架都可能尝试改变同一个 DOM 元素，从而导致诸如下拉菜单卡在 “open” 位置之类的错误。
+对于使用此类框架的用户，更好的选择是使用特定于框架的包，而不是 Bootstrap JavaScript。以下是一些最受欢迎的选项：
+React: React Bootstrap
+Vue: BootstrapVue (currently only supports Vue 2 and Bootstrap 4)  
+Angular: ng-bootstrap
+
+
+【模块】
+我们提供了一个构建为 ESM（bootstrap.esm.js 和 bootstrap.esm.min.js）的 Bootstrap 版本，它允许您将 Bootstrap 用作浏览器中的模块
+<script type="module">
+  import { Toast } from 'bootstrap.esm.min.js'
+
+  Array.from(document.querySelectorAll('.toast'))
+    .forEach(toastNode => new Toast(toastNode))
+</script>
+

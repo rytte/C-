@@ -527,3 +527,20 @@ class Employee(models.Model):
 	#生成表时，Django会生成dep_id字段而不是dep字段
 	dep = models.ForeignKey(to="Department", to_field="id", on_delete=models.CASCADE)
 
+
+
+('''********************'''其它'''************************************************************'''
+【setting.py】
+LANGUAGE_CODE = 'zh-hans'       #中文
+
+
+#ModelForm
+常用的数据库模型表单
+
+
+#切片（filter和all都可以）
+Employee.objects.all()	        # 获取全部数据
+Employee.objects.all()[0:10]	# 获取前10条数据
+
+
+

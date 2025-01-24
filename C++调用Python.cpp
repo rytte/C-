@@ -1,6 +1,74 @@
-#include <Python.h>
+
+/********************/方式1/************************************************************/
+方式1：使用 system() 函数执行 Python 脚本
+
+#include <cstdlib>
 #include <iostream>
 
+int main() 
+{
+    // 执行 Python 脚本
+    int result = system("python C:/path_to_your_script/hello.py");
+
+    if (result == 0)
+        std::cout << "Python script executed successfully!" << std::endl;
+    else
+        std::cerr << "Error executing Python script." << std::endl;
+
+
+    return 0;
+}
+
+
+
+/********************/方式2/************************************************************/
+方式2：Python C API，直接执行 Python 嵌入代码 或 脚本文件
+
+#include <Python.h>
+#include <iostream>
+//.pro：添加头文件和库文件
+//INCLUDEPATH += C:\Users\13055\miniconda3\include
+//LIBS += -LC:\Users\13055\miniconda3\libs -lpython310
+
+int main(int argc, char* argv[])
+{
+    _putenv("PYTHONHOME=C:\\Users\\13055\\miniconda3");
+    _putenv("PYTHONPATH=C:\\Users\\13055\\miniconda3\\Lib");
+
+    // 初始化 Python 解释器
+    Py_Initialize();
+
+    // 直接在 C++ 代码中执行 Python 代码
+    const char* code = R"(
+print("Hellp Cpp!")
+)";
+    PyRun_SimpleString(code);
+
+    // 直接在 C++ 代码中执行 Python 脚本
+    FILE* fp = _Py_fopen("C:/path_to_your_script/hello.py", "r");
+    if (fp != nullptr) 
+    {
+        PyRun_SimpleFile(fp, script_path);
+        fclose(fp);
+    }
+    else 
+    {
+        std::cerr << "Failed to open Python script" << std::endl;
+    }
+
+    // 结束 Python 解释器
+    Py_Finalize();
+    return 0;
+
+}
+
+
+
+/********************/方式3/************************************************************/
+方式3：Python C API，调用类和函数，适合需要数据交互的情况
+
+#include <Python.h>
+#include <iostream>
 
 //技巧：可以将Module、Argument、Object、Class、Function封装成一个或多个类来管理。
 
@@ -8,9 +76,11 @@
 //INCLUDEPATH += C:\Users\13055\AppData\Local\Programs\Python\Python310\include
 //LIBS += -LC:\Users\13055\AppData\Local\Programs\Python\Python310\libs -lpython310
 
-
 int main(int argc, char* argv[])
 {
+    _putenv("PYTHONHOME=C:\\Users\\13055\\miniconda3");
+    _putenv("PYTHONPATH=C:\\Users\\13055\\miniconda3\\Lib");
+
     // 初始化Python解释器
     Py_Initialize();
 
@@ -107,9 +177,38 @@ int main(int argc, char* argv[])
     }
 
 
-
     // 关闭Python解释器
     Py_Finalize();
+
+    return 0;
+}
+
+
+
+/********************/方式4/************************************************************/
+方式4：使用 Pybind11 API
+
+#include <pybind11/embed.h>  // pybind11 提供的嵌入式 API
+#include <iostream>
+
+namespace py = pybind11;
+
+int main() 
+{
+    // 初始化 Python 解释器
+    py::scoped_interpreter guard{};
+
+    try 
+    {
+        // 导入并执行 Python 文件
+        py::exec(R"(
+print("Hellp Cpp!")
+        )");
+    }
+    catch (const py::error_already_set& e) 
+    {
+        std::cerr << "Python error: " << e.what() << std::endl;
+    }
 
     return 0;
 }
