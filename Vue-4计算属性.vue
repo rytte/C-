@@ -54,3 +54,20 @@
 </script>
 
 
+<!--获取上一个计算值（仅 3.4+ 支持）-->
+<script setup>
+    import { ref, computed } from 'vue'
+
+    const count = ref(2)
+
+    // 这个计算属性在 count 的值小于或等于 3 时，将返回 count 的值。
+    // 当 count 的值大于等于 4 时，将会返回满足我们条件的最后一个值
+    // 直到 count 的值再次小于或等于 3 为止。
+    const alwaysSmall = computed((previous) => {
+        if (count.value <= 3) {
+            return count.value
+        }
+
+        return previous
+    })
+</script>

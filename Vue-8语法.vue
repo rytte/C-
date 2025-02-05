@@ -1,5 +1,4 @@
-﻿
-<!--表单绑定--> 同时绑定状态与函数
+﻿<!--表单绑定--> 同时绑定状态与函数
 同时使用 v-bind 和 v-on 来在表单的输入元素上创建双向绑定
 <script setup>
     <input: value="text" @input="onInput" >
@@ -13,8 +12,8 @@
 
 实例：
 <script setup>
-    import { ref } from 'vue'
-    const text = ref('')
+                import { ref } from 'vue'
+        const text = ref('')
 </script>
 
 <template>
@@ -23,65 +22,10 @@
 </template>
 
 
-<!--条件渲染-->
-<h1 v-if="awesome">Vue is awesome!</h1>
-<h1 v-else>Oh no</h1>
-awesome 的值为真值 (Truthy) 时渲染"Vue is awesome!",否则渲染"Oh no"
-
-实例：
-<script setup>
-    import { ref } from 'vue'
-
-    const awesome = ref(true)
-
-    function toggle() {
-        awesome.value = !awesome.value
-    }
-</script>
-
-<template>
-    <button @click="toggle">Toggle</button>
-    <h1 v-if="awesome">Vue is awesome!</h1>
-    <h1 v-else>Oh no</h1>
-</template>
-
-
-<!--列表渲染-->
-<script setup>
-    import { ref } from 'vue'
-
-    // 给每个 todo 对象一个唯一的 id
-    let id = 0
-
-    const newTodo = ref('')
-    const todos = ref([
-        { id: id++, text: 'Learn HTML' },
-        { id: id++, text: 'Learn JavaScript' },
-        { id: id++, text: 'Learn Vue' }
-    ])
-
-    function addTodo() {
-        todos.value.push({ id: id++, text: newTodo.value })         //添加值
-        newTodo.value = ''
-    }
-
-    function removeTodo(todo) {
-        todos.value = todos.value.filter((t) => t !== todo)         //filter会传入每一项，过滤出新的数组替代原数组
-    }
-</script>
-
-<template>
-    <form @submit.prevent="addTodo">
-        <input v-model="newTodo" required placeholder="new todo">
-        <button>Add Todo</button>
-    </form>
-    <ul>
-        <li v-for="todo in todos" :key="todo.id">
-            {{ todo.text }}
-            <button @click="removeTodo(todo)">X</button>
-        </li>
-    </ul>
-</template>
+<!--v-show-->
+用法和v-if基本一样，但v-show 会在 DOM 渲染中保留该元素，仅切换了该元素上名为 display 的 CSS 属性（也就是进行隐藏）
+并且v-show不支持在template标签上使用
+<h1 v-show="ok">Hello!</h1>
 
 
 <!--模板引用和生命周期-->

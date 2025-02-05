@@ -131,6 +131,7 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="Bootstrap.html" />
+    <ClCompile Include="C-12原码反码补码.c" />
     <ClCompile Include="CMake.cmake" />
     <ClCompile Include="demo3-10内存映射.c" />
     <ClCompile Include="demo3-1lcdinfo.c" />
@@ -427,7 +428,6 @@
     <ClCompile Include="设计模式-5观察者模式.cpp" />
     <ClCompile Include="设计模式-6策略模式.cpp" />
     <ClCompile Include="设计模式.cpp" />
-    <ClCompile Include="问答.cpp" />
     <ClCompile Include="多客户端server.c" />
     <ClCompile Include="多路复用server.c" />
     <ClCompile Include="实例_main.cpp" />
@@ -529,6 +529,8 @@
     <None Include="Vue-2模板语法.vue" />
     <None Include="Vue-3响应式.vue" />
     <None Include="Vue-4计算属性.vue" />
+    <None Include="Vue-5class与style绑定.vue" />
+    <None Include="Vue-6条件渲染和列表渲染.vue" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

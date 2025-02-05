@@ -308,9 +308,6 @@
     <ClCompile Include="异步信号驱动server.c">
       <Filter>源文件\4-网络编程\IO模型实例</Filter>
     </ClCompile>
-    <ClCompile Include="试合.cpp">
-      <Filter>源文件\其它</Filter>
-    </ClCompile>
     <ClCompile Include="23模板元编程.cpp">
       <Filter>源文件\6-C++语法</Filter>
     </ClCompile>
@@ -528,9 +525,6 @@
       <Filter>源文件\6-C++语法</Filter>
     </ClCompile>
     <ClCompile Include="21内存分布.cpp">
-      <Filter>源文件\6-C++语法</Filter>
-    </ClCompile>
-    <ClCompile Include="问答.cpp">
       <Filter>源文件\6-C++语法</Filter>
     </ClCompile>
     <ClCompile Include="辨析.cpp">
@@ -1094,6 +1088,12 @@
     <ClCompile Include="Vue-8语法.vue">
       <Filter>源文件\前端\Vue</Filter>
     </ClCompile>
+    <ClCompile Include="C-12原码反码补码.c">
+      <Filter>源文件\1-C语言语法</Filter>
+    </ClCompile>
+    <ClCompile Include="试合.cpp">
+      <Filter>源文件\6-C++语法</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="pthread_pool.h">
@@ -1327,6 +1327,12 @@
       <Filter>源文件\前端</Filter>
     </None>
     <None Include="Vue-4计算属性.vue">
+      <Filter>源文件\前端\Vue</Filter>
+    </None>
+    <None Include="Vue-5class与style绑定.vue">
+      <Filter>源文件\前端\Vue</Filter>
+    </None>
+    <None Include="Vue-6条件渲染和列表渲染.vue">
       <Filter>源文件\前端\Vue</Filter>
     </None>
   </ItemGroup>

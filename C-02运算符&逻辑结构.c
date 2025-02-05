@@ -118,7 +118,7 @@ do - while(0) 一般用于语句控制，可使用 break 跳出代码块。起到 goto 的作用。
 
 
 //关键字
-break	跳出整个 for / while / switch 循环，只能跳一层
+break		跳出整个 for / while / switch 循环，只能跳一层
 continue	用于跳出 for / while 的单次循环，进入下一次循环
 goto		无条件跳转到标签位置（使用场景：代码调试阶段可以适当使用；用于驱动）
 
