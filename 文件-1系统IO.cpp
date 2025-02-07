@@ -101,7 +101,7 @@ ssize_t write(int fd, const void* buf, size_t count);
 
 int close(int fd);
 
-参数：需要关闭的文件
+参数：需要关闭的文件描述符
 
 【返回值】
 成功：0

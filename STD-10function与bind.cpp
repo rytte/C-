@@ -4,7 +4,15 @@
 std::function 提供了一种通用的方式来存储、复制和调用任何可调用的目标（Callable Target），包括函数、Lambda 表达式、函数对象、绑定表达式以及其他函数指针等。
 std::function 的设计目的是为了提供一种类型安全的、多态的方式来回调任何可调用实体。
 
-使用 std::function 时需要注意性能开销。
+
+//函数指针与 std::function 对比
+特性			函数指针					std::function
+类型安全		必须匹配函数签名			支持多种可调用对象类型
+灵活性		仅支持指向普通函数		支持函数、lambda、成员函数等
+性能开销		极低	有一定的开销，		尤其是在复杂的场景下
+类型擦除		无						支持类型擦除，可以存储不同类型的可调用对象
+空指针检查	需要手动检查（nullptr）	支持 operator bool()
+赋值与拷贝	简单赋值，要求相同签名	支持动态赋值与拷贝
 
 
 //简单使用实例
@@ -26,35 +34,13 @@ int main() {
 	return 0;
 }
 
-//实现多态
-//通过函数指针实现多态
+
+//C++中只使用 std::function 替代函数指针
 #include<iostream>
 #include <functional>
 
 typedef int (*func)();
 
-int print1() {
-	printf("hello, print1 \n");
-	return 0;
-}
-
-int print2() {
-	printf("hello, print2 \n");
-	return 0;
-}
-
-int main(int argc, char* argv[]) {
-	func fp = print1;
-	fp();
-
-	fp = print2;
-	fp();
-
-	return 0;
-}
-
-
-//C++中只使用 std::function 替代函数指针
 void print1() {
 	std::cout << "hello, print1" << std::endl;
 }
@@ -65,6 +51,15 @@ void print2() {
 
 int main(int argc, char* argv[])
 {
+	//通过函数指针实现多态
+	func fp = print1;
+	fp();
+
+	fp = print2;
+	fp();
+
+
+	//通过std::function实现多态
 	std::function<void()> func(&print1);
 	func();
 
@@ -95,14 +90,12 @@ int main()
 
 
 
-
 /********************/std::bind/************************************************************/
 #include <functional>
 
 
 //两大作用：
-1、将可调用对象（如函数、成员函数、
-函数对象、lambda 表达式等）与其参数绑定起来，形成一个新的可调用对象。
+1、将可调用对象（如函数、成员函数、函数对象、lambda 表达式等）与其参数绑定起来，形成一个新的可调用对象。
 2、将n元可调用对象转成m(m < n)元可调用对象，绑定一部分参数，不绑定的参数使用std::placeholders占位符。
 
 

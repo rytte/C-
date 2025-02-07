@@ -13,12 +13,11 @@ using namespace std;
 
 
 //定义格式
-智能指针<数据类型>指针名(指向的对象);
-
+智能指针<数据类型>指针名(指向的对象，可选删除器);
 
 unique_ptr<int> uptr; 		//独占型的智能指针
 shared_ptr<int> sptr;		//共享型智能指针
-weak_ptr<int> wptr;		//弱引用型指针指针
+weak_ptr<int> wptr;			//弱引用型指针指针
 
 
 因为智能指针是c++11的特性，所以编译时加上 - std = c++11
@@ -41,93 +40,91 @@ auto_ptr是被废弃的，这个指针有BUG。它的进阶就是unique_ptr。
    比如在函数参数传递过程中，对象的所有不会返还，从而存在潜在的内存崩溃问题，不能指向数组，也不能作为STL容器成员
 
 
+//共有成员方法
+operator*()			获取当前 unique_ptr 指针指向的数据。
+operator->()		重载->箭头号，可以像普通指针一样直接操作成员。
+operator =()		重载 = 赋值号，可以直接赋值 nullptr 或者另一个同类型的 unique_ptr 指针。
+operator []()		重载[] 运算符，当 unique_ptr 指针指向一个数组时，可以直接通过[] 获取指定下标位置处的数据。
+operator bool()		允许 unique_ptr 作为布尔值在条件语句中使用，检查它内部的原始指针是否为空。
+swap(x)				将当前智能指针和同类型的 x 智能指针管理的对象交换（删除器类型也应相同）。
+
+
 
 /********************/unique_ptr<>/************************************************************/
-智能指针 unique_ptr
-① 对于unique_ptr，实现独占式拥有概念，同一时间只能有一个智能指针可以指向该对象;
-② 无法进行拷贝构造和拷贝赋值，但是可以进行移动构造和移动赋值。
+template <typename T, typename Deleter = std::default_delete<T>>
+class unique_ptr {
+public:
+	// 构造函数
+	unique_ptr(T* ptr, Deleter deleter = Deleter());	//删除器默认std::default_delete<T>，即调用delete操作符
 
+	// 其它成员函数
+};
 
-1、当unique_ptr的对象被销毁时，它会自动释放指向的堆空间
-2、unique_ptr是独占型智能指针，只允许一个智能指针指向同一块内存，因此不能调用拷贝构造函数。
+① 对于unique_ptr，实现独占式拥有概念，同一时间只能有一个智能指针可以指向该对象。也因此不能调用拷贝构造函数，但可以进行移动构造和移动赋值;
+② 当unique_ptr的对象被销毁时，它会自动释放指向的堆空间。
+
 
 //成员方法
-operator*()		获取当前 unique_ptr 指针指向的数据。
-operator->()		重载->号，当智能指针指向的数据类型为自定义的结构体时，通过->运算符可以获取其内部的指定成员。
-operator =()		重载了 = 赋值号，从而可以将 nullptr 或者一个右值 unique_ptr 指针直接赋值给当前同类型的 unique_ptr 指针。
-operator []()		重载了[] 运算符，当 unique_ptr 指针指向一个数组时，可以直接通过[] 获取指定下标位置处的数据。
-get()				获取当前 unique_ptr 指针内部包含的普通指针。
-get_deleter()		获取当前 unique_ptr 指针释放堆内存空间所用的规则。
-operator bool()	unique_ptr 指针可直接作为 if 语句的判断条件，以判断该指针是否为空，如果为空，则为 false；反之为 true。
-release()			释放当前 unique_ptr 指针对所指堆内存的所有权，但该存储空间并不会被销毁。
-reset(p)			其中 p 表示一个普通指针，如果 p 为 nullptr，则当前 unique_ptr 也变成空指针；反之，则该函数会释放当前 unique_ptr 指针指向的堆内存（如果有），然后获取 p 所指堆内存的所有权（p 为 nullptr）。
-swap(x)			交换当前 unique_ptr 指针和同类型的 x 指针。
+get()				获取内部包含的普通指针。
+get_deleter()		获取释放堆内存空间所用的函数对象。
+release()			释放当前 unique_ptr 所指对象的管理权，但不会释放该对象。
+reset()				不传参或传 nullptr ，会释放当前智能指针管理的对象，并指向 nullptr 。若传入普通指针，则会释放当前对象并重新指向新传入的指针。
+
+
+//make_unique<>		(C++14)
+std::make_unique 是一个工厂函数，用于创建 std::unique_ptr 实例并返回。它更加安全且避免了使用裸指针。
 
 
 
 /********************/shared_ptr<>/************************************************************/
-智能指针 shared_ptr
 ① 对于shared_ptr，实现共享式拥有概念，即多个指针可以指向相同的对象，该对象及其资源会在其所指对象不再使用时，自动释放与对象相关的资源;
-② 带有引用计数机制，支持多个指针度下行指向同一内存(实现共享)。
+② 当shared_ptr的对象被销毁时, 会查看当前是否有其他指针指向这个堆空间，如果没有了，则释放; 如果还存在，则不释放。
+③ 带有引用计数机制，支持多个指针度下行指向同一内存(实现共享)。
+④ shared_ptr是在unique_ptr的基础上，增加了一个计数值count, 用来保存指向这个堆空间的指针个数，只有当计数值为0的时候，才会释放内存。
 
-
-1.当shared_ptr的对象被销毁时, 会查看当前是否有其他指针指向这个堆空间，如果没有了，则释放; 如果还存在，则不释放。
-2.shared_ptr是在unique_ptr的基础上，增加了一个计数值count,用来保存指向这个堆空间的指针个数，只有当计数值为0的时候，才会释放内存。
 
 //成员方法
-operator=()		重载赋值号，使得同一类型的 shared_ptr 智能指针可以相互赋值。
-operator*()		重载* 号，获取当前 shared_ptr 智能指针对象指向的数据。
-operator->()		重载->号，当智能指针指向的数据类型为自定义的结构体时，通过->运算符可以获取其内部的指定成员。
-swap()			交换 2 个相同类型 shared_ptr 智能指针的内容。
-reset()			当函数没有实参时，该函数会使当前 shared_ptr 所指堆内存的引用计数减 1，同时将当前对象重置为一个空指针；当为函数传递一个新申请的堆内存时，则调用该函数的 shared_ptr 对象会获得该存储空间的所有权，并且引用计数的初始值为 1。
-get()				获得 shared_ptr 对象内部包含的普通指针。
-use_count()		返回同当前 shared_ptr 对象（包括它）指向相同的所有 shared_ptr 对象的数量。
-unique()			判断当前 shared_ptr 对象指向的堆内存，是否不再有其它 shared_ptr 对象再指向它。
-operator bool()	判断当前 shared_ptr 对象是否为空智能指针，如果是空指针，返回 false；反之，返回 true。
+get()			获得 shared_ptr 对象内部包含的普通指针。
+use_count()		返回所有指向对象的引用计数。（也即指向该对象的shared_ptr的数量）
+unique()		若当前 shared_ptr 是唯一的所有者（即引用计数为 1），则返回 true ，否则返回 false 。
+reset()			不传参或传 nullptr ，会释放当前智能指针管理的对象，并指向 nullptr ，同时引用计数-1；若传入普通指针，则会释放当前对象，同时引用计数 - 1，然后重新指向新传入的指针，并且引用计数 + 1。
 
 
 //make_shared<>
-可以使用 make_shared 函数来创建共享指针，它是一个模板函数，可以接受任何类型的参数，
-并返回一个指向该类型对象的共享指针。它可以将控制块和对象一起分配在堆上，
-从而避免了两次内存分配，并减少了引用计数的内存开销，相对于直接使用 new 或 shared_ptr 的构造函数，make_shared 更为高效。
-//语法
-std::shared_ptr<T> make_shared< T >( Args&&... args );
+std::shared_ptr<T> make_shared<T>(Args&&... args);		//原型
+
+std::make_shared 是一个工厂函数（模板），用于创建 std::shared_ptr 实例并返回，
+相对于直接使用 new 或 shared_ptr 的构造函数，make_shared 更为高效。他避免了两次内存分配，并减少了引用计数的内存开销。
 
 
 
 /********************/weak_ptr<>/************************************************************/
-智能指针 weak_ptr
 ① 对于weak_ptr, 解决shared_ptr相互引用的问题：若两个share_ptr指针相互引用，那么两个指针都将无法释放，从而导致死锁问题。
-② 而weak_ptr是对对象的一种弱引用，可以绑定到shared_ptr, 但是不会增加的对象引用计数。
+② 而weak_ptr是对对象的一种弱引用，可以绑定到shared_ptr, 但是不会增加的对象引用计数（即weak_ptr不会使use_count+1）。
 
 
-1.weak_ptr一般是shared_ptr的辅助使用。
-2.weak_ptr指向相同的内存时，use_count的数值不会 + 1
-
-
-operator=()	重载 = 赋值运算符，是的 weak_ptr 指针可以直接被 weak_ptr 或者 shared_ptr 类型指针赋值。
-swap(x)	其中 x 表示一个同类型的 weak_ptr 类型指针，该函数可以互换 2 个同类型 weak_ptr 指针的内容。
-reset()	将当前 weak_ptr 指针置为空指针。
-use_count()	查看指向和当前 weak_ptr 指针相同的 shared_ptr 指针的数量。
+//成员方法
+use_count()	返回所有指向对象的引用计数。（也即指向该对象的shared_ptr的数量）
 expired()	判断当前 weak_ptr 指针为否过期（指针为空，或者指向的堆内存已经被释放）。
-lock()	如果当前 weak_ptr 已经过期，则该函数会返回一个空的 shared_ptr 指针；反之，该函数返回一个和当前 weak_ptr 指向相同的 shared_ptr 指针。
+lock()		如果当前 weak_ptr 已经过期，则该函数会返回一个空的 shared_ptr 指针；反之，该函数返回一个和当前 weak_ptr 指向相同的 shared_ptr 指针。
+reset()		释放当前智能指针管理的对象，并指向 nullptr 。不接受参数。
 
 
 
 /********************/enable_shared_from_this<>/************************************************************/
-std::enable_shared_from_this 是一个模板基类，通常与其他智能指针（特别是 std::shared_ptr）一起使用，
-以允许一个对象从其自身的成员函数内部获取一个指向其自身的 std::shared_ptr。
+std::enable_shared_from_this 是一个模板基类，通常与 std::shared_ptr 一起使用，
+允许一个对象从其自身的成员函数内部创建一个指向其自身的 std::shared_ptr。
 
-这个类的主要用途是当你有一个成员函数，它需要在内部创建一个指向对象自身的 std::shared_ptr，
-但是你没有直接的 std::shared_ptr 来构造它时。
-std::enable_shared_from_this 允许对象在已经被 std::shared_ptr 管理的情况下做到这一点。
+确保对象的生命周期不被提前销毁，从而避免出现悬挂指针或访问已销毁对象的情况。
+
+注意：只有当一个对象已经被 std::shared_ptr 管理时，shared_from_this() 才能被安全地调用，否则会导致运行时错误。
 
 
 #include <iostream>  
 #include <memory>  
 
 class MyClass : public std::enable_shared_from_this<MyClass> 
-	{
+{
 public:
 	void doSomething() 
 	{	
@@ -143,10 +140,6 @@ int main()
 	obj->doSomething();										// 调用成员函数，该函数内部使用 shared_from_this()  
 	return 0;
 }
-
-注意，只有当一个对象已经被 std::shared_ptr 管理时，shared_from_this() 才能被安全地调用。
-如果对象没有被 std::shared_ptr 管理，调用 shared_from_this() 会导致运行时错误。
-
 
 
 
@@ -187,13 +180,9 @@ int main()
 	(*A).show();
 
 
-
-	//A开始指向NULL;
+	//手动接收并释放;
 	Person* ptr = A.release();
 	delete ptr;
-
-	cout << "--------" << endl;
-
 }
 
 

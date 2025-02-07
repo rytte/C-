@@ -2,7 +2,7 @@
 using 关键字有多种用法
 
 //1、打开命名空间
-using namespace + 命名空间名称
+using namespace 命名空间名称
 
 
 //2、定义别名

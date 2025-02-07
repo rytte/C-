@@ -6,7 +6,7 @@
 
 
 //发生死锁的情况
-m.lock();			//加锁
+m.lock();		//加锁
 {
 	if ()
 		return;	//发生了死锁
@@ -18,7 +18,7 @@ m.unlock();		//解锁
 
 //四种 Mutex 锁类型
 mutex				//最基本的 Mutex 类。
-time_mutex			//定时 Mutex 类。
+timed_mutex			//定时 Mutex 类。
 recursive_mutex		//递归 Mutex 类，可以递归地对互斥量对象上锁。
 recursive_timed_mutex	//定时递归 Mutex 类。
 

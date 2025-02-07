@@ -23,6 +23,9 @@ value = array[3]; //也可写成：value=*(array+3);
 //成员运算符
 p->a 等价于(*p).a
 
+//变量声明
+int* a, b;		//声明了一个int* 类型的变量a，和一个int类型的变量b
+
 
 //回调函数（callback）
 回调函数就是作为其它函数参数的函数。其它函数以函数指针方式调用它。
@@ -110,17 +113,31 @@ int main()
 /********************/字符串/************************************************************/
 在 C 语言中，字符串实际上是使用空字符 \0 结尾的一维字符数组。因此，\0 是用于标记字符串的结束。
 
-由于在数组的末尾存储了空字符 \0，所以字符数组的大小比实际的有效字符数大1。
+由于在数组的末尾存储了空字符 \0，所以字符数组的大小比实际的有效字符数大1;
 
 
 #include <string.h>
 
-size_t	这是无符号整数类型，它是 sizeof 关键字的结果。
+size_t	这是无符号整数类型，它是 sizeof 关键字的结果;
 
-strcpy(s1, s2);		//复制字符串 s2 到字符串 s1。
-strcat(s1, s2);		//连接字符串 s2 到字符串 s1 的末尾。
-strlen(s1);			//返回字符串 s1 的长度。
-strcmp(s1, s2);		//如果 s1 和 s2 是相同的，则返回 0；如果 s1<s2 则返回小于 0；如果 s1>s2 则返回大于 0。
-strchr(s1, ch);		//返回一个指针，指向字符串 s1 中字符 ch 的第一次出现的位置。
-strstr(s1, s2);		//返回一个指针，指向字符串 s1 中字符串 s2 的第一次出现的位置。
+size_t strlen(const char* str);								//返回字符串的长度
+char* strcpy(char* dest, const char* src);					//将一个字符串 src 复制到字符串 dest
+char* strncpy(char* dest, const char* src, size_t n);		//将最多 n 个字符从 src 字符串复制到 dest 字符串
+char* strcat(char* dest, const char* src);					//将字符串 src 附加到字符串 dest 的末尾
+char* strncat(char* dest, const char* src, size_t n);		//将最多 n 个字符从 src 字符串附加到 dest 字符串的末尾
+int strcmp(const char* str1, const char* str2);				//比较两个字符串，相同返回0，str1>str2返回正数，str1<str2返回负数
+int strncmp(const char* str1, const char* str2, size_t n);	//比较两个字符串的前 n 个字符
+char* strchr(const char* str, int c);						//返回一个指针，指向字符串 str 中字符 c 的第一次出现的位置
+char* strrchr(const char* str, int c);						//返回一个指针，指向字符串 str 中字符 c 的最后一次出现的位置
+char* strstr(const char* haystack, const char* needle);		//返回一个指针，指向字符串 haystack 中字符串 needle 的第一次出现的位置
+
+
+void* memcpy(void* dest, const void* src, size_t n);		//复制内存块
+void* memmove(void* dest, const void* src, size_t n);		//在内存区域重叠的情况下，安全地复制内存块
+int memcmp(const void* ptr1, const void* ptr2, size_t n);	//比较两块内存区域，ptr1>ptr2返回正数，ptr1<ptr2返回负数，相等返回0
+void* memset(void* str, int c, size_t n);					//将一块内存区域的所有字节设置为某个值
+void* memchr(const void* str, int c, size_t n);				//查找内存区域中第一次出现某个字节的地址
+
+
+
 

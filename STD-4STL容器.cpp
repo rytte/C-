@@ -33,7 +33,7 @@ using namespace std;
 //构造函数
 vector<int>V;						//无参构造
 vector<int>V2(V);					//拷贝构造
-vector<int>V3(V.begin(), V.end());		//将区间内的元素拷贝给新容器
+vector<int>V3(V.begin(), V.end());	//将区间内的元素拷贝给新容器
 vector<int>V4(n, elem);				//将n个元素拷贝给新容器
 
 //iterators（迭代器）
@@ -181,9 +181,9 @@ map<int, char> M3(V.begin(), V.end());		//将区间内的元素拷贝给新容器
 begin			返回指向容器中第一个（经过排序后）键值对的双向迭代器。
 end				返回指向容器最后一个元素（排序后）所在位置后一个位置的键值对的双向迭代器
 rbegin			返回容器逆序的第一个键值对的双向迭代器
-rend				返回容器逆序的最后一个元素的前一个位置的键值对双向迭代器
+rend			返回容器逆序的最后一个元素的前一个位置的键值对双向迭代器
 cbegin			和begin()功能相同，在其基础上增加了 const 属性，不能用于修改元素。
-cend				和end()功能相同，在其基础上增加了 const 属性，不能用于修改元素。
+cend			和end()功能相同，在其基础上增加了 const 属性，不能用于修改元素。
 crbegin			和rbegin()功能相同，在其基础上增加了 const 属性，不能用于修改元素。
 crend			和rend()功能相同，在其基础上增加了 const 属性，不能用于修改元素。
 

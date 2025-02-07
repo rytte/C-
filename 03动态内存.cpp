@@ -17,12 +17,18 @@ delete[]  指针				//释放N个数据类型的堆空间内存，释放大小由
 
 //区别
 (1)malloc和free都是函数, new 和 delete 是关键字
-(2)malloc返回值为void*, new 会根据数据类型来确定返回值。
-(3)malloc和free不会调用类的构造与析构， new 会调用构造， delete 会调用析构。
+(2)malloc返回值为void*, new 会根据数据类型来确定返回值。（）
+(3)malloc分配内存失败返回 nullptr, new 失败会抛出 std::bad_alloc 异常
+(4)malloc和free不会调用类的构造与析构， new 会调用构造， delete 会调用析构。
 
 //注意
-1、C++中函数返回值为指针时，不会发生隐式类型转换。
-2、如果 new 的时候内存不够了，操作系统会抛出一个 std::bad_allloc 异常。
+C++中函数返回值为指针时，不会发生隐式类型转换。
+
+//new底层实现
+1、一般是调用内存分配函数 malloc
+2、调用构造函数
+3、返回对象的指针
+
 
 //实例
 int* p1 = new int;				//申请一个int类型大小的堆空间
