@@ -157,23 +157,26 @@
 
 
 //手动实现以下函数
-内存操作函数：
 memcpy：复制内存区域。
 memmove：移动内存区域（考虑重叠区域的情况）。
 memset：设置内存区域的值。
 
-字符串操作函数：
 strcpy：复制字符串。
 strncpy：限制复制的字符数。
 strcmp：比较两个字符串。
 strchr：查找字符串中某个字符的首次出现位置。
 strlen：计算字符串的长度。
 
-链表操作：
-创建和操作单链表的函数：如 insert, delete, reverse, merge 等。
+单链表操作：
+insert
+delete
+reverse
+merge
 
 栈和队列操作：
-实现栈和队列的基本操作：push, pop, peek 等。
+push
+pop
+peek
 使用数组或链表实现栈或队列。
 
 递归问题：

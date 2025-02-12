@@ -188,7 +188,7 @@ FU Header格式如下：
 这里需要了解下H264打包方式，所谓打包方式就是如何组织一连串的NALU单元为完整的H264码流，目前有两种主流格式：
 Annex-B 和 AVCC，两种格式都有防止竞争字节。
 
-//一、Annex-B:
+//一、Annex-B:（适合传输流）
 通过起始码startCode(0x00000001或0x000001)来分割NALU,打包方式如下：
 [start Code]–[NALU]–[start code]–[NALU]…
 

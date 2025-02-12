@@ -1,6 +1,6 @@
 /********************/目录IO/************************************************************/
 
-//opendir()打开目录函数
+//opendir 打开目录函数
 #include <sys/types.h>
 #include <dirent.h>
 
@@ -9,7 +9,7 @@ DIR * opendir(const char* name);	//打开目录并返回目录文件的指针，失败返回NULL
 参数：需要打开目录的路径
 
 
-//readdir()读取目录函数
+//readdir 读取目录函数
 #include <dirent.h>
 
 struct dirent* readdir(DIR * dirp);		//读取目录并返回包含目录信息的目录结构体指针，失败返回NULL
@@ -36,7 +36,7 @@ d_type：文件类型
 }
 
 
-//closedir()关闭目录函数
+//closedir 关闭目录函数
 #include <sys/types.h>
 #include <dirent.h>
 
@@ -45,7 +45,7 @@ int closedir(DIR * dirp);		//成功返回0，失败返回-1
 参数：需要关闭的目录流指针
 
 
-//mkdir()创建目录函数
+//mkdir 创建目录函数
 #include <sys/stat.h>
 
 int mkdir(const char* path, mode_t mode);		//成功返回0，失败返回-1

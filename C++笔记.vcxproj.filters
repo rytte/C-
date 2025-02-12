@@ -24,29 +24,8 @@
     <Filter Include="源文件\OpenGL">
       <UniqueIdentifier>{d01ab72c-4960-412b-8194-420e9e80edca}</UniqueIdentifier>
     </Filter>
-    <Filter Include="源文件\FFmpeg">
-      <UniqueIdentifier>{935589c3-b953-4032-a96c-535bc886468e}</UniqueIdentifier>
-    </Filter>
     <Filter Include="源文件\QML">
       <UniqueIdentifier>{a0681e6f-8451-4634-b917-244b12cf9020}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="源文件\音视频">
-      <UniqueIdentifier>{4c90b61a-35ab-44fd-a554-19f72598df8b}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="源文件\音视频\图像处理">
-      <UniqueIdentifier>{f063c314-13d8-4699-958c-e00fc9225fa7}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="源文件\音视频\流协议">
-      <UniqueIdentifier>{edf4629f-4174-4494-9a79-b8269d85c428}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="源文件\音视频\编码标准">
-      <UniqueIdentifier>{90e23fc7-7944-4bc2-ad5d-56a2ca0914d8}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="源文件\音视频\封装格式">
-      <UniqueIdentifier>{917d8b33-b457-46e1-9791-95464ab9fd24}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="源文件\音视频\音频处理">
-      <UniqueIdentifier>{e8e15a29-980e-472f-aaf7-0f13f250fa7a}</UniqueIdentifier>
     </Filter>
     <Filter Include="源文件\Live555">
       <UniqueIdentifier>{21a2c306-3dbc-46b2-a2b5-4f399874ce04}</UniqueIdentifier>
@@ -117,9 +96,6 @@
     <Filter Include="源文件\SoundTouch">
       <UniqueIdentifier>{5314c157-179a-4964-982c-9556c9c94943}</UniqueIdentifier>
     </Filter>
-    <Filter Include="源文件\音视频\Json解析">
-      <UniqueIdentifier>{4907c30b-bdbe-4e47-9ebc-a9d7d159bdd3}</UniqueIdentifier>
-    </Filter>
     <Filter Include="源文件\Python">
       <UniqueIdentifier>{ffeae56c-da45-41a9-b8e0-25cd3621594e}</UniqueIdentifier>
     </Filter>
@@ -143,6 +119,33 @@
     </Filter>
     <Filter Include="源文件\前端\JavaScript">
       <UniqueIdentifier>{3f659ab5-dde0-4ec4-94cf-7b214e9c4631}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="源文件\9-音视频">
+      <UniqueIdentifier>{4c90b61a-35ab-44fd-a554-19f72598df8b}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="源文件\10-FFmpeg">
+      <UniqueIdentifier>{935589c3-b953-4032-a96c-535bc886468e}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="源文件\9-音视频\1-图像处理">
+      <UniqueIdentifier>{f063c314-13d8-4699-958c-e00fc9225fa7}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="源文件\9-音视频\2-音频处理">
+      <UniqueIdentifier>{e8e15a29-980e-472f-aaf7-0f13f250fa7a}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="源文件\9-音视频\3-编码标准">
+      <UniqueIdentifier>{90e23fc7-7944-4bc2-ad5d-56a2ca0914d8}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="源文件\9-音视频\4-封装格式">
+      <UniqueIdentifier>{917d8b33-b457-46e1-9791-95464ab9fd24}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="源文件\9-音视频\5-流协议">
+      <UniqueIdentifier>{edf4629f-4174-4494-9a79-b8269d85c428}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="源文件\9-音视频\6-Json解析">
+      <UniqueIdentifier>{4907c30b-bdbe-4e47-9ebc-a9d7d159bdd3}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="源文件\STM32">
+      <UniqueIdentifier>{155dd3bf-76d5-428d-91ba-c5ed0e219659}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>
@@ -194,7 +197,7 @@
     <ClCompile Include="算法-8二叉树.cpp">
       <Filter>源文件\7-C++算法</Filter>
     </ClCompile>
-    <ClCompile Include="算法-14排序算法.c">
+    <ClCompile Include="算法-21排序算法.c">
       <Filter>源文件\5-算法与数据结构</Filter>
     </ClCompile>
     <ClCompile Include="系编-1多进程.cpp">
@@ -215,7 +218,7 @@
     <ClCompile Include="算法-10图.cpp">
       <Filter>源文件\7-C++算法</Filter>
     </ClCompile>
-    <ClCompile Include="算法-15图.c">
+    <ClCompile Include="算法-14图.c">
       <Filter>源文件\5-算法与数据结构</Filter>
     </ClCompile>
     <ClCompile Include="系编-5消息队列.cpp">
@@ -320,9 +323,6 @@
     <ClCompile Include="04引用.cpp">
       <Filter>源文件\6-C++语法</Filter>
     </ClCompile>
-    <ClCompile Include="STM32.cpp">
-      <Filter>源文件\其它</Filter>
-    </ClCompile>
     <ClCompile Include="main.cpp">
       <Filter>源文件\8-设计模式\MVC实例</Filter>
     </ClCompile>
@@ -363,13 +363,13 @@
       <Filter>源文件\数据库\MySQL</Filter>
     </ClCompile>
     <ClCompile Include="FFmpeg-1ffmpeg命令行.cpp">
-      <Filter>源文件\FFmpeg</Filter>
+      <Filter>源文件\10-FFmpeg</Filter>
     </ClCompile>
     <ClCompile Include="FFmpeg-3函数库.cpp">
-      <Filter>源文件\FFmpeg</Filter>
+      <Filter>源文件\10-FFmpeg</Filter>
     </ClCompile>
     <ClCompile Include="FFmpeg-6视频解码.cpp">
-      <Filter>源文件\FFmpeg</Filter>
+      <Filter>源文件\10-FFmpeg</Filter>
     </ClCompile>
     <ClCompile Include="C-01数据类型.c">
       <Filter>源文件\1-C语言语法</Filter>
@@ -579,43 +579,43 @@
       <Filter>源文件\QT</Filter>
     </ClCompile>
     <ClCompile Include="FFmpeg-2ffplay命令行.cpp">
-      <Filter>源文件\FFmpeg</Filter>
+      <Filter>源文件\10-FFmpeg</Filter>
     </ClCompile>
-    <ClCompile Include="音视频-1音视频基础.cpp">
-      <Filter>源文件\音视频</Filter>
+    <ClCompile Include="音视频-1基本参数.cpp">
+      <Filter>源文件\9-音视频</Filter>
     </ClCompile>
-    <ClCompile Include="音视频-2音视频采集和处理.cpp">
-      <Filter>源文件\音视频</Filter>
+    <ClCompile Include="音视频-2采集和处理.cpp">
+      <Filter>源文件\9-音视频</Filter>
     </ClCompile>
     <ClCompile Include="图像-1YUV与RGB.cpp">
-      <Filter>源文件\音视频\图像处理</Filter>
+      <Filter>源文件\9-音视频\1-图像处理</Filter>
     </ClCompile>
     <ClCompile Include="图像-5RGB转YUV.cpp">
-      <Filter>源文件\音视频\图像处理</Filter>
+      <Filter>源文件\9-音视频\1-图像处理</Filter>
     </ClCompile>
     <ClCompile Include="图像-4RGB转BMP.cpp">
-      <Filter>源文件\音视频\图像处理</Filter>
+      <Filter>源文件\9-音视频\1-图像处理</Filter>
     </ClCompile>
     <ClCompile Include="图像-3RGB数据处理.cpp">
-      <Filter>源文件\音视频\图像处理</Filter>
+      <Filter>源文件\9-音视频\1-图像处理</Filter>
     </ClCompile>
     <ClCompile Include="图像-2YUV数据处理.cpp">
-      <Filter>源文件\音视频\图像处理</Filter>
+      <Filter>源文件\9-音视频\1-图像处理</Filter>
     </ClCompile>
     <ClCompile Include="流协议-1流媒体传输.cpp">
-      <Filter>源文件\音视频\流协议</Filter>
+      <Filter>源文件\9-音视频\5-流协议</Filter>
     </ClCompile>
     <ClCompile Include="流协议-2RTP协议.cpp">
-      <Filter>源文件\音视频\流协议</Filter>
+      <Filter>源文件\9-音视频\5-流协议</Filter>
     </ClCompile>
     <ClCompile Include="流协议-3RTP解析器.cpp">
-      <Filter>源文件\音视频\流协议</Filter>
+      <Filter>源文件\9-音视频\5-流协议</Filter>
     </ClCompile>
     <ClCompile Include="流协议-5RTSP协议.cpp">
-      <Filter>源文件\音视频\流协议</Filter>
+      <Filter>源文件\9-音视频\5-流协议</Filter>
     </ClCompile>
     <ClCompile Include="流协议-6RTMP协议.cpp">
-      <Filter>源文件\音视频\流协议</Filter>
+      <Filter>源文件\9-音视频\5-流协议</Filter>
     </ClCompile>
     <ClCompile Include="网编-4IP协议和HTTP协议.cpp">
       <Filter>源文件\4-网络编程</Filter>
@@ -630,52 +630,52 @@
       <Filter>源文件\4-网络编程</Filter>
     </ClCompile>
     <ClCompile Include="编码-4H264码流解析.cpp">
-      <Filter>源文件\音视频\编码标准</Filter>
+      <Filter>源文件\9-音视频\3-编码标准</Filter>
     </ClCompile>
     <ClCompile Include="编码-3H264编码原理.cpp">
-      <Filter>源文件\音视频\编码标准</Filter>
+      <Filter>源文件\9-音视频\3-编码标准</Filter>
     </ClCompile>
     <ClCompile Include="编码-6AAC码流解析.cpp">
-      <Filter>源文件\音视频\编码标准</Filter>
+      <Filter>源文件\9-音视频\3-编码标准</Filter>
     </ClCompile>
     <ClCompile Include="编码-2JPEG编码.cpp">
-      <Filter>源文件\音视频\编码标准</Filter>
+      <Filter>源文件\9-音视频\3-编码标准</Filter>
     </ClCompile>
     <ClCompile Include="编码-1编解码协议.cpp">
-      <Filter>源文件\音视频\编码标准</Filter>
+      <Filter>源文件\9-音视频\3-编码标准</Filter>
     </ClCompile>
     <ClCompile Include="流协议-4RTCP协议.cpp">
-      <Filter>源文件\音视频\流协议</Filter>
+      <Filter>源文件\9-音视频\5-流协议</Filter>
     </ClCompile>
     <ClCompile Include="封装-1封装格式.cpp">
-      <Filter>源文件\音视频\封装格式</Filter>
+      <Filter>源文件\9-音视频\4-封装格式</Filter>
     </ClCompile>
     <ClCompile Include="封装-2FLV封装格式.cpp">
-      <Filter>源文件\音视频\封装格式</Filter>
+      <Filter>源文件\9-音视频\4-封装格式</Filter>
     </ClCompile>
     <ClCompile Include="封装-3FLV解析器.cpp">
-      <Filter>源文件\音视频\封装格式</Filter>
+      <Filter>源文件\9-音视频\4-封装格式</Filter>
     </ClCompile>
     <ClCompile Include="音频-1PCM数据处理.cpp">
-      <Filter>源文件\音视频\音频处理</Filter>
+      <Filter>源文件\9-音视频\2-音频处理</Filter>
     </ClCompile>
     <ClCompile Include="音频-2PCM转WAV.cpp">
-      <Filter>源文件\音视频\音频处理</Filter>
+      <Filter>源文件\9-音视频\2-音频处理</Filter>
     </ClCompile>
     <ClCompile Include="封装-4MP4封装格式.cpp">
-      <Filter>源文件\音视频\封装格式</Filter>
+      <Filter>源文件\9-音视频\4-封装格式</Filter>
     </ClCompile>
     <ClCompile Include="编码-5H264解析器.cpp">
-      <Filter>源文件\音视频\编码标准</Filter>
+      <Filter>源文件\9-音视频\3-编码标准</Filter>
     </ClCompile>
     <ClCompile Include="编码-7AAC解析器.cpp">
-      <Filter>源文件\音视频\编码标准</Filter>
+      <Filter>源文件\9-音视频\3-编码标准</Filter>
     </ClCompile>
     <ClCompile Include="FFmpeg-4常用函数.cpp">
-      <Filter>源文件\FFmpeg</Filter>
+      <Filter>源文件\10-FFmpeg</Filter>
     </ClCompile>
     <ClCompile Include="FFmpeg-9ffplay源码分析.cpp">
-      <Filter>源文件\FFmpeg</Filter>
+      <Filter>源文件\10-FFmpeg</Filter>
     </ClCompile>
     <ClCompile Include="CMake.cmake">
       <Filter>源文件\其它</Filter>
@@ -687,10 +687,10 @@
       <Filter>源文件\SDL</Filter>
     </ClCompile>
     <ClCompile Include="FFmpeg-5结构体.cpp">
-      <Filter>源文件\FFmpeg</Filter>
+      <Filter>源文件\10-FFmpeg</Filter>
     </ClCompile>
     <ClCompile Include="FFmpeg-7音频解码.cpp">
-      <Filter>源文件\FFmpeg</Filter>
+      <Filter>源文件\10-FFmpeg</Filter>
     </ClCompile>
     <ClCompile Include="QT-25中文乱码问题.cpp">
       <Filter>源文件\QT</Filter>
@@ -705,7 +705,7 @@
       <Filter>源文件\其它</Filter>
     </ClCompile>
     <ClCompile Include="FFmpeg-8拉流.cpp">
-      <Filter>源文件\FFmpeg</Filter>
+      <Filter>源文件\10-FFmpeg</Filter>
     </ClCompile>
     <ClCompile Include="QML-1总示例.cpp">
       <Filter>源文件\QML</Filter>
@@ -1011,22 +1011,22 @@
       <Filter>源文件\SoundTouch</Filter>
     </ClCompile>
     <ClCompile Include="FFmpeg-10笔记.cpp">
-      <Filter>源文件\FFmpeg</Filter>
+      <Filter>源文件\10-FFmpeg</Filter>
     </ClCompile>
     <ClCompile Include="封装-5TS封装格式.cpp">
-      <Filter>源文件\音视频\封装格式</Filter>
+      <Filter>源文件\9-音视频\4-封装格式</Filter>
     </ClCompile>
     <ClCompile Include="解析-1视频格式.cpp">
-      <Filter>源文件\音视频\Json解析</Filter>
+      <Filter>源文件\9-音视频\6-Json解析</Filter>
     </ClCompile>
     <ClCompile Include="解析-2音频格式.cpp">
-      <Filter>源文件\音视频\Json解析</Filter>
+      <Filter>源文件\9-音视频\6-Json解析</Filter>
     </ClCompile>
     <ClCompile Include="解析-3流协议.cpp">
-      <Filter>源文件\音视频\Json解析</Filter>
+      <Filter>源文件\9-音视频\6-Json解析</Filter>
     </ClCompile>
     <ClCompile Include="解析-4常用协议.cpp">
-      <Filter>源文件\音视频\Json解析</Filter>
+      <Filter>源文件\9-音视频\6-Json解析</Filter>
     </ClCompile>
     <ClCompile Include="GL-1Linux图形系统.cpp">
       <Filter>源文件\OpenGL</Filter>
@@ -1111,6 +1111,24 @@
     </ClCompile>
     <ClCompile Include="Cpp17-4文件系统.cpp">
       <Filter>源文件\6-C++语法\Cpp新特性</Filter>
+    </ClCompile>
+    <ClCompile Include="Pool-5内存分配器（内存池）.cpp">
+      <Filter>源文件\6-C++语法\池设计</Filter>
+    </ClCompile>
+    <ClCompile Include="Git.cpp">
+      <Filter>源文件\其它</Filter>
+    </ClCompile>
+    <ClCompile Include="STD-12类型特征.cpp">
+      <Filter>源文件\6-C++语法\STD标准库</Filter>
+    </ClCompile>
+    <ClCompile Include="STM32-2GPIO.cpp">
+      <Filter>源文件\STM32</Filter>
+    </ClCompile>
+    <ClCompile Include="STM32-1介绍.cpp">
+      <Filter>源文件\STM32</Filter>
+    </ClCompile>
+    <ClCompile Include="STM32-3时钟体系.cpp">
+      <Filter>源文件\STM32</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>

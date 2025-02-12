@@ -48,7 +48,6 @@ Lambda表达式可以在捕获列表中直接初始化捕获的变量： auto lambda = [x = x + 1]() {
 decltype允许使用 auto ： decltype(auto)
 锁函数：std::shared_timed_mutex、std::unique_lock
 算法：std::exchange（交换两个值，避免了中间变量）、std::integer_sequence、std::is_final（判断是否为不能被继承的类）
-算法：std::as_const（标记为常量，避免被const_cast）
 算法改进：std::result_of、std::transform_reduce
 常量表达式增强
 std::get增强：支持更多容器类型
@@ -63,7 +62,7 @@ constexpr 改进
 inline 变量
 统一的可调用对象接口：std::invoke
 算法：std::erase_if（删除容器中符合条件的元素）、std::ranges（范围操作）、std::clamp（限定值的范围）
-算法：std::sample、std::byte、std::invoke_result、std::is_invocable、std::is_invocable_v
+算法：std::sample、std::byte、std::invoke_result、std::is_invocable、std::variant、std::visit、std::as_const（标记为常量，避免被const_cast）
 模板类：std::optional、std::nullopt
 
 

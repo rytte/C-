@@ -35,13 +35,13 @@ void Bubble_sort(int* arr, int len)
 {
 	for (int i = 0; i < len - 1; i++)
 	{
-		for (int n = 0; n < len - i - 1; n++)
+		for (int j = 0; j < len - i - 1; j++)
 		{
-			if (arr[n] > arr[n + 1])
+			if (arr[j] > arr[j + 1])
 			{
-				int temp = arr[n];
-				arr[n] = arr[n + 1];
-				arr[n + 1] = temp;
+				int temp = arr[j];
+				arr[j] = arr[j + 1];
+				arr[j + 1] = temp;
 			}
 		}
 	}
@@ -52,16 +52,16 @@ void Insert_sort(int* arr, int len)
 {
 	for (int i = 1; i < len; i++)
 	{
-		int temp = arr[i];			//保存节点i的值
-		int n;
-		for (n = i; n > 0; n--)
+		int temp = arr[i];			//要插入的元素
+		int j;
+		for (j = i; j > 0; j--)		//向前遍历，将大于 temp 的元素后移
 		{
-			if (temp < arr[n - 1])	//比较若更小则交换该位置与前面的值
-				arr[n] = arr[n - 1];
+			if (temp < arr[j - 1])
+				arr[j] = arr[j - 1];
 			else
 				break;
 		}
-		arr[n] = temp;
+		arr[j] = temp;				//插入元素
 	}
 }
 
@@ -71,10 +71,10 @@ void Select_sort(int* arr, int len)
 	for (int i = 0; i < len - 1; i++)
 	{
 		int min = i;				//先保存当前值的下标
-		for (int n = i + 1; n < len; n++)
+		for (int j = i + 1; j < len; j++)
 		{
-			if (arr[min] > arr[n])	//如果大于后面的数         
-				min = n;			//保存最小值的下标
+			if (arr[j] < arr[min])	//如果小于记录值         
+				min = j;			//保存最小值的下标
 		}
 		int temp = arr[i];			//原值与最小值交换
 		arr[i] = arr[min];
@@ -90,12 +90,12 @@ void Shell_sort(int* arr, int len)
 		for (int i = gap; i < len; i++)
 		{
 			int temp = arr[i];
-			int n;
-			for (n = i - gap; n >= 0 && arr[n] > temp; n -= gap)
+			int j;
+			for (j = i - gap; j >= 0 && arr[j] > temp; j -= gap)
 			{
-				arr[n + gap] = arr[n];
+				arr[j + gap] = arr[j];
 			}
-			arr[n + gap] = temp; 
+			arr[j + gap] = temp; 
 		}
 	}
 }

@@ -133,6 +133,19 @@ NULL在C语言中是(void*)0。 void 类型的指针都可以被转化为其他任何指针类型
 而在C++中是0。由于函数重载的存在，因此不支持如C语言般的隐式转换将 void* 转为其它类型指针
 
 
+/************************************************************/
+编译时函数
+sizeof
+constexpr
+if constexpr
+static_assert
+decltype
+typeid
+noexcept
+alignof
+alignas
+std::is_* 类型特征
+
 
 
 

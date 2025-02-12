@@ -163,6 +163,7 @@
     <ClCompile Include="FFmpeg-7音频解码.cpp" />
     <ClCompile Include="FFmpeg-8拉流.cpp" />
     <ClCompile Include="FTP.cpp" />
+    <ClCompile Include="Git.cpp" />
     <ClCompile Include="GL-1Linux图形系统.cpp" />
     <ClCompile Include="JS-10ES7&amp;8&amp;9新特性.cpp" />
     <ClCompile Include="JS-11ES10&amp;11新特性.cpp" />
@@ -185,6 +186,7 @@
     <ClCompile Include="Pool-2内存池.cpp" />
     <ClCompile Include="Pool-3线程池.cpp" />
     <ClCompile Include="Pool-4缓存池.cpp" />
+    <ClCompile Include="Pool-5内存分配器（内存池）.cpp" />
     <ClCompile Include="QML-1总示例.cpp" />
     <ClCompile Include="QT-24打包.cpp" />
     <ClCompile Include="QT-25中文乱码问题.cpp" />
@@ -193,6 +195,9 @@
     <ClCompile Include="SoundTouch.cpp" />
     <ClCompile Include="SQLite3.cpp" />
     <ClCompile Include="STD-11future与promise.cpp" />
+    <ClCompile Include="STD-12类型特征.cpp" />
+    <ClCompile Include="STM32-2GPIO.cpp" />
+    <ClCompile Include="STM32-3时钟体系.cpp" />
     <ClCompile Include="TS.cpp" />
     <ClCompile Include="UML.cpp" />
     <ClCompile Include="Vue-8语法.vue" />
@@ -257,7 +262,7 @@
     <ClCompile Include="汇编-5汇编器NASM.cpp" />
     <ClCompile Include="汇编-6逆向工程.cpp" />
     <ClCompile Include="C++调用Python.cpp" />
-    <ClCompile Include="音视频-2音视频采集和处理.cpp" />
+    <ClCompile Include="音视频-2采集和处理.cpp" />
     <ClCompile Include="流协议-1流媒体传输.cpp" />
     <ClCompile Include="流协议-2RTP协议.cpp" />
     <ClCompile Include="流协议-3RTP解析器.cpp" />
@@ -265,7 +270,7 @@
     <ClCompile Include="封装-3FLV解析器.cpp" />
     <ClCompile Include="13using与inline.cpp" />
     <ClCompile Include="24模板元编程.cpp" />
-    <ClCompile Include="音视频-1音视频基础.cpp" />
+    <ClCompile Include="音视频-1基本参数.cpp" />
     <ClCompile Include="图像-1YUV与RGB.cpp" />
     <ClCompile Include="21函数重入与线程安全.cpp" />
     <ClCompile Include="22内存分布.cpp" />
@@ -414,13 +419,13 @@
     <ClCompile Include="QT-18工程.cpp" />
     <ClCompile Include="QT-17SQLite数据库.cpp" />
     <ClCompile Include="QT-14QJson.cpp" />
-    <ClCompile Include="算法-15图.c" />
+    <ClCompile Include="算法-14图.c" />
     <ClCompile Include="网编-2TCP.cpp" />
     <ClCompile Include="SDL-3绘制图形与图片.cpp" />
     <ClCompile Include="SDL-4视频播放.cpp" />
     <ClCompile Include="SDL-5音频播放_有回调.cpp" />
     <ClCompile Include="SDL-6音频播放_无回调.cpp" />
-    <ClCompile Include="STM32.cpp" />
+    <ClCompile Include="STM32-1介绍.cpp" />
     <ClCompile Include="TCP_client.c" />
     <ClCompile Include="TCP_server.c" />
     <ClCompile Include="UDP_client.c" />
@@ -440,7 +445,7 @@
     <ClCompile Include="实例_quickdemo.cpp" />
     <ClCompile Include="广播send.c" />
     <ClCompile Include="异步信号驱动server.c" />
-    <ClCompile Include="算法-14排序算法.c" />
+    <ClCompile Include="算法-21排序算法.c" />
     <ClCompile Include="系编-4精灵进程.cpp" />
     <ClCompile Include="文件传输client.c" />
     <ClCompile Include="文件传输server.c" />

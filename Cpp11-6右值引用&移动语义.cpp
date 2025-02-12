@@ -50,8 +50,8 @@ int a = std::move(b);
 template <typename T>
 typename remove_reference<T>::type&& move(T&& t)
 {
-        //其中remove_reference<T>::type是去了引用，然后又加上&&使其变成右值引用，返回。（完美转发）
-        return static_cast<typename remove_reference<T>::type&&>(t);    
+    //其中remove_reference<T>::type是去了引用，然后又加上&&使其变成右值引用，返回。（完美转发）
+    return static_cast<typename remove_reference<T>::type&&>(t);    
 }
 
 
@@ -171,30 +171,33 @@ T&&			R&&		R&&
 
 /************************************************************/
 完美转发 std::forward()
+指将函数参数"完美地"转发给另一个函数，而不会丢失参数的值类别（左值或右值）。主要依赖于 右值引用 和 std::forward 来实现。
 
-普通转发：
+
+//普通转发
 template<class T>
 void normal_forwarding1(T t)
 {
-        show_type(t);                           //会执行构造函数
+    show_type(t);                           //会执行构造函数
 }
 
 template<class T>
 void normal_forwarding1(T& t)
 {
-        show_type(t);                           //不能转发右值
+    show_type(t);                           //不能转发右值
 }
 
 template<class T>
 void normal_forwarding1(const T& t)
 {
-        show_type(t);                           //会改变实参的常量性
+    show_type(t);                           //会改变实参的常量性
 }
 
-完美转发：
+
+//完美转发
 template<class T>
 void normal_forwarding1(T&& t)
 {
-        show_type(static_cast<T&&>(t));         // static_cast 函数中使用了 std::forward()
+    show_type(static_cast<T&&>(t));         // static_cast 函数中使用了 std::forward()
 }
 

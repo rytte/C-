@@ -175,16 +175,16 @@ swresample_strerror				获取错误消息字符串
 swresample_version				获取libswresample库的版本号
 
 //过滤器 libavfilter
-avfilter_register_all					注册所有可用的滤镜
-avfilter_graph_alloc					创建滤镜图
+avfilter_register_all				注册所有可用的滤镜
+avfilter_graph_alloc				创建滤镜图
 avfilter_graph_free					释放滤镜图
 avfilter_graph_parse2				解析滤镜图的字符串描述
 avfilter_get_by_name				通过名称获取滤镜
-avfilter_graph_create_filter			创建滤镜实例
-avfilter_init_str						初始化滤镜参数
+avfilter_graph_create_filter		创建滤镜实例
+avfilter_init_str					初始化滤镜参数
 av_buffersrc_add_frame				向输入缓冲区添加帧数据
 av_buffersink_get_frame				从输出缓冲区获取帧数据
-avfilter_inout_alloc					创建输入输出结构
+avfilter_inout_alloc				创建输入输出结构
 avfilter_inout_free					释放输入输出结构
 avfilter_graph_config				配置滤镜图
 avfilter_version					获取libavfilter库的版本号
