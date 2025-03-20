@@ -130,6 +130,14 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="ArkTS-1ArkTS语法.cpp" />
+    <ClCompile Include="ArkTS-2UI范式基础语法.cpp" />
+    <ClCompile Include="ArkTS-3状态管理.cpp" />
+    <ClCompile Include="ArkTS-4渲染控制.cpp" />
+    <ClCompile Include="ArkTS-5装饰器.cpp" />
+    <ClCompile Include="ArkTS-6应用沙箱目录.cpp" />
+    <ClCompile Include="ArkTS-7记录.cpp" />
+    <ClCompile Include="ArkTS-8文件系统.cpp" />
     <ClCompile Include="Bootstrap.html" />
     <ClCompile Include="C-12原码反码补码.c" />
     <ClCompile Include="CMake.cmake" />
@@ -155,7 +163,9 @@
     <ClCompile Include="demo5-6画板.c" />
     <ClCompile Include="demo5-7简易相册.c" />
     <ClCompile Include="docker.cpp" />
-    <ClCompile Include="ex13-yolo训练结果.py" />
+    <ClCompile Include="网编-12STOMP协议.cpp" />
+    <ClCompile Include="图标.cpp" />
+    <ClCompile Include="ex11-yolo训练结果.py" />
     <ClCompile Include="FFmpeg-10笔记.cpp" />
     <ClCompile Include="FFmpeg-4常用函数.cpp" />
     <ClCompile Include="FFmpeg-5结构体.cpp" />
@@ -202,7 +212,10 @@
     <ClCompile Include="UML.cpp" />
     <ClCompile Include="Vue-8语法.vue" />
     <ClCompile Include="Vue.cpp" />
+    <ClCompile Include="云计算.cpp" />
     <ClCompile Include="函数实现.cpp" />
+    <ClCompile Include="网编-10HTTP协议.cpp" />
+    <ClCompile Include="网编-11WebSocket协议.cpp" />
     <ClCompile Include="解析-1视频格式.cpp" />
     <ClCompile Include="封装-5TS封装格式.cpp" />
     <ClCompile Include="库文件编译和使用.cpp" />
@@ -238,8 +251,7 @@
     <ClCompile Include="算法-9顺序循环队列.c" />
     <ClCompile Include="编码-5H264解析器.cpp" />
     <ClCompile Include="编码-7AAC解析器.cpp" />
-    <ClCompile Include="网编-0计算机网络.cpp" />
-    <ClCompile Include="网编-4IP协议和HTTP协议.cpp" />
+    <ClCompile Include="网编-4IP协议.cpp" />
     <ClCompile Include="网编-6UDP实际应用.cpp" />
     <ClCompile Include="网编-7Socket.cpp" />
     <ClCompile Include="网编-5TCP性能调优.cpp" />
@@ -457,6 +469,7 @@
     <ClCompile Include="试合.cpp" />
     <ClCompile Include="音频-1PCM数据处理.cpp" />
     <ClCompile Include="音频-2PCM转WAV.cpp" />
+    <ClCompile Include="鸿蒙-HDC工具.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="callable.h" />
@@ -472,7 +485,7 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="CSS样式表.cpp" />
-    <None Include="ex12-yolo.py" />
+    <None Include="ex10-yolo.py" />
     <None Include="45-Django.py" />
     <None Include="HTML.htm">
       <DeploymentContent>true</DeploymentContent>
@@ -529,13 +542,11 @@
     <None Include="python\外部\ex02-shell.py" />
     <None Include="python\外部\ex03-makefile和动静态库.py" />
     <None Include="python\外部\ex04-正则表达式.py" />
-    <None Include="python\外部\ex05-HTTP.py" />
-    <None Include="python\外部\ex06-powershell.py" />
-    <None Include="python\外部\ex07-机器学习.py" />
-    <None Include="python\外部\ex08-cpp和py对比.py" />
-    <None Include="python\外部\ex09-Ollama.py" />
-    <None Include="python\外部\ex10-one-api.py" />
-    <None Include="python\外部\ex11-websocket.py" />
+    <None Include="python\外部\ex05-powershell.py" />
+    <None Include="python\外部\ex06-机器学习.py" />
+    <None Include="python\外部\ex07-cpp和py对比.py" />
+    <None Include="python\外部\ex08-Ollama.py" />
+    <None Include="python\外部\ex09-one-api.py" />
     <None Include="Vue-1嵌入.vue" />
     <None Include="Vue-2模板语法.vue" />
     <None Include="Vue-3响应式.vue" />

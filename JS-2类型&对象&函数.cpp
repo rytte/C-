@@ -32,6 +32,8 @@ NaN：非法数字（Not A Number）
 八进制：0 开头表示八进制
 十六进制：0x 开头表示十六进制
 
+let bigIntger : BigInt = BigInt('999999999999999999999999999999999999999999');  //BigInt表示大整数防止精度丢失
+
 
 //Undefined说明
 1、Undefined 类型只有一个值，即 undefined

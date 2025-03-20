@@ -10,6 +10,9 @@ git commit - m "message"	//提交暂存区的更改到本地仓库，并附上更新信息
 git log						//查看提交历史
 git diff					//查看文件差异
 git reset					//撤销某次提交或修改，可以指定回退的提交
+git reset --soft HEAD~1		//撤销最近一次提交但保留修改
+git reset --soft HEAD~3		//撤销最近三次提交但保留修改
+git reset --hard HEAD~1		//撤销最近一次提交并丢弃修改
 
 //分支操作
 git branch					//查看所有分支

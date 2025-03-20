@@ -202,6 +202,16 @@ interface b extends a
 }
 
 
+//类继承（implements关键字）
+implements关键字用于继承并实现接口。
+
+            <extends>	                                        <implements>
+用途	        用于类继承类和接口继承接口。	                        用于类实现接口。
+继承关系	    子类继承父类的实现，或接口继承接口的定义。	            类需要实现接口定义的所有方法，不能只继承。
+支持继承多个	一个类只能继承一个父类（单继承），但可以继承多个接口。	类可以实现多个接口。
+方法实现	    子类继承父类的实现，可以重写父类的方法。	            类必须实现接口定义的所有方法，不可以只声明方法。
+
+
 //元组
 元组是一种特殊的数组。有两点特殊之处，符号[]
 
@@ -267,4 +277,286 @@ const n : number = obj      // obj 可以是任意类型
 还有一种隐式 any，有下面两种情况会触发
 1、声明变量不提供类型也不提供默认值
 2、定义函数时，参数不给类型
+
+
+//函数签名重载（支持构造函数重载）
+class C {
+    foo(x: number) : void;            /* 第一个签名 */
+    foo(x: string) : void;            /* 第二个签名 */
+    foo(x: number | string) : void {  /* 实现签名 */
+    }
+
+    // 可见性修饰符
+    public a : string = '';
+    protected b: string = '';
+    private getCount() : number {
+        return 10
+    }
+}
+let c = new C();
+c.foo(123);     // OK，使用第一个签名
+c.foo('aa');    // OK，使用第二个签名
+
+
+//Record 定义一个字面量对象
+type PersonAge = Record<'Tom' | 'Jerry' | 'Mickey', number>;
+
+const ages : PersonAge = {
+  Tom: 25,
+  Jerry : 30,
+  Mickey : 35,
+};
+
+
+//抽象类语法
+抽象类不能被实例化，必须通过继承来使用。抽象方法没有实现，子类必须实现这些方法。
+abstract class ClassName {
+    abstract methodName() : void; // 抽象方法，没有实现，必须在子类中实现
+    // 可以有非抽象方法
+    regularMethod() {
+        console.log("This is a regular method.");
+    }
+}
+
+
+
+/*************************/泛型/***************************************************************************/
+
+//泛型类与接口
+class CustomStack<Element> {
+    public push(e: Element) :void {
+        // ...
+    }
+}
+
+let s = new CustomStack<string>();
+s.push('hello');
+
+
+//约束
+泛型类型的类型参数可以被限制只能取某些特定的值。例如，MyHashMap<Key, Value>这个类中的Key类型参数必须具有hash方法。
+
+interface Hashable {
+    hash() : number;
+}
+class MyHashMap<Key extends Hashable, Value> {
+    public set(k: Key, v : Value) {
+        let h = k.hash();
+        // ...其他代码...
+    }
+}
+
+
+//泛型函数
+使用泛型函数可编写更通用的代码。比如返回数组最后一个元素的函数：
+function last(x: number[]) : number{
+  return x[x.length - 1];
+}
+last([1, 2, 3]); // 3
+
+如果需要为任何数组定义相同的函数，使用类型参数将该函数定义为泛型：
+function last<T>(x: T[]) : T{
+  return x[x.length - 1];
+}
+
+在函数调用中，类型实参可以显式或隐式设置：
+
+last<string>(['aa', 'bb']);     // 显式设置的类型实参
+last<number>([1, 2, 3]);        // 显式设置的类型实参
+last([1, 2, 3]);                // 隐式设置的类型实参。编译器根据调用参数的类型来确定类型实参
+
+
+//泛型默认值
+泛型类型的类型参数可以设置默认值。这样可以不指定实际的类型实参，而只使用泛型类型名称。下面的示例展示了类和函数的这一点。
+
+class SomeType {}
+interface Interface <T1 = SomeType> { }
+class Base <T2 = SomeType> { }
+class Derived1 extends Base implements Interface { }
+
+class Derived2 extends Base<SomeType> implements Interface<SomeType> { }    // Derived1在语义上等价于Derived2
+
+function foo<T = number>() : T {
+    // ...
+}
+foo();
+foo<number>();      // 此函数在语义上等价于上面的调用
+
+
+//空安全
+TypeScript有严格的空值检查模式，类型的值不能为空
+let x : number = null;    // 编译时错误
+let y : string = null;    // 编译时错误
+let z : number[] = null;  // 编译时错误
+
+可以为空值的变量定义为联合类型T | null。
+let x : number | null = null;
+x = 1;    // ok
+x = null; // ok
+if (x != null) { /* do something */ }
+
+
+//非空断言运算符
+后缀运算符!可用于断言其操作数为非空。
+应用于可空类型的值时，它的编译时类型变为非空类型。例如，类型将从T | null更改为T：
+class A {
+value: number = 0;
+}
+
+function foo(a : A | null) {
+    a.value;   // 编译时错误：无法访问可空值的属性
+    a!.value;  // 编译通过，如果运行时a的值非空，可以访问到a的属性；如果运行时a的值为空，则发生运行时异常
+}
+
+
+//空值合并运算符
+空值合并二元运算符 ? ? 用于检查左侧表达式的求值是否等于null或者undefined。如果是，则表达式的结果为右侧表达式；否则，结果为左侧表达式。
+
+换句话说，a ? ? b等价于三元运算符(a != null && a != undefined) ? a : b。
+
+在以下示例中，getNick方法如果设置了昵称，则返回昵称；否则，返回空字符串：
+
+class Person {
+    // ...
+nick: string | null = null;
+    getNick() : string{
+      return this.nick ? ? '';
+    }
+}
+
+
+//可选链
+在访问对象属性时，如果该属性是undefined或者null，可选链运算符会返回undefined。
+
+class Person {
+nick: string | null = null;
+    spouse ? : Person
+
+        setSpouse(spouse : Person) : void {
+        this.spouse = spouse;
+    }
+
+    getSpouseNick() : string | null | undefined{
+      return this.spouse ? .nick;
+    }
+
+        constructor(nick : string) {
+        this.nick = nick;
+        this.spouse = undefined;
+    }
+}
+
+说明：getSpouseNick的返回类型必须为string | null | undefined，因为该方法可能返回null或者undefined。
+
+可选链可以任意长，可以包含任意数量的 ? .运算符。
+
+在以下示例中，如果一个Person的实例有不为空的spouse属性，且spouse有不为空的nick属性，则输出spouse.nick。否则，输出undefined：
+
+class Person {
+nick: string | null = null;
+    spouse ? : Person;
+
+    constructor(nick: string) {
+        this.nick = nick;
+        this.spouse = undefined;
+    }
+}
+
+let p : Person = new Person('Alice');
+p.spouse ? .nick; // undefined
+
+
+
+/*************************/模块/***************************************************************************/
+模块
+程序可划分为多组编译单元或模块。
+
+每个模块都有其自己的作用域，即，在模块中创建的任何声明（变量、函数、类等）在该模块之外都不可见，除非它们被显式导出。
+
+与此相对，从另一个模块导出的变量、函数、类、接口等必须首先导入到模块中。
+
+导出
+可以使用关键字export导出顶层的声明。
+
+未导出的声明名称被视为私有名称，只能在声明该名称的模块中使用。
+
+export class Point {
+x: number = 0;
+y: number = 0;
+    constructor(x: number, y : number) {
+        this.x = x;
+        this.y = y;
+    }
+}
+export let Origin = new Point(0, 0);
+export function Distance(p1: Point, p2 : Point) : number{
+  return Math.sqrt((p2.x - p1.x) * (p2.x - p1.x) + (p2.y - p1.y) * (p2.y - p1.y));
+}
+导入
+静态导入
+
+导入声明用于导入从其他模块导出的实体，并在当前模块中提供其绑定。导入声明由两部分组成：
+
+导入路径，用于指定导入的模块；
+导入绑定，用于定义导入的模块中的可用实体集和使用形式（限定或不限定使用）。
+导入绑定可以有几种形式。
+
+假设模块具有路径“. / utils”和导出实体“X”和“Y”。
+
+导入绑定 * as A表示绑定名称“A”，通过A.name可访问从导入路径指定的模块导出的所有实体：
+
+import * as Utils from './utils';
+Utils.X // 表示来自Utils的X
+Utils.Y // 表示来自Utils的Y
+导入绑定{ ident1, ..., identN }表示将导出的实体与指定名称绑定，该名称可以用作简单名称：
+
+import { X, Y } from './utils';
+X // 表示来自utils的X
+Y // 表示来自utils的Y
+如果标识符列表定义了ident as alias，则实体ident将绑定在名称alias下：
+
+import { X as Z, Y } from './utils';
+Z // 表示来自Utils的X
+Y // 表示来自Utils的Y
+X // 编译时错误：'X'不可见
+动态导入
+
+应用开发的有些场景中，如果希望根据条件导入模块或者按需导入模块，可以使用动态导入代替静态导入。
+
+import()语法通常称为动态导入（dynamic import），是一种类似函数的表达式，用来动态导入模块。以这种方式调用，将返回一个promise。
+
+如下例所示，import(modulePath)可以加载模块并返回一个promise，该promise resolve为一个包含其所有导出的模块对象。该表达式可以在代码中的任意位置调用。
+
+// Calc.ts
+export function add(a:number, b : number) :number{
+  let c = a + b;
+  console.info('Dynamic import, %d + %d = %d', a, b, c);
+  return c;
+}
+
+// Index.ts
+import("./Calc").then((obj: ESObject) => {
+console.info(obj.add(3, 5));
+}).catch ((err: Error) = > {
+    console.error("Module dynamic import error: ", err);
+});
+如果在异步函数中，可以使用let module = await import(modulePath)。
+
+// say.ts
+export function hi() {
+    console.log('Hello');
+}
+export function bye() {
+    console.log('Bye');
+}
+那么，可以像下面这样进行动态导入：
+
+async function test() {
+    let ns = await import('./say');
+    let hi = ns.hi;
+    let bye = ns.bye;
+    hi();
+    bye();
+}
+
 

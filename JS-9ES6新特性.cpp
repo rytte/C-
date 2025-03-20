@@ -65,6 +65,7 @@ console.log(tags);          //["车手", "歌手", "小旋风", "演员"]
 
 //模板字符串
 模板字符串（Template Literals）是一种定义字符串的新方式，用反引号(``) 包裹，可以轻松地嵌入变量和表达式。
+${变量名} 可以引用变量。
 
 const name = 'Alice';
 const greeting = `Hello, ${ name }!`;
@@ -182,6 +183,17 @@ class Person
 }
 const person = new Person('Alice');
 person.greet(); // 输出: Hello, Alice
+
+class Xiaoming extends Person {       // extends 关键字进行类继承
+    constructor(name) {
+        super(name);                // super() 调用父类构造
+    }
+    greet()
+    {
+        super.greet();              // super.方法名 调用父类方法
+        super.name = "xiaoming"     // super.变量名 调用父类属性
+    }
+};   
 
 
 //数值扩展

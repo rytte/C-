@@ -147,6 +147,12 @@
     <Filter Include="源文件\STM32">
       <UniqueIdentifier>{155dd3bf-76d5-428d-91ba-c5ed0e219659}</UniqueIdentifier>
     </Filter>
+    <Filter Include="源文件\鸿蒙">
+      <UniqueIdentifier>{d49fda2c-44b3-4b4f-aeda-a658ff9b1e31}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="源文件\鸿蒙\ArkTS">
+      <UniqueIdentifier>{3b714098-70f4-4f5a-9749-652feba30f8c}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="算法-1顺序表.c">
@@ -617,7 +623,7 @@
     <ClCompile Include="流协议-6RTMP协议.cpp">
       <Filter>源文件\9-音视频\5-流协议</Filter>
     </ClCompile>
-    <ClCompile Include="网编-4IP协议和HTTP协议.cpp">
+    <ClCompile Include="网编-4IP协议.cpp">
       <Filter>源文件\4-网络编程</Filter>
     </ClCompile>
     <ClCompile Include="网编-6UDP实际应用.cpp">
@@ -893,9 +899,6 @@
     <ClCompile Include="系编-0操作系统.cpp">
       <Filter>源文件\3-系统编程</Filter>
     </ClCompile>
-    <ClCompile Include="网编-0计算机网络.cpp">
-      <Filter>源文件\4-网络编程</Filter>
-    </ClCompile>
     <ClCompile Include="STD-1标准库.cpp">
       <Filter>源文件\6-C++语法\STD标准库</Filter>
     </ClCompile>
@@ -1040,7 +1043,7 @@
     <ClCompile Include="NAPI.cpp">
       <Filter>源文件\前端</Filter>
     </ClCompile>
-    <ClCompile Include="ex13-yolo训练结果.py">
+    <ClCompile Include="ex11-yolo训练结果.py">
       <Filter>源文件\Python\外部</Filter>
     </ClCompile>
     <ClCompile Include="SQLite3.cpp">
@@ -1129,6 +1132,48 @@
     </ClCompile>
     <ClCompile Include="STM32-3时钟体系.cpp">
       <Filter>源文件\STM32</Filter>
+    </ClCompile>
+    <ClCompile Include="鸿蒙-HDC工具.cpp">
+      <Filter>源文件\鸿蒙</Filter>
+    </ClCompile>
+    <ClCompile Include="ArkTS-2UI范式基础语法.cpp">
+      <Filter>源文件\鸿蒙\ArkTS</Filter>
+    </ClCompile>
+    <ClCompile Include="ArkTS-1ArkTS语法.cpp">
+      <Filter>源文件\鸿蒙\ArkTS</Filter>
+    </ClCompile>
+    <ClCompile Include="ArkTS-3状态管理.cpp">
+      <Filter>源文件\鸿蒙\ArkTS</Filter>
+    </ClCompile>
+    <ClCompile Include="ArkTS-4渲染控制.cpp">
+      <Filter>源文件\鸿蒙\ArkTS</Filter>
+    </ClCompile>
+    <ClCompile Include="ArkTS-5装饰器.cpp">
+      <Filter>源文件\鸿蒙\ArkTS</Filter>
+    </ClCompile>
+    <ClCompile Include="ArkTS-6应用沙箱目录.cpp">
+      <Filter>源文件\鸿蒙\ArkTS</Filter>
+    </ClCompile>
+    <ClCompile Include="ArkTS-7记录.cpp">
+      <Filter>源文件\鸿蒙\ArkTS</Filter>
+    </ClCompile>
+    <ClCompile Include="ArkTS-8文件系统.cpp">
+      <Filter>源文件\鸿蒙\ArkTS</Filter>
+    </ClCompile>
+    <ClCompile Include="网编-10HTTP协议.cpp">
+      <Filter>源文件\4-网络编程</Filter>
+    </ClCompile>
+    <ClCompile Include="网编-11WebSocket协议.cpp">
+      <Filter>源文件\4-网络编程</Filter>
+    </ClCompile>
+    <ClCompile Include="云计算.cpp">
+      <Filter>源文件\其它</Filter>
+    </ClCompile>
+    <ClCompile Include="图标.cpp">
+      <Filter>源文件\其它</Filter>
+    </ClCompile>
+    <ClCompile Include="网编-12STOMP协议.cpp">
+      <Filter>源文件\4-网络编程</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -1284,28 +1329,22 @@
     <None Include="python\外部\ex04-正则表达式.py">
       <Filter>源文件\Python\外部</Filter>
     </None>
-    <None Include="python\外部\ex05-HTTP.py">
+    <None Include="python\外部\ex05-powershell.py">
       <Filter>源文件\Python\外部</Filter>
     </None>
-    <None Include="python\外部\ex06-powershell.py">
+    <None Include="python\外部\ex06-机器学习.py">
       <Filter>源文件\Python\外部</Filter>
     </None>
-    <None Include="python\外部\ex07-机器学习.py">
+    <None Include="python\外部\ex07-cpp和py对比.py">
       <Filter>源文件\Python\外部</Filter>
     </None>
-    <None Include="python\外部\ex08-cpp和py对比.py">
+    <None Include="python\外部\ex08-Ollama.py">
       <Filter>源文件\Python\外部</Filter>
     </None>
-    <None Include="python\外部\ex09-Ollama.py">
+    <None Include="python\外部\ex09-one-api.py">
       <Filter>源文件\Python\外部</Filter>
     </None>
-    <None Include="python\外部\ex10-one-api.py">
-      <Filter>源文件\Python\外部</Filter>
-    </None>
-    <None Include="python\外部\ex11-websocket.py">
-      <Filter>源文件\Python\外部</Filter>
-    </None>
-    <None Include="ex12-yolo.py">
+    <None Include="ex10-yolo.py">
       <Filter>源文件\Python\外部</Filter>
     </None>
     <None Include="45-Django.py">

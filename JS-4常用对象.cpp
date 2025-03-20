@@ -217,3 +217,44 @@ var result = reg.test(str);
 console.log(result);            //true
 
 
+
+/*************************/Setter和Getter/***************************************************************************/
+function Person() {
+    var _name = ''; // 私有属性
+
+    // 使用 Object.defineProperty 定义 getter 和 setter
+    Object.defineProperty(this, 'name', {
+      get: function() {
+        return _name;
+      },
+      set : function(value) {
+        _name = value;
+      },
+      enumerable : true, // 属性可以枚举
+      configurable : true // 属性可以配置（删除或重新定义）
+        });
+}
+
+var jack = new Person();
+jack.name = 'Jack';  // 调用 setter
+console.log(jack.name);  // 调用 getter，输出 "Jack"
+
+
+//ES6的类语法支持
+class Person {
+    private _name: string = '';  // 私有属性，使用 _name 表示内部使用的属性
+
+    // getter
+    get name() : string{
+      return this._name;
+    }
+
+    // setter
+    set name(value : string) {
+    this._name = value;
+    }
+}
+
+let jack = new Person();
+jack.name = 'Jack';  // 调用 setter
+console.log(jack.name);  // 调用 getter，输出 "Jack"
