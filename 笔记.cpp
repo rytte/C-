@@ -667,3 +667,391 @@ printf("Video duration: %.3f seconds\n", microseconds / 1000 / 1000);
     }
 }
 
+
+
+
+
+
+
+
+
+
+{
+    "body": {
+        "messageBody": {
+            "planInfo": {
+                "stationCount": 10,
+                "stationInfoList": [
+                    {
+                        "firstLastTrainInfo": [
+                            {
+                                "destinationCode": "010",
+                                "destinationId": "0.12.0",
+                                "flag": "first train",
+                                "pisStationId": "0.12.9",
+                                "platformId": 21,
+                                "scheduledArrivalTime": "06:29",
+                                "scheduledDepartTime": "06:29",
+                                "serverNumber": "008",
+                                "stationId": 10
+                            }
+                        ],
+                        "index": 1,
+                        "name": "0.12.9",
+                        "platInfoId": 21,
+                        "stationCode": 10,
+                        "trainInfoList": [
+                            {
+                                "arrivalStatus": 0,
+                                "coachList": [
+                                    {
+                                        "crowded": "1",
+                                        "id": "1"
+                                    },
+                                    {
+                                        "crowded": "2",
+                                        "id": "2"
+                                    },
+                                    {
+                                        "crowded": "3",
+                                        "id": "3"
+                                    },
+                                    {
+                                        "crowded": "4",
+                                        "id": "4"
+                                    },
+                                    {
+                                        "crowded": "5",
+                                        "id": "5"
+                                    },
+                                    {
+                                        "crowded": "1",
+                                        "id": "6"
+                                    }
+                                ],
+                                "compartmentCount": 0,
+                                "departureStatus": 0,
+                                "destinationCodeLen": 0,
+                                "driverNumber": -1,
+                                "english_status": "3Min",
+                                "express": "0",
+                                "holdStatus": 0,
+                                "orderNumber": "11",
+                                "otpTime": 2,
+                                "outOfService": "no clear",
+                                "passengerAttributesStatus": 1,
+                                "preArrival": 0,
+                                "scheduledArrivalTime": "2024-11-16 21:46:01",
+                                "scheduledDepartTime": "2024-11-16 21:46:36",
+                                "serialid": 1,
+                                "serverNumber": "018",
+                                "skipStatus": 0,
+                                "status": "3分钟",
+                                "terminal": "0.12.0",
+                                "trainCnFlag": "正常",
+                                "trainFlag": "no",
+                                "trainId": "12028",
+                                "trainScheduleList": [
+
+                                ],
+                                "validityField": "valid"
+                            },
+                            {
+                                "arrivalStatus": 0,
+                                "coachList": [
+                                    {
+                                        "crowded": "1",
+                                        "id": "1"
+                                    },
+                                    {
+                                        "crowded": "1",
+                                        "id": "2"
+                                    },
+                                    {
+                                        "crowded": "1",
+                                        "id": "3"
+                                    },
+                                    {
+                                        "crowded": "1",
+                                        "id": "4"
+                                    },
+                                    {
+                                        "crowded": "2",
+                                        "id": "5"
+                                    },
+                                    {
+                                        "crowded": "1",
+                                        "id": "6"
+                                    }
+                                ],
+                                "compartmentCount": 0,
+                                "departureStatus": 0,
+                                "destinationCodeLen": 0,
+                                "driverNumber": -1,
+                                "english_status": "10Min",
+                                "express": "0",
+                                "holdStatus": 0,
+                                "orderNumber": "09",
+                                "otpTime": 29,
+                                "outOfService": "no clear",
+                                "passengerAttributesStatus": 1,
+                                "preArrival": 0,
+                                "scheduledArrivalTime": "2024-11-16 21:52:32",
+                                "scheduledDepartTime": "2024-11-16 21:53:07",
+                                "serialid": 2,
+                                "serverNumber": "030",
+                                "skipStatus": 0,
+                                "status": "10分钟",
+                                "terminal": "0.12.0",
+                                "trainCnFlag": "正常",
+                                "trainFlag": "no",
+                                "trainId": "12051",
+                                "validityField": "valid"
+                            },
+                            {
+                                "arrivalStatus": 0,
+                                "coachList": [
+                                    {
+                                        "crowded": "1",
+                                        "id": "1"
+                                    },
+                                    {
+                                        "crowded": "1",
+                                        "id": "2"
+                                    },
+                                    {
+                                        "crowded": "1",
+                                        "id": "3"
+                                    },
+                                    {
+                                        "crowded": "1",
+                                        "id": "4"
+                                    },
+                                    {
+                                        "crowded": "1",
+                                        "id": "5"
+                                    },
+                                    {
+                                        "crowded": "1",
+                                        "id": "6"
+                                    }
+                                ],
+                                "compartmentCount": 0,
+                                "departureStatus": 0,
+                                "destinationCodeLen": 0,
+                                "driverNumber": -1,
+                                "english_status": "16Min",
+                                "express": "0",
+                                "holdStatus": 0,
+                                "orderNumber": "11",
+                                "otpTime": 20,
+                                "outOfService": "no clear",
+                                "passengerAttributesStatus": 1,
+                                "preArrival": 0,
+                                "scheduledArrivalTime": "2024-11-16 21:58:27",
+                                "scheduledDepartTime": "2024-11-16 21:59:02",
+                                "serialid": 3,
+                                "serverNumber": "021",
+                                "skipStatus": 0,
+                                "status": "16分钟",
+                                "terminal": "0.12.0",
+                                "trainCnFlag": "正常",
+                                "trainFlag": "no",
+                                "trainId": "12015",
+                                "validityField": "valid"
+                            }
+                        ]
+                    },
+                    {
+                        "firstLastTrainInfo": [
+                            {
+                                "destinationCode": "010",
+                                "destinationId": "0.12.0",
+                                "flag": "first train",
+                                "pisStationId": "0.12.14",
+                                "platformId": 30,
+                                "scheduledArrivalTime": "06:17",
+                                "scheduledDepartTime": "06:18",
+                                "serverNumber": "008",
+                                "stationId": 15
+                            }
+                        ],
+                        "index": 1,
+                        "name": "0.12.14",
+                        "platInfoId": 30,
+                        "stationCode": 15,
+                        "trainInfoList": [
+                            {
+                                "arrivalStatus": 0,
+                                "coachList": [
+                                    {
+                                        "crowded": "1",
+                                        "id": "1"
+                                    },
+                                    {
+                                        "crowded": "1",
+                                        "id": "2"
+                                    },
+                                    {
+                                        "crowded": "1",
+                                        "id": "3"
+                                    },
+                                    {
+                                        "crowded": "1",
+                                        "id": "4"
+                                    },
+                                    {
+                                        "crowded": "2",
+                                        "id": "5"
+                                    },
+                                    {
+                                        "crowded": "1",
+                                        "id": "6"
+                                    }
+                                ],
+                                "compartmentCount": 0,
+                                "departureStatus": 1,
+                                "destinationCodeLen": 0,
+                                "driverNumber": -1,
+                                "english_status": "1Min",
+                                "express": "0",
+                                "holdStatus": 0,
+                                "orderNumber": "09",
+                                "otpTime": 29,
+                                "outOfService": "no clear",
+                                "passengerAttributesStatus": 1,
+                                "preArrival": 0,
+                                "scheduledArrivalTime": "2024-11-16 21:42:18",
+                                "scheduledDepartTime": "2024-11-16 21:43:03",
+                                "serialid": 0,
+                                "serverNumber": "030",
+                                "skipStatus": 0,
+                                "status": "1分钟",
+                                "terminal": "0.12.0",
+                                "trainCnFlag": "正常",
+                                "trainFlag": "no",
+                                "trainId": "12051",
+                                "validityField": "valid"
+                            },
+                            {
+                                "arrivalStatus": 0,
+                                "coachList": [
+                                    {
+                                        "crowded": "1",
+                                        "id": "1"
+                                    },
+                                    {
+                                        "crowded": "1",
+                                        "id": "2"
+                                    },
+                                    {
+                                        "crowded": "1",
+                                        "id": "3"
+                                    },
+                                    {
+                                        "crowded": "1",
+                                        "id": "4"
+                                    },
+                                    {
+                                        "crowded": "1",
+                                        "id": "5"
+                                    },
+                                    {
+                                        "crowded": "1",
+                                        "id": "6"
+                                    }
+                                ],
+                                "compartmentCount": 0,
+                                "departureStatus": 0,
+                                "destinationCodeLen": 0,
+                                "driverNumber": -1,
+                                "english_status": "5Min",
+                                "express": "0",
+                                "holdStatus": 0,
+                                "orderNumber": "11",
+                                "otpTime": 20,
+                                "outOfService": "no clear",
+                                "passengerAttributesStatus": 1,
+                                "preArrival": 0,
+                                "scheduledArrivalTime": "2024-11-16 21:47:22",
+                                "scheduledDepartTime": "2024-11-16 21:48:07",
+                                "serialid": 1,
+                                "serverNumber": "021",
+                                "skipStatus": 0,
+                                "status": "5分钟",
+                                "terminal": "0.12.0",
+                                "trainCnFlag": "正常",
+                                "trainFlag": "no",
+                                "trainId": "12015",
+                                "trainScheduleList": [
+
+                                ],
+                                "validityField": "valid"
+                            },
+                            {
+                                "arrivalStatus": 0,
+                                "coachList": [
+                                    {
+                                        "crowded": "1",
+                                        "id": "1"
+                                    },
+                                    {
+                                        "crowded": "1",
+                                        "id": "2"
+                                    },
+                                    {
+                                        "crowded": "1",
+                                        "id": "3"
+                                    },
+                                    {
+                                        "crowded": "1",
+                                        "id": "4"
+                                    },
+                                    {
+                                        "crowded": "1",
+                                        "id": "5"
+                                    },
+                                    {
+                                        "crowded": "1",
+                                        "id": "6"
+                                    }
+                                ],
+                                "compartmentCount": 0,
+                                "departureStatus": 0,
+                                "destinationCodeLen": 0,
+                                "driverNumber": -1,
+                                "english_status": "11Min",
+                                "express": "0",
+                                "holdStatus": 0,
+                                "orderNumber": "11",
+                                "otpTime": 29,
+                                "outOfService": "no clear",
+                                "passengerAttributesStatus": 1,
+                                "preArrival": 0,
+                                "scheduledArrivalTime": "2024-11-16 21:53:35",
+                                "scheduledDepartTime": "2024-11-16 21:54:20",
+                                "serialid": 2,
+                                "serverNumber": "011",
+                                "skipStatus": 0,
+                                "status": "11分钟",
+                                "terminal": "0.12.0",
+                                "trainCnFlag": "正常",
+                                "trainFlag": "no",
+                                "trainId": "12011",
+                                "validityField": "valid"
+                            }
+                        ]
+                    }
+                ]
+            }
+        },
+        "messageCommand": "ATS_PLAN"
+    },
+    "header": {
+        "end": true,
+        "messageNo": "1205eacb-36e5-4830-b195-6d03af78a23a",
+        "messageType": "P2P_command_message",
+        "timeout": 10,
+        "zzflag": "end"
+    }
+}

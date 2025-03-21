@@ -153,6 +153,12 @@
     <Filter Include="源文件\鸿蒙\ArkTS">
       <UniqueIdentifier>{3b714098-70f4-4f5a-9749-652feba30f8c}</UniqueIdentifier>
     </Filter>
+    <Filter Include="源文件\中间件">
+      <UniqueIdentifier>{7db5df41-e58e-4a66-9b8e-206dbe584342}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="源文件\中间件\消息队列系统">
+      <UniqueIdentifier>{8b8f226f-bcdf-421b-a195-5eea97fc47d8}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="算法-1顺序表.c">
@@ -1173,6 +1179,21 @@
       <Filter>源文件\其它</Filter>
     </ClCompile>
     <ClCompile Include="网编-12STOMP协议.cpp">
+      <Filter>源文件\4-网络编程</Filter>
+    </ClCompile>
+    <ClCompile Include="MQ-1RabbitMQ.cpp">
+      <Filter>源文件\中间件\消息队列系统</Filter>
+    </ClCompile>
+    <ClCompile Include="ArkTS-9异步并发.cpp">
+      <Filter>源文件\鸿蒙\ArkTS</Filter>
+    </ClCompile>
+    <ClCompile Include="ArkTS-10多线程并发.cpp">
+      <Filter>源文件\鸿蒙\ArkTS</Filter>
+    </ClCompile>
+    <ClCompile Include="网编-13RPC技术.cpp">
+      <Filter>源文件\4-网络编程</Filter>
+    </ClCompile>
+    <ClCompile Include="网编-14Protobuf.cpp">
       <Filter>源文件\4-网络编程</Filter>
     </ClCompile>
   </ItemGroup>
