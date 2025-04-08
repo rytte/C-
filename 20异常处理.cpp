@@ -120,7 +120,7 @@ using namespace std;
 
 struct MyException : public exception
 {
-    const char* what() const throw ()
+    const char* what() const throw ()          // throw() 是异常规格说明符。括号内写该函数可抛出的异常类型
     {
         return "C++ Exception";
     }
@@ -147,20 +147,4 @@ int main()
 MyException caught
 C++ Exception
 在这里，what() 是异常类提供的一个公共方法，它已被所有子异常类重载。这将返回异常产生的原因。
-
-
-
-对于:
-const char* what() const throw ()
-{
-    //函数体
-}
-做几点说明，从左到右看：
-
-1. const char* 表示返回值类型
-2. what 是函数名称
-3. () 是参数列表
-4. const 表示该成员函数不能修改成员变量
-5. throw() 是异常规格说明符。括号内写该函数可抛出的异常类型
-
 

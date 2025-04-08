@@ -18,6 +18,18 @@ OpenCV的OCL模块中，在GPU上进行运算之前我们必须把内存转成GPU可以直接调用的显存。
 
 
 
+/******************************/手动编译（启用CUDA支持）/******************************************************************************************/
+1、下载源码 https://opencv.org/releases/
+2、下载额外模块的扩展库 https://github.com/opencv/opencv_contrib
+3、编辑 CMakeLists.txt
+(1) WITH_CUDA 选项设为 ON
+(2) OPENCV_EXTRA_MODULES_PATH 设置为 "opencv_contrib-4.x/modules" 完整路径
+4、创建build目录并进入
+5、执行 "cmake -DBUILD_opencv_world=ON -DBUILD_TESTS=OFF -DBUILD_PERF_TESTS=OFF .."
+6、执行 "MSBuild OpenCV.sln /p:Configuration=Release /p:Platform=x64 /m:8"
+
+
+
 /******************************/Mat的创建、复制、释放/******************************************************************************************/
 枚举类型 type ： enum { CV_8U = 0, CV_8S = 1, CV_16U = 2, CV_16S = 3, CV_32S = 4, CV_32F = 5, CV_64F = 6 };
 分别对应，8位无符号(uchar)、8位有符号(char)、16位无符号(ushort)、16位有符号(short)、32位有符号(int)、32位浮点(float)和64位双精度(double)；

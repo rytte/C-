@@ -130,6 +130,7 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="46-Django-前后端分离.py" />
     <ClCompile Include="ArkTS-10多线程并发.cpp" />
     <ClCompile Include="ArkTS-1ArkTS语法.cpp" />
     <ClCompile Include="ArkTS-2UI范式基础语法.cpp" />
@@ -165,7 +166,9 @@
     <ClCompile Include="demo5-6画板.c" />
     <ClCompile Include="demo5-7简易相册.c" />
     <ClCompile Include="docker.cpp" />
+    <ClCompile Include="JS-5内置类型.cpp" />
     <ClCompile Include="MQ-1RabbitMQ.cpp" />
+    <ClCompile Include="打印版.cpp" />
     <ClCompile Include="网编-12STOMP协议.cpp" />
     <ClCompile Include="图标.cpp" />
     <ClCompile Include="ex11-yolo训练结果.py" />
@@ -178,17 +181,17 @@
     <ClCompile Include="FTP.cpp" />
     <ClCompile Include="Git.cpp" />
     <ClCompile Include="GL-1Linux图形系统.cpp" />
-    <ClCompile Include="JS-10ES7&amp;8&amp;9新特性.cpp" />
-    <ClCompile Include="JS-11ES10&amp;11新特性.cpp" />
+    <ClCompile Include="JS-11ES7·8·9新特性.cpp" />
+    <ClCompile Include="JS-12ES10·11·12新特性.cpp" />
     <ClCompile Include="JS-1基本介绍.cpp" />
     <ClCompile Include="JS-2类型&amp;对象&amp;函数.cpp" />
     <ClCompile Include="JS-3原型&amp;继承&amp;作用域.cpp" />
     <ClCompile Include="JS-4常用对象.cpp" />
-    <ClCompile Include="JS-5DOM.cpp" />
-    <ClCompile Include="JS-6BOM.cpp" />
-    <ClCompile Include="JS-7异常&amp;JSON&amp;AJAX.cpp" />
-    <ClCompile Include="JS-8Cookie&amp;WebStorage&amp;闭包.cpp" />
-    <ClCompile Include="JS-9ES6新特性.cpp" />
+    <ClCompile Include="JS-6DOM.cpp" />
+    <ClCompile Include="JS-7BOM.cpp" />
+    <ClCompile Include="JS-8异常&amp;JSON&amp;AJAX.cpp" />
+    <ClCompile Include="JS-9Cookie&amp;WebStorage&amp;闭包.cpp" />
+    <ClCompile Include="JS-10ES6新特性.cpp" />
     <ClCompile Include="JSX&amp;TSX.cpp" />
     <ClCompile Include="Live-1概述.cpp" />
     <ClCompile Include="Live-2testOnDemandRTSPServer.cpp" />
@@ -221,6 +224,8 @@
     <ClCompile Include="网编-11WebSocket协议.cpp" />
     <ClCompile Include="网编-13RPC技术.cpp" />
     <ClCompile Include="网编-14Protobuf.cpp" />
+    <ClCompile Include="网编-15SIP协议.cpp" />
+    <ClCompile Include="网编-16SDP协议.cpp" />
     <ClCompile Include="解析-1视频格式.cpp" />
     <ClCompile Include="封装-5TS封装格式.cpp" />
     <ClCompile Include="库文件编译和使用.cpp" />
@@ -558,6 +563,7 @@
     <None Include="Vue-4计算属性.vue" />
     <None Include="Vue-5class与style绑定.vue" />
     <None Include="Vue-6条件渲染和列表渲染.vue" />
+    <None Include="Vue-9ElementPlus库.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

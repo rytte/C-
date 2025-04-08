@@ -33,9 +33,6 @@
     <Filter Include="源文件\1-C语言语法">
       <UniqueIdentifier>{cbf42b85-8f0b-4f45-b75a-093804c6b896}</UniqueIdentifier>
     </Filter>
-    <Filter Include="源文件\Python与C++相互调用">
-      <UniqueIdentifier>{91b8e302-feb5-4420-80d1-5e58fa8734e2}</UniqueIdentifier>
-    </Filter>
     <Filter Include="源文件\8-设计模式">
       <UniqueIdentifier>{557f9706-16fa-4b92-a4f1-4146d36b1133}</UniqueIdentifier>
     </Filter>
@@ -158,6 +155,9 @@
     </Filter>
     <Filter Include="源文件\中间件\消息队列系统">
       <UniqueIdentifier>{8b8f226f-bcdf-421b-a195-5eea97fc47d8}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="源文件\Python\与C++交互">
+      <UniqueIdentifier>{fab1d510-d5c9-49f6-99a6-bce111d127f3}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>
@@ -788,12 +788,6 @@
     <ClCompile Include="算法-13并查集.c">
       <Filter>源文件\5-算法与数据结构</Filter>
     </ClCompile>
-    <ClCompile Include="Python调用C++.cpp">
-      <Filter>源文件\Python与C++相互调用</Filter>
-    </ClCompile>
-    <ClCompile Include="C++调用Python.cpp">
-      <Filter>源文件\Python与C++相互调用</Filter>
-    </ClCompile>
     <ClCompile Include="文件-1系统IO.cpp">
       <Filter>源文件\2-文件IO</Filter>
     </ClCompile>
@@ -1070,25 +1064,25 @@
     <ClCompile Include="JS-4常用对象.cpp">
       <Filter>源文件\前端\JavaScript</Filter>
     </ClCompile>
-    <ClCompile Include="JS-5DOM.cpp">
+    <ClCompile Include="JS-6DOM.cpp">
       <Filter>源文件\前端\JavaScript</Filter>
     </ClCompile>
-    <ClCompile Include="JS-6BOM.cpp">
+    <ClCompile Include="JS-7BOM.cpp">
       <Filter>源文件\前端\JavaScript</Filter>
     </ClCompile>
-    <ClCompile Include="JS-7异常&amp;JSON&amp;AJAX.cpp">
+    <ClCompile Include="JS-8异常&amp;JSON&amp;AJAX.cpp">
       <Filter>源文件\前端\JavaScript</Filter>
     </ClCompile>
-    <ClCompile Include="JS-8Cookie&amp;WebStorage&amp;闭包.cpp">
+    <ClCompile Include="JS-9Cookie&amp;WebStorage&amp;闭包.cpp">
       <Filter>源文件\前端\JavaScript</Filter>
     </ClCompile>
-    <ClCompile Include="JS-9ES6新特性.cpp">
+    <ClCompile Include="JS-10ES6新特性.cpp">
       <Filter>源文件\前端\JavaScript</Filter>
     </ClCompile>
-    <ClCompile Include="JS-10ES7&amp;8&amp;9新特性.cpp">
+    <ClCompile Include="JS-11ES7·8·9新特性.cpp">
       <Filter>源文件\前端\JavaScript</Filter>
     </ClCompile>
-    <ClCompile Include="JS-11ES10&amp;11新特性.cpp">
+    <ClCompile Include="JS-12ES10·11·12新特性.cpp">
       <Filter>源文件\前端\JavaScript</Filter>
     </ClCompile>
     <ClCompile Include="Bootstrap.html">
@@ -1195,6 +1189,27 @@
     </ClCompile>
     <ClCompile Include="网编-14Protobuf.cpp">
       <Filter>源文件\4-网络编程</Filter>
+    </ClCompile>
+    <ClCompile Include="C++调用Python.cpp">
+      <Filter>源文件\Python\与C++交互</Filter>
+    </ClCompile>
+    <ClCompile Include="Python调用C++.cpp">
+      <Filter>源文件\Python\与C++交互</Filter>
+    </ClCompile>
+    <ClCompile Include="JS-5内置类型.cpp">
+      <Filter>源文件\前端\JavaScript</Filter>
+    </ClCompile>
+    <ClCompile Include="46-Django-前后端分离.py">
+      <Filter>源文件\Python</Filter>
+    </ClCompile>
+    <ClCompile Include="网编-15SIP协议.cpp">
+      <Filter>源文件\4-网络编程</Filter>
+    </ClCompile>
+    <ClCompile Include="网编-16SDP协议.cpp">
+      <Filter>源文件\4-网络编程</Filter>
+    </ClCompile>
+    <ClCompile Include="打印版.cpp">
+      <Filter>源文件\6-C++语法</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -1429,6 +1444,9 @@
       <Filter>源文件\前端\Vue</Filter>
     </None>
     <None Include="Vue-6条件渲染和列表渲染.vue">
+      <Filter>源文件\前端\Vue</Filter>
+    </None>
+    <None Include="Vue-9ElementPlus库.cpp">
       <Filter>源文件\前端\Vue</Filter>
     </None>
   </ItemGroup>

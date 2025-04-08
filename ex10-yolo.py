@@ -8,9 +8,10 @@ YOLO：主要用于对象检测、分割、姿态估计、跟踪和分类。基�
 https://docs.ultralytics.com/zh
 
 
-#模型导出为onnx格式
+#模型导出为onnx格式（ONNX 推理通常要求输入尺寸固定，因此建议 保持训练/导出和推理的输入尺寸一致）
 pip install onnx
-yolo export model=/path/to/yolo11n.pt format=onnx opset=12
+yolo export model=/path/to/yolo11n.pt imgsz=480,640 format=onnx opset=12
+
 
 
 ('''********************'''环境安装'''************************************************************'''

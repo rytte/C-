@@ -38,7 +38,7 @@ class 和 struct 的区别
 typedef 是关键字，在编译时处理，有类型检查功能。在自己的作用域内给一个已存在的类型起别名，但不能在函数定义里面使用 typedef 。
 
 定义指针的区别：
-#define ptr int* p
+#define ptr int*
 ptr a, b;					//a是int * a,    b是 int b
 typedef  int* ptr;
 ptr a, b;					//a是int * a,    b是 int* b

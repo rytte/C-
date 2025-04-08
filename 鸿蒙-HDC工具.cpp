@@ -17,7 +17,7 @@ bm(Bundle Manager) 主要用于操作和管理系统中的应用 Bundle（应用包和相关资源）。
 hdc shell					//进入shell命令行
 hdc shell <shell命令>		//执行shell命令
 hdc -v						//查看版本号
-hdc list target				//查看设备编号列表，-v参数可显示详细信息
+hdc list targets			//查看设备编号列表，-v参数可显示详细信息
 hdc shell bm get --udid		//查询设备udid
 hdc target boot				//重启设备
 hdc - kill					//停止hdc server

@@ -122,7 +122,8 @@ QString：string的派生类
 
 QString->String
 QString qstr;
-String str = qstr.toStdString(); //QString转换为String
+String str = qstr.toStdString();	  //QString转换为String
+String str = qstr.toUtf8.constData(); //QString转换为String
 String->QString
 String str;
 QString qstr = QString::fromStdString(str); //String转换为QString

@@ -1,4 +1,4 @@
-/*************************/ECMAScript7新特性/***************************************************************************/
+/********************/ES7新特性/************************************************************/
 //数组方法扩展
 Array.prototype.includes：此方法用来检测数组中是否包含某个元素，返回布尔类型值
 
@@ -7,23 +7,25 @@ console.log(mingzhu.includes("西游记"));			//true
 
 
 //幂运算
-**操作符的作用和 Math.pow 的作用是一样，请看代码：
+**操作符的作用和 Math.pow 的作用是一样，如下：
 
 console.log(2 ** 10);
 console.log(Math.pow(2, 10));
 
 
 
-/*************************/ECMAScript8新特性/***************************************************************************/
+/********************/ES8新特性/************************************************************/
 //async 函数
 async function fn() {
 
 }
 
 async 函数的返回值：
-1、返回的结果不是一个 Promise 类型的对象，返回的结果就是成功 Promise 对象
-2、返回的结果如果是一个 Promise 对象，具体需要看执行resolve方法还是reject方法
-3、抛出错误，返回的结果是一个失败的 Promise
+1、async 函数始终返回 Promise。
+2、如果 return 一个普通值，则自动封装为 Promise.resolve(value)。
+3、如果 return 一个 Promise，则直接返回该 Promise。
+4、如果 throw 错误，则返回 Promise.reject(error)。
+5、需要使用 then / catch 处理 async 函数的返回值，或者用 await。
 
 //实例
 async function fn() 
@@ -69,7 +71,6 @@ async function fun()              //await 要放在 async 函数中.
         console.log(e);
     }
 }
-
 fun();      //调用函数
 
 
@@ -109,21 +110,41 @@ async function fun()        // async 与 await 测试
     console.log(joke);
     console.error(tianqi);//为了区别数据，我这里用红色的error输出
 }
-
 fun();      // 调用函数
 
 
 //对象方法拓展
-Object.keys()           //返回一个给定对象的所有可枚举键值的数组
-Object.values()         //返回一个给定对象的所有可枚举属性值的数组
-Object.entries()        //返回一个给定对象自身可遍历属性[key, value] 的数组
-Object.getOwnPropertyDescriptors    //返回指定对象所有自身属性的描述对象
+Object.keys()           //返回一个对象的所有可枚举键值的数组
+Object.values()         //返回一个对象的所有可枚举属性值的数组
+Object.entries()        //返回一个对象的所有键值对的数组
+Object.getOwnPropertyDescriptors    //返回对象所有自身属性的描述对象
+
+
+//Trailing Comma
+允许函数参数最后加逗号，提高可读性
+
+
+//字符串方法拓展
+String.prototype.padStart() / padEnd()	    //补全字符串，格式化文本
+
+console.log("5".padStart(3, "0")); // "005"
+console.log("123".padEnd(6, ".")); // "123..."
+
+
+//多线程共享内存，提高性能
+【SharedArrayBuffer】允许多个 Web Worker 共享内存。
+【Atomics】          提供原子操作，防止多线程竞争条件（race condition）。
+
+const buffer = new SharedArrayBuffer(1024);
+const view = new Uint8Array(buffer);
+Atomics.store(view, 0, 42);
+console.log(Atomics.load(view, 0)); // 42
 
 
 
-/*************************/ECMAScript9新特性/***************************************************************************/
+/********************/ES9新特性/************************************************************/
 //对象拓展
-Rest 参数与 spread 扩展运算符在 ES6 中已经引入，不过 ES6 中只针对于数组，在 ES9 中为对象提供了像数组一样的 rest 参数和扩展运算符
+对象也支持 Rest 参数与 spread 扩展运算符
 
 //对象展开
 function connect({ host, port, ...user }) 
@@ -154,11 +175,7 @@ const skillThree = {
     e: '天雷破'
 };
 
-const skillFour = {
-    r: '猛龙摆尾'
-};
-
-const mangseng = { ...skillOne, ...skillTwo, ...skillThree, ...skillFour };
+const mangseng = { ...skillOne, ...skillTwo, ...skillThree };
 console.log(mangseng);
 
 

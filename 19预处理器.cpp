@@ -55,20 +55,13 @@ using namespace std;
 
 int main()
 {
-    cout << "Value of __LINE__ : " << __LINE__ << endl;
-    cout << "Value of __FILE__ : " << __FILE__ << endl;
-    cout << "Value of __DATE__ : " << __DATE__ << endl;
-    cout << "Value of __TIME__ : " << __TIME__ << endl;
+    cout << "Value of __LINE__ : " << __LINE__ << endl;     // Value of __LINE__ : 6
+    cout << "Value of __FILE__ : " << __FILE__ << endl;     // Value of __FILE__ : test.cpp
+    cout << "Value of __DATE__ : " << __DATE__ << endl;     // Value of __DATE__ : Feb 28 2011
+    cout << "Value of __TIME__ : " << __TIME__ << endl;     // Value of __TIME__ : 18 : 52 : 48
 
     return 0;
 }
-当上面的代码被编译和执行时，它会产生下列结果：
-
-Value of __LINE__ : 6
-Value of __FILE__ : test.cpp
-Value of __DATE__ : Feb 28 2011
-Value of __TIME__ : 18 : 52 : 48
-
 
 //消除VS的安全警告
 _CRT_SECURE_NO_WARNINGS
