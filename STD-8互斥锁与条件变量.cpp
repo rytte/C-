@@ -54,8 +54,16 @@ try_lock_for		//尝试锁住互斥量在一段时间内，如果超过时长则�
 try_lock_until		//尝试锁住互斥量到一个时间点，如果超过指定时间点则失败。（timed_mutex）
 
 
-//对比unique_lock 和 lock_guard
-二者都是自释放锁；lock_guard 在时间和空间上都比unique_lock要快；lock_guard 功能单一，只能用作自释放锁；unique_lock具备lock_guard的所有能力，同时提供更多的能力，比如锁的成员函数都会被封装后导出，同时不会引入double lock和 double unlock；
+//unique_lock 和 lock_guard 对比
+特性						std::lock_guard 		std::unique_lock 
+RAII自动加锁解锁			✅ 是					✅ 是
+可手动 lock / unlock		❌ 否（构造时立即加锁）	✅ 支持
+支持延迟加锁				❌ 否					✅ 是（defer_lock）
+支持尝试加锁（try_lock）	❌ 否					✅ 是
+可移动（move - only）	❌ 否					✅ 是
+占用空间大				✅ 小（紧凑）			❌ 略大
+效率高					✅ 快（功能少）			❌ 略慢（功能多）
+条件变量必须使用它		❌ 否					✅ 是（配合 cv.wait）
 
 
 //那么为什么有时候需要unlock()？

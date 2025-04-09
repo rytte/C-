@@ -20,7 +20,8 @@ char16_t myString[] = u"Hello, char16_t!";		// 声明一个char16_t字符串
 NULL在C语言中是(void*)0。 void 类型的指针都可以被转化为其他任何指针类型
 #define NULL (void*)0
 
-而在C++中是0。由于函数重载的存在，因此不支持如C语言般的隐式转换将 void* 转为其它类型指针
+而在C++中是0。由于函数重载的存在，因此不支持如C语言般的隐式转换将 void* 转为其它类型指针，
+因而引入 nullptr ， nullptr 值为0，类型为std::nullptr_t。
 // lmcons.h中定义NULL的源码  
 #ifndef NULL  
 #ifdef __cplusplus  

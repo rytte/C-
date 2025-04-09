@@ -1,39 +1,3 @@
-/********************/QMainWindow/************************************************************/
-常用的窗口 - QWidget、QDialog、QMainWindow
-QWidget继承于QObject和QPaintDevice，QDialog和QMainWindow则继承于QWidget
-
-QWidget类是所有用户界面对象的基类。
-QDialog类是对话框窗口的基类。
-QMainWindow类提供一个有菜单条、工具栏、状态条的主应用程序窗口。
-
-QMainWindow拥有自己的布局，我们可以使用QMenuBar（菜单栏）、QToolBar（工具栏）、QStatusBar（状态栏）
-以及QDockWidget（悬浮窗体），布局有一个可由任何种类小窗口所占据的中心区域。
-
-
-#include<QMainWindow>
-qmake： QT += widgets
-
-
-
-UI底层界面就是CentralWidget对象。
-
-Q_OBJECT		宏定义，实现信号与槽的功能
-
-ui->setupUi		UI界面的QMainWindow窗口框架和各种控件初始化。
-
-Ctrl + F		在帮助索引中搜索相关内容。
-
-
-QT工程编译后会生成一个build文件，程序在这里执行。
-
-
-void setWindowTitle(const QString&)          //设置窗口标题
-void setWindowIcon(Icon(":/资源图片名"))     //设置窗口图标
-
-
-
-
-
 /********************/自定义窗口界面/************************************************************/
 //无边框：设置窗口标志为无边框
 setWindowFlags(Qt::FramelessWindowHint | windowFlags());
@@ -71,3 +35,25 @@ void ListWindow::mouseMoveEvent(QMouseEvent* event)
 {
 	this->move(event->globalPos() - this->dPos);
 }
+
+
+
+/********************/页面切换/************************************************************/
+设计师界面类模版：
+MainWindow：继承QMainWindow，创建全新的窗口界面。
+Widget：	继承QWidget，覆盖原窗口上的UI，不会新建窗口。
+
+窗口切换 :
+1、新建文件（设计师界面类）创建新窗口
+2、包含新窗口头文件
+3、设置槽函数
+4、槽函数触发：创建新界面对象，同时传入旧界面指针this或引用，p->show()显示新窗口，使用this->hide()方法隐藏旧窗口。
+
+旧窗口信息传入新窗口 :
+方法一: 在旧窗口的槽函数中利用新窗口对象指针p调用新窗口处理信息的成员函数，传入信息对象或字符串。
+方法二 : 重载新窗口的构造函数，在创建新窗口对象时传入信息对象或字符串。
+
+销毁新窗口 :
+this->parentWidget()->show()	返回上一级窗口
+delete this						销毁窗口
+

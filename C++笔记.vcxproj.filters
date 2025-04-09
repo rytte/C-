@@ -386,31 +386,25 @@
     <ClCompile Include="C-01数据类型.c">
       <Filter>源文件\1-C语言语法</Filter>
     </ClCompile>
-    <ClCompile Include="QT-1基础与QString.cpp">
+    <ClCompile Include="QT-5样式表.cpp">
       <Filter>源文件\QT</Filter>
     </ClCompile>
-    <ClCompile Include="QT-2样式表.cpp">
+    <ClCompile Include="QT-21信号与槽.cpp">
       <Filter>源文件\QT</Filter>
     </ClCompile>
-    <ClCompile Include="QT-3信号与槽.cpp">
+    <ClCompile Include="QT-13QJson.cpp">
       <Filter>源文件\QT</Filter>
     </ClCompile>
-    <ClCompile Include="QT-14QJson.cpp">
+    <ClCompile Include="QT-15SQLite数据库.cpp">
       <Filter>源文件\QT</Filter>
     </ClCompile>
-    <ClCompile Include="QT-17SQLite数据库.cpp">
-      <Filter>源文件\QT</Filter>
-    </ClCompile>
-    <ClCompile Include="QT-18工程.cpp">
+    <ClCompile Include="QT-27工程.cpp">
       <Filter>源文件\QT</Filter>
     </ClCompile>
     <ClCompile Include="QT-4对话框.cpp">
       <Filter>源文件\QT</Filter>
     </ClCompile>
-    <ClCompile Include="QT-5文件.cpp">
-      <Filter>源文件\QT</Filter>
-    </ClCompile>
-    <ClCompile Include="QT-6图像.cpp">
+    <ClCompile Include="QT-6文件与图像.cpp">
       <Filter>源文件\QT</Filter>
     </ClCompile>
     <ClCompile Include="QT-7布局管理器.cpp">
@@ -431,16 +425,16 @@
     <ClCompile Include="QT-12网络模块.cpp">
       <Filter>源文件\QT</Filter>
     </ClCompile>
-    <ClCompile Include="QT-15事件.cpp">
+    <ClCompile Include="QT-22事件.cpp">
       <Filter>源文件\QT</Filter>
     </ClCompile>
-    <ClCompile Include="QT-19调试.cpp">
+    <ClCompile Include="QT-28调试.cpp">
       <Filter>源文件\QT</Filter>
     </ClCompile>
     <ClCompile Include="mplayer.cpp">
       <Filter>源文件\其它</Filter>
     </ClCompile>
-    <ClCompile Include="QT-13快捷键.cpp">
+    <ClCompile Include="QT-26快捷键.cpp">
       <Filter>源文件\QT</Filter>
     </ClCompile>
     <ClCompile Include="C标准库-3string.h">
@@ -449,7 +443,7 @@
     <ClCompile Include="C标准库-1stdio.h">
       <Filter>头文件</Filter>
     </ClCompile>
-    <ClCompile Include="QT-2QMainWindow.cpp">
+    <ClCompile Include="QT-2UI控件.cpp">
       <Filter>源文件\QT</Filter>
     </ClCompile>
     <ClCompile Include="C-02运算符&amp;逻辑结构.c">
@@ -575,19 +569,16 @@
     <ClCompile Include="设计模式-6策略模式.cpp">
       <Filter>源文件\8-设计模式</Filter>
     </ClCompile>
-    <ClCompile Include="QT-20绘图系统.cpp">
+    <ClCompile Include="QT-23绘图系统.cpp">
       <Filter>源文件\QT</Filter>
     </ClCompile>
-    <ClCompile Include="QT-21宏定义.cpp">
+    <ClCompile Include="QT-14自定义控件.cpp">
       <Filter>源文件\QT</Filter>
     </ClCompile>
-    <ClCompile Include="QT-16自定义控件.cpp">
+    <ClCompile Include="QT-24键盘事件.cpp">
       <Filter>源文件\QT</Filter>
     </ClCompile>
-    <ClCompile Include="QT-22键盘事件.cpp">
-      <Filter>源文件\QT</Filter>
-    </ClCompile>
-    <ClCompile Include="QT-23鼠标事件.cpp">
+    <ClCompile Include="QT-25鼠标事件.cpp">
       <Filter>源文件\QT</Filter>
     </ClCompile>
     <ClCompile Include="FFmpeg-2ffplay命令行.cpp">
@@ -692,7 +683,7 @@
     <ClCompile Include="CMake.cmake">
       <Filter>源文件\其它</Filter>
     </ClCompile>
-    <ClCompile Include="QT-24打包.cpp">
+    <ClCompile Include="QT-29打包.cpp">
       <Filter>源文件\QT</Filter>
     </ClCompile>
     <ClCompile Include="SDL-2核心API.cpp">
@@ -704,7 +695,7 @@
     <ClCompile Include="FFmpeg-7音频解码.cpp">
       <Filter>源文件\10-FFmpeg</Filter>
     </ClCompile>
-    <ClCompile Include="QT-25中文乱码问题.cpp">
+    <ClCompile Include="QT-30中文乱码问题.cpp">
       <Filter>源文件\QT</Filter>
     </ClCompile>
     <ClCompile Include="工具链.cpp">
@@ -1210,6 +1201,15 @@
     </ClCompile>
     <ClCompile Include="打印版.cpp">
       <Filter>源文件\6-C++语法</Filter>
+    </ClCompile>
+    <ClCompile Include="QT-1QT与QtCreator.cpp">
+      <Filter>源文件\QT</Filter>
+    </ClCompile>
+    <ClCompile Include="QT-20元对象系统.cpp">
+      <Filter>源文件\QT</Filter>
+    </ClCompile>
+    <ClCompile Include="QT-3窗口与页面管理.cpp">
+      <Filter>源文件\QT</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>

@@ -36,7 +36,7 @@ auto 其它用法
 
 
 /********************/decltype 关键字/************************************************************/
-decltype 关键字可以用于求表达式的类型.是"declare type"的缩写，译为“声明类型”
+decltype 关键字可以用于求表达式的类型.是"declare type"的缩写，译为"声明类型"
 decltype(exp) 会推导exp（表达式）的类型并替换掉整个"decltype(exp)"
 例如：decltype(10.8) x = 5.5;		//x 被推导成了 double
 
