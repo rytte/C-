@@ -395,10 +395,10 @@
     <ClCompile Include="QT-13QJson.cpp">
       <Filter>源文件\QT</Filter>
     </ClCompile>
-    <ClCompile Include="QT-15SQLite数据库.cpp">
+    <ClCompile Include="QT-14SQLite数据库.cpp">
       <Filter>源文件\QT</Filter>
     </ClCompile>
-    <ClCompile Include="QT-27工程.cpp">
+    <ClCompile Include="QT-27qmake.cpp">
       <Filter>源文件\QT</Filter>
     </ClCompile>
     <ClCompile Include="QT-4对话框.cpp">
@@ -428,7 +428,7 @@
     <ClCompile Include="QT-22事件.cpp">
       <Filter>源文件\QT</Filter>
     </ClCompile>
-    <ClCompile Include="QT-28调试.cpp">
+    <ClCompile Include="QT-28QDebug.cpp">
       <Filter>源文件\QT</Filter>
     </ClCompile>
     <ClCompile Include="mplayer.cpp">
@@ -572,7 +572,7 @@
     <ClCompile Include="QT-23绘图系统.cpp">
       <Filter>源文件\QT</Filter>
     </ClCompile>
-    <ClCompile Include="QT-14自定义控件.cpp">
+    <ClCompile Include="QT-26自定义控件.cpp">
       <Filter>源文件\QT</Filter>
     </ClCompile>
     <ClCompile Include="QT-24键盘事件.cpp">
@@ -695,7 +695,7 @@
     <ClCompile Include="FFmpeg-7音频解码.cpp">
       <Filter>源文件\10-FFmpeg</Filter>
     </ClCompile>
-    <ClCompile Include="QT-30中文乱码问题.cpp">
+    <ClCompile Include="QT-30QString与编码问题.cpp">
       <Filter>源文件\QT</Filter>
     </ClCompile>
     <ClCompile Include="工具链.cpp">
@@ -728,7 +728,7 @@
     <ClCompile Include="QML-6动画.cpp">
       <Filter>源文件\QML</Filter>
     </ClCompile>
-    <ClCompile Include="QML-7工程.cpp">
+    <ClCompile Include="QML-7交互.cpp">
       <Filter>源文件\QML</Filter>
     </ClCompile>
     <ClCompile Include="QML-8打包.cpp">
@@ -1210,6 +1210,18 @@
     </ClCompile>
     <ClCompile Include="QT-3窗口与页面管理.cpp">
       <Filter>源文件\QT</Filter>
+    </ClCompile>
+    <ClCompile Include="QT-31其它问题.cpp">
+      <Filter>源文件\QT</Filter>
+    </ClCompile>
+    <ClCompile Include="音视频-3H264视频处理.cpp">
+      <Filter>源文件\9-音视频</Filter>
+    </ClCompile>
+    <ClCompile Include="FFmpeg-21H264封装为MP4.cpp">
+      <Filter>源文件\10-FFmpeg</Filter>
+    </ClCompile>
+    <ClCompile Include="FFmpeg-22BFS.cpp">
+      <Filter>源文件\10-FFmpeg</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>

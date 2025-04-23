@@ -163,7 +163,7 @@ FU Header格式如下：
 
 
 
-/*************************/H264封装示例/***************************************************************************/
+/*************************/发包/***************************************************************************/
 1、SPS、PPS采用单包模式发送。
 2、I帧、P帧采用FU - A分包模式发送。
 3、注意RTP Header中Mark标记位的设置和相对时间戳的设置。 MARK标记的是首包
@@ -177,49 +177,128 @@ FU Header格式如下：
 像Flash这样的播放器，每次需要一个完整的帧数据，那么把2个AUD之间的数据按照格式打包给播放器就可以了。
 
 
-//总结
-总的来说，H264的码流的打包方式有两种, 一种为annex - b（也叫byte stream format）的格式，
-这个是绝大部分编码器的默认输出格式，就是每个帧的开头的3~4个字节是H264的start_code, 0x00000001或者0x000001；
-另一种是原始的NAL打包格式AVCC，就是开始的若干字节（1，2，4字节）是NAL的长度，而不是start_code, 
-此时必须借助某个全局的数据来获得编码器的profile, level, PPS, SPS等信息才可以解码。
+
+/********************/AVCC 和 Annex - B/************************************************************/
+//AVCC和Annex-B
+AVCC 和 Annex - B 是 H.264（或 HEVC）码流的两种封装格式，主要区别在于它们如何 标识 NAL 单元（NALU），也就是编码后的一帧一帧数据的组织方式。
+
+Annex - B：适合直播或流式传输（如 RTSP、MPEG - TS），播放器边收边播。
+AVCC：适合本地文件或点播（如 MP4），支持快速定位和精准索引，节省空间。
 
 
-//H.264的NALU单元组织格式
-这里需要了解下H264打包方式，所谓打包方式就是如何组织一连串的NALU单元为完整的H264码流，目前有两种主流格式：
-Annex-B 和 AVCC，两种格式都有防止竞争字节。
+//主要区别
+区别有两点：一个是参数集(SPS, PPS)组织格式；一个是分隔。
+Annex - B：使用起始码分隔NAL(起始码为三字节或四字节，0x000001或0x00000001，一般是四字节)；SPS和PPS按流的方式写在头部。
+AVCC：使用NALU长度（4字节）分隔NAL；在头部包含extradata(或sequence header)的结构体。（extradata包含分隔的字节数、SPS和PPS）
 
-//一、Annex-B:（适合传输流）
-通过起始码startCode(0x00000001或0x000001)来分割NALU,打包方式如下：
-[start Code]–[NALU]–[start code]–[NALU]…
 
-Annex B格式通常用于实时的流格式，比如说传输流，通过无线传输的广播、DVD等。
-在这些格式中通常会周期性的重复SPS和PPS包，经常是在每一个关键帧之前，
-因此据此建立解码器可以一个随机访问的点，这样就可以加入一个正在进行的流，及播放一个已经在传输的流。
+//AVCC和Annex-B区别
+特性					Annex - B									AVCC（又叫 AVC1）
+NALU 分隔符			使用起始码（Start Code）						使用长度前缀（Length Prefix）
+起始码格式			0x000001 或 0x00000001						无起始码
+结构					[0x00000001][NALU][0x00000001][NALU] ...	[4字节长度][NALU][4字节长度][NALU] ...
+封装用途				TS、FLV(RTMP)、裸流、RTSP 等流式封装			MP4、FLV、MKV、MOV
+是否包含 SPS / PPS	通常每个关键帧前包含 SPS / PPS				SPS / PPS 在 mp4 的 extradata 中
 
-//二、AVCC:（主要应用于MP4、FLV、MKV格式）
-([extradata]) | ([length] NALU) | ([length] NALU) | …
-这种模式也叫AVC1格式，和上述Annex-b相比没有起始码。 
-其中AVCC这种格式下NALU一般没有sps、pps等参数信息，这些信息属于额外数据extradata存放在其他地方。
-extradata后面就是nalu数据，在每帧前面几个字节（通常是4字节）是帧长度。
 
-AVCC格式的一个优点是在开始配置解码器的时候可以跳到流的中间播放，
-这种格式通常用于可以被随机访问的多媒体数据，如存储在硬盘的文件。
-也因为这个特性，MP4、MKV通常用AVCC格式来存储。
 
-第1字节：version(通常0x01)
-第2字节：avc profile(值同第1个sps的第2字节)
-第3字节：avc compatibility(值同第1个sps的第3字节)
-第4字节：avc level(值同第1个sps的第3字节)
-第5字节前6位：保留全1
-第5字节后2位：NALU Length 字段大小减1，通常这个值为3，即NAL码流中使用3 + 1 = 4字节表示NALU的长度
-第6字节前3位：保留，全1
-第6字节后5位：SPS NALU的个数，通常为1
-第7字节开始后接1个或者多个SPS数据
-SPS结构[16位 SPS长度][SPS NALU data]
+aligned(8) class AVCDecoderConfigurationRecord {
+    unsigned int(8) configurationVersion = 1;
+    unsigned int(8) AVCProfileIndication;
+    unsigned int(8) profile_compatibility;
+    unsigned int(8) AVCLevelIndication;
+    bit(6) reserved = ‘111111’b;
+    unsigned int(2) lengthSizeMinusOne;
+    bit(3) reserved = ‘111’b;
+    unsigned int(5) numOfSequenceParameterSets;
+    for (i = 0; i < numOfSequenceParameterSets; i++) {
+        unsigned int(16) sequenceParameterSetLength;
+        bit(8 * sequenceParameterSetLength) sequenceParameterSetNALUnit;
+    }
+    unsigned int(8) numOfPictureParameterSets;
+    for (i = 0; i < numOfPictureParameterSets; i++) {
+        unsigned int(16) pictureParameterSetLength;
+        bit(8 * pictureParameterSetLength) pictureParameterSetNALUnit;
+    }
+}
 
-SPS数据后
-第1字节：PPS的个数，通常为1
-第2字节开始接1个或多个PPS数据
-PPS结构[16位 PPS长度][SPS NALU data]
+//extradata
+/*
+ * extradata: [1字节编码格式][4字节 SPS 的数量][2字节SPS的NALU长度][SPS的NALU][2字节PPS的NALU长度][PPS的NALU]
+ *
+ * extradata = {
+ *     0x01,                    // 标识数据格式（在某些情况下为 0x01 表示 AVCC 格式）
+ *     0x06, 0x00, 0x1E, 0xFF,  // 第5个字节的低5位为 SPS 的数量
+ *     0x00, 0x1F,              // SPS NAL unit 的长度，此处表示长度为 31 字节，如果是 AnnexB 格式的话，此处为起始码
+ *     0x67, 0x64, 0x00, 0x1F,  // SPS NAL unit (0x67开头; 包括图像大小、色彩信息等)
+ *     0x4D, 0x40, 0x1F, 0xD5,
+ *     0xA9, 0x90, 0x6F, 0x21,
+ *     0x00, 0x1F,              // PPS NAL unit 的长度，此处表示长度为 31 字节
+ *     0x68, 0x64, 0x00, 0x1F,  // PPS NAL unit (0x68开头; 编码的图像参数)
+ *     0x4D, 0x40, 0x1F, 0xD5,
+ *     0xA9, 0x90, 0x6F, 0x22
+ * };
+ */
+
+AVCProfileIndication 一般取值为 66、77、88、100、110、122、244，对应的 Profile 分别是 Baseline、Main、Extended、High、High10、High422、High444。
+AVCLevelIndication 一般取值为 30、31、32、40、41、42、50、51、52，对应的 Level 分别是 3.0、3.1、3.2、4.0、4.1、4.2、5.0、5.1、5.2。
+
+
+AVCProfileIndication(8 bits)
+这是一个 8 位的值，表示 AVC 编码器使用的 Profile（编码配置文件）。
+
+常见的 H.264 Profile 值如下：
+0x42：Baseline Profile
+0x4D：Main Profile
+0x58：High Profile
+这个值用于指示解码器支持的 Profile 类型，它与编码视频时选择的 Profile 类型匹配。
+
+profile_compatibility(8 bits)
+这也是一个 8 位的值，表示 Profile Compatibility（配置文件兼容性）。它是一个位字段，每一位表示对特定 Profile 的支持。例如，如果一个位为 1，表示支持该 Profile。
+该字段的各个比特位通常用于表示支持的其他 Profile，如：
+比特0：是否支持 Baseline Profile
+比特1：是否支持 Main Profile
+比特2：是否支持 High Profile
+等等...
+
+AVCLevelIndication(8 bits)
+这是一个 8 位的值，表示 AVC Level（级别）。AVC Level 定义了视频的编码复杂度和分辨率限制。
+这个值表明视频流的级别限制，影响视频的分辨率、帧率等。
+
+reserved(6 bits)
+这 6 位是保留位，通常被设为 111111，意味着这些位应保持为 1，并且没有实际的用途。它们只用于对齐和协议兼容性。
+
+lengthSizeMinusOne(2 bits)
+这 2 位表示 NAL 单元长度字段 的大小，值为 lengthSizeMinusOne。
+它用于指示 NALU 长度字段的大小。lengthSizeMinusOne 是 NALU 长度字段大小减去 1。具体来说，它表示：
+00 表示 NAL 单元大小为 1 字节（即 4 字节）
+01 表示 NAL 单元大小为 2 字节（即 16 字节）
+10 表示 NAL 单元大小为 4 字节（即 64 字节）
+11 是无效的。
+
+
+
+//✅ Annex - B 示例（用于流媒体）
+00 00 00 01 67 64 00 29 ...  ← SPS（起始码 + NALU）
+00 00 00 01 68 EE 3C 80 ...  ← PPS
+00 00 00 01 65 88 84 ...     ← I 帧数据（IDR）
+
+每个 NALU 用 0x00000001 开头；
+解码器读取起始码就知道下一段是一个 NALU。
+
+
+//✅ AVCC 示例（用于 MP4 封装）
+00 00 00 1A 67 64 00 29 ...  ← SPS（4字节长度前缀）
+00 00 00 06 68 EE 3C 80 ...  ← PPS
+00 00 00 25 65 88 84 ...     ← I 帧数据
+
+每个 NALU 前 4 字节表示其长度；
+适合用于随机访问的封装格式如 MP4。
+
+
+//转换
+"ffmpeg -i input.h264 -c:v copy output.mp4"								//Annex-B → AVCC（用于 MP4）
+"ffmpeg -i input.mp4 -c:v copy -bsf:v h264_mp4toannexb output.ts"		//AVCC → Annex-B（用于 TS）
+
 
 

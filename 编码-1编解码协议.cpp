@@ -37,7 +37,7 @@ l  视觉冗余。
 MPEG - 4是一种面向多媒体的编解码标准，主要用于视频、音频、3D图像等应用。MPEG - 4文件一般使用.mp4扩展名。
 
 MPEG - 4于1998年11月公布，
-由国际标准化组织（ISO）和国际电工委员会（IEC）下属的“动态影像专家组”（Moving Picture Experts Group，即MPEG）制定。
+由国际标准化组织（ISO）和国际电工委员会（IEC）下属的"动态影像专家组"（Moving Picture Experts Group，即MPEG）制定。
 它利用很窄的带宽，通过帧重建技术，压缩和传输数据，以求以最少的数据获得最佳的图像质量。
 
 
@@ -70,18 +70,18 @@ Part 25，3D图形压缩模型。
 Part 26，音频一致性检查。
 Part 27，3D图形一致性检查。
 
+* Part 3定义了音频编码器：AAC
+* Part 2定义了视频编码器：H263
+* Part 10定义了高级视频编码器：H264，也称AVC
 
-其中，对于传统媒体进行编解码时，人们主要关注Part 2、Part 3和Part 10。
-例如Part 2定义了视频编解码器，Part 10则专注于进阶视频信息编码，也被称为H.264 / AVC或高级视频编码。
 
+//avc1和h264的区别
+AVC1 描述 : H.264 bitstream without start codes.一般通过ffmpeg转码生成的视频，是不带起始码0×00000001的。
+H264 描述 : H.264 bitstream with start codes.一般对于一下HDVD等电影的压制格式，是带有起始码0×00000001的。
 
-//AVC 既是文件格式，也是压缩标准
-* AVC文件格式：基于 ISO基础文件格式 衍生的，使用的是AVC压缩标准，可以认为是MP4的扩展格式，对应的brand 通常是 avc1，在MPEG - 4 PART 15 中定义。
-* AVC压缩标准（H.264）：在MPEG - 4 Part 10中定义。
-* ISO基础文件格式(Base Media File Format) 在 MPEG - 4 Part 12 中定义。
 
 // isom（ISO Base Media file）
-isom 是在 MPEG - 4 Part 12 中定义的一种基础文件格式，MP4、3gp、QT 等常见的封装格式，都是基于这种基础文件格式衍生的。
+isom 是在 "MPEG-4 Part 12" 中定义的一种基础文件格式，MP4、3gp、QT 等常见的封装格式，都是基于这种基础文件格式衍生的。
 
 //MP4相关
 MP4文件的格式主要由Part 12、Part 14 两部分进行定义。

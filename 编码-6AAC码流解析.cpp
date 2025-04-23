@@ -1,67 +1,78 @@
-/*************************/AAC����ԭ��/***************************************************************************/
-AAC��Advance Audio Coding���߼���Ƶ���룩����MPEG - 2����Ƶ���뼼��������Ϊ��MP3�ļ����ߣ����MP3�и��ߵ�ѹ��Ч�ʡ�
-����MPEG - 4��MP4����׼��2000��ĳ��ͣ���ΪAACҲ��M4A��
+﻿/*************************/AAC编码原理/***************************************************************************/
+AAC（Advance Audio Coding，高级音频编码）基于MPEG - 2的音频编码技术，被认为是MP3的继任者，相对MP3有更高的压缩效率。
+随着MPEG - 4（MP4）标准在2000年的成型，则为AAC也叫M4A。
+
+特性				MP3						AAC
+标准年代			1993 年					1997 年
+开发组织			Fraunhofer + MPEG		MPEG (ISO/IEC)
+编码效率			⭐一般					⭐⭐更高（在同码率下更好）
+音质				128 kbps 起才较好		96 kbps 就能接近 CD 音质
+延迟				较高						较低（更适合实时流媒体）
+支持通道			最多 2 声道（立体声）		支持多声道（比如 5.1 环绕声）
+兼容性			非常高（所有设备都支持）	越来越高（新设备基本都支持）
+文件扩展名		.mp3					.aac, .m4a, .mp4, .3gp
+开源编码器		LAME					FAAC, FDK-AAC, libavcodec 等
 
 
 //SBR
-SBR������Spectral Band Replication(Ƶ�θ���)���ֵ���ҪƵ�׼����ڵ�Ƶ�Σ���Ƶ�η��Ⱥ�С��������Ҫ�����������ʡ�
-���������Ƶ�α��룬����Ϊ�˱�����Ƶ�ͻ���ɵ�Ƶ�α����ϸ�����ļ��޴�
-���Ǳ����˵�Ƶ����Ҫ�ɷֶ�ʧȥ��Ƶ�ɷ־ͻ�ɥʧ���ʡ�
-SBR��Ƶ���и������Ƶ�������뱣����Ҫ�ɷ֣���Ƶ�����Ŵ���뱣�����ʣ���ͳ���ˡ��ˣ�
-�ڼ����ļ���С������»����������ʣ������Ļ�����һì�ܡ�
+SBR技术即Spectral Band Replication(频段复制)音乐的主要频谱集中在低频段，高频段幅度很小，但很重要，决定了音质。
+如果对整个频段编码，若是为了保护高频就会造成低频段编码过细以致文件巨大；
+若是保存了低频的主要成分而失去高频成分就会丧失音质。
+SBR把频谱切割开来，低频单独编码保存主要成分，高频单独放大编码保存音质，“统筹兼顾”了，
+在减少文件大小的情况下还保存了音质，完美的化解这一矛盾。
 
 //PS
-PSָ��parametric stereo������������������ԭ�����������ļ��ļ���С��һ��������������
-����������������������ĳ�������ԣ�������ũ��Ϣ�ر��붨���������Ӧ�ñ�ȥ�����ܼ�С�ļ���С��
-����PS�����洢��һ��������ȫ����Ϣ��Ȼ�󣬻����ٵ��ֽ��ò���������һ������������ͬ�ĵط���
+PS指“parametric stereo”（参数立体声）。原来的立体声文件文件大小是一个声道的两倍。
+但是两个声道的声音存在某种相似性，根据香农信息熵编码定理，相关性应该被去掉才能减小文件大小。
+所以PS技术存储了一个声道的全部信息，然后，花很少的字节用参数描述另一个声道和它不同的地方。
 
-//AAC������
-MPEG - 2 AAC LC �͸��Ӷȹ��Low Complexity�� ע���Ƚϼ򵥣�û��������ƣ�������˱���Ч�ʣ����е����ʵı���Ч���Լ����ʷ��棬�����ҵ�ƽ���
-MPEG - 2 AAC Main �����
-MPEG - 2 AAC SSR �ɱ�����ʹ��Scaleable Sample Rate��
-MPEG - 4 AAC LC �͸��Ӷȹ��Low Complexity��-- - ���ڵ��ֻ��Ƚϳ�����MP4�ļ��е���Ƶ���ݾͰ����˸ù����Ƶ�ļ�
-MPEG - 4 AAC Main ����� ע�������˳��������֮���ȫ�����ܣ����������
-MPEG - 4 AAC SSR �ɱ�����ʹ��Scaleable Sample Rate��
-MPEG - 4 AAC LTP ��ʱ��Ԥ����Long Term Predicition��
-MPEG - 4 AAC LD ���ӳٹ��Low Delay��
-MPEG - 4 AAC HE ��Ч�ʹ��High Efficiency��-- - ���ֹ���ʺ����ڵ����ʱ��룬��Nero ACC ������֧��
+//AAC编码规格
+MPEG - 2 AAC LC 低复杂度规格（Low Complexity） 注：比较简单，没有增益控制，但提高了编码效率，在中等码率的编码效率以及音质方面，都能找到平衡点
+MPEG - 2 AAC Main 主规格
+MPEG - 2 AAC SSR 可变采样率规格（Scaleable Sample Rate）
+MPEG - 4 AAC LC 低复杂度规格（Low Complexity）-- - 现在的手机比较常见的MP4文件中的音频部份就包括了该规格音频文件
+MPEG - 4 AAC Main 主规格 注：包含了除增益控制之外的全部功能，其音质最好
+MPEG - 4 AAC SSR 可变采样率规格（Scaleable Sample Rate）
+MPEG - 4 AAC LTP 长时期预测规格（Long Term Predicition）
+MPEG - 4 AAC LD 低延迟规格（Low Delay）
+MPEG - 4 AAC HE 高效率规格（High Efficiency）-- - 这种规格适合用于低码率编码，有Nero ACC 编码器支持
 
-Ŀǰʹ�����ľ���LC��HE���ʺϽ������ʣ�
-���е�Nero AAC�������ֻ֧��LC��HE��HEv2�����ֹ�񣬱�����AAC��Ƶ�������ʾ����LC��
-HE��ʵ����AAC��LC�� + SBR������HEv2����AAC��LC�� + SBR + PS������
-
-
-//AAC�ı��빤��
-�˲����飨Filter bank��
-ʱ������������Temporal Noise Shaping��TNS������������ļ�������ͨ����Ƶ�����ϵ�Ԥ�⣬������ʱ���ϵ����������ķֲ�����һЩ����������;��ұ仯�źŵ������ϣ�TNS���������ʵ���߹��׾޴�
-Ԥ�⣨Prediction��������Ƶ�źŽ���Ԥ����Լ����ظ������źŵĴ��������Ч�ʡ�
-������Quantization����AAC������������ʹ��������״ѭ�����з������㡣ͨ�����������������ÿ��ƣ��������ܹ�������Ч�����á�
-��������ʽ��Bit��stream format������AAC�У���Ϣ�Ĵ��䶼Ҫ�����ر��룬�Ա�֤���ྡ�����١�����AACӵ��һ�����Եı������ṹ��ʹ�ñ���Ч�ʽ�һ����ߡ�
-��ʱ��Ԥ�⣨Long Term Prediction��LTP��������һ��MPEG��4 AAC�в��еĹ��ߣ���������������������������֮����ź����࣬���ڴ��������ʵ������ǳ���Ч��
-֪���������棨Perceptual Noise Substitution��PNS������Ҳ��MPEG��4 AAC�в��еĹ��ߣ������������������������ź�ʱ�����������������������������Ǿͺ��Թ�ȥ��������ʱ�ٻ�ԭ�����������������Ч�ʡ�
+目前使用最多的就是LC和HE（适合降低码率）
+流行的Nero AAC编码程序只支持LC，HE，HEv2这三种规格，编码后的AAC音频，规格显示都是LC。
+HE其实就是AAC（LC） + SBR技术，HEv2就是AAC（LC） + SBR + PS技术；
 
 
-//AAC��Ƶ��ʽ
-ADIF(Audio Data Interchage Format����Ƶ���ݽ�����ʽ����ֻ��һ��ͳһ��ͷ������õ��������ݺ���룬�����ڱ����ļ����Ƚ��ټ���
-	���ָ�ʽ�������ǿ���ȷ�����ҵ������Ƶ���ݵĿ�ʼ�������������Ƶ�������м俪ʼ�Ľ��룬
-	�����Ľ����������ȷ����Ŀ�ʼ�����С������ָ�ʽ�����ڴ����ļ��С�
-ADTS(Audio Data Transport Stream���������ݴ���������ÿһ֡����ͷ��Ϣ������֡���룬�����ڴ�������
-	���ָ�ʽ������������һ����ͬ���ֵı������������������������κ�λ�ÿ�ʼ��
-	��������������mp3��������ʽ�����ָ�ʽ�������ڹ㲥���ӡ�
+//AAC的编码工序
+滤波器组（Filter bank）
+时域噪音修整（Temporal Noise Shaping，TNS）：这项神奇的技术可以通过在频率域上的预测，来修整时域上的量化噪音的分布。在一些特殊的语音和剧烈变化信号的量化上，TNS技术对音质的提高贡献巨大！
+预测（Prediction）：对音频信号进行预测可以减少重复冗余信号的处理，提高效率。
+量化（Quantization）：AAC的量化过程是使用两个巢状循环进行反复运算。通过对量化分析的良好控制，比特率能够被更高效地利用。
+比特流格式（Bit－stream format）：在AAC中，信息的传输都要经过熵编码，以保证冗余尽可能少。此外AAC拥有一个弹性的比特流结构，使得编码效率进一步提高。
+长时期预测（Long Term Prediction，LTP）：这是一个MPEG－4 AAC中才有的工具，它用来减少连续两个编码音框之间的信号冗余，对于处理低码率的语音非常有效。
+知觉噪音代替（Perceptual Noise Substitution，PNS）：这也是MPEG－4 AAC中才有的工具，当编码器发现类似噪音的信号时，并不对其进行量化，而是作个标记就忽略过去，当解码时再还原出来，这样就提高了效率。
+
+
+//AAC音频格式
+ADIF(Audio Data Interchage Format，音频数据交换格式）：只有一个统一的头，必须得到所有数据后解码，适用于本地文件。比较少见。
+	这种格式的特征是可以确定的找到这个音频数据的开始，不需进行在音频数据流中间开始的解码，
+	即它的解码必须在明确定义的开始处进行。故这种格式常用在磁盘文件中。
+ADTS(Audio Data Transport Stream，音视数据传输流）：每一帧都有头信息，任意帧解码，适用于传输流。
+	这种格式的特征是它是一个有同步字的比特流，解码可以在这个流中任何位置开始。
+	它的特征类似于mp3数据流格式。这种格式可以用于广播电视。
 
 
 
-/*************************/ADIF֡�ṹ/***************************************************************************/
-�����ʽ�Ƚ��ټ�������ʶһ�¼��ɡ�
+/*************************/ADIF帧结构/***************************************************************************/
+这个格式比较少见，简单认识一下即可。
 
-ADIF��ʽ�����У���adif_header��byte_alignment��raw_data_stream��������ɡ�
-byte_alignment���������ֽڶ���ģ�Ҳ����˵��ADIF��ʽ��һ��ADIFͷ��Ϣ(adif_header) �� ԭʼ������(raw_data_stream) ���ɡ�
+ADIF格式的序列，由adif_header、byte_alignment、raw_data_stream三部分组成。
+byte_alignment是用来做字节对齐的，也就是说，ADIF格式由一个ADIF头信息(adif_header) 和 原始数据流(raw_data_stream) 构成。
 
 //adif_header
-�ֶ�							������
+字段							比特数
 adif_id						32
 copyright_id_present			1
-copyright_id					72��copyright_id_presentΪ1ʱ�Ŵ��ڸ��ֶΣ�
+copyright_id					72（copyright_id_present为1时才存在该字段）
 original_copy					1
 home						1
 bitstream_type				1
@@ -71,52 +82,58 @@ adif_buffer_fullness				20
 
 
 
-/*************************/ADTS֡�ṹ/***************************************************************************/
-ADTS����ɵ�Ԫ��ADTS Frame��
-ADTS Frame��ADTS_Header��AAC ES��ɡ�
-ADTS_Header���������ʡ���������֡���ȵ���Ϣ��ADTSͷ��Ϣ�ĳ�����7���ֽڻ�9�ֽڣ���CRC���������
+/*************************/ADTS帧结构/***************************************************************************/
+ADTS的组成单元是ADTS Frame。
+ADTS Frame由ADTS_Header和AAC ES组成。
+ADTS_Header包含采样率、声道数、帧长度的信息。ADTS头信息的长度是7个字节或9字节（有CRC的情况）。
 
-//ADTS_Header���Է�Ϊ���������֣�
-adts_fixed_header��ÿһ֡�������ǲ���ġ�
-adts_variable_header��ÿһ֡�������Ǵ��ڱ仯�ġ�
-crc��16bits��protection_absent�ֶ�Ϊ0ʱ���ڡ�
+//ADTS_Header可以分为以下三部分：
+adts_fixed_header：每一帧的内容是不变的。
+adts_variable_header：每一帧的内容是存在变化的。
+crc：16bits，protection_absent字段为0时存在。
 
-adts_fixed_header��
-�ֶ�						������		˵��
-syncword					12			����λ����Ϊ1����0xFFF��
-ID						1			0����MPEG - 4, 1����MPEG - 2��
-layer						2			����λ����Ϊ0��
-protection_absent			1			1����û��CRC��0�����С�
-profile					2			���ü���Table1.17��
-sampling_frequency_index	4			��ʶʹ�õĲ���Ƶ�ʣ����������
-private_bit				1			see ISO / IEC 11172 - 3, subclause 2.4.2.3 (Table 8).
-channel_configuration		3			ȡֵΪ0ʱ��ͨ��inband ��PCE����channel configuration��
-original / copy				1			����ʱ����Ϊ0������ʱ���ԡ�
-home					1			����ʱ����Ϊ0������ʱ���ԡ�
+/*
+ * 0xFF, 0xF1, 0x4C, 0x80, 0x03, 0x7F, 0xFC
+ *
+ * 【adts_fixed_header】
+ * syncword                   12    所有位必须为1，即0xFFF。
+ * ID						  1		0代表MPEG-4, 1代表MPEG-2。
+ * layer					  2		所有位必须为0。
+ * protection_absent		  1		1代表没有CRC，0代表有。
+ * profile					  2		配置级别（Table1.17）
+ * sampling_frequency_index   4		标识使用的采样频率，具体见表。
+ * private_bit				  1		see ISO / IEC 11172 - 3, subclause 2.4.2.3 (Table 8).
+ * channel_configuration	  3		取值为0时，通过inband 的PCE设置channel configuration。
+ * original / copy			  1		编码时设置为0，解码时忽略。
+ * home                       1		编码时设置为0，解码时忽略。
+ *
+ * 【adts_variable_header】
+ * copyright_identification_bit         1	  编码时设置为0，解码时忽略。
+ * copyright_identification_start		1	  编码时设置为0，解码时忽略
+ * frame_length                         13	  帧长度，包括header和crc的长度，单位byte
+ * adts_buffer_fullness                 11
+ * number_of_raw_data_blocks_in_frame	2	  ADTS帧中的AAC Frames(RDB)数减1, 为了最大的兼容性通常每个ADTS frame 包含一个AAC frame。
+ */
 
-adts_variable_header��
-�ֶ�								������		˵��
-copyright_identification_bit			1			����ʱ����Ϊ0������ʱ���ԡ�
-copyright_identification_start	1					����ʱ����Ϊ0������ʱ����
-frame_length						13			֡���ȣ�����header��crc�ĳ��ȣ���λbyte
-adts_buffer_fullness					11
-number_of_raw_data_blocks_in_frame	2			ADTS֡�е�AAC Frames(RDB)����1, Ϊ�����ļ�����ͨ��ÿ��ADTS frame ����һ��AAC frame��
+//AAC文件处理流程：
+（1）判断文件格式，确定为ADIF或ADTS
+（2）若为ADIF，解ADIF头信息，跳至第6步。
+（3）若为ADTS，寻找同步头。
+（4）解ADTS帧头信息。
+（5）若有错误检测，进行错误检测。
+（6）解块信息。
+（7）解元素信息。
+注意：有时候在处理AAC音频流的时候（比如：把 AAC 音频的 ES 流从 FLV 封装格式中抽出来送给硬件解码器)，
+编码后的 AAC 文件在PC或者手机上不能播放，导致播放错误，
+很大可能的原因是 AAC 文件的每一帧缺少 ADTS 头信息文件的包装拼接，这时需要加上头文件 ADTS 即可。
 
 
-//AAC�ļ��������̣�
-��1���ж��ļ���ʽ��ȷ��ΪADIF��ADTS
-��2����ΪADIF����ADIFͷ��Ϣ��������6����
-��3����ΪADTS��Ѱ��ͬ��ͷ��
-��4����ADTS֡ͷ��Ϣ��
-��5�����д����⣬���д����⡣
-��6�������Ϣ��
-��7����Ԫ����Ϣ��
-ע�⣺��ʱ���ڴ���AAC��Ƶ����ʱ�򣨱��磺�� AAC ��Ƶ�� ES ���� FLV ��װ��ʽ�г�����͸�Ӳ��������)��
-������ AAC �ļ���PC�����ֻ��ϲ��ܲ��ţ����²��Ŵ���
-�ܴ���ܵ�ԭ���� AAC �ļ���ÿһ֡ȱ�� ADTS ͷ��Ϣ�ļ��İ�װƴ�ӣ���ʱ��Ҫ����ͷ�ļ� ADTS ���ɡ�
-
-
-
+//音频格式
+格式类型						可以直接播放？
+.aac（裸流，有 ADTS 头）		✅ 一般播放器可以直接播放，比如 VLC、FFplay、某些手机播放器
+.aac（裸流，无 ADTS 头）		❌ 不能直接播放，大多数播放器无法识别帧
+.m4a / .mp4（封装格式）		✅ 完全可以，最推荐的播放格式
+.adts（就是有 ADTS 的.aac）	✅ 和有 ADTS 的.aac 一样，完全能播
 
 
 

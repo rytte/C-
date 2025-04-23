@@ -27,6 +27,21 @@ func     : 函数名
 参数列表 : 参数个数不限
 
 
+//注意
+模板函数的定义通常需要和声明放在同一个头文件中（推荐），以便编译器能够看到它的实现并实例化相应的模板。如下
+template <typename T>
+void Logger::warning(const T& value) {
+    std::ostringstream oss;
+    print(value, oss);
+    log(LogLevel::WARNING, oss.str());
+}
+如果你不希望将模板定义放到头文件中，你也可以在.cpp 文件中显式实例化模板。显式实例化告诉编译器生成特定类型的模板函数代码。
+例如，在.cpp 文件的某个地方，你可以显式地实例化这些模板：
+template void Logger::warning<int>(const int&);
+template void Logger::warning<double>(const double&);
+template void Logger::warning<bool>(const bool&);
+
+
 //调用
 func<类型传参>(数据传参)        //可以不给定类型，由编译器自行推断
 

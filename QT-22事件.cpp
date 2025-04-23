@@ -1,16 +1,61 @@
 /********************/事件/************************************************************/
-在Qt框架中，事件（Event）是对应用程序内部或外部产生的事情或动作的通称。
-Qt使用对象来表示事件，这些事件都继承自QEvent类。
-Qt的事件处理机制允许开发者响应这些事件，从而改变应用程序的行为或状态。
-
-QT中，一个事件就是一个类对象。
-只要有一个事件发生（如鼠标单击事件），此时就会有一个 QEvent 对象被创建出来，然后开始各种传送。
-由于 Qt 事件系统是依托于元对象系统的，所以所有的 QObject 类都可以接收 / 处理 QEvent 事件。
+在Qt框架中，事件（Event）是对应用程序内部或外部产生的事情或动作的通称。Qt的事件处理机制允许开发者响应这些事件，从而改变应用程序的行为或状态。
 
 
-//事件队列
-我们创建一个 Qt 程序的时候，一般在 main 下面会看到 QCoreApplication a(argc, argv) 以及 return a.exec() 的字样。
-这其实就是开启了 Qt 事件循环来维护一个事件队列，exec 的本质就是不停的调用 processEvent() 函数从队列中获取事件来处理。
+//事件的基本概念
+Qt 中的事件（QEvent）用于描述应用程序中发生的一些事情，比如：
+* 鼠标移动、按键按下
+* 窗口大小变化、控件更新
+* 定时器超时
+* 自定义事件通知
+这些事件会封装为 QEvent 对象，并通过事件系统传递给相应的 QObject 对象。
+Qt 事件系统依托于 QObject ，所有的 QObject 类都可以接收 / 处理 QEvent 事件。
+
+
+//常见的事件类型
+鼠标事件(QMouseEvent) : 鼠标的移动、点击、释放等动作。
+键盘事件(QKeyEvent) : 键盘按键的按下和释放。
+定时事件(QTimerEvent) : 在定时器到期时触发，用于执行周期性任务。
+绘图事件(QPaintEvent) : 当控件需要重新绘制时触发，用于自定义绘制。
+焦点事件(QFocusEvent) : 键盘焦点的移动，如窗口控件获得或失去焦点。
+进入和离开事件(QEnterEvent 和 QLeaveEvent) : 鼠标移入或移出窗口控件的事件。
+移动事件(QMoveEvent) : 窗口控件的位置改变事件。
+大小改变事件(QResizeEvent) : 窗口控件的大小改变事件。
+显示和隐藏事件(QShowEvent 和 QHideEvent) : 窗口控件的显示和隐藏事件。
+窗口事件(QWindowStateChangeEvent) : 窗口是否为当前窗口的状态变化事件。
+
+
+//事件系统流程
+操作系统产生 / 程序内部触发
+↓
+QPA 层将事件封装为 QEvent         // Qt Platform Abstraction, 平台抽象层
+↓
+添加到事件队列（postEvent）
+↓
+事件循环从事件队列中取出一个事件
+↓
+检查过滤器，过滤事件(eventFilter)
+↓
+事件分发和执行，即调用目标 QObject 的 event() 函数（如果是 QWidget，则调用具体事件函数，如 paintEvent）
+
+
+
+/********************/事件循环和队列/************************************************************/
+//事件循环（Event Loop）
+事件循环是一个"死循环"，不断地从事件队列中取出事件并派发给目标对象进行处理。
+int main(int argc, char* argv[])
+{
+    QApplication app(argc, argv);
+    // 初始化界面
+    return app.exec();  // <--- 启动事件循环
+}
+
+事件循环是Qt应用程序的核心部分，它负责接收和处理来自系统或其他线程的事件。
+
+exec 的本质就是不停的调用 processEvent() 函数从队列中获取事件来处理。
+直到退出程序或调用以下函数才会结束。
+app.quit();     // 退出事件循环
+app.exit(0);    // 指定退出状态码
 
 
 //事件优先级
@@ -19,86 +64,8 @@ Qt使用整数值表示事件的优先级，数值越小表示优先级越高。
 默认情况下，事件的优先级是0，可以通过设置QEvent::setPriority()方法来改变事件的优先级。
 
 
-//常见的事件类型
-鼠标事件(QMouseEvent) : 处理鼠标的移动、点击、释放等动作。
-键盘事件(QKeyEvent) : 处理键盘按键的按下和释放。
-定时事件(QTimerEvent) : 在定时器到期时触发，用于执行周期性任务。
-绘图事件(QPaintEvent) : 当控件需要重新绘制时触发，用于自定义绘制。
-焦点事件(QFocusEvent) : 处理键盘焦点的移动，如窗口控件获得或失去焦点。
-进入和离开事件(QEnterEvent 和 QLeaveEvent) : 处理鼠标移入或移出窗口控件的事件。
-移动事件(QMoveEvent) : 处理窗口控件的位置改变事件。
-大小改变事件(QResizeEvent) : 处理窗口控件的大小改变事件。
-显示和隐藏事件(QShowEvent 和 QHideEvent) : 处理窗口控件的显示和隐藏事件。
-窗口事件(QWindowStateChangeEvent) : 处理窗口是否为当前窗口的状态变化事件。
 
-
-//事件处理：通常通过两种方式实现
-重载相关的事件处理函数：例如，通过重载paintEvent(), mousePressEvent()等函数，可以处理特定部件的特定事件。
-使用事件过滤器：可以在对象上安装事件过滤器，这样可以在一个界面类中同时处理不同子部件的不同事件。
-
-//事件循环
-Qt的事件处理还涉及到事件循环（Event Loop）。
-事件循环是Qt应用程序的核心部分，它负责接收和处理来自系统或其他线程的事件。
-事件循环不断运行，直到应用程序退出。
-
-
-//QEvent函数
-accept标志：设置 accept标志(为 true)，表示接受参数指示事件接收器需要事件。若设为 false 则意味着事件接收器不需要该事件，不需要事件可能被传播给父级 Widget。
-
-bool isAccepted() const                              //默认为 true。不能依赖于此，因为子类可能会在子类构造器中清除该标志。
-void setAccepted(bool accepted)               //设置 accept 标志为 true 或 false。
-
-void accept()                                           //设置事件对象的接受标志，等价于 setAccepted(true)。
-void ignore()                                           //清除事件对象的 accept 标志，等价于 setAccepted(false)。
- 
-bool spontaneous() const                //若事件发源于应用程序外(如系统事件)则返回 true ，否则返回 false 。绘制事件的返回值是未定义的。
-Type QEvent::type() const               //返回事件的类型
-
-static int registerEventType(int hint = -1)     //注册并返回一个自定义事件类型。
-如果 hint 是合法的，则会返回这个值；否则返回介于 QEvent::User 和 QEvent::MaxUser 之间的一个尚未被注册的值。
-如果其值不在 QEvent::User 和 QEvent::MaxUser 之间，hint 值将被忽略。
-如果可用的值被使用或程序关闭，将返回 - 1。该函数是线程安全的。
-
-
-//type值
-每一个事件类都有个唯一身份值：type值
-这个 type 值的作用就是我们在处理事件时用于识别事件类的代号。请看下面实际中的例子：
-bool FilterObject::eventFilter(QObject* object, QEvent* event)
-{
-        if (object == target && event->type() == QEvent::KeyPress)
-        {
-                QKeyEvent* keyEvent = static_cast<QKeyEvent*>(event);
-                if (keyEvent->key() == Qt::Key_Tab)
-                        return true;
-                else
-                        return false;
-        }
-        return false;
-}
-
-
-//自定义事件类
-class MyEvent : public QEvent
-{
-public:
-        MyEvent();
-        MyEvent(int x, int y, int z);
-
-        static const Type type;         //自己定义的事件类也有个 type 值
-
-        int x;
-        int y;
-        int z;
-};
-假如我程序中触发了某某槽函数，产生了一个三维坐标事件，要把坐标发送出去，那我上面写的这个事件类就派上用场了。
-我创建一个事件对象，并把坐标参数传到这个事件对象里（MyEvent event(1, 2, 3)），
-这样这个 event 对象就产生了，它承载着一个三维坐标。
-
-QT中 enum QEvent::Type 取值范围为[0, 999]
-因此自定义 type 的数值要大于 999。Qt 给我们规定了两个边界值：QEvent::User 和 QEvent::MaxUser，即 1000 - 65535。
-可以使用 registerEventType() 函数获取一个合法的 type 值。
-
-
+/********************/事件发送/************************************************************/
 //发送一个事件
 Qt 提供了三个 static 事件发送函数：sendEvent、postEvent、sendPostEvents。函数原型如下：
 
@@ -111,15 +78,15 @@ void QCoreApplication::sendPostedEvents(QObject* receiver = Q_NULLPTR, int event
 因为事件被发送的时候，event 对象并不会被销毁，因此我们要在栈上创建 event 对象。
 int main(int argc, char* argv[])
 {
-        QCoreApplication a(argc, argv);
+    QCoreApplication a(argc, argv);
 
-        MainWindow w;
-        w.show();
+    MainWindow w;
+    w.show();
 
-        MyEvent event(1, 2, 3);
-        QCoreApplication::sendEvent(&w, &event);
+    MyEvent event(1, 2, 3);
+    QCoreApplication::sendEvent(&w, &event);
 
-        return a.exec();
+    return a.exec();
 };
 
 //发到队列：postEvent
@@ -131,108 +98,173 @@ postEvent() 的作用：把事件发送到事件队列中去。这种方式不需要等待处理结果，所以返
 需要注意的是，来自窗口系统的事件并不由这个函数进行处理，而是 processEvent()。
 
 
-//发送的事件在哪里捕获？
-我们发送的事件传给了 QObject 对象，更具体点是传给了 QObject 对象的 event() 函数。
-所有的事件都会进到这个函数里面，因此我们处理事件就要重写这个 event() 函数。
 
-//在 event() 中怎么处理事件？
-event() 函数本身不会去处理事件，而是根据事件类型（type值）调用不同的事件处理器函数。
-举个简单的例子：鼠标点击一下->产生鼠标点击事件->接收者的 event() 函数判断类型->发给 mousePressEvent() 函数处理。
-代码如下：
-void MyCheckBox::mousePressEvent(QMouseEvent* event)
+/********************/事件过滤/************************************************************/
+事件过滤器：可以在对象上安装事件过滤器，这样可以在一个界面类中同时处理不同子部件的不同事件。
+
+
+void QObject::installEventFilter(QObject* filterObj);       //安装过滤器
+bool QObject::eventFilter(QObject* watched, QEvent* event); //过滤器处理函数
+
+//举例
+button->installEventFilter(window)
+button的事件产生时将会先进入 filterObj 对象的eventFilter()，如果eventFilter()中 return false, 事件才会进入button的event();
+
+//注意
+1、事件过滤器和被安装过滤器的组件必须在同一线程，否则，只有等到二者重新回到同一线程的时候过滤器才会有效。
+2、eventFilter() 中 return true, 事件将处理完毕。 如果 return false, 事件将继续传递。
+3、如果 eventFilter() 中 delete 了某个接收组件，务必将函数返回值设为 true 。否则，Qt 还是会将事件分发给这个接收组件，从而导致程序崩溃。
+4、如果在单个对象上安装了多个事件过滤器，则首先激活最后安装的过滤器。
+
+//实例
+class MainWindow : public QMainWindow
 {
-        if (event->button() == Qt::LeftButton)
-        {
-                ....//点击左键后实现的功能
+    Q_OBJECT
+public:
+    MainWindow(QWidget* parent = nullptr) : QMainWindow(parent) {
+        button = new QPushButton("Click me", this);
+        button->installEventFilter(this); // 安装事件过滤器，button产生的事件会进入MainWindow的eventFilter中。
+    }
+
+protected:
+    // 过滤器函数
+    bool eventFilter(QObject* watched, QEvent* event) override {
+        if (watched == button && event->type() == QEvent::MouseButtonPress) {
+            qDebug() << "拦截了按钮的鼠标点击事件！";
+            return true; // 阻止按钮正常响应点击
         }
+        return false; // 不处理，继续传递
+    }
+
+private:
+    QPushButton* button;
+};
+
+
+
+/********************/事件处理：QEvent 和 event()/************************************************************/
+//accept标志
+accept标志，设置 accept标志(为 true)，表示接受参数指示事件接收器需要事件。
+若设为 false 则意味着事件接收器不需要该事件，不需要事件可能被传播给父级 Widget。
+Qt 中大部分的事件处理函数都是默认 accept() 接收事件对象，而 QWidget 是默认 ignore() 的。
+窗口关闭事件（QCloseEvent） 必须调用 accept() 函数，忽略意味着事件继续传播，窗口仍然开着。
+
+
+//QEvent方法
+bool isAccepted() const                     //默认为 true。不能依赖于此，因为子类可能会在子类构造器中清除该标志。
+void setAccepted(bool accepted)             //设置 accept 标志为 true 或 false。
+
+void accept()                               //设置事件对象的接受标志，等价于 setAccepted(true)。
+void ignore()                               //清除事件对象的 accept 标志，等价于 setAccepted(false)。
+ 
+bool spontaneous() const                    //若事件发源于应用程序外(如系统事件)则返回 true ，否则返回 false 。绘制事件的返回值是未定义的。
+Type QEvent::type() const                   //返回事件的类型
+
+static int registerEventType(int hint = -1) //注册并返回一个自定义事件类型。
+                //如果 hint 是合法的，则会返回这个值；否则返回介于 QEvent::User 和 QEvent::MaxUser 之间的一个尚未被注册的值。
+                //如果其值不在 QEvent::User 和 QEvent::MaxUser 之间，hint 值将被忽略。
+                //如果可用的值被使用或程序关闭，将返回 - 1。该函数是线程安全的。
+
+
+//type值
+每一个事件类都有个唯一身份值：type值
+这个 type 值的作用就是我们在处理事件时用于识别事件类的代号。请看下面实际中的例子：
+bool FilterObject::eventFilter(QObject* object, QEvent* event)
+{
+    if (object == target && event->type() == QEvent::KeyPress)
+    {
+        QKeyEvent* keyEvent = static_cast<QKeyEvent*>(event);
+        if (keyEvent->key() == Qt::Key_Tab)
+            return true;
         else
-        {
-                QCheckBox::mousePressEvent(event);                 //完成正常QCheckBox的功能
-        }
+            return false;
+    }
+    return false;
 }
-需要注意的是，重写事件处理器函数时，如果不实现任何功能，最好调用基类的实现。
-就像上面的那段代码，Qt 本身就已经写了一大堆的实现了，你要是不写上 QCheckBox::mousePressEvent(event) 这个代码，
-那你写的这个继承于 QCheckBox 类的 MyCheckBox 就不会对鼠标点击产生任何反应。
 
 
-event 函数的作用就在于 事件的分发，在 even filter 之后执行
+//事件处理
+我们发送的事件传给了 QObject 对象的 event() 函数，处理事件就要重写这个 event() 函数。
+重载相关的事件处理函数：例如，通过重载paintEvent(), mousePressEvent()等函数，可以处理特定部件的特定事件。
+
+//event()和xxxEvent()的关系
+event() 是一个总入口，它会根据事件类型分发到更专门的处理函数（比如 mousePressEvent()、keyPressEvent()、paintEvent() 等）。
+
+event(QEvent* event) 是通用事件处理函数
+1、定义在 QObject（基类），被 QWidget 等子类重写
+2、所有事件都会先经过这个函数
+3、在这里判断事件类型，然后再调用更具体的函数
+
+//event重写
+* 如果不实现任何功能，最好调用基类的实现，以执行原本的功能，如 QCheckBox 的勾选。
 bool myWidget::event(QEvent* e)
 {
-        if (e->type() == QEvent::KeyPress)
+    if (e->type() == QEvent::KeyPress)
+    {
+        //将QEvent对象转换为真正的QKeyEvent对象
+        QKeyEvent* keyEvent = static_cast<QKeyEvent*>(e);
+        if (keyEvent->key() == Qt::Key_Tab)
         {
-                //将QEvent对象转换为真正的QKeyEvent对象
-                QKeyEvent* keyEvent = static_cast<QKeyEvent*>(e);
-                if (keyEvent->key() == Qt::Key_Tab)
-                {
-                        qDebug() << "You press tab.";
-                        return true;
-                }
+            qDebug() << "You press tab.";
+            return true;
         }
-        //按照原来的流程来进行事件的分发
-        return QWidget::event(e);
+    }
+    //按照原来的流程来进行事件的分发
+    return QWidget::event(e);
 }
 若返回 父类的 event，即 return QWidget::event(e); 则还会调用 父组件。
 需要注意的是，重写event函数之后最好返回父类的event函数来处理其他的事件分发，不然就只能处理自己定义的事件。
-bool myTextEdit::event(QEvent* e)
+bool myTextEdit::event(QEvent * e)
 {
-        if (e->type() == QEvent::KeyPress)
+    if (e->type() == QEvent::KeyPress)
+    {
+        //将QEvent对象转换为真正的QKeyEvent对象
+        QKeyEvent* keyEvent = static_cast<QKeyEvent*>(e);
+        if (keyEvent->key() == Qt::Key_Tab)
         {
-                //将QEvent对象转换为真正的QKeyEvent对象
-                QKeyEvent* keyEvent = static_cast<QKeyEvent*>(e);
-                if (keyEvent->key() == Qt::Key_Tab)
-                {
-                        qDebug() << "You press tab.";
-                        return true;
-                }
+            qDebug() << "You press tab.";
+            return true;
         }
-        //直接返回false
-        return false;
+    }
+    //直接返回false
+    return false;
 }
-在这个例子中，因为没有调用父类QTextEdit的event函数，所以只能处理Tab的情况，
-你再按其他按键就啥反应都没有了。同样，事件也不能进行传播。
+该例中没有调用父类QTextEdit的event函数，所以只能处理Tab的情况，你再按其他按键就啥反应都没有了。同样，事件也不能进行传播。
 
 
+//自定义事件类
+class MyEvent : public QEvent
+{
+public:
+    MyEvent();
+    MyEvent(int x, int y, int z);
 
-//技巧一：接收 / 忽略事件
-所有的事件的祖先都是 QEvent 类，而该类里有个 isAccepted() 函数来判断这个事件是否被接受（处理）了。
-当收到一个事件对象时，我先拿到这个事件。如果不去处理，就会层层向父控件对象传递。
-事实上，我们很少会用到 accept()、ignore() 函数的，如果忽略事件（即自己不想去处理这个事件），只要调用父类的响应函数就可以了。
+    static const Type type;         //自己定义的事件类也有个 type 值
 
-一个特殊的例子：QWidget
-Qt 中大部分的事件处理函数都是默认 accept() 接收事件对象，而 QWidget 却是默认 ignore() 的。
-这样的话如果某个 QWidget 子类想忽略某个事件，既可以调用 ignore() 函数，也可以调用基类 QWidget 的默认实现。
+    int x;
+    int y;
+    int z;
+};
+假如我程序中触发了某某槽函数，产生了一个三维坐标事件，要把坐标发送出去，那我上面写的这个事件类就派上用场了。
+我创建一个事件对象，并把坐标参数传到这个事件对象里（MyEvent event(1, 2, 3)），
+这样这个 event 对象就产生了，它承载着一个三维坐标。
 
-必须调用 accept()、ignore() 函数的场景
-就是窗口关闭事件！对于 QCloseEvent 来说，接收意味着事件到此结束不再传播，窗口关闭；忽略意味着事件继续传播，窗口仍然开着。
-
-
-//技巧二：过滤事件
-为对象安装过滤器： void QObject::installEventFilter(QObject* filterObj);
-过滤器处理函数：    bool QObject::eventFilter(QObject* watched, QEvent* event);
-
-事件过滤器是一个对象，它接收发送到此对象的所有事件。
-过滤器可以停止该事件，也可以将其转发给该对象。
-事件过滤器filterObj通过其 eventFilter() 函数接收事件。
-在重新实现 eventFilter() 函数时，如果应该过滤事件，即停止进一步处理事件，则该函数必须返回 true ，否则它必须返回 false 。
-如果在单个对象上安装了多个事件过滤器，则首先激活最后安装的过滤器。
-
-举例：
-比如在主界面上有一个按钮叫“A“。
-当 A->installEventFilter(MainWindow) 的时候，A 产生的事件就不会进入接收者的 event() 函数中了，
-而是进入接收者的 eventFilter() 函数中。
-
-注意：
-1、如果你在事件过滤器中 delete 了某个接收组件，务必将函数返回值设为 true 。否则，Qt 还是会将事件分发给这个接收组件，从而导致程序崩溃。
-2、事件过滤器和被安装过滤器的组件必须在同一线程，否则，过滤器将不起作用。
-3、如果在安装过滤器之后，这两个组件到了不同的线程，那么，只有等到二者重新回到同一线程的时候过滤器才会有效。
+QT中 enum QEvent::Type 取值范围为[0, 999]
+因此自定义 type 的数值要大于 999。Qt 给我们规定了两个边界值：QEvent::User 和 QEvent::MaxUser，即 1000 - 65535。
+可以使用 registerEventType() 函数获取一个合法的 type 值。
 
 
 
 /********************/事件处理方法归纳/************************************************************/
-Qt的事件处理函数都是虚函数，在基类中声明，在子类中重新实现，这些相应的事件函数在.h文件中定义在.cpp文件中重新实现函数内容
+//可以控制的环节
+拦截事件	        installEventFilter()
+自定义处理	    重载 event() 函数
+特定响应	        重载如 mousePressEvent() 等
+自定义事件	    自定义 QEvent 子类，注册事件类型
 
-事件执行流程：
-事件产生(窗口)->事件过滤(过滤器)->事件分发(指定执行窗口)->事件执行(具体控件)
+
+//事件执行流程
+事件产生 >> 事件过滤(过滤器) >> 事件分发(指定执行窗口) >> 事件执行(具体控件)
 
 
 //1. 重新实现特定事件（修改事件处理）
@@ -412,8 +444,8 @@ QEvent::ZOrderChange	                                        126	部件的 z 值发生
 
 用户事件的值应该介于 User 和 MaxUser 之间。
 常量	                        值	                描述
-QEvent::User	        1000	                用户定义的事件
-QEvent::MaxUser	65535	        最后的用户事件 ID
+QEvent::User	            1000	            用户定义的事件
+QEvent::MaxUser	            65535	            最后的用户事件 ID
 
 
 
