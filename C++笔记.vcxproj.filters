@@ -1223,6 +1223,21 @@
     <ClCompile Include="FFmpeg-22BFS.cpp">
       <Filter>源文件\10-FFmpeg</Filter>
     </ClCompile>
+    <ClCompile Include="命名规范.cpp">
+      <Filter>源文件\其它</Filter>
+    </ClCompile>
+    <ClCompile Include="基础开源库.cpp">
+      <Filter>源文件\其它</Filter>
+    </ClCompile>
+    <ClCompile Include="header-only.cpp">
+      <Filter>源文件\其它</Filter>
+    </ClCompile>
+    <ClCompile Include="Cpp20-7source_location.cpp">
+      <Filter>源文件\6-C++语法\Cpp新特性</Filter>
+    </ClCompile>
+    <ClCompile Include="Cpp17-5折叠表达式.cpp">
+      <Filter>源文件\6-C++语法\Cpp新特性</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="pthread_pool.h">
