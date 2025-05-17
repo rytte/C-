@@ -218,7 +218,6 @@
     <ClCompile Include="QT-29打包.cpp" />
     <ClCompile Include="QT-30QString与编码问题.cpp" />
     <ClCompile Include="SDL-2核心API.cpp" />
-    <ClCompile Include="SDP格式.cpp" />
     <ClCompile Include="SoundTouch.cpp" />
     <ClCompile Include="SQLite3.cpp" />
     <ClCompile Include="STD-11future与promise.cpp" />

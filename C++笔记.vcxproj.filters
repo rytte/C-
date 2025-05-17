@@ -749,9 +749,6 @@
     <ClCompile Include="Live-4客户端.cpp">
       <Filter>源文件\Live555</Filter>
     </ClCompile>
-    <ClCompile Include="SDP格式.cpp">
-      <Filter>源文件\其它</Filter>
-    </ClCompile>
     <ClCompile Include="算法-0数据结构.c">
       <Filter>源文件\5-算法与数据结构</Filter>
     </ClCompile>
