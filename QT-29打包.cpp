@@ -15,7 +15,7 @@ name就是输出的exe文件名称。
 //打包
 1、使用Release编译项目
 2、复制生成的exe文件到新建文件夹
-3、新建文件夹中打开Qt5.12.12命令行，输入：windeployqt  project.exe
+3、新建文件夹中打开Qt5.12.12命令行，输入："windeployqt project.exe"
 4、完成
 
 //压缩

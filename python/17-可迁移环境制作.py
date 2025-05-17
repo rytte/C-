@@ -1,3 +1,22 @@
+'''********************'''可执行文件打包'''************************************************************'''
+1、执行 "pip install pyinstaller"
+2、执行 "pyinstaller --onefile app.py"  # app.py为运行的文件名
+
+打包完毕，会生成这几个文件夹：
+build/   # 中间文件
+dist/    # 最终产物（你的 .exe）
+app.spec # 打包配置文件
+
+build/和app.spec可删
+
+如果程序中用到了额外的文件（比如 json、图片、模型文件），要么：
+手动放到和 .exe 同级目录，
+或者用 pyinstaller 的 --add-data 参数把文件打包进去。
+
+pyinstaller --onefile --add-data "config.json;." app.py     #（分号 ; 是 Windows，Linux 用冒号 :）
+
+
+
 '''********************'''整合包'''************************************************************'''
 https://blog.csdn.net/weixin_44505135/article/details/136737915
 

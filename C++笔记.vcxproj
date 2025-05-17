@@ -147,6 +147,8 @@
     <ClCompile Include="Cpp11-2自动类型推导.cpp" />
     <ClCompile Include="Cpp17-3字符串视图.cpp" />
     <ClCompile Include="Cpp17-4文件系统.cpp" />
+    <ClCompile Include="Cpp17-5折叠表达式.cpp" />
+    <ClCompile Include="Cpp20-7source_location.cpp" />
     <ClCompile Include="Cpp新特性预览.cpp" />
     <ClCompile Include="demo3-10内存映射.c" />
     <ClCompile Include="demo3-1lcdinfo.c" />
@@ -168,12 +170,15 @@
     <ClCompile Include="docker.cpp" />
     <ClCompile Include="FFmpeg-21H264封装为MP4.cpp" />
     <ClCompile Include="FFmpeg-22BFS.cpp" />
+    <ClCompile Include="header-only.cpp" />
     <ClCompile Include="JS-5内置类型.cpp" />
     <ClCompile Include="MQ-1RabbitMQ.cpp" />
     <ClCompile Include="QT-1QT与QtCreator.cpp" />
     <ClCompile Include="QT-20元对象系统.cpp" />
     <ClCompile Include="QT-31其它问题.cpp" />
     <ClCompile Include="QT-3窗口与页面管理.cpp" />
+    <ClCompile Include="命名规范.cpp" />
+    <ClCompile Include="基础开源库.cpp" />
     <ClCompile Include="打印版.cpp" />
     <ClCompile Include="网编-12STOMP协议.cpp" />
     <ClCompile Include="图标.cpp" />

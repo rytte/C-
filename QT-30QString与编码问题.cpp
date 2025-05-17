@@ -24,6 +24,13 @@ Local8Bits(本地系统的编码:GBK、ISO - 8859 - 1等)
 Latin1(ANSI)
 
 
+//Qt Creator 控制台输出中文乱码解决方法
+1、工具 >> 选项 >> 文本编辑器 >> 勾选 "Display file encoding" >> Apply >> OK
+2、点击右上角编码方式 >> 选择"System" >> Save with Encoding
+3、解决
 
-
+//Qt Creator 源码中文显示乱码
+1、工具 >> 选项 >> 文本编辑器 >> 勾选 "Display file encoding" >> Apply >> OK
+2、点击右上角编码方式 >> 选择"System" >> Load with Encoding
+3、解决
 
