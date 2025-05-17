@@ -7,9 +7,8 @@ https://zhuanlan.zhihu.com/p/40356456
 input->采样、块划分、中心化、DCT、量化、DC差分、AC RLC、Huffman->output
 
 //（1）采样
-色彩空间转换：将每个像素的RGB888转换为YUV444。这个过程是可逆的，信息并没有损失。
-颜色降采样：将YUV444变化为YUV420，色度信息是求取的周围4个像素点的平均值，数据压缩到原来的一半。
-查看的时候会重建RGB888，因为显示器都是RGB的，但是还原回来的RGB和编码之前的RGB是有差别的。
+色彩空间转换：将每个像素的RGB888转换为YUV444。(可逆无损)
+颜色降采样：将YUV444变化为YUV420，色度分量（U和V）是周围4个像素点的平均值，数据压缩到原来的一半。(有损)
 
 //（2）块划分
 将输入数据按8x8像素划分数据块，源图像如果不是8x8的整数倍，需进行补充
@@ -30,7 +29,7 @@ DCT在复杂度和失真上是最好的trade - off
 //（4）量化
 对亮度和色度分量的DCT系数进行量化，使用如下量化表，该量化表是从广泛的实验中得出的。当然，也可以自定义量化表
 
-static const unsigned int std_luminance_quant_tbl[DCTSIZE2] = {     //标准亮度分量量化表
+static const unsigned int std_luminance_quant_tbl[DCTSIZE2] = {     //标准亮度分量(Y)量化表
     16,  11,  10,  16,  24,  40,  51,  61,
     12,  12,  14,  19,  26,  58,  60,  55,
     14,  13,  16,  24,  40,  57,  69,  56,
@@ -41,7 +40,7 @@ static const unsigned int std_luminance_quant_tbl[DCTSIZE2] = {     //标准亮�
     72,  92,  95,  98, 112, 100, 103,  99
 };
 
-static const unsigned int std_chrominance_quant_tbl[DCTSIZE2] = {   //标准色度分量量化表
+static const unsigned int std_chrominance_quant_tbl[DCTSIZE2] = {   //标准色度分量(UV)量化表
     17,  18,  24,  47,  99,  99,  99,  99,
     18,  21,  26,  66,  99,  99,  99,  99,
     24,  26,  56,  99,  99,  99,  99,  99,
