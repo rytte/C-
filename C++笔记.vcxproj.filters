@@ -159,6 +159,9 @@
     <Filter Include="源文件\Python\与C++交互">
       <UniqueIdentifier>{fab1d510-d5c9-49f6-99a6-bce111d127f3}</UniqueIdentifier>
     </Filter>
+    <Filter Include="源文件\ESP32">
+      <UniqueIdentifier>{4e169bc6-584d-4dea-a6d7-38fbe2b20313}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="算法-1顺序表.c">
@@ -1235,9 +1238,18 @@
     <ClCompile Include="Cpp17-5折叠表达式.cpp">
       <Filter>源文件\6-C++语法\Cpp新特性</Filter>
     </ClCompile>
+<<<<<<< HEAD
     <ClCompile Include="字符编码.cpp">
       <Filter>源文件\其它</Filter>
     </ClCompile>
+=======
+    <ClCompile Include="内存池.cpp">
+      <Filter>源文件\其它</Filter>
+    </ClCompile>
+    <ClCompile Include="ESP32-1ArduinoIDE.cpp">
+      <Filter>源文件\ESP32</Filter>
+    </ClCompile>
+>>>>>>> fcf5302aa5e0e78246f58d372cd83300e8c584b0
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="pthread_pool.h">
