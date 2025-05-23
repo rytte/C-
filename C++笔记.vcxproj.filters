@@ -1235,6 +1235,9 @@
     <ClCompile Include="Cpp17-5折叠表达式.cpp">
       <Filter>源文件\6-C++语法\Cpp新特性</Filter>
     </ClCompile>
+    <ClCompile Include="字符编码.cpp">
+      <Filter>源文件\其它</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="pthread_pool.h">
