@@ -1244,6 +1244,12 @@
     <ClCompile Include="ESP32-1ArduinoIDE.cpp">
       <Filter>源文件\ESP32</Filter>
     </ClCompile>
+    <ClCompile Include="STD-13原子操作.cpp">
+      <Filter>源文件\6-C++语法\STD标准库</Filter>
+    </ClCompile>
+    <ClCompile Include="Typora自定义配置.cpp">
+      <Filter>源文件\其它</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="pthread_pool.h">

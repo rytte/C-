@@ -178,6 +178,8 @@
     <ClCompile Include="QT-20元对象系统.cpp" />
     <ClCompile Include="QT-31其它问题.cpp" />
     <ClCompile Include="QT-3窗口与页面管理.cpp" />
+    <ClCompile Include="STD-13原子操作.cpp" />
+    <ClCompile Include="Typora自定义配置.cpp" />
     <ClCompile Include="内存池.cpp" />
     <ClCompile Include="命名规范.cpp" />
     <ClCompile Include="基础开源库.cpp" />
