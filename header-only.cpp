@@ -6,6 +6,7 @@
 3、在类声明"下方""#include"这些inl文件，如果写在类声明上方inl文件将会找不到类定义（并且在inl"#include".hpp时还会有循环包含问题）
 
 * inl不需要"#ifndef"等语句，因为inl文件只应该被唯一的.hpp文件包含，而.hpp已有"#ifndef"。
+* 头文件中定义的函数，即使不是类成员，也需要 inline ，否则被多个cpp文件包含时，会出现重复定义。
 
 
 // header-only 优点

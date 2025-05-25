@@ -9,6 +9,8 @@ git add .					//添加所有文件
 git commit - m "message"	//提交暂存区的更改到本地仓库，并附上更新信息
 git log						//查看提交历史
 git diff					//查看文件差异
+git restore <file>			//撤销指定文件的修改
+//git checkout <file>		//撤销指定文件的修改
 git reset					//撤销某次提交或修改，可以指定回退的提交
 git reset --soft HEAD~1		//撤销最近一次提交但保留修改
 git reset --soft HEAD~3		//撤销最近三次提交但保留修改
@@ -17,10 +19,13 @@ git reset --hard HEAD~1		//撤销最近一次提交并丢弃修改
 //分支操作
 git branch					//查看所有分支
 git branch <branch>			//创建新分支
-git checkout <branch>		//切换分支
-git checkout - b <branch>	//创建并切换到新分支。
-git merge <branch>			//将指定的分支合并到当前分支
+git switch <branch>			//切换分支
+git switch - c <branch>		//创建并切换到新分支
+//git checkout <branch>		//切换分支
+//git checkout - b <branch>	//创建并切换到新分支。
 git branch - d <branch>		//删除本地分支
+git merge <branch>			//将指定的分支合并到当前分支
+git rebase <branch>			//把当前分支的提交，重新应用到另一个分支的最新位置上
 
 // 远程操作
 git remote - v				// 查看远程仓库的 URL
