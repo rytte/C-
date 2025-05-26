@@ -1247,6 +1247,12 @@
     <ClCompile Include="字符编码.cpp">
       <Filter>源文件\其它</Filter>
     </ClCompile>
+    <ClCompile Include="ESP32-电路设计.cpp">
+      <Filter>源文件\ESP32</Filter>
+    </ClCompile>
+    <ClCompile Include="ESP32-硬件基础.cpp">
+      <Filter>源文件\ESP32</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="pthread_pool.h">
