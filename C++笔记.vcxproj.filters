@@ -1247,11 +1247,19 @@
     <ClCompile Include="字符编码.cpp">
       <Filter>源文件\其它</Filter>
     </ClCompile>
+<<<<<<< HEAD
     <ClCompile Include="ESP32-电路设计.cpp">
       <Filter>源文件\ESP32</Filter>
     </ClCompile>
     <ClCompile Include="ESP32-硬件基础.cpp">
       <Filter>源文件\ESP32</Filter>
+=======
+    <ClCompile Include="STD-13原子操作.cpp">
+      <Filter>源文件\6-C++语法\STD标准库</Filter>
+    </ClCompile>
+    <ClCompile Include="Typora自定义配置.cpp">
+      <Filter>源文件\其它</Filter>
+>>>>>>> d0138b9d7ad59d40ae6976fb6312eb7f4501852b
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
