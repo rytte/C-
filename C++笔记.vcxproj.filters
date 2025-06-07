@@ -159,9 +159,6 @@
     <Filter Include="源文件\Python\与C++交互">
       <UniqueIdentifier>{fab1d510-d5c9-49f6-99a6-bce111d127f3}</UniqueIdentifier>
     </Filter>
-    <Filter Include="源文件\ESP32">
-      <UniqueIdentifier>{4e169bc6-584d-4dea-a6d7-38fbe2b20313}</UniqueIdentifier>
-    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="算法-1顺序表.c">
@@ -1241,23 +1238,11 @@
     <ClCompile Include="内存池.cpp">
       <Filter>源文件\其它</Filter>
     </ClCompile>
-    <ClCompile Include="ESP32-1ArduinoIDE.cpp">
-      <Filter>源文件\ESP32</Filter>
-    </ClCompile>
-    <ClCompile Include="字符编码.cpp">
-      <Filter>源文件\其它</Filter>
-    </ClCompile>
     <ClCompile Include="STD-13原子操作.cpp">
       <Filter>源文件\6-C++语法\STD标准库</Filter>
     </ClCompile>
     <ClCompile Include="Typora自定义配置.cpp">
       <Filter>源文件\其它</Filter>
-    </ClCompile>
-    <ClCompile Include="ESP32-电路设计.cpp">
-      <Filter>源文件\ESP32</Filter>
-    </ClCompile>
-    <ClCompile Include="ESP32-硬件基础.cpp">
-      <Filter>源文件\ESP32</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>

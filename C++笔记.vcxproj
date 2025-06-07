@@ -168,9 +168,6 @@
     <ClCompile Include="demo5-6画板.c" />
     <ClCompile Include="demo5-7简易相册.c" />
     <ClCompile Include="docker.cpp" />
-    <ClCompile Include="ESP32-1ArduinoIDE.cpp" />
-    <ClCompile Include="ESP32-电路设计.cpp" />
-    <ClCompile Include="ESP32-硬件基础.cpp" />
     <ClCompile Include="FFmpeg-21H264封装为MP4.cpp" />
     <ClCompile Include="FFmpeg-22BFS.cpp" />
     <ClCompile Include="header-only.cpp" />
@@ -185,7 +182,6 @@
     <ClCompile Include="内存池.cpp" />
     <ClCompile Include="命名规范.cpp" />
     <ClCompile Include="基础开源库.cpp" />
-    <ClCompile Include="字符编码.cpp" />
     <ClCompile Include="打印版.cpp" />
     <ClCompile Include="网编-12STOMP协议.cpp" />
     <ClCompile Include="图标.cpp" />

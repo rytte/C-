@@ -1,7 +1,11 @@
 
 
+// 安装 Fira Code 字体
+1、访问 Fira Code 的 GitHub 页面 下载字体文件。
+2、解压后，双击.ttf 文件进行安装，或右键选择“安装”以将字体添加到系统中。
 
 
+// 设置配置
 文件 >> 偏好设置 >> 外观 >> 打开主题文件夹 >> 打开github.css文件，在底部添加下面代码
 
 /* 额外自定义配置 */
@@ -66,5 +70,10 @@ h5{
 
 h6{
     color: #739ab2; /* 灰蓝色 */
+}
+
+code, pre{
+    font - family: "Fira Code", "Consolas", monospace;
+    font - size: 0.9em;
 }
 
