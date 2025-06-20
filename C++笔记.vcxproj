@@ -167,7 +167,6 @@
     <ClCompile Include="demo5-5进度条.c" />
     <ClCompile Include="demo5-6画板.c" />
     <ClCompile Include="demo5-7简易相册.c" />
-    <ClCompile Include="docker.cpp" />
     <ClCompile Include="FFmpeg-21H264封装为MP4.cpp" />
     <ClCompile Include="FFmpeg-22BFS.cpp" />
     <ClCompile Include="header-only.cpp" />
@@ -179,7 +178,6 @@
     <ClCompile Include="STD-13原子操作.cpp" />
     <ClCompile Include="Typora自定义配置.cpp" />
     <ClCompile Include="命名规范.cpp" />
-    <ClCompile Include="基础开源库.cpp" />
     <ClCompile Include="打印版.cpp" />
     <ClCompile Include="网编-12STOMP协议.cpp" />
     <ClCompile Include="图标.cpp" />
@@ -190,7 +188,6 @@
     <ClCompile Include="FFmpeg-9ffplay源码分析.cpp" />
     <ClCompile Include="FFmpeg-7音频解码.cpp" />
     <ClCompile Include="FFmpeg-8拉流.cpp" />
-    <ClCompile Include="FTP.cpp" />
     <ClCompile Include="Git.cpp" />
     <ClCompile Include="GL-1Linux图形系统.cpp" />
     <ClCompile Include="JS-11ES7·8·9新特性.cpp" />
@@ -224,7 +221,6 @@
     <ClCompile Include="STD-11future与promise.cpp" />
     <ClCompile Include="STD-12类型特征.cpp" />
     <ClCompile Include="TS.cpp" />
-    <ClCompile Include="UML.cpp" />
     <ClCompile Include="Vue-8语法.vue" />
     <ClCompile Include="Vue.cpp" />
     <ClCompile Include="函数实现.cpp" />
