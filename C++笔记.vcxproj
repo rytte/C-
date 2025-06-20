@@ -172,14 +172,12 @@
     <ClCompile Include="FFmpeg-22BFS.cpp" />
     <ClCompile Include="header-only.cpp" />
     <ClCompile Include="JS-5内置类型.cpp" />
-    <ClCompile Include="MQ-1RabbitMQ.cpp" />
     <ClCompile Include="QT-1QT与QtCreator.cpp" />
     <ClCompile Include="QT-20元对象系统.cpp" />
     <ClCompile Include="QT-31其它问题.cpp" />
     <ClCompile Include="QT-3窗口与页面管理.cpp" />
     <ClCompile Include="STD-13原子操作.cpp" />
     <ClCompile Include="Typora自定义配置.cpp" />
-    <ClCompile Include="内存池.cpp" />
     <ClCompile Include="命名规范.cpp" />
     <ClCompile Include="基础开源库.cpp" />
     <ClCompile Include="打印版.cpp" />
@@ -225,13 +223,10 @@
     <ClCompile Include="SQLite3.cpp" />
     <ClCompile Include="STD-11future与promise.cpp" />
     <ClCompile Include="STD-12类型特征.cpp" />
-    <ClCompile Include="STM32-2GPIO.cpp" />
-    <ClCompile Include="STM32-3时钟体系.cpp" />
     <ClCompile Include="TS.cpp" />
     <ClCompile Include="UML.cpp" />
     <ClCompile Include="Vue-8语法.vue" />
     <ClCompile Include="Vue.cpp" />
-    <ClCompile Include="云计算.cpp" />
     <ClCompile Include="函数实现.cpp" />
     <ClCompile Include="网编-10HTTP协议.cpp" />
     <ClCompile Include="网编-11WebSocket协议.cpp" />
@@ -457,7 +452,6 @@
     <ClCompile Include="SDL-4视频播放.cpp" />
     <ClCompile Include="SDL-5音频播放_有回调.cpp" />
     <ClCompile Include="SDL-6音频播放_无回调.cpp" />
-    <ClCompile Include="STM32-1介绍.cpp" />
     <ClCompile Include="TCP_client.c" />
     <ClCompile Include="TCP_server.c" />
     <ClCompile Include="UDP_client.c" />

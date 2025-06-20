@@ -90,9 +90,6 @@
     <Filter Include="源文件\6-C++语法\池设计">
       <UniqueIdentifier>{695f25cc-708c-4bf0-8923-6797f087857b}</UniqueIdentifier>
     </Filter>
-    <Filter Include="源文件\SoundTouch">
-      <UniqueIdentifier>{5314c157-179a-4964-982c-9556c9c94943}</UniqueIdentifier>
-    </Filter>
     <Filter Include="源文件\Python">
       <UniqueIdentifier>{ffeae56c-da45-41a9-b8e0-25cd3621594e}</UniqueIdentifier>
     </Filter>
@@ -141,20 +138,11 @@
     <Filter Include="源文件\9-音视频\6-Json解析">
       <UniqueIdentifier>{4907c30b-bdbe-4e47-9ebc-a9d7d159bdd3}</UniqueIdentifier>
     </Filter>
-    <Filter Include="源文件\STM32">
-      <UniqueIdentifier>{155dd3bf-76d5-428d-91ba-c5ed0e219659}</UniqueIdentifier>
-    </Filter>
     <Filter Include="源文件\鸿蒙">
       <UniqueIdentifier>{d49fda2c-44b3-4b4f-aeda-a658ff9b1e31}</UniqueIdentifier>
     </Filter>
     <Filter Include="源文件\鸿蒙\ArkTS">
       <UniqueIdentifier>{3b714098-70f4-4f5a-9749-652feba30f8c}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="源文件\中间件">
-      <UniqueIdentifier>{7db5df41-e58e-4a66-9b8e-206dbe584342}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="源文件\中间件\消息队列系统">
-      <UniqueIdentifier>{8b8f226f-bcdf-421b-a195-5eea97fc47d8}</UniqueIdentifier>
     </Filter>
     <Filter Include="源文件\Python\与C++交互">
       <UniqueIdentifier>{fab1d510-d5c9-49f6-99a6-bce111d127f3}</UniqueIdentifier>
@@ -998,9 +986,6 @@
     <ClCompile Include="库文件编译和使用.cpp">
       <Filter>源文件\其它</Filter>
     </ClCompile>
-    <ClCompile Include="SoundTouch.cpp">
-      <Filter>源文件\SoundTouch</Filter>
-    </ClCompile>
     <ClCompile Include="FFmpeg-10笔记.cpp">
       <Filter>源文件\10-FFmpeg</Filter>
     </ClCompile>
@@ -1112,15 +1097,6 @@
     <ClCompile Include="STD-12类型特征.cpp">
       <Filter>源文件\6-C++语法\STD标准库</Filter>
     </ClCompile>
-    <ClCompile Include="STM32-2GPIO.cpp">
-      <Filter>源文件\STM32</Filter>
-    </ClCompile>
-    <ClCompile Include="STM32-1介绍.cpp">
-      <Filter>源文件\STM32</Filter>
-    </ClCompile>
-    <ClCompile Include="STM32-3时钟体系.cpp">
-      <Filter>源文件\STM32</Filter>
-    </ClCompile>
     <ClCompile Include="鸿蒙-HDC工具.cpp">
       <Filter>源文件\鸿蒙</Filter>
     </ClCompile>
@@ -1154,17 +1130,11 @@
     <ClCompile Include="网编-11WebSocket协议.cpp">
       <Filter>源文件\4-网络编程</Filter>
     </ClCompile>
-    <ClCompile Include="云计算.cpp">
-      <Filter>源文件\其它</Filter>
-    </ClCompile>
     <ClCompile Include="图标.cpp">
       <Filter>源文件\其它</Filter>
     </ClCompile>
     <ClCompile Include="网编-12STOMP协议.cpp">
       <Filter>源文件\4-网络编程</Filter>
-    </ClCompile>
-    <ClCompile Include="MQ-1RabbitMQ.cpp">
-      <Filter>源文件\中间件\消息队列系统</Filter>
     </ClCompile>
     <ClCompile Include="ArkTS-9异步并发.cpp">
       <Filter>源文件\鸿蒙\ArkTS</Filter>
@@ -1235,13 +1205,13 @@
     <ClCompile Include="Cpp17-5折叠表达式.cpp">
       <Filter>源文件\6-C++语法\Cpp新特性</Filter>
     </ClCompile>
-    <ClCompile Include="内存池.cpp">
-      <Filter>源文件\其它</Filter>
-    </ClCompile>
     <ClCompile Include="STD-13原子操作.cpp">
       <Filter>源文件\6-C++语法\STD标准库</Filter>
     </ClCompile>
     <ClCompile Include="Typora自定义配置.cpp">
+      <Filter>源文件\其它</Filter>
+    </ClCompile>
+    <ClCompile Include="SoundTouch.cpp">
       <Filter>源文件\其它</Filter>
     </ClCompile>
   </ItemGroup>

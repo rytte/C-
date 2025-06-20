@@ -261,30 +261,3 @@ int main(int argc, char* argv[])
 	return 0;
 }
 
-
-
-/********************/实例：格式化输出/************************************************************/
-#include <stdio.h>
-
-int main(int argc, char const* argv[])
-{
-	// 操作
-	char name[20] = "jack";
-	int age = 15;
-	char sex[5] = "男";
-	float score = 56.3;
-	// 定义数组并清空
-	char str[50] = { 0 };
-	// 组合字符串，拼接字符串 （strcat）
-	sprintf(str, "姓名：%s 性别：%s 年龄：%d 成绩:%.2f\n",
-		name, sex, age, score);
-	fprintf(stdout, "%s", str); // 输出到屏幕
-
-	snprintf(str, 40, "姓名：%s 性别：%s 年龄：%d 成绩:%.2f\n",
-		name, sex, age, score);
-	fprintf(stdout, "%s", str); // 输出到屏幕
-
-	return 0;
-}
-
-
